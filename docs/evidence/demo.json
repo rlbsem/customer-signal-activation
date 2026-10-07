@@ -1,0 +1,5352 @@
+{
+  "source_hash": "37e2382060c9b4d60169217501ca9be09e0f3a8e7238f2e795fcc8c6a261b459",
+  "source_events": 1070,
+  "accounts": 120,
+  "decisions": [
+    {
+      "brand": "cedar",
+      "account": "account-0000",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0000-web-0",
+      "input_events": [
+        "account-0000-consent",
+        "account-0000-enrich",
+        "account-0000-link",
+        "account-0000-opp",
+        "account-0000-profile",
+        "account-0000-web-0",
+        "account-0000-web-1",
+        "account-0000-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "c6eae4ecb71c32a7d256527d775d998587c4d19da47edfbb7a7efba7eb47062b"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0002",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0002-web-0",
+      "input_events": [
+        "account-0002-consent",
+        "account-0002-enrich",
+        "account-0002-link",
+        "account-0002-profile",
+        "account-0002-web-0",
+        "account-0002-web-1",
+        "account-0002-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "42959bdd36e3830cbf3583ec1b93ae930183f2192b2b0282c246178571c7289a"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0004",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0004-web-0",
+      "input_events": [
+        "account-0004-consent",
+        "account-0004-enrich",
+        "account-0004-link",
+        "account-0004-profile",
+        "account-0004-web-0",
+        "account-0004-web-1",
+        "account-0004-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "26bab1b7fe5bb8ed9190af81d022e21d1cb3315bfffd0b3206277e406ef02f30"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0006",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0006-web-0",
+      "input_events": [
+        "account-0006-consent",
+        "account-0006-enrich",
+        "account-0006-link",
+        "account-0006-profile",
+        "account-0006-web-0",
+        "account-0006-web-1",
+        "account-0006-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "d2ade516577fb64aa35b780e32640cfc001e4994ff33d44268fb8a1b27d6b9e4"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0008",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0008-web-0",
+      "input_events": [
+        "account-0008-conflict",
+        "account-0008-consent",
+        "account-0008-enrich",
+        "account-0008-link",
+        "account-0008-profile",
+        "account-0008-web-0",
+        "account-0008-web-1",
+        "account-0008-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "ed9844f659dfaccf9391a25608fb86979fbe873cc86c1afde78faf7e6e5254c5"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0010",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0010-call",
+      "input_events": [
+        "account-0010-call",
+        "account-0010-consent",
+        "account-0010-enrich",
+        "account-0010-link",
+        "account-0010-opp",
+        "account-0010-profile"
+      ],
+      "input_seq": 1070,
+      "id": "9105fea8e32e767f4fca44a93c66771e37ac3096d04ef0f43eea9ccb4a51b93e"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "01e83050e05b25777919dce4e8921c037c334e0e08de50a4320df402facca5d0"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0014",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0014-web-0",
+      "input_events": [
+        "account-0014-consent",
+        "account-0014-enrich",
+        "account-0014-link",
+        "account-0014-profile",
+        "account-0014-web-0",
+        "account-0014-web-1",
+        "account-0014-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "f3331d9e4807a4e0c9bd2e257832faa61af4cfd0c6c9d42c5a03f6b43ca954b3"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0016",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0016-web-0",
+      "input_events": [
+        "account-0016-consent",
+        "account-0016-enrich",
+        "account-0016-link",
+        "account-0016-profile",
+        "account-0016-web-0",
+        "account-0016-web-1",
+        "account-0016-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "b9c17968fe3aee1135f510d521281754ae9000aae52981bb6ab12b211855ece3"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0018",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0018-web-0",
+      "input_events": [
+        "account-0018-consent",
+        "account-0018-enrich",
+        "account-0018-link",
+        "account-0018-profile",
+        "account-0018-web-0",
+        "account-0018-web-1",
+        "account-0018-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "ba4a88292366165a0529b0f1056b710d7eb45a313f65e373ccbc8946f1e3d088"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0020",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0020-web-0",
+      "input_events": [
+        "account-0020-conflict",
+        "account-0020-consent",
+        "account-0020-enrich",
+        "account-0020-link",
+        "account-0020-profile",
+        "account-0020-web-0",
+        "account-0020-web-1",
+        "account-0020-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "2ff548692bf3d78cc0fcffe65f5da11091fc8c6488e32920e818a2aeb8527bee"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0022",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0022-call",
+      "input_events": [
+        "account-0022-call",
+        "account-0022-consent",
+        "account-0022-enrich",
+        "account-0022-link",
+        "account-0022-opp",
+        "account-0022-profile"
+      ],
+      "input_seq": 1070,
+      "id": "ffd79413911a620364c21b9f6a70ec37d10d35749328392a1ee717b440a02d99"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0024",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0024-web-0",
+      "input_events": [
+        "account-0024-consent",
+        "account-0024-enrich",
+        "account-0024-link",
+        "account-0024-opp",
+        "account-0024-profile",
+        "account-0024-web-0",
+        "account-0024-web-1",
+        "account-0024-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "5137612171481310660891a83450c7bb8b80efd86dd7377bd18476e3e484f24c"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0026",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0026-web-0",
+      "input_events": [
+        "account-0026-consent",
+        "account-0026-enrich",
+        "account-0026-link",
+        "account-0026-profile",
+        "account-0026-web-0",
+        "account-0026-web-1",
+        "account-0026-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "7091227fdbe9ce0831a39a0c2aa8cda998177e18ce5fb24d0e3ffe491fd6e78f"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0028",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0028-web-0",
+      "input_events": [
+        "account-0028-consent",
+        "account-0028-enrich",
+        "account-0028-link",
+        "account-0028-profile",
+        "account-0028-web-0",
+        "account-0028-web-1",
+        "account-0028-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "74adb6e7a14f0dc3cf41dc7d9b85322660768e574db80d8f258d9f03b3a10c7e"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0030",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0030-web-0",
+      "input_events": [
+        "account-0030-consent",
+        "account-0030-enrich",
+        "account-0030-link",
+        "account-0030-profile",
+        "account-0030-web-0",
+        "account-0030-web-1",
+        "account-0030-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "8f97b16fe27638d4427f850bea8dd5017a8ecdf2b55a6745c087b35e4332edfc"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0032",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0032-web-0",
+      "input_events": [
+        "account-0032-conflict",
+        "account-0032-consent",
+        "account-0032-enrich",
+        "account-0032-link",
+        "account-0032-profile",
+        "account-0032-web-0",
+        "account-0032-web-1",
+        "account-0032-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "154eae8663ef61d91aefd1c286af22f8435f54b3233873fa4cbda5922f1561d7"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0034",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0034-call",
+      "input_events": [
+        "account-0034-call",
+        "account-0034-consent",
+        "account-0034-enrich",
+        "account-0034-link",
+        "account-0034-opp",
+        "account-0034-profile"
+      ],
+      "input_seq": 1070,
+      "id": "a54f4e317997c6bfd65298f2624c44eecee8914f75ad39030cf79af8b6a8f339"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0036",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0036-web-0",
+      "input_events": [
+        "account-0036-consent",
+        "account-0036-enrich",
+        "account-0036-link",
+        "account-0036-opp",
+        "account-0036-profile",
+        "account-0036-web-0",
+        "account-0036-web-1",
+        "account-0036-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "59f26080b8ff1803b2a80cef3b9699503fe5b0368e34c06cb03aca7c5a9e48b6"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0038",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0038-web-0",
+      "input_events": [
+        "account-0038-consent",
+        "account-0038-enrich",
+        "account-0038-link",
+        "account-0038-profile",
+        "account-0038-web-0",
+        "account-0038-web-1",
+        "account-0038-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "b3c5f8d20d6918f5aa40bc2e2ccbc4bf17c25391f0afb54bc72ba6f3938d8cd4"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0040",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0040-web-0",
+      "input_events": [
+        "account-0040-consent",
+        "account-0040-enrich",
+        "account-0040-link",
+        "account-0040-profile",
+        "account-0040-web-0",
+        "account-0040-web-1",
+        "account-0040-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "dbcb1992811ac60b2cb299048f2667e10a30f1987c6f0e0b6ec71a0b22cb20c6"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0042",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0042-web-0",
+      "input_events": [
+        "account-0042-consent",
+        "account-0042-enrich",
+        "account-0042-link",
+        "account-0042-profile",
+        "account-0042-web-0",
+        "account-0042-web-1",
+        "account-0042-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "77df58766b24d54241f13ecd9478a9b40c18721f2f3e0aaa599b288a9c9eba3e"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0044",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0044-web-0",
+      "input_events": [
+        "account-0044-conflict",
+        "account-0044-consent",
+        "account-0044-enrich",
+        "account-0044-link",
+        "account-0044-profile",
+        "account-0044-web-0",
+        "account-0044-web-1",
+        "account-0044-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "c325a65297b5a3c36b5889ad57dd3a65d5300160dd9b4678b49687a79ef5a1da"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0046",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0046-call",
+      "input_events": [
+        "account-0046-call",
+        "account-0046-consent",
+        "account-0046-enrich",
+        "account-0046-link",
+        "account-0046-opp",
+        "account-0046-profile"
+      ],
+      "input_seq": 1070,
+      "id": "09dc4863db5b404b86c47581273e830f12e433690f33091526c515cf3aaa53ec"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0048",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0048-web-0",
+      "input_events": [
+        "account-0048-consent",
+        "account-0048-enrich",
+        "account-0048-link",
+        "account-0048-opp",
+        "account-0048-profile",
+        "account-0048-web-0",
+        "account-0048-web-1",
+        "account-0048-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "0562047c5b2f4d87f600d20d7ee489afef85959e5b4c4812d7b45c30dd026c43"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0050",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0050-web-0",
+      "input_events": [
+        "account-0050-consent",
+        "account-0050-enrich",
+        "account-0050-link",
+        "account-0050-profile",
+        "account-0050-web-0",
+        "account-0050-web-1",
+        "account-0050-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "34604880bfa0668606ec928ea92e1da916dc7c24a82be510676ff366208aaaa9"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0052",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0052-web-0",
+      "input_events": [
+        "account-0052-consent",
+        "account-0052-enrich",
+        "account-0052-link",
+        "account-0052-profile",
+        "account-0052-web-0",
+        "account-0052-web-1",
+        "account-0052-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "c09c7d60037f6095ea7cdb217b18bc6e18435911be50b4987afc337fe7b33a2d"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0054",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0054-web-0",
+      "input_events": [
+        "account-0054-consent",
+        "account-0054-enrich",
+        "account-0054-link",
+        "account-0054-profile",
+        "account-0054-web-0",
+        "account-0054-web-1",
+        "account-0054-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "539b01f40cdc1aac7ba9b0356c7136487eb553e96748456b1fbdc185273dad48"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0056",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0056-web-0",
+      "input_events": [
+        "account-0056-conflict",
+        "account-0056-consent",
+        "account-0056-enrich",
+        "account-0056-link",
+        "account-0056-profile",
+        "account-0056-web-0",
+        "account-0056-web-1",
+        "account-0056-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "27cf06f8c5b2018d392b0010d991686e29b6519a27be066110d1e36967c19829"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0058",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0058-call",
+      "input_events": [
+        "account-0058-call",
+        "account-0058-consent",
+        "account-0058-enrich",
+        "account-0058-link",
+        "account-0058-opp",
+        "account-0058-profile"
+      ],
+      "input_seq": 1070,
+      "id": "f766701d89ed54e4323f48e79866c408c56f5b53c16d35cf15d95246ceb6586d"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0060",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0060-web-0",
+      "input_events": [
+        "account-0060-consent",
+        "account-0060-enrich",
+        "account-0060-link",
+        "account-0060-opp",
+        "account-0060-profile",
+        "account-0060-web-0",
+        "account-0060-web-1",
+        "account-0060-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "c20bb78537f27d6d46a862c356d6e797425a069046eccb2ccde9a670c96e2ec1"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0062",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0062-web-0",
+      "input_events": [
+        "account-0062-consent",
+        "account-0062-enrich",
+        "account-0062-link",
+        "account-0062-profile",
+        "account-0062-web-0",
+        "account-0062-web-1",
+        "account-0062-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "55f316898b15b246b25d7bcb53ed909d0365ed61a798c4b92b5078eec563d157"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0064",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0064-web-0",
+      "input_events": [
+        "account-0064-consent",
+        "account-0064-enrich",
+        "account-0064-link",
+        "account-0064-profile",
+        "account-0064-web-0",
+        "account-0064-web-1",
+        "account-0064-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "9c65eea1bd1f7fe1f43a0a02cf3cccb05dd8cd9bb80ccde5eb7bbbff2befe783"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0066",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0066-web-0",
+      "input_events": [
+        "account-0066-consent",
+        "account-0066-enrich",
+        "account-0066-link",
+        "account-0066-profile",
+        "account-0066-web-0",
+        "account-0066-web-1",
+        "account-0066-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "50d3567d7cea003e4c68635028db9d3fe8de70b0a2eff0a36c0b98c77f7a6f41"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0068",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0068-web-0",
+      "input_events": [
+        "account-0068-conflict",
+        "account-0068-consent",
+        "account-0068-enrich",
+        "account-0068-link",
+        "account-0068-profile",
+        "account-0068-web-0",
+        "account-0068-web-1",
+        "account-0068-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "7d6bc670f7fd213a6deca483cb5acfaf87de025bf94cc66f702fc526d15c602a"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0070",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0070-call",
+      "input_events": [
+        "account-0070-call",
+        "account-0070-consent",
+        "account-0070-enrich",
+        "account-0070-link",
+        "account-0070-opp",
+        "account-0070-profile"
+      ],
+      "input_seq": 1070,
+      "id": "f364b215e8d0355a79d7290f70fa48f9d0c514430c7a35a42b8b40a731dfa1ca"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0072",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0072-web-0",
+      "input_events": [
+        "account-0072-consent",
+        "account-0072-enrich",
+        "account-0072-link",
+        "account-0072-opp",
+        "account-0072-profile",
+        "account-0072-web-0",
+        "account-0072-web-1",
+        "account-0072-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "a3156c6c15706004103f7fac461284d879955ffb34ac303a74ea8332c9eceeb4"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0074",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0074-web-0",
+      "input_events": [
+        "account-0074-consent",
+        "account-0074-enrich",
+        "account-0074-link",
+        "account-0074-profile",
+        "account-0074-web-0",
+        "account-0074-web-1",
+        "account-0074-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "1d0ff172ec50baf833b4e6e1775eeeb920209e4021741d2a7e1bddcf6016c707"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0076",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0076-web-0",
+      "input_events": [
+        "account-0076-consent",
+        "account-0076-enrich",
+        "account-0076-link",
+        "account-0076-profile",
+        "account-0076-web-0",
+        "account-0076-web-1",
+        "account-0076-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "99470ce1be3dd516c4dec4bfef655c8cfb5980de0539d22351f9cdf2b1b4a66f"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0078",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0078-web-0",
+      "input_events": [
+        "account-0078-consent",
+        "account-0078-enrich",
+        "account-0078-link",
+        "account-0078-profile",
+        "account-0078-web-0",
+        "account-0078-web-1",
+        "account-0078-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "fb714b09cbd7db4ce87765b432abb7d958125ada71f66c4604e571b46a0ce0bb"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0080",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0080-web-0",
+      "input_events": [
+        "account-0080-conflict",
+        "account-0080-consent",
+        "account-0080-enrich",
+        "account-0080-link",
+        "account-0080-profile",
+        "account-0080-web-0",
+        "account-0080-web-1",
+        "account-0080-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "95df39108768d89bab09710abca175b9086cfce440063022e0aefc92cc4c2caa"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0082",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0082-call",
+      "input_events": [
+        "account-0082-call",
+        "account-0082-consent",
+        "account-0082-enrich",
+        "account-0082-link",
+        "account-0082-opp",
+        "account-0082-profile"
+      ],
+      "input_seq": 1070,
+      "id": "02410dd97ab7fb06d581697846e39f0fb103e0547070e67a86399939b9112989"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0084",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0084-web-0",
+      "input_events": [
+        "account-0084-consent",
+        "account-0084-enrich",
+        "account-0084-link",
+        "account-0084-opp",
+        "account-0084-profile",
+        "account-0084-web-0",
+        "account-0084-web-1",
+        "account-0084-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "4743e17b345fbf2de068983c7b7867f9a3866f10534d0bbc9bdcc67876d16fec"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0086",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0086-web-0",
+      "input_events": [
+        "account-0086-consent",
+        "account-0086-enrich",
+        "account-0086-link",
+        "account-0086-profile",
+        "account-0086-web-0",
+        "account-0086-web-1",
+        "account-0086-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "0da6b88029647c748c97fbf1072cec202e0240bb15b4a90aef01bf72e2322328"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0088",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0088-web-0",
+      "input_events": [
+        "account-0088-consent",
+        "account-0088-enrich",
+        "account-0088-link",
+        "account-0088-profile",
+        "account-0088-web-0",
+        "account-0088-web-1",
+        "account-0088-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "efce9d566f24c751b04ac36045409206bfeb18461e710d537dd3ab0a80695de9"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0090",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0090-web-0",
+      "input_events": [
+        "account-0090-consent",
+        "account-0090-enrich",
+        "account-0090-link",
+        "account-0090-profile",
+        "account-0090-web-0",
+        "account-0090-web-1",
+        "account-0090-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "98a68405a5c14d63ad45d700994e500b0a8daade067f6155aeeb8412fd7f23e0"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0092",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0092-web-0",
+      "input_events": [
+        "account-0092-conflict",
+        "account-0092-consent",
+        "account-0092-enrich",
+        "account-0092-link",
+        "account-0092-profile",
+        "account-0092-web-0",
+        "account-0092-web-1",
+        "account-0092-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "966f8a7488b576fc56a884af625c8785cd1d607163e4167cb5af0ffc76af1cdb"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0094",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0094-call",
+      "input_events": [
+        "account-0094-call",
+        "account-0094-consent",
+        "account-0094-enrich",
+        "account-0094-link",
+        "account-0094-opp",
+        "account-0094-profile"
+      ],
+      "input_seq": 1070,
+      "id": "5f2e4e5e569a6d22f8a4e6f24a3f1bdc825e24c9eefda77fc993b37a65e5184f"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0096",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0096-web-0",
+      "input_events": [
+        "account-0096-consent",
+        "account-0096-enrich",
+        "account-0096-link",
+        "account-0096-opp",
+        "account-0096-profile",
+        "account-0096-web-0",
+        "account-0096-web-1",
+        "account-0096-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "653723a7fce0108e1195adfa9e52c6bdd0f1e7201ad81b89d971b0207eeb2376"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0098",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0098-web-0",
+      "input_events": [
+        "account-0098-consent",
+        "account-0098-enrich",
+        "account-0098-link",
+        "account-0098-profile",
+        "account-0098-web-0",
+        "account-0098-web-1",
+        "account-0098-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "56f6a2f2a44a88efc675744dba7ee06ac426e26e9231a9e4154a63227b825861"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0100",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0100-web-0",
+      "input_events": [
+        "account-0100-consent",
+        "account-0100-enrich",
+        "account-0100-link",
+        "account-0100-profile",
+        "account-0100-web-0",
+        "account-0100-web-1",
+        "account-0100-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "d424f5276d335ced484f877820b384dfb8a79621d698a5e3615df4c47b237427"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0102",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0102-web-0",
+      "input_events": [
+        "account-0102-consent",
+        "account-0102-enrich",
+        "account-0102-link",
+        "account-0102-profile",
+        "account-0102-web-0",
+        "account-0102-web-1",
+        "account-0102-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "7526aa423439f25126181399867b4a0d6745ac5e73aacac333a95fcd1c059d08"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0104",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0104-web-0",
+      "input_events": [
+        "account-0104-conflict",
+        "account-0104-consent",
+        "account-0104-enrich",
+        "account-0104-link",
+        "account-0104-profile",
+        "account-0104-web-0",
+        "account-0104-web-1",
+        "account-0104-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "007601881c1fc9060f294a4c62407c36a528278bc439895f97d58b7a9a6f4206"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0106",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0106-call",
+      "input_events": [
+        "account-0106-call",
+        "account-0106-consent",
+        "account-0106-enrich",
+        "account-0106-link",
+        "account-0106-opp",
+        "account-0106-profile"
+      ],
+      "input_seq": 1070,
+      "id": "c75add2e346e00cc67a6596eda2636632fd0078ff87d2302927129b264fc4bb2"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0108",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0108-web-0",
+      "input_events": [
+        "account-0108-consent",
+        "account-0108-enrich",
+        "account-0108-link",
+        "account-0108-opp",
+        "account-0108-profile",
+        "account-0108-web-0",
+        "account-0108-web-1",
+        "account-0108-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "2c690c6f6e3effbf1b7c85e0c6d220db5c36127921347d9ce28cda95d660ccd0"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0110",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0110-web-0",
+      "input_events": [
+        "account-0110-consent",
+        "account-0110-enrich",
+        "account-0110-link",
+        "account-0110-profile",
+        "account-0110-web-0",
+        "account-0110-web-1",
+        "account-0110-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "87af72ac20a33cfa075b41ef9c1bbb78ad3250b2d9298329d91084aff6f5a5c1"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0112",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0112-web-0",
+      "input_events": [
+        "account-0112-consent",
+        "account-0112-enrich",
+        "account-0112-link",
+        "account-0112-profile",
+        "account-0112-web-0",
+        "account-0112-web-1",
+        "account-0112-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "9ec8c18d4b95952654966cf6f1ab919a0275ccca52d026f36c6141b0e894589c"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0114",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0114-web-0",
+      "input_events": [
+        "account-0114-consent",
+        "account-0114-enrich",
+        "account-0114-link",
+        "account-0114-profile",
+        "account-0114-web-0",
+        "account-0114-web-1",
+        "account-0114-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "bc9a29d50f2582299a870a860b68d3a4e95c0a1da9659474735f7ea9aaa6196e"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0116",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0116-web-0",
+      "input_events": [
+        "account-0116-conflict",
+        "account-0116-consent",
+        "account-0116-enrich",
+        "account-0116-link",
+        "account-0116-profile",
+        "account-0116-web-0",
+        "account-0116-web-1",
+        "account-0116-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "050e5338510f9106d1b2d4644f1d6e64542fae00d076db24a2ed0b7199c28d01"
+    },
+    {
+      "brand": "cedar",
+      "account": "account-0118",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0118-call",
+      "input_events": [
+        "account-0118-call",
+        "account-0118-consent",
+        "account-0118-enrich",
+        "account-0118-link",
+        "account-0118-opp",
+        "account-0118-profile"
+      ],
+      "input_seq": 1070,
+      "id": "ea5517243686caca4b046395e70cd0dae728964a6d699f6b3b2226272c3fb3cc"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0001",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0001-web-0",
+      "input_events": [
+        "account-0001-consent",
+        "account-0001-enrich",
+        "account-0001-link",
+        "account-0001-opp",
+        "account-0001-profile",
+        "account-0001-web-0",
+        "account-0001-web-1",
+        "account-0001-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "e8ef2f34c3d70109340a6924fc948448378f54cc7784ca92ddb8a345999832f5"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0003",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0003-web-0",
+      "input_events": [
+        "account-0003-consent",
+        "account-0003-enrich",
+        "account-0003-link",
+        "account-0003-profile",
+        "account-0003-web-0",
+        "account-0003-web-1",
+        "account-0003-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "cdda0f497de2063ae4e2141aa6a1cc68549f14e5a724e517104a39a389458687"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0005",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0005-web-0",
+      "input_events": [
+        "account-0005-consent",
+        "account-0005-enrich",
+        "account-0005-link",
+        "account-0005-profile",
+        "account-0005-web-0",
+        "account-0005-web-1",
+        "account-0005-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "41bd911f1e10a51905136989efff99c4d07d4f8a32eab73aa244d66a1655bb63"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0007",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0007-web-0",
+      "input_events": [
+        "account-0007-consent",
+        "account-0007-enrich",
+        "account-0007-link",
+        "account-0007-profile",
+        "account-0007-web-0",
+        "account-0007-web-1",
+        "account-0007-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "e813aa5d63d20bfa3eb4aede23173b82e29119e0db36ac05685d4bb2ce954e8e"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0009",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0009-web-0",
+      "input_events": [
+        "account-0009-conflict",
+        "account-0009-consent",
+        "account-0009-enrich",
+        "account-0009-link",
+        "account-0009-profile",
+        "account-0009-web-0",
+        "account-0009-web-1",
+        "account-0009-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "07f67d0a74280dd03aa40a00d006402d108c2d0acaeff0c17b1e4b406c5830cf"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0011",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0011-call",
+      "input_events": [
+        "account-0011-call",
+        "account-0011-consent",
+        "account-0011-enrich",
+        "account-0011-link",
+        "account-0011-opp",
+        "account-0011-profile"
+      ],
+      "input_seq": 1070,
+      "id": "0c37ea9805b7aaaf16d56ebea417a5592436db3e6f088d93b644e785ffd9d6ab"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0013",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0013-web-0",
+      "input_events": [
+        "account-0013-consent",
+        "account-0013-enrich",
+        "account-0013-link",
+        "account-0013-opp",
+        "account-0013-profile",
+        "account-0013-web-0",
+        "account-0013-web-1",
+        "account-0013-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "97f0ff402f1d9cb8eec69a2a1089ad96d0f3429a0df5b6c5c6d3f724e12f10bc"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0015",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0015-web-0",
+      "input_events": [
+        "account-0015-consent",
+        "account-0015-enrich",
+        "account-0015-link",
+        "account-0015-profile",
+        "account-0015-web-0",
+        "account-0015-web-1",
+        "account-0015-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "e9e85de95fdbc4b87bedd71fe656f0a3fbda2abecb9fa882fce663d8030f27f4"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0017",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0017-web-0",
+      "input_events": [
+        "account-0017-consent",
+        "account-0017-enrich",
+        "account-0017-link",
+        "account-0017-profile",
+        "account-0017-web-0",
+        "account-0017-web-1",
+        "account-0017-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "33cbc6de93753932e3a7525a11e1abf58e38223a7268faba82def05ff4f2d3a1"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0019",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0019-web-0",
+      "input_events": [
+        "account-0019-consent",
+        "account-0019-enrich",
+        "account-0019-link",
+        "account-0019-profile",
+        "account-0019-web-0",
+        "account-0019-web-1",
+        "account-0019-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "57fb7c8a42660f8741e7587e073d2f18bcf4fe285249b949296d70be5b1ae7d2"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0021",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0021-web-0",
+      "input_events": [
+        "account-0021-conflict",
+        "account-0021-consent",
+        "account-0021-enrich",
+        "account-0021-link",
+        "account-0021-profile",
+        "account-0021-web-0",
+        "account-0021-web-1",
+        "account-0021-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "2d8a92cd0018ada97adef549e765a32e7bc7345d71425c7769ece4b1467baad0"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0023",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0023-call",
+      "input_events": [
+        "account-0023-call",
+        "account-0023-consent",
+        "account-0023-enrich",
+        "account-0023-link",
+        "account-0023-opp",
+        "account-0023-profile"
+      ],
+      "input_seq": 1070,
+      "id": "86184dc4e79a08c529fb491db49f0a5abd5e9397e83b74862fc824aff3ccf4d9"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0025",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0025-web-0",
+      "input_events": [
+        "account-0025-consent",
+        "account-0025-enrich",
+        "account-0025-link",
+        "account-0025-opp",
+        "account-0025-profile",
+        "account-0025-web-0",
+        "account-0025-web-1",
+        "account-0025-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "c8facec6cd8e5525bfcb9741df57173881d3df6af23d7c90d79116993d42227c"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0027",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0027-web-0",
+      "input_events": [
+        "account-0027-consent",
+        "account-0027-enrich",
+        "account-0027-link",
+        "account-0027-profile",
+        "account-0027-web-0",
+        "account-0027-web-1",
+        "account-0027-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "d221f31115bd4714782d4c81d7334d481302c50c295e30b6638ea58c8bd69963"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0029",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0029-web-0",
+      "input_events": [
+        "account-0029-consent",
+        "account-0029-enrich",
+        "account-0029-link",
+        "account-0029-profile",
+        "account-0029-web-0",
+        "account-0029-web-1",
+        "account-0029-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "2840ee5aceb22867274ac1658958f518e6e8c1143c81fb04a1864ed9881c4123"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0031",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0031-web-0",
+      "input_events": [
+        "account-0031-consent",
+        "account-0031-enrich",
+        "account-0031-link",
+        "account-0031-profile",
+        "account-0031-web-0",
+        "account-0031-web-1",
+        "account-0031-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "40f5c229aea4d3aad499d3b5b0c7c3eaad36b9ff58c31ae7d5739fadebdb9437"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0033",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0033-web-0",
+      "input_events": [
+        "account-0033-conflict",
+        "account-0033-consent",
+        "account-0033-enrich",
+        "account-0033-link",
+        "account-0033-profile",
+        "account-0033-web-0",
+        "account-0033-web-1",
+        "account-0033-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "49d7414423758a7a4586717cb940008635bdaa01d689788f817d1b28410c73ea"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0035",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0035-call",
+      "input_events": [
+        "account-0035-call",
+        "account-0035-consent",
+        "account-0035-enrich",
+        "account-0035-link",
+        "account-0035-opp",
+        "account-0035-profile"
+      ],
+      "input_seq": 1070,
+      "id": "c2dd04d77fe4ab7bd76c832a057026e22749c7b2e8942f6f2d22ec943504676f"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0037",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0037-web-0",
+      "input_events": [
+        "account-0037-consent",
+        "account-0037-enrich",
+        "account-0037-link",
+        "account-0037-opp",
+        "account-0037-profile",
+        "account-0037-web-0",
+        "account-0037-web-1",
+        "account-0037-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "b3c96f04a949495be624051f75b3fe772b7e547a29098d9404b886b388ed570e"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0039",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0039-web-0",
+      "input_events": [
+        "account-0039-consent",
+        "account-0039-enrich",
+        "account-0039-link",
+        "account-0039-profile",
+        "account-0039-web-0",
+        "account-0039-web-1",
+        "account-0039-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "d67d6218d0c968bfe982ee664c68c39840bd02caf3a0f6cbb8e5474048041bae"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0041",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0041-web-0",
+      "input_events": [
+        "account-0041-consent",
+        "account-0041-enrich",
+        "account-0041-link",
+        "account-0041-profile",
+        "account-0041-web-0",
+        "account-0041-web-1",
+        "account-0041-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "95a37294a74d6feb6c38626ea007e042e4a04e418132c5d37027113f030865ff"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0043",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0043-web-0",
+      "input_events": [
+        "account-0043-consent",
+        "account-0043-enrich",
+        "account-0043-link",
+        "account-0043-profile",
+        "account-0043-web-0",
+        "account-0043-web-1",
+        "account-0043-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "5bfa5ba20e77bfbd1a591c169b7eb6e52a2120e2541adbc29865e9a48452adc2"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0045",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0045-web-0",
+      "input_events": [
+        "account-0045-conflict",
+        "account-0045-consent",
+        "account-0045-enrich",
+        "account-0045-link",
+        "account-0045-profile",
+        "account-0045-web-0",
+        "account-0045-web-1",
+        "account-0045-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "6f6e550854612df5454d5b489d43904a45df09c59ad6c9440045278e6cb20cea"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0047",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0047-call",
+      "input_events": [
+        "account-0047-call",
+        "account-0047-consent",
+        "account-0047-enrich",
+        "account-0047-link",
+        "account-0047-opp",
+        "account-0047-profile"
+      ],
+      "input_seq": 1070,
+      "id": "fea4205a5ba138491af2db8f1fd898f50cd88c51ce07c3f8ed981b8cfeed898d"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0049",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0049-web-0",
+      "input_events": [
+        "account-0049-consent",
+        "account-0049-enrich",
+        "account-0049-link",
+        "account-0049-opp",
+        "account-0049-profile",
+        "account-0049-web-0",
+        "account-0049-web-1",
+        "account-0049-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "a75e4762166a033dbd6838f453100d7a5021e775db029bb2d7a7236227bada9b"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0051",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0051-web-0",
+      "input_events": [
+        "account-0051-consent",
+        "account-0051-enrich",
+        "account-0051-link",
+        "account-0051-profile",
+        "account-0051-web-0",
+        "account-0051-web-1",
+        "account-0051-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "ca59c70d207f65704fa7f8508caae6fac55041c9f7982162ddc66728de60a624"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0053",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0053-web-0",
+      "input_events": [
+        "account-0053-consent",
+        "account-0053-enrich",
+        "account-0053-link",
+        "account-0053-profile",
+        "account-0053-web-0",
+        "account-0053-web-1",
+        "account-0053-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "d07c674a9a37c645ca3f2190c92d207e39b1b5b29b6b26797d3ff6662ffb6093"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0055",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0055-web-0",
+      "input_events": [
+        "account-0055-consent",
+        "account-0055-enrich",
+        "account-0055-link",
+        "account-0055-profile",
+        "account-0055-web-0",
+        "account-0055-web-1",
+        "account-0055-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "bfed1cd06151f70dc03755973a81d971280c9a5e567442d029c43d7614f969cb"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0057",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0057-web-0",
+      "input_events": [
+        "account-0057-conflict",
+        "account-0057-consent",
+        "account-0057-enrich",
+        "account-0057-link",
+        "account-0057-profile",
+        "account-0057-web-0",
+        "account-0057-web-1",
+        "account-0057-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "1e713127d0ec604b39afd4bc884291318d84d3954b4c81dbfe88297f4523f621"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0059",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0059-call",
+      "input_events": [
+        "account-0059-call",
+        "account-0059-consent",
+        "account-0059-enrich",
+        "account-0059-link",
+        "account-0059-opp",
+        "account-0059-profile"
+      ],
+      "input_seq": 1070,
+      "id": "2507b69838032d83cb95f0afb4bcfef55d5d42516ae17e041f45ebca34d3c15b"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0061",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0061-web-0",
+      "input_events": [
+        "account-0061-consent",
+        "account-0061-enrich",
+        "account-0061-link",
+        "account-0061-opp",
+        "account-0061-profile",
+        "account-0061-web-0",
+        "account-0061-web-1",
+        "account-0061-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "f852c1184008d3afa2f76399330fec29302b5d91708bb8ec672b209606ca995a"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0063",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0063-web-0",
+      "input_events": [
+        "account-0063-consent",
+        "account-0063-enrich",
+        "account-0063-link",
+        "account-0063-profile",
+        "account-0063-web-0",
+        "account-0063-web-1",
+        "account-0063-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "48c642e05c48169558082e0f3a9f72820b43312d75e35d6c93c8641a66b3b518"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0065",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0065-web-0",
+      "input_events": [
+        "account-0065-consent",
+        "account-0065-enrich",
+        "account-0065-link",
+        "account-0065-profile",
+        "account-0065-web-0",
+        "account-0065-web-1",
+        "account-0065-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "f2395e10fd1306088e973982e190819fb19c5f5d77d8a4d9f2098f8d2ca0d6ff"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0067",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0067-web-0",
+      "input_events": [
+        "account-0067-consent",
+        "account-0067-enrich",
+        "account-0067-link",
+        "account-0067-profile",
+        "account-0067-web-0",
+        "account-0067-web-1",
+        "account-0067-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "e3488b7a43b476e7b1eb1e7ac65c314a137e82ff7025a5ec6ce0704c8d55be48"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0069",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0069-web-0",
+      "input_events": [
+        "account-0069-conflict",
+        "account-0069-consent",
+        "account-0069-enrich",
+        "account-0069-link",
+        "account-0069-profile",
+        "account-0069-web-0",
+        "account-0069-web-1",
+        "account-0069-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "a961be4a1eff4abbcaf19589f6c6885794869d4920d7680cc1f3e1149a4b9f89"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0071",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0071-call",
+      "input_events": [
+        "account-0071-call",
+        "account-0071-consent",
+        "account-0071-enrich",
+        "account-0071-link",
+        "account-0071-opp",
+        "account-0071-profile"
+      ],
+      "input_seq": 1070,
+      "id": "6fbcb280d387bc78f1e34bd7e32d53f0de550a48b60cce78b3ac6ba93a54fdbf"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0073",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0073-web-0",
+      "input_events": [
+        "account-0073-consent",
+        "account-0073-enrich",
+        "account-0073-link",
+        "account-0073-opp",
+        "account-0073-profile",
+        "account-0073-web-0",
+        "account-0073-web-1",
+        "account-0073-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "35e2c33866631fc7f411535b403d7b822ca2ec28109fa099d5e3c310ed7cda04"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0075",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0075-web-0",
+      "input_events": [
+        "account-0075-consent",
+        "account-0075-enrich",
+        "account-0075-link",
+        "account-0075-profile",
+        "account-0075-web-0",
+        "account-0075-web-1",
+        "account-0075-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "f97faffff9a05a39c86fc8b38634d7efce6dd58cff397b654b88587fd094a8e1"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0077",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0077-web-0",
+      "input_events": [
+        "account-0077-consent",
+        "account-0077-enrich",
+        "account-0077-link",
+        "account-0077-profile",
+        "account-0077-web-0",
+        "account-0077-web-1",
+        "account-0077-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "93b8db6dd16c982a868dbac82d8b22586cc3c960376dbc25651923ec6509918f"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0079",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0079-web-0",
+      "input_events": [
+        "account-0079-consent",
+        "account-0079-enrich",
+        "account-0079-link",
+        "account-0079-profile",
+        "account-0079-web-0",
+        "account-0079-web-1",
+        "account-0079-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "03f86e8198f060d12c889c38e80ff19490c3362f17b18ceeb66ec38cfac8f2ba"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0081",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0081-web-0",
+      "input_events": [
+        "account-0081-conflict",
+        "account-0081-consent",
+        "account-0081-enrich",
+        "account-0081-link",
+        "account-0081-profile",
+        "account-0081-web-0",
+        "account-0081-web-1",
+        "account-0081-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "d8e43ced0be036ae38a52c97fb310d938ff4a5c3677c51b45ae84ffcfc820792"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0083",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0083-call",
+      "input_events": [
+        "account-0083-call",
+        "account-0083-consent",
+        "account-0083-enrich",
+        "account-0083-link",
+        "account-0083-opp",
+        "account-0083-profile"
+      ],
+      "input_seq": 1070,
+      "id": "ab4746cc2a4de186c0460ba7cd8f2fd1bdbc31bf935de802d91382c85cc822c1"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0085",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0085-web-0",
+      "input_events": [
+        "account-0085-consent",
+        "account-0085-enrich",
+        "account-0085-link",
+        "account-0085-opp",
+        "account-0085-profile",
+        "account-0085-web-0",
+        "account-0085-web-1",
+        "account-0085-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "cd22d5d28da9272d12d115f0876f574620994161c1a540492d4212f5a0a779f5"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0087",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0087-web-0",
+      "input_events": [
+        "account-0087-consent",
+        "account-0087-enrich",
+        "account-0087-link",
+        "account-0087-profile",
+        "account-0087-web-0",
+        "account-0087-web-1",
+        "account-0087-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "cc719b8ba1ef907346fd511b712a77861e7dfa55bad35e99eef337ea283ad663"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0089",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0089-web-0",
+      "input_events": [
+        "account-0089-consent",
+        "account-0089-enrich",
+        "account-0089-link",
+        "account-0089-profile",
+        "account-0089-web-0",
+        "account-0089-web-1",
+        "account-0089-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "885dcd9db9f65c765a7cbfc170a15e84a495417bf055191ddf96a9f555602cf1"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0091",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0091-web-0",
+      "input_events": [
+        "account-0091-consent",
+        "account-0091-enrich",
+        "account-0091-link",
+        "account-0091-profile",
+        "account-0091-web-0",
+        "account-0091-web-1",
+        "account-0091-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "dcfef5f4bff76f31191b00ad3f565fceda533d082c15c0c6b3641704e97921cf"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0093",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0093-web-0",
+      "input_events": [
+        "account-0093-conflict",
+        "account-0093-consent",
+        "account-0093-enrich",
+        "account-0093-link",
+        "account-0093-profile",
+        "account-0093-web-0",
+        "account-0093-web-1",
+        "account-0093-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "e8037951be2e179c54947af39b2feaf9fedf56f28372782a6c998a90cfdcf904"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0095",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0095-call",
+      "input_events": [
+        "account-0095-call",
+        "account-0095-consent",
+        "account-0095-enrich",
+        "account-0095-link",
+        "account-0095-opp",
+        "account-0095-profile"
+      ],
+      "input_seq": 1070,
+      "id": "1f107fae2157648230a4db727fae37a20ad4102d0f9f467e6bbee44c62292f34"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0097",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0097-web-0",
+      "input_events": [
+        "account-0097-consent",
+        "account-0097-enrich",
+        "account-0097-link",
+        "account-0097-opp",
+        "account-0097-profile",
+        "account-0097-web-0",
+        "account-0097-web-1",
+        "account-0097-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "108ce90c89b34935c3cec63ced84c1bc819588ce133ef86b89c257ce44e9d7b7"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0099",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0099-web-0",
+      "input_events": [
+        "account-0099-consent",
+        "account-0099-enrich",
+        "account-0099-link",
+        "account-0099-profile",
+        "account-0099-web-0",
+        "account-0099-web-1",
+        "account-0099-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "7e1e279b3ad6876d91f9617247f0123b4a05983be2160853667009525d625e69"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0101",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0101-web-0",
+      "input_events": [
+        "account-0101-consent",
+        "account-0101-enrich",
+        "account-0101-link",
+        "account-0101-profile",
+        "account-0101-web-0",
+        "account-0101-web-1",
+        "account-0101-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "6d7ef485be6d5e6e736f02ac1041cea2d1bc8ea2c3678d388e7dd52531e7b985"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0103",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0103-web-0",
+      "input_events": [
+        "account-0103-consent",
+        "account-0103-enrich",
+        "account-0103-link",
+        "account-0103-profile",
+        "account-0103-web-0",
+        "account-0103-web-1",
+        "account-0103-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "ff5cc84f33d1f004944c410753b3e16e58473bbec826841fa39c88eba7bad08d"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0105",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0105-web-0",
+      "input_events": [
+        "account-0105-conflict",
+        "account-0105-consent",
+        "account-0105-enrich",
+        "account-0105-link",
+        "account-0105-profile",
+        "account-0105-web-0",
+        "account-0105-web-1",
+        "account-0105-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "23574bd23f3dc2a729e053ff09a78fd62ec1fab786631a736cf3ddfb85475014"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0107",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0107-call",
+      "input_events": [
+        "account-0107-call",
+        "account-0107-consent",
+        "account-0107-enrich",
+        "account-0107-link",
+        "account-0107-opp",
+        "account-0107-profile"
+      ],
+      "input_seq": 1070,
+      "id": "71e43ee037c3a2d53b598bc7ac81e42d304bfdea500a4c6c2072d137fe201335"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0109",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0109-web-0",
+      "input_events": [
+        "account-0109-consent",
+        "account-0109-enrich",
+        "account-0109-link",
+        "account-0109-opp",
+        "account-0109-profile",
+        "account-0109-web-0",
+        "account-0109-web-1",
+        "account-0109-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "be75e83e1f0beb4e05da74a160cc1db712e2bf6dec317026eebf48537e0a761d"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0111",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0111-web-0",
+      "input_events": [
+        "account-0111-consent",
+        "account-0111-enrich",
+        "account-0111-link",
+        "account-0111-profile",
+        "account-0111-web-0",
+        "account-0111-web-1",
+        "account-0111-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "702f398b363e82b2e38cc669fc3808bd6f17c14e42c4d4dfd1e964f147960560"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0113",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0113-web-0",
+      "input_events": [
+        "account-0113-consent",
+        "account-0113-enrich",
+        "account-0113-link",
+        "account-0113-profile",
+        "account-0113-web-0",
+        "account-0113-web-1",
+        "account-0113-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "5f4012a15c666326fd07a692c93f90a2a6d2ebd043d68516a852f31bda0d50f7"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0115",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": null,
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "territory_or_owner_conflict"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0115-web-0",
+      "input_events": [
+        "account-0115-consent",
+        "account-0115-enrich",
+        "account-0115-link",
+        "account-0115-profile",
+        "account-0115-web-0",
+        "account-0115-web-1",
+        "account-0115-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "bb90c5993191909b9b040758d51fc9d71f2084c283d67058a7cdb0bfaf414837"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0117",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "hold",
+      "consent": true,
+      "blocked": [
+        "enrichment_fit_conflict"
+      ],
+      "notes": [
+        "enrichment_fit_conflict"
+      ],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0117-web-0",
+      "input_events": [
+        "account-0117-conflict",
+        "account-0117-consent",
+        "account-0117-enrich",
+        "account-0117-link",
+        "account-0117-profile",
+        "account-0117-web-0",
+        "account-0117-web-1",
+        "account-0117-web-2"
+      ],
+      "input_seq": 1070,
+      "id": "51d330974872a915105a88017659cb9042e68ce2aaa0967800a513191b281cb2"
+    },
+    {
+      "brand": "harbour",
+      "account": "account-0119",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 20,
+      "score": 50,
+      "owner": "harbour-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "partner-referral",
+      "touch_id": "account-0119-call",
+      "input_events": [
+        "account-0119-call",
+        "account-0119-consent",
+        "account-0119-enrich",
+        "account-0119-link",
+        "account-0119-opp",
+        "account-0119-profile"
+      ],
+      "input_seq": 1070,
+      "id": "32fd8a968d2c7871f9e157553910b81fe840825a084b8a659296dfae60ee926b"
+    }
+  ],
+  "delivery": {
+    "events": 1070,
+    "decisions": 120,
+    "outbox": [
+      {
+        "destination": "conversion",
+        "state": "applied",
+        "count": 40
+      },
+      {
+        "destination": "crm",
+        "state": "applied",
+        "count": 80
+      },
+      {
+        "destination": "crm",
+        "state": "blocked",
+        "count": 40
+      }
+    ],
+    "exceptions": [
+      {
+        "id": "crm:d2ade516577fb64aa35b780e32640cfc001e4994ff33d44268fb8a1b27d6b9e4",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:ed9844f659dfaccf9391a25608fb86979fbe873cc86c1afde78faf7e6e5254c5",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:ba4a88292366165a0529b0f1056b710d7eb45a313f65e373ccbc8946f1e3d088",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:2ff548692bf3d78cc0fcffe65f5da11091fc8c6488e32920e818a2aeb8527bee",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:8f97b16fe27638d4427f850bea8dd5017a8ecdf2b55a6745c087b35e4332edfc",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:154eae8663ef61d91aefd1c286af22f8435f54b3233873fa4cbda5922f1561d7",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:77df58766b24d54241f13ecd9478a9b40c18721f2f3e0aaa599b288a9c9eba3e",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:c325a65297b5a3c36b5889ad57dd3a65d5300160dd9b4678b49687a79ef5a1da",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:539b01f40cdc1aac7ba9b0356c7136487eb553e96748456b1fbdc185273dad48",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:27cf06f8c5b2018d392b0010d991686e29b6519a27be066110d1e36967c19829",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:50d3567d7cea003e4c68635028db9d3fe8de70b0a2eff0a36c0b98c77f7a6f41",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:7d6bc670f7fd213a6deca483cb5acfaf87de025bf94cc66f702fc526d15c602a",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:fb714b09cbd7db4ce87765b432abb7d958125ada71f66c4604e571b46a0ce0bb",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:95df39108768d89bab09710abca175b9086cfce440063022e0aefc92cc4c2caa",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:98a68405a5c14d63ad45d700994e500b0a8daade067f6155aeeb8412fd7f23e0",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:966f8a7488b576fc56a884af625c8785cd1d607163e4167cb5af0ffc76af1cdb",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:7526aa423439f25126181399867b4a0d6745ac5e73aacac333a95fcd1c059d08",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:007601881c1fc9060f294a4c62407c36a528278bc439895f97d58b7a9a6f4206",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:bc9a29d50f2582299a870a860b68d3a4e95c0a1da9659474735f7ea9aaa6196e",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:050e5338510f9106d1b2d4644f1d6e64542fae00d076db24a2ed0b7199c28d01",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:e813aa5d63d20bfa3eb4aede23173b82e29119e0db36ac05685d4bb2ce954e8e",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:07f67d0a74280dd03aa40a00d006402d108c2d0acaeff0c17b1e4b406c5830cf",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:57fb7c8a42660f8741e7587e073d2f18bcf4fe285249b949296d70be5b1ae7d2",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:2d8a92cd0018ada97adef549e765a32e7bc7345d71425c7769ece4b1467baad0",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:40f5c229aea4d3aad499d3b5b0c7c3eaad36b9ff58c31ae7d5739fadebdb9437",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:49d7414423758a7a4586717cb940008635bdaa01d689788f817d1b28410c73ea",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:5bfa5ba20e77bfbd1a591c169b7eb6e52a2120e2541adbc29865e9a48452adc2",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:6f6e550854612df5454d5b489d43904a45df09c59ad6c9440045278e6cb20cea",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:bfed1cd06151f70dc03755973a81d971280c9a5e567442d029c43d7614f969cb",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:1e713127d0ec604b39afd4bc884291318d84d3954b4c81dbfe88297f4523f621",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:e3488b7a43b476e7b1eb1e7ac65c314a137e82ff7025a5ec6ce0704c8d55be48",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:a961be4a1eff4abbcaf19589f6c6885794869d4920d7680cc1f3e1149a4b9f89",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:03f86e8198f060d12c889c38e80ff19490c3362f17b18ceeb66ec38cfac8f2ba",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:d8e43ced0be036ae38a52c97fb310d938ff4a5c3677c51b45ae84ffcfc820792",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:dcfef5f4bff76f31191b00ad3f565fceda533d082c15c0c6b3641704e97921cf",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:e8037951be2e179c54947af39b2feaf9fedf56f28372782a6c998a90cfdcf904",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:ff5cc84f33d1f004944c410753b3e16e58473bbec826841fa39c88eba7bad08d",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:23574bd23f3dc2a729e053ff09a78fd62ec1fab786631a736cf3ddfb85475014",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:bb90c5993191909b9b040758d51fc9d71f2084c283d67058a7cdb0bfaf414837",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      },
+      {
+        "id": "crm:51d330974872a915105a88017659cb9042e68ce2aaa0967800a513191b281cb2",
+        "state": "blocked",
+        "detail": "business_policy_hold"
+      }
+    ]
+  },
+  "remote": {
+    "contacts": 80,
+    "conversions": 40,
+    "receipts": 120
+  },
+  "reconciliation": {
+    "matched": true,
+    "crm_accounts_checked": 80,
+    "applied_operations_checked": 120,
+    "differences": [],
+    "unresolved": []
+  },
+  "commercial": {
+    "as_of": 1774958400,
+    "input_seq": 1070,
+    "input_hash": "cc3c50aca1aa28bfafb1d516c05b5522ac8a0410cf9ca7b65a7fdcd7770d52f6",
+    "cash_cents": 5530000,
+    "allocations": 120,
+    "campaigns": [
+      {
+        "brand": "cedar",
+        "campaign": "enterprise-workflows",
+        "allocations": 20,
+        "accounts": 5,
+        "fulfillments": 5,
+        "cash_cents": 825000,
+        "linked_invoice_cents": 825000
+      },
+      {
+        "brand": "cedar",
+        "campaign": "partner-referral",
+        "allocations": 40,
+        "accounts": 10,
+        "fulfillments": 10,
+        "cash_cents": 1790000,
+        "linked_invoice_cents": 1790000
+      },
+      {
+        "brand": "harbour",
+        "campaign": "enterprise-workflows",
+        "allocations": 20,
+        "accounts": 5,
+        "fulfillments": 5,
+        "cash_cents": 925000,
+        "linked_invoice_cents": 925000
+      },
+      {
+        "brand": "harbour",
+        "campaign": "partner-referral",
+        "allocations": 40,
+        "accounts": 10,
+        "fulfillments": 10,
+        "cash_cents": 1990000,
+        "linked_invoice_cents": 1990000
+      }
+    ],
+    "lineage": [
+      {
+        "brand": "cedar",
+        "allocation": "payment-0-0-0",
+        "account": "account-0000",
+        "opportunity": "opp-0",
+        "fulfillment": "fulfillment-0",
+        "invoice": "invoice-0-0",
+        "cents": 25000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0000-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-0-0-1",
+        "account": "account-0000",
+        "opportunity": "opp-0",
+        "fulfillment": "fulfillment-0",
+        "invoice": "invoice-0-0",
+        "cents": 25000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0000-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-0-1-0",
+        "account": "account-0000",
+        "opportunity": "opp-0",
+        "fulfillment": "fulfillment-0",
+        "invoice": "invoice-0-1",
+        "cents": 27500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0000-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-0-1-1",
+        "account": "account-0000",
+        "opportunity": "opp-0",
+        "fulfillment": "fulfillment-0",
+        "invoice": "invoice-0-1",
+        "cents": 27500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0000-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-10-0-0",
+        "account": "account-0010",
+        "opportunity": "opp-10",
+        "fulfillment": "fulfillment-10",
+        "invoice": "invoice-10-0",
+        "cents": 30000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0010-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-10-0-1",
+        "account": "account-0010",
+        "opportunity": "opp-10",
+        "fulfillment": "fulfillment-10",
+        "invoice": "invoice-10-0",
+        "cents": 30000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0010-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-10-1-0",
+        "account": "account-0010",
+        "opportunity": "opp-10",
+        "fulfillment": "fulfillment-10",
+        "invoice": "invoice-10-1",
+        "cents": 32500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0010-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-10-1-1",
+        "account": "account-0010",
+        "opportunity": "opp-10",
+        "fulfillment": "fulfillment-10",
+        "invoice": "invoice-10-1",
+        "cents": 32500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0010-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-106-0-0",
+        "account": "account-0106",
+        "opportunity": "opp-106",
+        "fulfillment": "fulfillment-106",
+        "invoice": "invoice-106-0",
+        "cents": 60000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0106-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-106-0-1",
+        "account": "account-0106",
+        "opportunity": "opp-106",
+        "fulfillment": "fulfillment-106",
+        "invoice": "invoice-106-0",
+        "cents": 60000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0106-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-106-1-0",
+        "account": "account-0106",
+        "opportunity": "opp-106",
+        "fulfillment": "fulfillment-106",
+        "invoice": "invoice-106-1",
+        "cents": 62500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0106-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-106-1-1",
+        "account": "account-0106",
+        "opportunity": "opp-106",
+        "fulfillment": "fulfillment-106",
+        "invoice": "invoice-106-1",
+        "cents": 62500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0106-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-118-0-0",
+        "account": "account-0118",
+        "opportunity": "opp-118",
+        "fulfillment": "fulfillment-118",
+        "invoice": "invoice-118-0",
+        "cents": 30000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0118-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-118-0-1",
+        "account": "account-0118",
+        "opportunity": "opp-118",
+        "fulfillment": "fulfillment-118",
+        "invoice": "invoice-118-0",
+        "cents": 30000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0118-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-118-1-0",
+        "account": "account-0118",
+        "opportunity": "opp-118",
+        "fulfillment": "fulfillment-118",
+        "invoice": "invoice-118-1",
+        "cents": 32500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0118-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-118-1-1",
+        "account": "account-0118",
+        "opportunity": "opp-118",
+        "fulfillment": "fulfillment-118",
+        "invoice": "invoice-118-1",
+        "cents": 32500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0118-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-22-0-0",
+        "account": "account-0022",
+        "opportunity": "opp-22",
+        "fulfillment": "fulfillment-22",
+        "invoice": "invoice-22-0",
+        "cents": 45000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0022-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-22-0-1",
+        "account": "account-0022",
+        "opportunity": "opp-22",
+        "fulfillment": "fulfillment-22",
+        "invoice": "invoice-22-0",
+        "cents": 45000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0022-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-22-1-0",
+        "account": "account-0022",
+        "opportunity": "opp-22",
+        "fulfillment": "fulfillment-22",
+        "invoice": "invoice-22-1",
+        "cents": 47500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0022-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-22-1-1",
+        "account": "account-0022",
+        "opportunity": "opp-22",
+        "fulfillment": "fulfillment-22",
+        "invoice": "invoice-22-1",
+        "cents": 47500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0022-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-24-0-0",
+        "account": "account-0024",
+        "opportunity": "opp-24",
+        "fulfillment": "fulfillment-24",
+        "invoice": "invoice-24-0",
+        "cents": 55000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0024-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-24-0-1",
+        "account": "account-0024",
+        "opportunity": "opp-24",
+        "fulfillment": "fulfillment-24",
+        "invoice": "invoice-24-0",
+        "cents": 55000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0024-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-24-1-0",
+        "account": "account-0024",
+        "opportunity": "opp-24",
+        "fulfillment": "fulfillment-24",
+        "invoice": "invoice-24-1",
+        "cents": 57500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0024-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-24-1-1",
+        "account": "account-0024",
+        "opportunity": "opp-24",
+        "fulfillment": "fulfillment-24",
+        "invoice": "invoice-24-1",
+        "cents": 57500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0024-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-34-0-0",
+        "account": "account-0034",
+        "opportunity": "opp-34",
+        "fulfillment": "fulfillment-34",
+        "invoice": "invoice-34-0",
+        "cents": 60000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0034-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-34-0-1",
+        "account": "account-0034",
+        "opportunity": "opp-34",
+        "fulfillment": "fulfillment-34",
+        "invoice": "invoice-34-0",
+        "cents": 60000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0034-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-34-1-0",
+        "account": "account-0034",
+        "opportunity": "opp-34",
+        "fulfillment": "fulfillment-34",
+        "invoice": "invoice-34-1",
+        "cents": 62500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0034-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-34-1-1",
+        "account": "account-0034",
+        "opportunity": "opp-34",
+        "fulfillment": "fulfillment-34",
+        "invoice": "invoice-34-1",
+        "cents": 62500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0034-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-46-0-0",
+        "account": "account-0046",
+        "opportunity": "opp-46",
+        "fulfillment": "fulfillment-46",
+        "invoice": "invoice-46-0",
+        "cents": 30000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0046-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-46-0-1",
+        "account": "account-0046",
+        "opportunity": "opp-46",
+        "fulfillment": "fulfillment-46",
+        "invoice": "invoice-46-0",
+        "cents": 30000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0046-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-46-1-0",
+        "account": "account-0046",
+        "opportunity": "opp-46",
+        "fulfillment": "fulfillment-46",
+        "invoice": "invoice-46-1",
+        "cents": 32500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0046-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-46-1-1",
+        "account": "account-0046",
+        "opportunity": "opp-46",
+        "fulfillment": "fulfillment-46",
+        "invoice": "invoice-46-1",
+        "cents": 32500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0046-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-48-0-0",
+        "account": "account-0048",
+        "opportunity": "opp-48",
+        "fulfillment": "fulfillment-48",
+        "invoice": "invoice-48-0",
+        "cents": 40000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0048-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-48-0-1",
+        "account": "account-0048",
+        "opportunity": "opp-48",
+        "fulfillment": "fulfillment-48",
+        "invoice": "invoice-48-0",
+        "cents": 40000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0048-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-48-1-0",
+        "account": "account-0048",
+        "opportunity": "opp-48",
+        "fulfillment": "fulfillment-48",
+        "invoice": "invoice-48-1",
+        "cents": 42500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0048-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-48-1-1",
+        "account": "account-0048",
+        "opportunity": "opp-48",
+        "fulfillment": "fulfillment-48",
+        "invoice": "invoice-48-1",
+        "cents": 42500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0048-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-58-0-0",
+        "account": "account-0058",
+        "opportunity": "opp-58",
+        "fulfillment": "fulfillment-58",
+        "invoice": "invoice-58-0",
+        "cents": 45000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0058-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-58-0-1",
+        "account": "account-0058",
+        "opportunity": "opp-58",
+        "fulfillment": "fulfillment-58",
+        "invoice": "invoice-58-0",
+        "cents": 45000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0058-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-58-1-0",
+        "account": "account-0058",
+        "opportunity": "opp-58",
+        "fulfillment": "fulfillment-58",
+        "invoice": "invoice-58-1",
+        "cents": 47500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0058-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-58-1-1",
+        "account": "account-0058",
+        "opportunity": "opp-58",
+        "fulfillment": "fulfillment-58",
+        "invoice": "invoice-58-1",
+        "cents": 47500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0058-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-70-0-0",
+        "account": "account-0070",
+        "opportunity": "opp-70",
+        "fulfillment": "fulfillment-70",
+        "invoice": "invoice-70-0",
+        "cents": 60000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0070-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-70-0-1",
+        "account": "account-0070",
+        "opportunity": "opp-70",
+        "fulfillment": "fulfillment-70",
+        "invoice": "invoice-70-0",
+        "cents": 60000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0070-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-70-1-0",
+        "account": "account-0070",
+        "opportunity": "opp-70",
+        "fulfillment": "fulfillment-70",
+        "invoice": "invoice-70-1",
+        "cents": 62500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0070-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-70-1-1",
+        "account": "account-0070",
+        "opportunity": "opp-70",
+        "fulfillment": "fulfillment-70",
+        "invoice": "invoice-70-1",
+        "cents": 62500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0070-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-72-0-0",
+        "account": "account-0072",
+        "opportunity": "opp-72",
+        "fulfillment": "fulfillment-72",
+        "invoice": "invoice-72-0",
+        "cents": 25000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0072-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-72-0-1",
+        "account": "account-0072",
+        "opportunity": "opp-72",
+        "fulfillment": "fulfillment-72",
+        "invoice": "invoice-72-0",
+        "cents": 25000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0072-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-72-1-0",
+        "account": "account-0072",
+        "opportunity": "opp-72",
+        "fulfillment": "fulfillment-72",
+        "invoice": "invoice-72-1",
+        "cents": 27500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0072-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-72-1-1",
+        "account": "account-0072",
+        "opportunity": "opp-72",
+        "fulfillment": "fulfillment-72",
+        "invoice": "invoice-72-1",
+        "cents": 27500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0072-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-82-0-0",
+        "account": "account-0082",
+        "opportunity": "opp-82",
+        "fulfillment": "fulfillment-82",
+        "invoice": "invoice-82-0",
+        "cents": 30000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0082-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-82-0-1",
+        "account": "account-0082",
+        "opportunity": "opp-82",
+        "fulfillment": "fulfillment-82",
+        "invoice": "invoice-82-0",
+        "cents": 30000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0082-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-82-1-0",
+        "account": "account-0082",
+        "opportunity": "opp-82",
+        "fulfillment": "fulfillment-82",
+        "invoice": "invoice-82-1",
+        "cents": 32500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0082-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-82-1-1",
+        "account": "account-0082",
+        "opportunity": "opp-82",
+        "fulfillment": "fulfillment-82",
+        "invoice": "invoice-82-1",
+        "cents": 32500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0082-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-94-0-0",
+        "account": "account-0094",
+        "opportunity": "opp-94",
+        "fulfillment": "fulfillment-94",
+        "invoice": "invoice-94-0",
+        "cents": 45000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0094-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-94-0-1",
+        "account": "account-0094",
+        "opportunity": "opp-94",
+        "fulfillment": "fulfillment-94",
+        "invoice": "invoice-94-0",
+        "cents": 45000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0094-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-94-1-0",
+        "account": "account-0094",
+        "opportunity": "opp-94",
+        "fulfillment": "fulfillment-94",
+        "invoice": "invoice-94-1",
+        "cents": 47500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0094-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-94-1-1",
+        "account": "account-0094",
+        "opportunity": "opp-94",
+        "fulfillment": "fulfillment-94",
+        "invoice": "invoice-94-1",
+        "cents": 47500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0094-call"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-96-0-0",
+        "account": "account-0096",
+        "opportunity": "opp-96",
+        "fulfillment": "fulfillment-96",
+        "invoice": "invoice-96-0",
+        "cents": 55000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0096-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-96-0-1",
+        "account": "account-0096",
+        "opportunity": "opp-96",
+        "fulfillment": "fulfillment-96",
+        "invoice": "invoice-96-0",
+        "cents": 55000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0096-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-96-1-0",
+        "account": "account-0096",
+        "opportunity": "opp-96",
+        "fulfillment": "fulfillment-96",
+        "invoice": "invoice-96-1",
+        "cents": 57500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0096-web-0"
+      },
+      {
+        "brand": "cedar",
+        "allocation": "payment-96-1-1",
+        "account": "account-0096",
+        "opportunity": "opp-96",
+        "fulfillment": "fulfillment-96",
+        "invoice": "invoice-96-1",
+        "cents": 57500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0096-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-1-0-0",
+        "account": "account-0001",
+        "opportunity": "opp-1",
+        "fulfillment": "fulfillment-1",
+        "invoice": "invoice-1-0",
+        "cents": 30000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0001-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-1-0-1",
+        "account": "account-0001",
+        "opportunity": "opp-1",
+        "fulfillment": "fulfillment-1",
+        "invoice": "invoice-1-0",
+        "cents": 30000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0001-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-1-1-0",
+        "account": "account-0001",
+        "opportunity": "opp-1",
+        "fulfillment": "fulfillment-1",
+        "invoice": "invoice-1-1",
+        "cents": 32500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0001-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-1-1-1",
+        "account": "account-0001",
+        "opportunity": "opp-1",
+        "fulfillment": "fulfillment-1",
+        "invoice": "invoice-1-1",
+        "cents": 32500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0001-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-107-0-0",
+        "account": "account-0107",
+        "opportunity": "opp-107",
+        "fulfillment": "fulfillment-107",
+        "invoice": "invoice-107-0",
+        "cents": 65000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0107-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-107-0-1",
+        "account": "account-0107",
+        "opportunity": "opp-107",
+        "fulfillment": "fulfillment-107",
+        "invoice": "invoice-107-0",
+        "cents": 65000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0107-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-107-1-0",
+        "account": "account-0107",
+        "opportunity": "opp-107",
+        "fulfillment": "fulfillment-107",
+        "invoice": "invoice-107-1",
+        "cents": 67500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0107-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-107-1-1",
+        "account": "account-0107",
+        "opportunity": "opp-107",
+        "fulfillment": "fulfillment-107",
+        "invoice": "invoice-107-1",
+        "cents": 67500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0107-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-11-0-0",
+        "account": "account-0011",
+        "opportunity": "opp-11",
+        "fulfillment": "fulfillment-11",
+        "invoice": "invoice-11-0",
+        "cents": 35000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0011-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-11-0-1",
+        "account": "account-0011",
+        "opportunity": "opp-11",
+        "fulfillment": "fulfillment-11",
+        "invoice": "invoice-11-0",
+        "cents": 35000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0011-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-11-1-0",
+        "account": "account-0011",
+        "opportunity": "opp-11",
+        "fulfillment": "fulfillment-11",
+        "invoice": "invoice-11-1",
+        "cents": 37500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0011-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-11-1-1",
+        "account": "account-0011",
+        "opportunity": "opp-11",
+        "fulfillment": "fulfillment-11",
+        "invoice": "invoice-11-1",
+        "cents": 37500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0011-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-119-0-0",
+        "account": "account-0119",
+        "opportunity": "opp-119",
+        "fulfillment": "fulfillment-119",
+        "invoice": "invoice-119-0",
+        "cents": 35000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0119-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-119-0-1",
+        "account": "account-0119",
+        "opportunity": "opp-119",
+        "fulfillment": "fulfillment-119",
+        "invoice": "invoice-119-0",
+        "cents": 35000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0119-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-119-1-0",
+        "account": "account-0119",
+        "opportunity": "opp-119",
+        "fulfillment": "fulfillment-119",
+        "invoice": "invoice-119-1",
+        "cents": 37500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0119-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-119-1-1",
+        "account": "account-0119",
+        "opportunity": "opp-119",
+        "fulfillment": "fulfillment-119",
+        "invoice": "invoice-119-1",
+        "cents": 37500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0119-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-23-0-0",
+        "account": "account-0023",
+        "opportunity": "opp-23",
+        "fulfillment": "fulfillment-23",
+        "invoice": "invoice-23-0",
+        "cents": 50000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0023-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-23-0-1",
+        "account": "account-0023",
+        "opportunity": "opp-23",
+        "fulfillment": "fulfillment-23",
+        "invoice": "invoice-23-0",
+        "cents": 50000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0023-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-23-1-0",
+        "account": "account-0023",
+        "opportunity": "opp-23",
+        "fulfillment": "fulfillment-23",
+        "invoice": "invoice-23-1",
+        "cents": 52500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0023-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-23-1-1",
+        "account": "account-0023",
+        "opportunity": "opp-23",
+        "fulfillment": "fulfillment-23",
+        "invoice": "invoice-23-1",
+        "cents": 52500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0023-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-25-0-0",
+        "account": "account-0025",
+        "opportunity": "opp-25",
+        "fulfillment": "fulfillment-25",
+        "invoice": "invoice-25-0",
+        "cents": 60000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0025-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-25-0-1",
+        "account": "account-0025",
+        "opportunity": "opp-25",
+        "fulfillment": "fulfillment-25",
+        "invoice": "invoice-25-0",
+        "cents": 60000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0025-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-25-1-0",
+        "account": "account-0025",
+        "opportunity": "opp-25",
+        "fulfillment": "fulfillment-25",
+        "invoice": "invoice-25-1",
+        "cents": 62500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0025-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-25-1-1",
+        "account": "account-0025",
+        "opportunity": "opp-25",
+        "fulfillment": "fulfillment-25",
+        "invoice": "invoice-25-1",
+        "cents": 62500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0025-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-35-0-0",
+        "account": "account-0035",
+        "opportunity": "opp-35",
+        "fulfillment": "fulfillment-35",
+        "invoice": "invoice-35-0",
+        "cents": 65000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0035-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-35-0-1",
+        "account": "account-0035",
+        "opportunity": "opp-35",
+        "fulfillment": "fulfillment-35",
+        "invoice": "invoice-35-0",
+        "cents": 65000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0035-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-35-1-0",
+        "account": "account-0035",
+        "opportunity": "opp-35",
+        "fulfillment": "fulfillment-35",
+        "invoice": "invoice-35-1",
+        "cents": 67500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0035-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-35-1-1",
+        "account": "account-0035",
+        "opportunity": "opp-35",
+        "fulfillment": "fulfillment-35",
+        "invoice": "invoice-35-1",
+        "cents": 67500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0035-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-47-0-0",
+        "account": "account-0047",
+        "opportunity": "opp-47",
+        "fulfillment": "fulfillment-47",
+        "invoice": "invoice-47-0",
+        "cents": 35000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0047-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-47-0-1",
+        "account": "account-0047",
+        "opportunity": "opp-47",
+        "fulfillment": "fulfillment-47",
+        "invoice": "invoice-47-0",
+        "cents": 35000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0047-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-47-1-0",
+        "account": "account-0047",
+        "opportunity": "opp-47",
+        "fulfillment": "fulfillment-47",
+        "invoice": "invoice-47-1",
+        "cents": 37500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0047-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-47-1-1",
+        "account": "account-0047",
+        "opportunity": "opp-47",
+        "fulfillment": "fulfillment-47",
+        "invoice": "invoice-47-1",
+        "cents": 37500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0047-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-49-0-0",
+        "account": "account-0049",
+        "opportunity": "opp-49",
+        "fulfillment": "fulfillment-49",
+        "invoice": "invoice-49-0",
+        "cents": 45000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0049-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-49-0-1",
+        "account": "account-0049",
+        "opportunity": "opp-49",
+        "fulfillment": "fulfillment-49",
+        "invoice": "invoice-49-0",
+        "cents": 45000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0049-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-49-1-0",
+        "account": "account-0049",
+        "opportunity": "opp-49",
+        "fulfillment": "fulfillment-49",
+        "invoice": "invoice-49-1",
+        "cents": 47500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0049-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-49-1-1",
+        "account": "account-0049",
+        "opportunity": "opp-49",
+        "fulfillment": "fulfillment-49",
+        "invoice": "invoice-49-1",
+        "cents": 47500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0049-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-59-0-0",
+        "account": "account-0059",
+        "opportunity": "opp-59",
+        "fulfillment": "fulfillment-59",
+        "invoice": "invoice-59-0",
+        "cents": 50000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0059-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-59-0-1",
+        "account": "account-0059",
+        "opportunity": "opp-59",
+        "fulfillment": "fulfillment-59",
+        "invoice": "invoice-59-0",
+        "cents": 50000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0059-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-59-1-0",
+        "account": "account-0059",
+        "opportunity": "opp-59",
+        "fulfillment": "fulfillment-59",
+        "invoice": "invoice-59-1",
+        "cents": 52500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0059-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-59-1-1",
+        "account": "account-0059",
+        "opportunity": "opp-59",
+        "fulfillment": "fulfillment-59",
+        "invoice": "invoice-59-1",
+        "cents": 52500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0059-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-71-0-0",
+        "account": "account-0071",
+        "opportunity": "opp-71",
+        "fulfillment": "fulfillment-71",
+        "invoice": "invoice-71-0",
+        "cents": 65000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0071-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-71-0-1",
+        "account": "account-0071",
+        "opportunity": "opp-71",
+        "fulfillment": "fulfillment-71",
+        "invoice": "invoice-71-0",
+        "cents": 65000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0071-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-71-1-0",
+        "account": "account-0071",
+        "opportunity": "opp-71",
+        "fulfillment": "fulfillment-71",
+        "invoice": "invoice-71-1",
+        "cents": 67500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0071-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-71-1-1",
+        "account": "account-0071",
+        "opportunity": "opp-71",
+        "fulfillment": "fulfillment-71",
+        "invoice": "invoice-71-1",
+        "cents": 67500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0071-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-73-0-0",
+        "account": "account-0073",
+        "opportunity": "opp-73",
+        "fulfillment": "fulfillment-73",
+        "invoice": "invoice-73-0",
+        "cents": 30000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0073-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-73-0-1",
+        "account": "account-0073",
+        "opportunity": "opp-73",
+        "fulfillment": "fulfillment-73",
+        "invoice": "invoice-73-0",
+        "cents": 30000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0073-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-73-1-0",
+        "account": "account-0073",
+        "opportunity": "opp-73",
+        "fulfillment": "fulfillment-73",
+        "invoice": "invoice-73-1",
+        "cents": 32500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0073-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-73-1-1",
+        "account": "account-0073",
+        "opportunity": "opp-73",
+        "fulfillment": "fulfillment-73",
+        "invoice": "invoice-73-1",
+        "cents": 32500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0073-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-83-0-0",
+        "account": "account-0083",
+        "opportunity": "opp-83",
+        "fulfillment": "fulfillment-83",
+        "invoice": "invoice-83-0",
+        "cents": 35000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0083-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-83-0-1",
+        "account": "account-0083",
+        "opportunity": "opp-83",
+        "fulfillment": "fulfillment-83",
+        "invoice": "invoice-83-0",
+        "cents": 35000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0083-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-83-1-0",
+        "account": "account-0083",
+        "opportunity": "opp-83",
+        "fulfillment": "fulfillment-83",
+        "invoice": "invoice-83-1",
+        "cents": 37500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0083-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-83-1-1",
+        "account": "account-0083",
+        "opportunity": "opp-83",
+        "fulfillment": "fulfillment-83",
+        "invoice": "invoice-83-1",
+        "cents": 37500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0083-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-95-0-0",
+        "account": "account-0095",
+        "opportunity": "opp-95",
+        "fulfillment": "fulfillment-95",
+        "invoice": "invoice-95-0",
+        "cents": 50000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0095-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-95-0-1",
+        "account": "account-0095",
+        "opportunity": "opp-95",
+        "fulfillment": "fulfillment-95",
+        "invoice": "invoice-95-0",
+        "cents": 50000,
+        "campaign": "partner-referral",
+        "touch_id": "account-0095-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-95-1-0",
+        "account": "account-0095",
+        "opportunity": "opp-95",
+        "fulfillment": "fulfillment-95",
+        "invoice": "invoice-95-1",
+        "cents": 52500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0095-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-95-1-1",
+        "account": "account-0095",
+        "opportunity": "opp-95",
+        "fulfillment": "fulfillment-95",
+        "invoice": "invoice-95-1",
+        "cents": 52500,
+        "campaign": "partner-referral",
+        "touch_id": "account-0095-call"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-97-0-0",
+        "account": "account-0097",
+        "opportunity": "opp-97",
+        "fulfillment": "fulfillment-97",
+        "invoice": "invoice-97-0",
+        "cents": 60000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0097-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-97-0-1",
+        "account": "account-0097",
+        "opportunity": "opp-97",
+        "fulfillment": "fulfillment-97",
+        "invoice": "invoice-97-0",
+        "cents": 60000,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0097-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-97-1-0",
+        "account": "account-0097",
+        "opportunity": "opp-97",
+        "fulfillment": "fulfillment-97",
+        "invoice": "invoice-97-1",
+        "cents": 62500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0097-web-0"
+      },
+      {
+        "brand": "harbour",
+        "allocation": "payment-97-1-1",
+        "account": "account-0097",
+        "opportunity": "opp-97",
+        "fulfillment": "fulfillment-97",
+        "invoice": "invoice-97-1",
+        "cents": 62500,
+        "campaign": "enterprise-workflows",
+        "touch_id": "account-0097-web-0"
+      }
+    ],
+    "oracle_match": true
+  },
+  "conversion_exclusions": [
+    {
+      "allocation": "payment-10-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-10-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-10-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-10-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-106-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-106-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-106-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-106-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-118-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-118-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-118-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-118-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-22-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-22-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-22-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-22-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-34-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-34-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-34-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-34-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-46-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-46-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-46-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-46-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-58-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-58-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-58-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-58-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-70-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-70-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-70-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-70-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-82-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-82-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-82-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-82-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-94-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-94-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-94-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-94-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-107-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-107-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-107-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-107-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-11-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-11-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-11-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-11-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-119-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-119-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-119-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-119-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-23-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-23-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-23-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-23-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-35-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-35-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-35-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-35-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-47-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-47-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-47-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-47-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-59-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-59-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-59-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-59-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-71-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-71-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-71-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-71-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-83-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-83-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-83-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-83-1-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-95-0-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-95-0-1",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-95-1-0",
+      "reason": "no_eligible_click_id"
+    },
+    {
+      "allocation": "payment-95-1-1",
+      "reason": "no_eligible_click_id"
+    }
+  ]
+}

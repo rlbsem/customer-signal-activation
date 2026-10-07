@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "customer-signal-activation"
+version = "2.0.0"
+description = "Executable multi-brand customer signals, CRM activation and source-to-cash measurement"
+requires-python = ">=3.12,<3.13"
+dependencies = ["fastapi==0.115.12", "uvicorn==0.34.2", "httpx==0.28.1", "pydantic==2.13.5", "dbt-duckdb==1.9.6", "duckdb==1.3.2"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+signals = ["*.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+

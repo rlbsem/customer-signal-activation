@@ -1,0 +1,124 @@
+{
+  "dbt_version": "1.9.8",
+  "elapsed_seconds": 0.3356308937072754,
+  "results": [
+    {
+      "node": "model.customer_signals.stg_events",
+      "status": "success",
+      "execution_seconds": 0.043630361557006836,
+      "depends_on": [
+        "source.customer_signals.raw.events"
+      ]
+    },
+    {
+      "node": "model.customer_signals.dim_account",
+      "status": "success",
+      "execution_seconds": 0.020012617111206055,
+      "depends_on": [
+        "model.customer_signals.stg_events"
+      ]
+    },
+    {
+      "node": "model.customer_signals.fct_fulfillment",
+      "status": "success",
+      "execution_seconds": 0.015516042709350586,
+      "depends_on": [
+        "model.customer_signals.stg_events"
+      ]
+    },
+    {
+      "node": "model.customer_signals.fct_opportunity",
+      "status": "success",
+      "execution_seconds": 0.019016504287719727,
+      "depends_on": [
+        "model.customer_signals.stg_events"
+      ]
+    },
+    {
+      "node": "model.customer_signals.fct_touch",
+      "status": "success",
+      "execution_seconds": 0.013505935668945312,
+      "depends_on": [
+        "model.customer_signals.stg_events"
+      ]
+    },
+    {
+      "node": "model.customer_signals.fct_cash_lineage",
+      "status": "success",
+      "execution_seconds": 0.03257942199707031,
+      "depends_on": [
+        "model.customer_signals.stg_events",
+        "model.customer_signals.fct_fulfillment",
+        "model.customer_signals.fct_opportunity",
+        "model.customer_signals.dim_account",
+        "model.customer_signals.fct_touch"
+      ]
+    },
+    {
+      "node": "test.customer_signals.commercial_contract",
+      "status": "pass",
+      "execution_seconds": 0.01901555061340332,
+      "depends_on": [
+        "model.customer_signals.fct_cash_lineage"
+      ]
+    },
+    {
+      "node": "test.customer_signals.not_null_fct_cash_lineage_account.ca989e7438",
+      "status": "pass",
+      "execution_seconds": 0.01101064682006836,
+      "depends_on": [
+        "model.customer_signals.fct_cash_lineage"
+      ]
+    },
+    {
+      "node": "test.customer_signals.not_null_fct_cash_lineage_fulfillment.1375500a2c",
+      "status": "pass",
+      "execution_seconds": 0.006505012512207031,
+      "depends_on": [
+        "model.customer_signals.fct_cash_lineage"
+      ]
+    },
+    {
+      "node": "test.customer_signals.not_null_fct_cash_lineage_invoice.66c1e96e26",
+      "status": "pass",
+      "execution_seconds": 0.00750279426574707,
+      "depends_on": [
+        "model.customer_signals.fct_cash_lineage"
+      ]
+    },
+    {
+      "node": "test.customer_signals.not_null_fct_cash_lineage_opportunity.6e7974f2d7",
+      "status": "pass",
+      "execution_seconds": 0.007003068923950195,
+      "depends_on": [
+        "model.customer_signals.fct_cash_lineage"
+      ]
+    },
+    {
+      "node": "model.customer_signals.mart_campaign_cash",
+      "status": "success",
+      "execution_seconds": 0.02551889419555664,
+      "depends_on": [
+        "model.customer_signals.fct_cash_lineage"
+      ]
+    },
+    {
+      "node": "test.customer_signals.grain_and_conservation",
+      "status": "pass",
+      "execution_seconds": 0.010505199432373047,
+      "depends_on": [
+        "model.customer_signals.fct_cash_lineage",
+        "model.customer_signals.stg_events",
+        "model.customer_signals.mart_campaign_cash"
+      ]
+    },
+    {
+      "node": "test.customer_signals.not_null_mart_campaign_cash_campaign.9ee049a86c",
+      "status": "pass",
+      "execution_seconds": 0.007506370544433594,
+      "depends_on": [
+        "model.customer_signals.mart_campaign_cash"
+      ]
+    }
+  ]
+}

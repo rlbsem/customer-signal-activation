@@ -1,0 +1,22 @@
+version: 2
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: events
+models:
+  - name: fct_cash_lineage
+    columns:
+      - name: account
+        tests: [not_null]
+      - name: invoice
+        tests: [not_null]
+      - name: fulfillment
+        tests: [not_null]
+      - name: opportunity
+        tests: [not_null]
+  - name: mart_campaign_cash
+    columns:
+      - name: campaign
+        tests: [not_null]
+

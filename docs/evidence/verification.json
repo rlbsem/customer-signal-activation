@@ -1,0 +1,95 @@
+{
+  "executed_at": "2026-10-06T23:47:08.515924+00:00",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tests": {
+    "tests": "60",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "commands": [
+    {
+      "command": [
+        "-m",
+        "pip",
+        "check"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "-m",
+        "ruff",
+        "check"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0
+    }
+  ],
+  "demo_equal": true,
+  "internal_links_checked": 19,
+  "hosted_ci": "not run for this local delivery",
+  "source_sha256": {
+    ".github/workflows/verify.yml": "81d266448653d5d1bfc29177ac51439cde41347e03a11725f125de5c8e22415d",
+    ".gitignore": "1b9259e0e9389c7f45f3bed04798e2dbef443b83cfdf433afcef5a555ebac43d",
+    "dbt/dbt_project.yml": "3a9f0010bbde16a23d8844fbee76647b185b0005f95e3a6cc9cd4f50774dc1bd",
+    "dbt/models/dim_account.sql": "1d9dd9cd8c8ecd2e1f76141aee5407fa91921bd859149d588fa1673c12d8e556",
+    "dbt/models/fct_cash_lineage.sql": "a1c120e309b643de96fd4d7d3740582dce919089b57df5cd54c0c93ef951b37d",
+    "dbt/models/fct_fulfillment.sql": "1cb5921a7298cb870fa2a76fd7a01297553e494c5ba9038e14f60e1225dc97a0",
+    "dbt/models/fct_opportunity.sql": "26a6f744ccaf500fb45fdc158f825babe451780c70fcac19e7ea9bb0099ee138",
+    "dbt/models/fct_touch.sql": "42409024951027f59e33ae05b9c342c965940d23e7416e139eb0573dc5aa9bdf",
+    "dbt/models/mart_campaign_cash.sql": "597e4854b9b4cf84c10e56009f9d94372a5d46bac238f448c61556d486f0a3bb",
+    "dbt/models/schema.yml": "0c9ef629ca03a31f83873f59219a3fa0392714cef9e84a6a3674ba17d6ae211b",
+    "dbt/models/stg_events.sql": "b0b7f1bcb9cccfea4f1ddba8e45169d8f24bfdfd07b5c25c4a5a755d7cc3c9c3",
+    "dbt/profiles.yml": "0a3791d17d9d7a00320d7072f46451c28cdbd4165dc83b1426de6594fe92e4c5",
+    "dbt/tests/commercial_contract.sql": "38fe7f8c723a3eac8d837477761b2e96d2d1a59a8d3c521be46a50ad09b03792",
+    "dbt/tests/grain_and_conservation.sql": "f9a3cd2c803eb697e31765b3ef4d7cc9057aa4f0992bab0c87312eb7f5482823",
+    "docs/architecture.md": "5634b689fa07315fedd4275b5b4e4ae5a2784e8d9c509cc24fb4d5bfcd560fa5",
+    "docs/limitations.md": "915380bebb18c1d68af88c0adf92234ef5b0ddb5b05afca3aae8808d86300e58",
+    "docs/operations.md": "a82a83264e79614b2e0e19b73bb6310da35f387ef46b9dc393a91764d5026c81",
+    "docs/repository-map.md": "c9818d541e652b84381bcfcbbfec045278ca4542eccd286c1ed2ee7781764324",
+    "docs/validation.md": "427569000ee44f939dccda17f526b1cc707fb87744c742daafdf7477137c229e",
+    "LICENSE": "bfa35d897efdd7b0c543024c4d8a4d39feb8d9132f5432c1644f7f74443b4c13",
+    "pyproject.toml": "d451b91dde87db90b02bea74ad99f25d2c5544f6ec1d46b5ed6cdd7a4d83c8ab",
+    "README.md": "a4f745d97c67b7e67ea4f619c4bec83254d063df9160f13f8d2386c2365350f1",
+    "requirements.in": "38e9a28242bd24fee7af39e7640621a35bf7e233e8f1edd676355ad2a23e98ff",
+    "requirements.lock": "8604af350bb2a8af77255da49de8773641d30225f63a35cd4e2c76e5676fa166",
+    "scripts/demo.py": "baae42068dc70359ee8b9804d7993e81d89975492e83a97d18731f91352f4904",
+    "scripts/operate.py": "45899fa304b31fd9601a2055702d5f4f122cd604b59b01252b3a60dd553f2e2f",
+    "scripts/package.py": "a4391a21f15c0f75fa52b19b5016922d13cec73549a75a3a7008b08f7cb12b4f",
+    "scripts/render_diagram.py": "6915692df3a9a14eabee45f12ccc978316386a78f672a1c0dab57b0b002a2720",
+    "scripts/serve.py": "65555cbfbaa8e629eec88cdcc774b8d149c744e0c6dc05f8e9a313da6651fd4d",
+    "scripts/verify.py": "8353ba773553f708146dde45d7287874ef980121beee1b602c2bbbb622f1b15b",
+    "src/signals/__init__.py": "7b979352be01962aebe63925eb29e99746006c1a0ddc854d67c5de2ce37ceeb6",
+    "src/signals/analytics.py": "16dfb55f6b17d7fd88e4f9b59ed353d123c07ce06d1d56edb875fc8447608f76",
+    "src/signals/api.py": "98bb10685c14609e3fa4550c06a0c99f23d7b6460e9c92a32d18a3fe66899aa0",
+    "src/signals/contracts.py": "66937dfc371d4fd0081072d3b7b7bc5f91015938cbecbec18d57d7ca105e9f32",
+    "src/signals/decision.py": "5f7ea2852891541dc3ef382b35beedd9cccb5a8a9561e24e0b82b3f21934185d",
+    "src/signals/finance.py": "5187db5cd93d80eee9978d35bcdda9f2cdc32fd338723b31e7ab3dd3a5a273b0",
+    "src/signals/fixtures.py": "ff40faf8a820d93ccc1ae21e4ab5e02bc3e726556e92369c43416367307ef2d7",
+    "src/signals/harness.py": "e5c2396ef97dca034dff53813ab734a6f01472205d2427c4041246585f5a8804",
+    "src/signals/reconcile.py": "24400eba1981d4dd05eff45c8d9f63e2cd5c5716abdb70ca8e5422f7e950108a",
+    "src/signals/remote.py": "17d90b901f98d4f3d8f17fd2b59b53062100d6b288b51c32c31012441909bf59",
+    "src/signals/schema.sql": "084f750881887404cddc60e4572f992e322dcbccb1492e0ea47b597fc7a7429c",
+    "src/signals/store.py": "1859620b7afbd4a04044ad485c944a8ec9845ad9fcb7153c656c6895cf85cdbf",
+    "src/signals/worker.py": "8681b880e1348884a66745e4ea1a6d670e032fe36cc9fbdb65cfebb3f3dc81eb",
+    "tests/conftest.py": "ea48f3134e8a595b474464e02bb2da9b67df0a0e99e8c1f92459aab0df6b0e4c",
+    "tests/test_analytics.py": "ba8db100f85337956cb6ab45288eadf4aa7a58b44c06620daa7ac703c9706733",
+    "tests/test_browser.py": "5a114bcd24ae1a16f706a9acb02c311b8d319bf2305caaf0ec692eb2e64b7212",
+    "tests/test_contracts.py": "63d9d41fd3c6c7c3de1a1f57ec5f619b26a4bd18305ee46949f4711057a7a98a",
+    "tests/test_decisions.py": "3089cf33cb0fdfe2fe488c79b5bbb49cd72180ea9291e164d8a1da62ef4b9cf4",
+    "tests/test_delivery.py": "aae956199284b1680e2e4dab601783efe1c6a47a4ee0ebd08287e8697a6a77fc",
+    "tests/test_domain_contract.py": "6cd191d7d14d1e317b1860e30372b25000d607d779c80492b592879e5592d7ca",
+    "tests/test_review.py": "20338a0a7780bacaf09068fbbc937d20ee2ec851564a5e7da22a3aa2f5382801",
+    "web/index.html": "68ea9d7df1299623699d8ef202e846a433a782475569ee1f48e1740e48d7363b",
+    "web/instrumentation.js": "0562151c58fe1b7f5e025e6128dea56ee922fb847d537fb60001ffeb218f5979"
+  }
+}

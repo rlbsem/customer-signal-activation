@@ -1,0 +1,7 @@
+-e .
+dbt-core==1.9.8
+dbt-adapters==1.16.3
+dbt-common==1.27.1
+pytest==8.4.2
+ruff==0.13.0
+playwright==1.55.0

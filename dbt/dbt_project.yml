@@ -1,0 +1,10 @@
+name: customer_signals
+version: '2.0.0'
+config-version: 2
+profile: customer_signals
+model-paths: [models]
+test-paths: [tests]
+models:
+  customer_signals:
+    +materialized: table
+
