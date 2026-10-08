@@ -74,7 +74,7 @@ def verify():
     }
     summary = (
         f"The executed synthetic demonstration has **{a['accounts']} accounts and {a['source_events']:,} source events**. "
-        f"It produces **CAD{a['commercial']['cash_cents'] / 100:,.2f} allocated cash**, "
+        f"It produces **${a['commercial']['cash_cents'] / 100:,.2f} allocated cash**, "
         f"{a['remote']['contacts']} reconciled CRM projections and {a['remote']['conversions']} eligible cash-conversion records. "
         f"Decisions include {stages['qualified']} qualified, {stages['nurture']} nurture, "
         f"{stages['customer']} customer and {stages['hold']} hold outcomes. "

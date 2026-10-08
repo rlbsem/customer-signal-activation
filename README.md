@@ -7,7 +7,7 @@ A multi-brand B2B organization can capture the right campaign signal, associate 
 The browser, API, durable workflow, separate HTTP destination and dbt models all execute locally. [See the generated commercial review](docs/evidence/report.md) and [individual decisions and lineage](docs/evidence/demo.json).
 
 <!-- executed-result:start -->
-The executed synthetic demonstration has **120 accounts and 1,070 source events**. It produces **CAD55,300.00 allocated cash**, 80 reconciled CRM projections and 40 eligible cash-conversion records. Decisions include 10 qualified, 20 nurture, 30 customer and 60 hold outcomes. Open qualified opportunities do not manufacture cash; exclusions remain inspectable.
+The executed synthetic demonstration has **120 accounts and 1,070 source events**. It produces **$55,300.00 allocated cash**, 80 reconciled CRM projections and 40 eligible cash-conversion records. Decisions include 10 qualified, 20 nurture, 30 customer and 60 hold outcomes. Open qualified opportunities do not manufacture cash; exclusions remain inspectable.
 <!-- executed-result:end -->
 
 ```mermaid
@@ -44,7 +44,7 @@ flowchart LR
 | Attribution doubles invoices across payments | dbt preserves payment-allocation grain and aggregates invoice values separately; a Python traversal checks every lineage row |
 | Cash feedback lacks an eligible click or permission | The allocation remains in financial reporting with a named conversion exclusion |
 
-This public implementation uses synthetic businesses, sources and destinations, informed by Richard Butts' professional systems work. It does not represent an exact client deployment. The local CRM and conversion interfaces exercise real HTTP and persisted effects; they do not call Salesforce, HubSpot, Clay, Google Ads or a cloud warehouse.
+The local CRM and conversion interfaces exercise real HTTP and persisted effects. Vendor integrations and cloud warehouse execution are outside this implementation; see the [operating boundaries](docs/limitations.md).
 
 ## Inspect a real browser interaction
 

@@ -59,15 +59,15 @@ def run(workspace, evidence, count=120):
     (evidence / "report.md").write_text(
         "# Executed signal-to-cash review\n\n"
         f"{count} synthetic accounts; {evidence_body['source_events']:,} retained source events. "
-        f"Collected cash: CAD {report['cash_cents'] / 100:,.2f} across {report['allocations']} allocations.\n\n"
+        f"Collected cash: ${report['cash_cents'] / 100:,.2f} across {report['allocations']} allocations.\n\n"
         f"{remote_counts['contacts']} CRM projections and {remote_counts['conversions']} cash conversion receipts "
         "were persisted by the separate HTTP destination. Other allocations retain explicit eligibility exclusions.\n\n"
         "Attribution is first observed campaign touch before the won opportunity. It is descriptive, not causal. "
         "The invoice measure covers invoices linked to collected cash; it is not all company billing.\n\n"
-        "| Brand | Campaign | Accounts | Fulfillments | Linked invoice CAD | Allocated cash CAD |\n|---|---|---:|---:|---:|---:|\n"
+        "| Brand | Campaign | Accounts | Fulfillments | Linked invoice | Allocated cash |\n|---|---|---:|---:|---:|---:|\n"
         + "".join(
             f"| {r['brand']} | {r['campaign']} | {r['accounts']} | {r['fulfillments']} | "
-            f"{r['linked_invoice_cents'] / 100:,.2f} | {r['cash_cents'] / 100:,.2f} |\n"
+            f"${r['linked_invoice_cents'] / 100:,.2f} | ${r['cash_cents'] / 100:,.2f} |\n"
             for r in report["campaigns"]
         )
         + "\n[Complete decisions, exclusions and event-level lineage](demo.json).\n",
