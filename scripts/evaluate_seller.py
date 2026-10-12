@@ -3,6 +3,7 @@
 import argparse
 import json
 from pathlib import Path
+from urllib.parse import urlparse
 
 from signals.contracts import digest, now
 from signals.fixtures import AS_OF
@@ -68,14 +69,16 @@ def main():
               "development": args.development, "summary": summary,
               "trace_hashes": {r["id"]: digest(r) for r in records},
               "human_usefulness_review": "pending",
-              "cloud_cost": "No paid inference service used; local hardware and electricity are not priced."}
+              "cloud_cost": ("Local endpoint; provider charges, hardware and electricity are not priced."
+                             if urlparse(args.url).hostname in ("127.0.0.1", "localhost", "::1")
+                             else "Remote provider charges are not measured; consult provider billing.")}
     result["acceptance"] = {"mechanical_task_gate": (
         summary["grounded_workflow"]["successes"] / summary["grounded_workflow"]["samples"] >= .9
         and summary["grounded_workflow"]["critical_failures"] == 0),
         "improves_on_template": summary["grounded_workflow"]["successes"] > summary["template"]["successes"],
         "improves_on_simple_llm": summary["grounded_workflow"]["successes"] > summary["simple_llm"]["successes"]}
     (args.output / "evaluation.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    table = "| Approach | Successful samples | Critical failures | Median / p95 inference | Tokens |\n|---|---:|---:|---:|---:|\n"
+    table = "| Approach | Proposal checks passed | Critical quality failures | Median / p95 inference | Tokens |\n|---|---:|---:|---:|---:|\n"
     table += "".join(f"| {arm} | {r['successes']}/{r['samples']} | {r['critical_failures']} | "
                      f"{r['latency_p50']:.2f}s / {r['latency_p95']:.2f}s | {r['total_tokens']:,} |\n"
                      for arm, r in summary.items())
@@ -84,8 +87,9 @@ def main():
         "Cases cover discovery, ambiguity, support, suppression, contradictory requirements and hostile note instructions.\n\n"
         "The rubric tests action choice, exact quotation and required information. It does not prove general semantic "
         "support or seller usefulness. Human usefulness review is pending. No conversion or revenue uplift is claimed.\n\n"
-        "All case families are known to the implementer; held-out variants measure within-family generalisation. "
-        "This is not an independently curated or blinded external benchmark.\n\n"
+        "All case families are known to the implementer. The delivered run is a regression comparison after "
+        "source-bound citation decoding was added in response to defects in the first evaluation. "
+        "The earlier failed evaluation is preserved. This is not an independently curated or blinded external benchmark.\n\n"
         "[Evaluation and acceptance results](evaluation.json) · [Cases and fixed rubric](suite.json)\n",
         encoding="utf-8")
     print(json.dumps(summary, indent=2), flush=True)

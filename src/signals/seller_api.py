@@ -46,7 +46,10 @@ def app(workbench, operator_token, destination_url, destination_token, root=None
         if len(raw) > 32000:
             raise HTTPException(413, "request_too_large")
         try:
-            return json.loads(raw)
+            value = json.loads(raw)
+            if not isinstance(value, dict):
+                raise HTTPException(422, "json_object_required")
+            return value
         except ValueError as exc:
             raise HTTPException(422, "invalid_json") from exc
 
@@ -67,6 +70,7 @@ def app(workbench, operator_token, destination_url, destination_token, root=None
 
     @api.post("/api/logout")
     def logout(request: Request, response: Response):
+        authenticated(request)
         sessions.discard(request.cookies.get("seller_session", ""))
         response.delete_cookie("seller_session")
         return {"authenticated": False}

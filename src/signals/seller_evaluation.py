@@ -61,7 +61,7 @@ def cases(workbench, count=60, development=False):
                                       "kind": "inquiry", "text": text,
                                       "occurred_at": "2026-03-30T12:00:00Z"})
         snapshot["state_hash"] = digest(snapshot["documents"])
-        yield {"id": ("dev-" if development else "heldout-") + f"{i:03}", "class": family,
+        yield {"id": ("dev-" if development else "regression-") + f"{i:03}", "class": family,
                "snapshot": snapshot, "expected_action": expected, "required_any": required,
                "forbidden": forbidden, "source": source}
 

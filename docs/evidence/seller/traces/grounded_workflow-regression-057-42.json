@@ -1,0 +1,123 @@
+{
+  "id": "grounded_workflow-regression-057-42",
+  "case_id": "regression-057",
+  "class": "suppressed",
+  "arm": "grounded_workflow",
+  "seed": 42,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "42686eaa8e89c957e68170f2db74577cd79e16cde04732854a0131414267daf5",
+  "executed_at": 1791777608,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0004",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0004",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0004-web-0",
+      "input_events": [
+        "account-0004-consent",
+        "account-0004-enrich",
+        "account-0004-link",
+        "account-0004-profile",
+        "account-0004-web-0",
+        "account-0004-web-1",
+        "account-0004-web-2"
+      ]
+    },
+    "state_hash": "b2d0868c96ace6a6c498c1612602a546b24ebf1660987dbbce577ad47562b87d",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[\"suppressed_or_unknown_consent\"],\"consent\":false,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"hold\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "The facilities management account once asked about regional coordination. Current permission is withdrawn. Do not send outreach or create a seller follow-up.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is currently in a 'hold' stage due to suppressed or unknown consent, and outreach is explicitly prohibited. The customer previously inquired about regional coordination in facilities management, but no further details are available. The account lacks verified consent, and the seller is not authorized to proceed with any action.",
+    "action": "no_action",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "Current permission is withdrawn."
+      },
+      {
+        "source": "verified-state",
+        "quote": "{\"blocked\":[\"suppressed_or_unknown_consent\"],\"consent\":false,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"hold\"}"
+      }
+    ],
+    "draft": "This account is currently on hold due to suppressed or unknown consent, and no outreach or follow-up is permitted. The customer previously inquired about regional coordination in facilities management, but no further details are available. Please note that no action can be taken at this time due to the lack of verified consent.",
+    "questions": [
+      "Is there any additional internal documentation or notes that could clarify the status of consent for this account?",
+      "Has the customer provided any recent updates or reauthorized engagement with Cedar Systems?"
+    ],
+    "uncertainties": [
+      "The lack of verified consent prevents any further engagement.",
+      "No details are available on the customer's current needs or the status of their previous inquiry."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 42,
+    "prompt_hash": "b064df146c2c4cea748d8683d87460fb6492c1e253576baa6653f27fc30cfb6c",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": false,
+    "source_bound_citation_decoding": true,
+    "latency_seconds": 4.0471,
+    "usage": {
+      "completion_tokens": 310,
+      "prompt_tokens": 871,
+      "total_tokens": 1181,
+      "prompt_tokens_details": {
+        "cached_tokens": 414
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "c88de0cea8c397b3ee16f9aab216cd2aa5387869e178679efce7f71cb4a0a5d5",
+    "finish_reason": "stop",
+    "executed_at": 1791777612
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

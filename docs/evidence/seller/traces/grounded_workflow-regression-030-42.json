@@ -1,0 +1,126 @@
+{
+  "id": "grounded_workflow-regression-030-42",
+  "case_id": "regression-030",
+  "class": "discovery",
+  "arm": "grounded_workflow",
+  "seed": 42,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "42686eaa8e89c957e68170f2db74577cd79e16cde04732854a0131414267daf5",
+  "executed_at": 1791777401,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0012",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ]
+    },
+    "state_hash": "3f606fdb42ad4d991a70233020037869c566a2ed874e575292f0a1ae9474d89a",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "Our partner support team struggles with manual status updates. We want workflow coordination and account reporting. Please arrange a discovery meeting to understand our requirements. No budget has been approved.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The customer explicitly states that their partner support team struggles with manual status updates and they want workflow coordination and account reporting. They have requested a discovery meeting to understand their requirements, but no budget has been approved. The account is currently in the 'qualified' stage with verified consent and ownership by 'cedar-east'.",
+    "action": "schedule_discovery",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "Our partner support team struggles with manual status updates."
+      },
+      {
+        "source": "customer-note",
+        "quote": "We want workflow coordination and account reporting."
+      },
+      {
+        "source": "customer-note",
+        "quote": "Please arrange a discovery meeting to understand our requirements."
+      }
+    ],
+    "draft": "Thank you for reaching out. We understand that your partner support team is currently struggling with manual status updates, and you are looking for workflow coordination and account reporting solutions. We would be happy to schedule a discovery meeting to better understand your specific requirements. Please let us know a convenient time for this discussion.",
+    "questions": [
+      "What specific workflows are currently being managed manually?",
+      "Are there any existing systems or tools that you are currently using for workflow coordination?",
+      "What are the key performance indicators or outcomes you expect from the workflow coordination and account reporting solution?"
+    ],
+    "uncertainties": [
+      "No budget has been approved, which may impact the timeline or scope of the project."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 42,
+    "prompt_hash": "b064df146c2c4cea748d8683d87460fb6492c1e253576baa6653f27fc30cfb6c",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": false,
+    "source_bound_citation_decoding": true,
+    "latency_seconds": 4.1826,
+    "usage": {
+      "completion_tokens": 317,
+      "prompt_tokens": 875,
+      "total_tokens": 1192,
+      "prompt_tokens_details": {
+        "cached_tokens": 406
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "64c288338f05814f033f89730ea44be1449ea6ddf9eefa5befdb44c9a8e49652",
+    "finish_reason": "stop",
+    "executed_at": 1791777405
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

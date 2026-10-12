@@ -1,0 +1,121 @@
+{
+  "id": "simple_llm-regression-058-43",
+  "case_id": "regression-058",
+  "class": "conflicting",
+  "arm": "simple_llm",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "2543caec48dc1cd593c6df5739076fecf1705b9b0462e7a3e03c8bced53791d9",
+  "executed_at": 1791777157,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0012",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ]
+    },
+    "state_hash": "ce97cd8faa9d87fd3f7a47e69e3b33d6e4166c9061d2ed01b0be16cc5a7c2faa",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "An earlier inquiry from our facilities management team requested discovery about regional coordination. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is currently in the 'qualified' stage with a score of 80, indicating a moderate level of interest and fit. The customer has provided consent, and the account is not blocked. However, there is a note in the 'customer-note' document indicating a potential contradiction in project status, with the project being paused and the owner disagreeing about the requirement. This needs clarification before proceeding further.",
+    "action": "clarify_need",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "An earlier inquiry from our facilities management team requested discovery about regional coordination. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting."
+      },
+      {
+        "source": "verified-state",
+        "quote": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      }
+    ],
+    "draft": "Hi [Customer Name],\n\nThank you for your inquiry. We understand that there may be some conflicting information regarding the current status of your project. Could you please clarify whether the project is currently paused and if there is any disagreement about the requirements? This will help us ensure we are aligned and can proceed appropriately.\n\nWe look forward to your response.\n\nBest regards,\n[Your Name]\nCedar Systems Team\n[Contact Information]",
+    "questions": [
+      "Is the project currently paused?",
+      "Is there a disagreement about the project requirements?"
+    ],
+    "uncertainties": [
+      "The project status appears to be in conflict between the facilities management team and the owner."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 4.636,
+    "usage": {
+      "completion_tokens": 362,
+      "prompt_tokens": 515,
+      "total_tokens": 877,
+      "prompt_tokens_details": {
+        "cached_tokens": 514
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "ca55fc6e3087ee1ffe48863f2e6589de3229b62e8e9695981c28b13d087ae667",
+    "finish_reason": "stop",
+    "executed_at": 1791777162
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

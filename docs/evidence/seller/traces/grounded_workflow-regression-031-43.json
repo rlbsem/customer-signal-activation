@@ -1,0 +1,116 @@
+{
+  "id": "grounded_workflow-regression-031-43",
+  "case_id": "regression-031",
+  "class": "ambiguous",
+  "arm": "grounded_workflow",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "e2a68a110b3130f7232f2fa06e31f9670513c196ec8e4feea29d2ffda0440bba",
+  "executed_at": 1791777416,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0002",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0002",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0002-web-0",
+      "input_events": [
+        "account-0002-consent",
+        "account-0002-enrich",
+        "account-0002-link",
+        "account-0002-profile",
+        "account-0002-web-0",
+        "account-0002-web-1",
+        "account-0002-web-2"
+      ]
+    },
+    "state_hash": "bc126723597c25660b7e53fe00c2ea9bbcf2584b38500f23d4ccb6cc97e418cd",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":50,\"stage\":\"nurture\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "Our partner support team is exploring options. We have not identified a specific requirement or project owner. Please clarify what we need before arranging a discovery meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The customer has not identified a specific requirement or project owner, which creates operational friction in moving forward with Cedar Systems. The lack of clarity on needs and ownership is a key barrier to scheduling a discovery meeting.",
+    "action": "clarify_need",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "We have not identified a specific requirement or project owner."
+      }
+    ],
+    "draft": "Thank you for reaching out. To better support your needs, we'd like to clarify what specific requirements or goals you're currently exploring. This will help us ensure we're aligned and can provide the most relevant assistance moving forward. Could you share more about what you're looking to achieve?",
+    "questions": [
+      "What specific requirements or goals are you currently exploring?",
+      "Who is the project owner or decision-maker for this initiative?"
+    ],
+    "uncertainties": [
+      "The lack of identified requirements or project owner creates uncertainty about the scope and direction of the engagement."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "b064df146c2c4cea748d8683d87460fb6492c1e253576baa6653f27fc30cfb6c",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": false,
+    "source_bound_citation_decoding": true,
+    "latency_seconds": 2.7316,
+    "usage": {
+      "completion_tokens": 219,
+      "prompt_tokens": 859,
+      "total_tokens": 1078,
+      "prompt_tokens_details": {
+        "cached_tokens": 858
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "4ee891007edc825b4e5bd338c7b62508bbc9da1a8e10fa21c259b941515b6016",
+    "finish_reason": "stop",
+    "executed_at": 1791777419
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

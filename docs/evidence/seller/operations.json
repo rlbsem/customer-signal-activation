@@ -1,0 +1,331 @@
+{
+  "runs": 3,
+  "actions": 1,
+  "audit_events": 11,
+  "summary": [
+    {
+      "mode": "live",
+      "model": "qwen3-14b",
+      "generated_runs": 3,
+      "reviewable_runs": 3,
+      "failed_runs": 0,
+      "total_tokens": 3695,
+      "median_inference_seconds": 7.3057,
+      "approved_actions": 1,
+      "edited_actions": 1,
+      "delivered_actions": 1,
+      "delivery_attempts": 1,
+      "median_approval_elapsed_seconds": 110.0
+    }
+  ],
+  "dbt_results": {
+    "metadata": {
+      "dbt_schema_version": "https://schemas.getdbt.com/dbt/run-results/v6.json",
+      "dbt_version": "1.9.8",
+      "generated_at": "2026-10-12T04:00:06.157749Z",
+      "invocation_id": "b0978a5d-1bd0-4ab0-abfd-8b739a6961c1",
+      "env": {}
+    },
+    "results": [
+      {
+        "status": "success",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.003747Z",
+            "completed_at": "2026-10-12T04:00:06.007747Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.007747Z",
+            "completed_at": "2026-10-12T04:00:06.044747Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.040999412536621094,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": "OK",
+        "failures": null,
+        "unique_id": "model.seller_operations.fct_seller_runs",
+        "compiled": true,
+        "compiled_code": "select id as run_id,\n       json_extract_string(body,'$.snapshot.brand') as brand,\n       json_extract_string(body,'$.snapshot.account') as account,\n       json_extract_string(body,'$.configuration.mode') as mode,\n       json_extract_string(body,'$.configuration.model') as model,\n       json_extract_string(body,'$.status') as status,\n       cast(json_extract(body,'$.created_at') as bigint) as created_at,\n       cast(json_extract(body,'$.inference.latency_seconds') as double) as latency_seconds,\n       coalesce(cast(json_extract(body,'$.inference.usage.total_tokens') as bigint),0) as total_tokens\nfrom \"seller\".\"raw\".\"runs\"",
+        "relation_name": "\"seller\".\"main\".\"fct_seller_runs\"",
+        "batch_results": null
+      },
+      {
+        "status": "pass",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.046748Z",
+            "completed_at": "2026-10-12T04:00:06.052747Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.052747Z",
+            "completed_at": "2026-10-12T04:00:06.065748Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.020002126693725586,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": null,
+        "failures": 0,
+        "unique_id": "test.seller_operations.not_null_fct_seller_runs_run_id.bfec2a0897",
+        "compiled": true,
+        "compiled_code": "\n    \n    \n\n\n\nselect run_id\nfrom \"seller\".\"main\".\"fct_seller_runs\"\nwhere run_id is null\n\n\n",
+        "relation_name": null,
+        "batch_results": null
+      },
+      {
+        "status": "pass",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.067747Z",
+            "completed_at": "2026-10-12T04:00:06.070767Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.071748Z",
+            "completed_at": "2026-10-12T04:00:06.076750Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.009002208709716797,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": null,
+        "failures": 0,
+        "unique_id": "test.seller_operations.unique_fct_seller_runs_run_id.25b192b8e5",
+        "compiled": true,
+        "compiled_code": "\n    \n    \n\nselect\n    run_id as unique_field,\n    count(*) as n_records\n\nfrom \"seller\".\"main\".\"fct_seller_runs\"\nwhere run_id is not null\ngroup by run_id\nhaving count(*) > 1\n\n\n",
+        "relation_name": null,
+        "batch_results": null
+      },
+      {
+        "status": "success",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.078748Z",
+            "completed_at": "2026-10-12T04:00:06.080746Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.080746Z",
+            "completed_at": "2026-10-12T04:00:06.097748Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.01900005340576172,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": "OK",
+        "failures": null,
+        "unique_id": "model.seller_operations.fct_seller_actions",
+        "compiled": true,
+        "compiled_code": "with approval as (\n  select subject, min(occurred) as approved_at,\n         bool_or(cast(json_extract(body,'$.edited') as boolean)) as edited\n  from \"seller\".\"raw\".\"audit\"\n  where action='proposal_approved'\n  group by subject\n), delivery as (\n  select subject,min(occurred) as delivered_at\n  from \"seller\".\"raw\".\"audit\" where action='action_delivered' group by subject\n)\nselect a.id as action_id,a.run_id,a.state,a.attempts,\n       p.approved_at,p.edited,d.delivered_at,\n       p.approved_at-r.created_at as approval_elapsed_seconds\nfrom \"seller\".\"raw\".\"actions\" a\njoin \"seller\".\"main\".\"fct_seller_runs\" r on a.run_id=r.run_id\nleft join approval p on a.id=p.subject\nleft join delivery d on a.id=d.subject",
+        "relation_name": "\"seller\".\"main\".\"fct_seller_actions\"",
+        "batch_results": null
+      },
+      {
+        "status": "pass",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.099747Z",
+            "completed_at": "2026-10-12T04:00:06.101747Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.102747Z",
+            "completed_at": "2026-10-12T04:00:06.105747Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.007002353668212891,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": null,
+        "failures": 0,
+        "unique_id": "test.seller_operations.not_null_fct_seller_actions_action_id.20a53938f5",
+        "compiled": true,
+        "compiled_code": "\n    \n    \n\n\n\nselect action_id\nfrom \"seller\".\"main\".\"fct_seller_actions\"\nwhere action_id is null\n\n\n",
+        "relation_name": null,
+        "batch_results": null
+      },
+      {
+        "status": "pass",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.107748Z",
+            "completed_at": "2026-10-12T04:00:06.110747Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.110747Z",
+            "completed_at": "2026-10-12T04:00:06.114749Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.00800013542175293,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": null,
+        "failures": 0,
+        "unique_id": "test.seller_operations.relationships_fct_seller_actions_run_id__run_id__ref_fct_seller_runs_.90541fbe7d",
+        "compiled": true,
+        "compiled_code": "\n    \n    \n\nwith child as (\n    select run_id as from_field\n    from \"seller\".\"main\".\"fct_seller_actions\"\n    where run_id is not null\n),\n\nparent as (\n    select run_id as to_field\n    from \"seller\".\"main\".\"fct_seller_runs\"\n)\n\nselect\n    from_field\n\nfrom child\nleft join parent\n    on child.from_field = parent.to_field\n\nwhere parent.to_field is null\n\n\n",
+        "relation_name": null,
+        "batch_results": null
+      },
+      {
+        "status": "pass",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.116747Z",
+            "completed_at": "2026-10-12T04:00:06.118748Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.118748Z",
+            "completed_at": "2026-10-12T04:00:06.122747Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.007002115249633789,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": null,
+        "failures": 0,
+        "unique_id": "test.seller_operations.unique_fct_seller_actions_action_id.ef9b6fa216",
+        "compiled": true,
+        "compiled_code": "\n    \n    \n\nselect\n    action_id as unique_field,\n    count(*) as n_records\n\nfrom \"seller\".\"main\".\"fct_seller_actions\"\nwhere action_id is not null\ngroup by action_id\nhaving count(*) > 1\n\n\n",
+        "relation_name": null,
+        "batch_results": null
+      },
+      {
+        "status": "success",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.125748Z",
+            "completed_at": "2026-10-12T04:00:06.126747Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.127747Z",
+            "completed_at": "2026-10-12T04:00:06.144749Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.01999974250793457,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": "OK",
+        "failures": null,
+        "unique_id": "model.seller_operations.mart_seller_workflow",
+        "compiled": true,
+        "compiled_code": "with runs as (\n  select mode,model,count(*) as generated_runs,\n         count(*) filter(where status='review_required') as reviewable_runs,\n         count(*) filter(where status='failed') as failed_runs,\n         sum(total_tokens) as total_tokens,median(latency_seconds) as median_inference_seconds\n  from \"seller\".\"main\".\"fct_seller_runs\" group by mode,model\n), actions as (\n  select r.mode,r.model,count(*) as approved_actions,\n         count(*) filter(where a.edited) as edited_actions,\n         count(*) filter(where a.state='delivered') as delivered_actions,\n         sum(a.attempts) as delivery_attempts,\n         median(a.approval_elapsed_seconds) as median_approval_elapsed_seconds\n  from \"seller\".\"main\".\"fct_seller_actions\" a join \"seller\".\"main\".\"fct_seller_runs\" r using(run_id)\n  group by r.mode,r.model\n)\nselect r.*,coalesce(a.approved_actions,0) as approved_actions,\n       coalesce(a.edited_actions,0) as edited_actions,\n       coalesce(a.delivered_actions,0) as delivered_actions,\n       coalesce(a.delivery_attempts,0) as delivery_attempts,\n       a.median_approval_elapsed_seconds\nfrom runs r left join actions a using(mode,model)",
+        "relation_name": "\"seller\".\"main\".\"mart_seller_workflow\"",
+        "batch_results": null
+      },
+      {
+        "status": "pass",
+        "timing": [
+          {
+            "name": "compile",
+            "started_at": "2026-10-12T04:00:06.145748Z",
+            "completed_at": "2026-10-12T04:00:06.148748Z"
+          },
+          {
+            "name": "execute",
+            "started_at": "2026-10-12T04:00:06.148748Z",
+            "completed_at": "2026-10-12T04:00:06.153748Z"
+          }
+        ],
+        "thread_id": "Thread-1 (worker)",
+        "execution_time": 0.009000062942504883,
+        "adapter_response": {
+          "_message": "OK"
+        },
+        "message": null,
+        "failures": 0,
+        "unique_id": "test.seller_operations.seller_conservation",
+        "compiled": true,
+        "compiled_code": "select 'run_count' as defect\nwhere (select coalesce(sum(generated_runs),0) from \"seller\".\"main\".\"mart_seller_workflow\")\n  <> (select count(*) from \"seller\".\"raw\".\"runs\")\nunion all\nselect 'action_count' where\n  (select coalesce(sum(approved_actions),0) from \"seller\".\"main\".\"mart_seller_workflow\")\n  <> (select count(*) from \"seller\".\"raw\".\"actions\")\nunion all\nselect 'token_count' where\n  (select coalesce(sum(total_tokens),0) from \"seller\".\"main\".\"mart_seller_workflow\")\n  <> (select coalesce(sum(total_tokens),0) from \"seller\".\"main\".\"fct_seller_runs\")\nunion all\nselect 'delivered_without_receipt' where exists(\n  select 1 from \"seller\".\"raw\".\"actions\" where state='delivered' and receipt is null)",
+        "relation_name": null,
+        "batch_results": null
+      }
+    ],
+    "elapsed_time": 0.2729976177215576,
+    "args": {
+      "log_file_max_bytes": 10485760,
+      "target_path": "C:\\Users\\rlbse\\Documents\\Codex\\2026-09-11\\jo\\work\\seller-workbench\\work\\application-v2-warehouse\\target",
+      "printer_width": 80,
+      "source_freshness_run_project_hooks": false,
+      "log_level": "info",
+      "macro_debugging": false,
+      "profiles_dir": "C:\\Users\\rlbse\\Documents\\Codex\\2026-09-11\\jo\\work\\seller-workbench\\seller_dbt",
+      "include_saved_query": false,
+      "partial_parse": true,
+      "favor_state": false,
+      "exclude_resource_types": [],
+      "log_format": "default",
+      "vars": {},
+      "indirect_selection": "eager",
+      "exclude": [],
+      "strict_mode": false,
+      "introspect": true,
+      "quiet": false,
+      "use_colors": true,
+      "project_dir": "C:\\Users\\rlbse\\Documents\\Codex\\2026-09-11\\jo\\work\\seller-workbench\\seller_dbt",
+      "empty": false,
+      "send_anonymous_usage_stats": false,
+      "log_format_file": "debug",
+      "log_level_file": "debug",
+      "require_batched_execution_for_custom_microbatch_strategy": false,
+      "resource_types": [],
+      "write_json": true,
+      "version_check": true,
+      "require_nested_cumulative_type_params": false,
+      "require_resource_names_without_spaces": false,
+      "show_resource_report": false,
+      "static_parser": true,
+      "log_path": "C:\\Users\\rlbse\\Documents\\Codex\\2026-09-11\\jo\\work\\seller-workbench\\work\\application-v2-warehouse\\logs",
+      "skip_nodes_if_on_run_start_fails": false,
+      "populate_cache": true,
+      "which": "build",
+      "require_explicit_package_overrides_for_builtin_materializations": true,
+      "select": [],
+      "invocation_command": "dbt build --project-dir C:\\Users\\rlbse\\Documents\\Codex\\2026-09-11\\jo\\work\\seller-workbench\\seller_dbt --profiles-dir C:\\Users\\rlbse\\Documents\\Codex\\2026-09-11\\jo\\work\\seller-workbench\\seller_dbt --target-path C:\\Users\\rlbse\\Documents\\Codex\\2026-09-11\\jo\\work\\seller-workbench\\work\\application-v2-warehouse\\target",
+      "state_modified_compare_more_unrendered_values": false,
+      "defer": false,
+      "state_modified_compare_vars": false,
+      "warn_error_options": {
+        "include": [],
+        "exclude": []
+      },
+      "require_yaml_configuration_for_mf_time_spines": false,
+      "use_colors_file": true,
+      "export_saved_queries": false,
+      "show": false,
+      "partial_parse_file_diff": true,
+      "cache_selected_only": false,
+      "print": true
+    }
+  }
+}

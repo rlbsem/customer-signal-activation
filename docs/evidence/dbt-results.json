@@ -1,11 +1,11 @@
 {
   "dbt_version": "1.9.8",
-  "elapsed_seconds": 0.3177304267883301,
+  "elapsed_seconds": 0.3249995708465576,
   "results": [
     {
       "node": "model.customer_signals.stg_events",
       "status": "success",
-      "execution_seconds": 0.043001413345336914,
+      "execution_seconds": 0.04499983787536621,
       "depends_on": [
         "source.customer_signals.raw.events"
       ]
@@ -13,7 +13,7 @@
     {
       "node": "model.customer_signals.dim_account",
       "status": "success",
-      "execution_seconds": 0.017998695373535156,
+      "execution_seconds": 0.016998291015625,
       "depends_on": [
         "model.customer_signals.stg_events"
       ]
@@ -21,7 +21,7 @@
     {
       "node": "model.customer_signals.fct_fulfillment",
       "status": "success",
-      "execution_seconds": 0.015002012252807617,
+      "execution_seconds": 0.014999628067016602,
       "depends_on": [
         "model.customer_signals.stg_events"
       ]
@@ -29,7 +29,7 @@
     {
       "node": "model.customer_signals.fct_opportunity",
       "status": "success",
-      "execution_seconds": 0.017031431198120117,
+      "execution_seconds": 0.01699995994567871,
       "depends_on": [
         "model.customer_signals.stg_events"
       ]
@@ -37,7 +37,7 @@
     {
       "node": "model.customer_signals.fct_touch",
       "status": "success",
-      "execution_seconds": 0.013000011444091797,
+      "execution_seconds": 0.01600027084350586,
       "depends_on": [
         "model.customer_signals.stg_events"
       ]
@@ -45,7 +45,7 @@
     {
       "node": "model.customer_signals.fct_cash_lineage",
       "status": "success",
-      "execution_seconds": 0.027704477310180664,
+      "execution_seconds": 0.03000044822692871,
       "depends_on": [
         "model.customer_signals.stg_events",
         "model.customer_signals.fct_fulfillment",
@@ -57,7 +57,7 @@
     {
       "node": "test.customer_signals.commercial_contract",
       "status": "pass",
-      "execution_seconds": 0.018998384475708008,
+      "execution_seconds": 0.020000219345092773,
       "depends_on": [
         "model.customer_signals.fct_cash_lineage"
       ]
@@ -65,7 +65,7 @@
     {
       "node": "test.customer_signals.not_null_fct_cash_lineage_account.ca989e7438",
       "status": "pass",
-      "execution_seconds": 0.009995222091674805,
+      "execution_seconds": 0.010999917984008789,
       "depends_on": [
         "model.customer_signals.fct_cash_lineage"
       ]
@@ -73,7 +73,7 @@
     {
       "node": "test.customer_signals.not_null_fct_cash_lineage_fulfillment.1375500a2c",
       "status": "pass",
-      "execution_seconds": 0.006995439529418945,
+      "execution_seconds": 0.00599980354309082,
       "depends_on": [
         "model.customer_signals.fct_cash_lineage"
       ]
@@ -81,7 +81,7 @@
     {
       "node": "test.customer_signals.not_null_fct_cash_lineage_invoice.66c1e96e26",
       "status": "pass",
-      "execution_seconds": 0.0060024261474609375,
+      "execution_seconds": 0.00699925422668457,
       "depends_on": [
         "model.customer_signals.fct_cash_lineage"
       ]
@@ -89,7 +89,7 @@
     {
       "node": "test.customer_signals.not_null_fct_cash_lineage_opportunity.6e7974f2d7",
       "status": "pass",
-      "execution_seconds": 0.0059986114501953125,
+      "execution_seconds": 0.006998300552368164,
       "depends_on": [
         "model.customer_signals.fct_cash_lineage"
       ]
@@ -97,7 +97,7 @@
     {
       "node": "model.customer_signals.mart_campaign_cash",
       "status": "success",
-      "execution_seconds": 0.02399921417236328,
+      "execution_seconds": 0.025997638702392578,
       "depends_on": [
         "model.customer_signals.fct_cash_lineage"
       ]
@@ -105,7 +105,7 @@
     {
       "node": "test.customer_signals.grain_and_conservation",
       "status": "pass",
-      "execution_seconds": 0.009000062942504883,
+      "execution_seconds": 0.00800013542175293,
       "depends_on": [
         "model.customer_signals.fct_cash_lineage",
         "model.customer_signals.stg_events",
@@ -115,7 +115,7 @@
     {
       "node": "test.customer_signals.not_null_mart_campaign_cash_campaign.9ee049a86c",
       "status": "pass",
-      "execution_seconds": 0.006001949310302734,
+      "execution_seconds": 0.006999492645263672,
       "depends_on": [
         "model.customer_signals.mart_campaign_cash"
       ]

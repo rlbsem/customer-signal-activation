@@ -1,0 +1,122 @@
+{
+  "id": "grounded_workflow-regression-016-42",
+  "case_id": "regression-016",
+  "class": "conflicting",
+  "arm": "grounded_workflow",
+  "seed": 42,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "42686eaa8e89c957e68170f2db74577cd79e16cde04732854a0131414267daf5",
+  "executed_at": 1791777296,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0012",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ]
+    },
+    "state_hash": "49d795c6ffacd892b2776be3ed3a36fe49961d0ffbfe15a487908acf9afe1e12",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "An earlier inquiry from our wholesale distribution team requested discovery about fragmented reporting. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The customer's operational friction involves 'fragmented reporting' as noted in their inquiry, and there is a contradiction in project status: the project is described as paused, while the team previously requested discovery about the issue. This inconsistency needs clarification before proceeding.",
+    "action": "clarify_need",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "An earlier inquiry from our wholesale distribution team requested discovery about fragmented reporting."
+      },
+      {
+        "source": "customer-note",
+        "quote": "The latest call says the project is paused and the owner disagrees about the requirement."
+      }
+    ],
+    "draft": "We understand that your team previously requested discovery about fragmented reporting, but the latest call indicates the project is paused and there is disagreement about the requirement. To ensure we align with your needs, could you clarify the current status and the specific requirements related to the reporting issue?",
+    "questions": [
+      "Could you clarify whether the project is still active or paused, and what the current priority is regarding the fragmented reporting issue?",
+      "What specific requirements or expectations do you have for workflow coordination and account reporting at this time?"
+    ],
+    "uncertainties": [
+      "The contradiction between the paused project status and the earlier request for discovery needs resolution.",
+      "The exact requirements for workflow coordination and reporting are not yet defined."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 42,
+    "prompt_hash": "b064df146c2c4cea748d8683d87460fb6492c1e253576baa6653f27fc30cfb6c",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": false,
+    "source_bound_citation_decoding": true,
+    "latency_seconds": 3.7734,
+    "usage": {
+      "completion_tokens": 292,
+      "prompt_tokens": 881,
+      "total_tokens": 1173,
+      "prompt_tokens_details": {
+        "cached_tokens": 410
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "79f0ae276cc0086e49d6fd895ac2d7524da546c2a7bbef9f60f6a5e667089c7e",
+    "finish_reason": "stop",
+    "executed_at": 1791777300
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

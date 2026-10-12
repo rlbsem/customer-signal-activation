@@ -1,0 +1,122 @@
+{
+  "id": "simple_llm-regression-045-42",
+  "case_id": "regression-045",
+  "class": "suppressed",
+  "arm": "simple_llm",
+  "seed": 42,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "9baa2bc451c3a6172cb04aeb9497fbdb8c1b5a787dd480941685ce50cfca0b8a",
+  "executed_at": 1791777037,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0004",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0004",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "hold",
+      "consent": false,
+      "blocked": [
+        "suppressed_or_unknown_consent"
+      ],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0004-web-0",
+      "input_events": [
+        "account-0004-consent",
+        "account-0004-enrich",
+        "account-0004-link",
+        "account-0004-profile",
+        "account-0004-web-0",
+        "account-0004-web-1",
+        "account-0004-web-2"
+      ]
+    },
+    "state_hash": "af03eb7fec244c802c09d42c37c5b9641a5144c6577c8ec30388e0167c9c9ff4",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[\"suppressed_or_unknown_consent\"],\"consent\":false,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"hold\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "The manufacturing account once asked about duplicate follow-ups. Current permission is withdrawn. Do not send outreach or create a seller follow-up.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is currently in a 'hold' stage due to suppressed or unknown consent, and outreach is explicitly blocked. The customer has requested not to be contacted again, and the current score is 80 with a fit of 30 and intent of 50.",
+    "action": "no_action",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "Current permission is withdrawn. Do not send outreach or create a seller follow-up."
+      },
+      {
+        "source": "verified-state",
+        "quote": "{\"blocked\":[\"suppressed_or_unknown_consent\"],\"consent\":false,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"hold\"}"
+      }
+    ],
+    "draft": "Thank you for your inquiry. We understand that you have requested not to be contacted again regarding this account. As such, we will not proceed with any outreach or follow-up actions. If you have any further questions or need assistance, please let us know. We appreciate your understanding and remain available to help in the future.",
+    "questions": [
+      "Is there any specific reason for the suppressed or unknown consent status?",
+      "Would you like us to update the account status or remove it from our outreach list?"
+    ],
+    "uncertainties": [
+      "The exact reason for the suppressed or unknown consent status is not provided in the documents."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 42,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 4.1407,
+    "usage": {
+      "completion_tokens": 306,
+      "prompt_tokens": 507,
+      "total_tokens": 813,
+      "prompt_tokens_details": {
+        "cached_tokens": 397
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "70fbb0c9cc556c30bb73ec9cfa4ebff699a960a50a7e1cc655baa412c71319f4",
+    "finish_reason": "stop",
+    "executed_at": 1791777041
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

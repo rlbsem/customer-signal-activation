@@ -1,0 +1,122 @@
+{
+  "id": "simple_llm-regression-014-43",
+  "case_id": "regression-014",
+  "class": "support",
+  "arm": "simple_llm",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "2543caec48dc1cd593c6df5739076fecf1705b9b0462e7a3e03c8bced53791d9",
+  "executed_at": 1791776742,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0000",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0000",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0000-web-0",
+      "input_events": [
+        "account-0000-consent",
+        "account-0000-enrich",
+        "account-0000-link",
+        "account-0000-opp",
+        "account-0000-profile",
+        "account-0000-web-0",
+        "account-0000-web-1",
+        "account-0000-web-2"
+      ]
+    },
+    "state_hash": "df81b004fd04c892c764d980ed859780d83577f1031149593cd602ad10978c8a",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"customer\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "We are an existing customer in wholesale distribution. Our workflow stopped after a configuration change. Please get support involved before discussing expansion. This is a support incident.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is in the 'customer' stage with a score of 80, indicating a moderate level of engagement. The customer has provided consent and is under the ownership of 'cedar-east'. The intent score is 50, and the fit score is 30, suggesting the account may need further engagement or clarification on how Cedar Systems can better align with their needs. There is an active inquiry from the customer regarding a workflow issue that needs to be resolved before any expansion discussions can take place.",
+    "action": "support_handoff",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "We are an existing customer in wholesale distribution. Our workflow stopped after a configuration change. Please get support involved before discussing expansion. This is a support incident."
+      },
+      {
+        "source": "verified-state",
+        "quote": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"customer\"}"
+      }
+    ],
+    "draft": "Thank you for reaching out. We understand that your workflow has stopped following a configuration change, and we appreciate your prompt communication. Our support team will be in touch shortly to assist you with resolving this issue. Once the workflow is restored, we can revisit any expansion opportunities that may be of interest to you. In the meantime, please feel free to reach out if you have any further questions or need additional assistance. We look forward to helping you get back on track.",
+    "questions": [
+      "Have you already contacted the support team, or would you like us to escalate this to them directly?",
+      "Is there any specific information or documentation you can provide to help expedite the resolution of the workflow issue?"
+    ],
+    "uncertainties": [
+      "The customer has not explicitly mentioned the nature of the configuration change that caused the workflow to stop. This may impact the support team's ability to diagnose the issue quickly.",
+      "It is unclear whether the customer has already initiated a support ticket or if the support team is already aware of the issue."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 5.6013,
+    "usage": {
+      "completion_tokens": 443,
+      "prompt_tokens": 508,
+      "total_tokens": 951,
+      "prompt_tokens_details": {
+        "cached_tokens": 507
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "e40a6f71806d631079df4535d18e28a2635c67204ff07c68d18a30fe88c9da8b",
+    "finish_reason": "stop",
+    "executed_at": 1791776748
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

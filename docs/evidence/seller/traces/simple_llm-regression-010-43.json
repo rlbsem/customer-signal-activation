@@ -1,0 +1,117 @@
+{
+  "id": "simple_llm-regression-010-43",
+  "case_id": "regression-010",
+  "class": "conflicting",
+  "arm": "simple_llm",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "2543caec48dc1cd593c6df5739076fecf1705b9b0462e7a3e03c8bced53791d9",
+  "executed_at": 1791776706,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0012",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ]
+    },
+    "state_hash": "ee60f8c9bfd1f5b354ced4ed50725878a4d78cd2a5c0355def05285a4e12d180",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "An earlier inquiry from our field services team requested discovery about missed handoffs. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is currently in the 'qualified' stage with a score of 80, indicating a moderate level of interest and fit. The customer has provided consent, and the account is not blocked. However, there is an inquiry indicating a potential contradiction in project information, which needs clarification before proceeding.",
+    "action": "clarify_need",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "Please clarify the contradictory project information before proposing a meeting."
+      }
+    ],
+    "draft": "Dear [Customer Name],\n\nThank you for your engagement with Cedar Systems. We understand that your project is currently paused, and there appears to be some disagreement regarding the requirements. To ensure we align properly and provide the best support, we would like to clarify the current project status and requirements before scheduling a discovery meeting.\n\nPlease let us know a convenient time to discuss this further. We look forward to your response.\n\nBest regards,\n[Your Name]\nCedar Systems Team\n[Contact Information]\n\nP.S. If you have any specific questions or need further details, feel free to reach out directly to your account owner, cedar-east, for immediate assistance.",
+    "questions": [
+      "What is the current status of the project?",
+      "Can you clarify the requirements and any disagreements regarding them?"
+    ],
+    "uncertainties": [
+      "The project is paused, but the owner disagrees about the requirement."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 4.2679,
+    "usage": {
+      "completion_tokens": 316,
+      "prompt_tokens": 515,
+      "total_tokens": 831,
+      "prompt_tokens_details": {
+        "cached_tokens": 514
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "95da066e32bd8f0bbf7820fc0529f3edf3174400e13de26fc1f6641a7ed9237c",
+    "finish_reason": "stop",
+    "executed_at": 1791776711
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

@@ -39,7 +39,7 @@ The model does not send email or alter consent, identity, account ownership, lif
 
 Documents enter through an authenticated operator endpoint (`POST /api/documents`). This proves scoped document admission, not live web research, speech transcription, vendor enrichment or a Salesforce/HubSpot connector. Source IDs are immutable; a changed document needs a new source ID. Sources older than 30 scenario days are excluded from inference, with an explicit reason. All admitted account document changes invalidate existing proposals conservatively.
 
-Quotes are checked against exact source text. This does not prove that unrestricted generated prose is semantically supported. Seller review remains required. There is no calibrated purchase probability or measured pipeline uplift.
+The grounded adapter offers only source-bound exact sentence spans for citations through structured decoding. The model selects the evidence; the adapter does not invent or repair a model's answer. Post-inference validation checks the complete contract and every source/quote pair. The simple LLM baseline uses the same model, sampling parameters, snapshots and output fields, with unconstrained citation text. This compares the complete grounded method with a basic prompt, rather than isolating prompt wording alone. Exact quotation does not prove that unrestricted generated prose is semantically supported. Seller review remains required. There is no calibrated purchase probability or measured pipeline uplift.
 
 ## Execution and evaluation
 
@@ -52,7 +52,7 @@ python scripts/package.py
 
 The benchmark compares a deterministic template, a simple LLM prompt and the grounded workflow on identical snapshots. Expectations and rubric labels never enter model input. Each trace includes input, raw output, provider provenance, seed, token usage, latency and scorer checks. Evaluation resumes only when stored configuration hashes match. Use a new output directory after changing the model, prompt, rubric or cases.
 
-The mechanical acceptance rule is at least 90% task success with zero failures in suppression and injection classes, plus a reported comparison against both baselines. These are acceptance criteria for a finite synthetic suite, not an enterprise service-level guarantee. All case families are known to the implementer; held-out variants are not an independently curated external benchmark. Human review of response usefulness is reported separately and cannot be inferred from a keyword check.
+The mechanical acceptance rule is at least 90% task success with zero failures in suppression and injection classes, plus a reported comparison against both baselines. These are acceptance criteria for a finite synthetic suite, not an enterprise service-level guarantee. The delivered comparison reruns the scenario variants after fixing citation defects found in the first evaluation; it is a regression evaluation, not an untouched holdout. All case families are known to the implementer. The first evaluation and its failures remain available as an archive. Human review of response usefulness is reported separately and cannot be inferred from a keyword check.
 
 Software tests use explicitly handwritten responders. Those outputs never count as inference evidence. Live inference is optional in CI: paid credentials and downloaded model weights are not required to verify authority, review, delivery, browser and regression behaviour.
 

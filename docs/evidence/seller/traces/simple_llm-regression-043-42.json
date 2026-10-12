@@ -1,0 +1,121 @@
+{
+  "id": "simple_llm-regression-043-42",
+  "case_id": "regression-043",
+  "class": "ambiguous",
+  "arm": "simple_llm",
+  "seed": 42,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "9baa2bc451c3a6172cb04aeb9497fbdb8c1b5a787dd480941685ce50cfca0b8a",
+  "executed_at": 1791777017,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0002",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0002",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0002-web-0",
+      "input_events": [
+        "account-0002-consent",
+        "account-0002-enrich",
+        "account-0002-link",
+        "account-0002-profile",
+        "account-0002-web-0",
+        "account-0002-web-1",
+        "account-0002-web-2"
+      ]
+    },
+    "state_hash": "c61da24c56ffbddaae03cea5ed46473725db56fbacc30f247126df30b2b24d35",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":50,\"stage\":\"nurture\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "Our manufacturing team is exploring options. We have not identified a specific requirement or project owner. Please clarify what we need before arranging a discovery meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is in the 'nurture' stage with a score of 50 and an intent level of 50. The customer has provided consent and is currently exploring options without a clear project owner or specific requirements. A discovery meeting is mentioned as a next step, but the customer has requested clarification on what is needed before proceeding.",
+    "action": "clarify_need",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "Our manufacturing team is exploring options. We have not identified a specific requirement or project owner. Please clarify what we need before arranging a discovery meeting."
+      },
+      {
+        "source": "catalog-v1",
+        "quote": "A discovery meeting can establish integration requirements."
+      }
+    ],
+    "draft": "Hi [Customer Name],\n\nThank you for your inquiry. We understand that your manufacturing team is currently exploring options, and we appreciate your interest in Cedar Systems. To ensure we align with your needs, we would like to clarify what specific requirements or goals you are looking to address with our workflow coordination and account reporting solutions.\n\nOnce we have a better understanding of your needs, we can schedule a discovery meeting to discuss integration requirements and how Cedar Systems can support your operations.\n\nPlease let us know a convenient time to connect and provide further details.\n\nBest regards,\n[Your Name]\nCedar Systems Team\n[Contact Information]",
+    "questions": [
+      "What specific goals or requirements are you looking to address with workflow coordination and account reporting?",
+      "Is there a particular department or team that will be leading this initiative?"
+    ],
+    "uncertainties": [
+      "The lack of a clear project owner or defined requirements makes it difficult to tailor the next steps effectively.",
+      "The customer has not yet specified what they need before a discovery meeting can be arranged."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 42,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 5.2795,
+    "usage": {
+      "completion_tokens": 402,
+      "prompt_tokens": 492,
+      "total_tokens": 894,
+      "prompt_tokens_details": {
+        "cached_tokens": 386
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "efc3027a942c12ed4818acefd9b8e85c01cd7194687a77b6ae32ee31669fe929",
+    "finish_reason": "stop",
+    "executed_at": 1791777022
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}
