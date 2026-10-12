@@ -1,0 +1,122 @@
+{
+  "id": "simple_llm-regression-016-43",
+  "case_id": "regression-016",
+  "class": "conflicting",
+  "arm": "simple_llm",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "2543caec48dc1cd593c6df5739076fecf1705b9b0462e7a3e03c8bced53791d9",
+  "executed_at": 1791776762,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0012",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ]
+    },
+    "state_hash": "49d795c6ffacd892b2776be3ed3a36fe49961d0ffbfe15a487908acf9afe1e12",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "An earlier inquiry from our wholesale distribution team requested discovery about fragmented reporting. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is currently in the 'qualified' stage with a score of 80, indicating a moderate level of interest and fit. The customer has expressed interest in workflow coordination and account reporting, but there is conflicting information regarding the project status. The latest call suggests the project is paused, and there is disagreement about the requirement. This needs clarification before moving forward.",
+    "action": "clarify_need",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "An earlier inquiry from our wholesale distribution team requested discovery about fragmented reporting. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting."
+      },
+      {
+        "source": "verified-state",
+        "quote": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      }
+    ],
+    "draft": "Hi [Customer Name],\n\nThank you for your interest in Cedar Systems. We understand your team previously inquired about fragmented reporting and workflow coordination. However, we noticed some conflicting information regarding the current project status\u2014specifically, that the project is paused and there is disagreement about the requirement.\n\nCould you please clarify the current project status and requirements? This will help us ensure we align our next steps with your needs and provide the most relevant support.\n\nLooking forward to your response.\n\nBest regards,\n[Your Name]\nCedar Systems Team\n[Your Contact Information]",
+    "questions": [
+      "What is the current status of the project?",
+      "Are there any specific requirements or concerns that need to be addressed before proceeding?"
+    ],
+    "uncertainties": [
+      "There is conflicting information about the project status and requirements.",
+      "The owner disagrees about the requirement, which needs clarification."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 5.0262,
+    "usage": {
+      "completion_tokens": 397,
+      "prompt_tokens": 510,
+      "total_tokens": 907,
+      "prompt_tokens_details": {
+        "cached_tokens": 509
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "3da598783d628e0d8b3ea5555556b27620816dbbfb3e86388ab114f7783fd1d4",
+    "finish_reason": "stop",
+    "executed_at": 1791776767
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

@@ -6,6 +6,16 @@ A multi-brand B2B organization can capture the right campaign signal, associate 
 
 The browser, API, durable workflow, separate HTTP destination and dbt models all execute locally. [See the generated commercial review](docs/evidence/report.md) and [individual decisions and lineage](docs/evidence/demo.json).
 
+The **seller workbench** turns account inquiries and call evidence into a live LLM brief, a relevant response draft and an explicitly reviewed CRM task. It keeps source citations, current permission, account ownership and delivery receipts inspectable. All businesses and source documents are synthetic; model inference and local HTTP effects are real.
+
+![Executed seller workbench with a real model response](docs/images/seller-brief.jpg)
+
+[Run the workbench](docs/seller-workbench.md) · [Inspect the model comparison](docs/evidence/seller/report.md) · [Read the preserved first evaluation](docs/evidence/seller/first-pass-report.md)
+
+<!-- seller-result:start -->
+The live regression comparison uses **60 distinct synthetic scenarios and two seeds**. The grounded workflow passes **120/120 proposal-quality checks**, compared with 81/120 for the simple LLM and 60/120 for the governed template. Grounded inference has a measured median of 3.76 seconds and p95 of 4.76 seconds on the recorded workstation, with 0 critical rubric failures. The first failed evaluation is retained. These are finite regression results, not independently validated seller usefulness or commercial uplift.
+<!-- seller-result:end -->
+
 <!-- executed-result:start -->
 The executed synthetic demonstration has **120 accounts and 1,070 source events**. It produces **$55,300.00 allocated cash**, 80 reconciled CRM projections and 40 eligible cash-conversion records. Decisions include 10 qualified, 20 nurture, 30 customer and 60 hold outcomes. Open qualified opportunities do not manufacture cash; exclusions remain inspectable.
 <!-- executed-result:end -->
@@ -52,6 +62,20 @@ The local CRM and conversion interfaces exercise real HTTP and persisted effects
 
 The browser test drives these controls, then supplies an independently authenticated CRM association, delivers the resulting CRM projection, loads won/fulfillment/invoice/payment events, executes dbt and verifies four eligible cash conversion records in the remote destination. [Validation and failure matrix](docs/validation.md).
 
+## Review a seller action
+
+The workbench assembles account-scoped documents and verified commercial state. Qwen3-14B interprets the customer's need, selects source-bound quotation spans and proposes a response. The seller can inspect sources, edit the draft, reject the proposal or approve its exact content. A changed permission or evidence version blocks dispatch; a lost acknowledgement is reconciled before retry.
+
+The **Evaluation evidence** tab lets reviewers compare saved template, simple LLM and grounded-workflow outputs for each scenario, inspect their source documents and see the checks behind each result. It works without a model download or provider credential. The live workspace uses an authenticated model endpoint. Recorded outputs are retained verbatim, including imperfect drafts; see the [focused source-support review and reviewer-edited example](docs/seller-review-notes.md).
+
+```text
+python scripts/seller.py --no-model
+```
+
+Open `http://127.0.0.1:8530`, enter the operator token printed by the launcher and choose Evaluation evidence. For fresh inference, follow the [pinned model and application setup](docs/seller-workbench.md).
+
+[Actual application records](docs/evidence/seller/application.json), [operational dbt results](docs/evidence/seller/operations.json) and [runtime provenance](docs/evidence/seller/runtime.json) support the screenshots. Operational metrics count generated proposals and reviewed tasks; they do not establish commercial uplift. The original cash lineage remains independent of the model.
+
 ## Run it
 
 Use **Python 3.12** from the repository directory:
@@ -83,7 +107,7 @@ To open the browser intake independently, run `python scripts/serve.py --workspa
 - [Repository map](docs/repository-map.md)
 - [Limitations and vendor boundaries](docs/limitations.md)
 
-The bounded local system uses SQLite transactions for durable admission and delivery, FastAPI for source boundaries, and DuckDB/dbt for the analytical graph. A broker, Airflow, LLM or second warehouse would add deployment work without improving this proof. The full test suite is also defined in GitHub Actions; a workflow definition is not evidence of a hosted run.
+The bounded local system uses SQLite transactions for durable admission and delivery, FastAPI for source boundaries, and DuckDB/dbt for the analytical graph. The seller workbench adds optional live LLM interpretation behind evidence, human review and approval controls; the existing deterministic cash lineage remains independent of inference. A broker, Airflow or second warehouse is not needed for this local demonstration. The full test suite runs in GitHub Actions; the published CI run, rather than the workflow definition alone, supplies evidence of hosted verification.
 
 ## Scope
 

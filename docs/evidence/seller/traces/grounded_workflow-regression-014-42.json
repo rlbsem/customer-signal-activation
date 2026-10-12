@@ -1,0 +1,118 @@
+{
+  "id": "grounded_workflow-regression-014-42",
+  "case_id": "regression-014",
+  "class": "support",
+  "arm": "grounded_workflow",
+  "seed": 42,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "42686eaa8e89c957e68170f2db74577cd79e16cde04732854a0131414267daf5",
+  "executed_at": 1791777277,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0000",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0000",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0000-web-0",
+      "input_events": [
+        "account-0000-consent",
+        "account-0000-enrich",
+        "account-0000-link",
+        "account-0000-opp",
+        "account-0000-profile",
+        "account-0000-web-0",
+        "account-0000-web-1",
+        "account-0000-web-2"
+      ]
+    },
+    "state_hash": "df81b004fd04c892c764d980ed859780d83577f1031149593cd602ad10978c8a",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"customer\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "We are an existing customer in wholesale distribution. Our workflow stopped after a configuration change. Please get support involved before discussing expansion. This is a support incident.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The customer is an existing Cedar Systems user in wholesale distribution who is experiencing workflow disruptions due to a recent configuration change. They explicitly stated that this is a support incident and requested that support be involved before any discussion of expansion. The operational friction they described is 'workflow stopped after a configuration change.'",
+    "action": "support_handoff",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "This is a support incident."
+      }
+    ],
+    "draft": "We understand that your workflow has stopped after a configuration change, and we appreciate your clarification that this is a support incident. Our support team is prepared to assist you with resolving this issue. Please allow us to connect you with the appropriate support representative to address the disruption as quickly as possible.",
+    "questions": [
+      "What specific configuration change caused the workflow disruption?",
+      "Have you already contacted support, or would you like us to escalate this directly?"
+    ],
+    "uncertainties": [
+      "The exact nature of the configuration change is not specified.",
+      "It is unclear if the support team has already been contacted."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 42,
+    "prompt_hash": "b064df146c2c4cea748d8683d87460fb6492c1e253576baa6653f27fc30cfb6c",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": false,
+    "source_bound_citation_decoding": true,
+    "latency_seconds": 3.1951,
+    "usage": {
+      "completion_tokens": 241,
+      "prompt_tokens": 869,
+      "total_tokens": 1110,
+      "prompt_tokens_details": {
+        "cached_tokens": 411
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "e0bc0016ff15cb3ef1065261352a01d390beef68fc241bfa195080215cd26085",
+    "finish_reason": "stop",
+    "executed_at": 1791777281
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "grounded_workflow-regression-004-43",
+  "case_id": "regression-004",
+  "class": "conflicting",
+  "arm": "grounded_workflow",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "e2a68a110b3130f7232f2fa06e31f9670513c196ec8e4feea29d2ffda0440bba",
+  "executed_at": 1791777203,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0012",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ]
+    },
+    "state_hash": "8735536dac7d6c2b357b547d01233fbfa56275aacbd6aa5ca7b68da040cbb2f8",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "An earlier inquiry from our regional logistics team requested discovery about approval delays. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The customer's operational friction involves 'approval delays' and a 'paused project' with conflicting information about the requirement. The regional logistics team previously requested discovery about approval delays, but the latest call indicates disagreement about the requirement and that the project is paused. This creates uncertainty about the current status and intent for Cedar Systems integration.",
+    "action": "clarify_need",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "An earlier inquiry from our regional logistics team requested discovery about approval delays."
+      },
+      {
+        "source": "customer-note",
+        "quote": "The latest call says the project is paused and the owner disagrees about the requirement."
+      }
+    ],
+    "draft": "We understand that your regional logistics team previously requested discovery about approval delays, and the latest call indicates the project is paused with disagreement about the requirement. To ensure we align with your needs, could you clarify the current status of the project and confirm whether Cedar Systems integration is still a priority? This will help us proceed effectively.",
+    "questions": [
+      "Could you clarify the current status of the project and whether Cedar Systems integration is still a priority?",
+      "Are there any specific concerns or disagreements about the integration requirement that we should be aware of?"
+    ],
+    "uncertainties": [
+      "The project is paused, but it is unclear if this is a temporary hold or a permanent change in direction.",
+      "There is a contradiction between the logistics team's request for discovery and the owner's disagreement about the requirement."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "b064df146c2c4cea748d8683d87460fb6492c1e253576baa6653f27fc30cfb6c",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": false,
+    "source_bound_citation_decoding": true,
+    "latency_seconds": 3.9947,
+    "usage": {
+      "completion_tokens": 326,
+      "prompt_tokens": 883,
+      "total_tokens": 1209,
+      "prompt_tokens_details": {
+        "cached_tokens": 882
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "605453811b15f2204a15acb237418bec537438da5abda3e32bac32006c05a3b8",
+    "finish_reason": "stop",
+    "executed_at": 1791777207
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

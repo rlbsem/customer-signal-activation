@@ -1,0 +1,122 @@
+{
+  "id": "simple_llm-regression-050-43",
+  "case_id": "regression-050",
+  "class": "support",
+  "arm": "simple_llm",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "2543caec48dc1cd593c6df5739076fecf1705b9b0462e7a3e03c8bced53791d9",
+  "executed_at": 1791777085,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0000",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0000",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "customer",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0000-web-0",
+      "input_events": [
+        "account-0000-consent",
+        "account-0000-enrich",
+        "account-0000-link",
+        "account-0000-opp",
+        "account-0000-profile",
+        "account-0000-web-0",
+        "account-0000-web-1",
+        "account-0000-web-2"
+      ]
+    },
+    "state_hash": "55d344796959a0d3aca596689a9d9017251f8d43458a0f78bd7727b0d425e971",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"customer\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "We are an existing customer in managed services. Our workflow stopped after a configuration change. Please get support involved before discussing expansion. This is a support incident.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is in the 'customer' stage with a score of 80, indicating a moderate level of engagement. The customer has expressed an issue with workflow stopping after a configuration change and has requested support before considering expansion. The account has given consent and is under the ownership of 'cedar-east'.",
+    "action": "support_handoff",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "We are an existing customer in managed services. Our workflow stopped after a configuration change. Please get support involved before discussing expansion. This is a support incident."
+      },
+      {
+        "source": "verified-state",
+        "quote": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"customer\"}"
+      }
+    ],
+    "draft": "Dear [Customer Name],\n\nThank you for reaching out. We understand that your workflow has stopped following a configuration change, and we appreciate your request to involve support before discussing any expansion.\n\nOur support team will be in touch shortly to assist with resolving the issue. Please rest assured that we are here to help and will work with you to ensure your workflows are running smoothly.\n\nBest regards,\n[Your Name]\nCedar Systems Support Team\n[Contact Information]",
+    "questions": [
+      "Has the support team already been contacted?",
+      "What specific configuration change caused the workflow to stop?"
+    ],
+    "uncertainties": [
+      "The exact nature of the configuration change is unknown.",
+      "It is unclear if the support team has already been engaged."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 4.4868,
+    "usage": {
+      "completion_tokens": 348,
+      "prompt_tokens": 510,
+      "total_tokens": 858,
+      "prompt_tokens_details": {
+        "cached_tokens": 509
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "0140ae2a90232ddf7c6abce1b5862cfa8b53f17583fdf1b90ef37cfc67b37a69",
+    "finish_reason": "stop",
+    "executed_at": 1791777089
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

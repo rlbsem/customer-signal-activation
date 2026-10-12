@@ -1,0 +1,121 @@
+{
+  "id": "simple_llm-regression-025-43",
+  "case_id": "regression-025",
+  "class": "ambiguous",
+  "arm": "simple_llm",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "2543caec48dc1cd593c6df5739076fecf1705b9b0462e7a3e03c8bced53791d9",
+  "executed_at": 1791776848,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0002",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0002",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 0,
+      "intent": 50,
+      "score": 50,
+      "owner": "cedar-east",
+      "stage": "nurture",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0002-web-0",
+      "input_events": [
+        "account-0002-consent",
+        "account-0002-enrich",
+        "account-0002-link",
+        "account-0002-profile",
+        "account-0002-web-0",
+        "account-0002-web-1",
+        "account-0002-web-2"
+      ]
+    },
+    "state_hash": "eee209ef83f45717f7666a5c966de274ee2f21fae1a4055198faeef81f09919a",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":50,\"stage\":\"nurture\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "Our consulting operations team is exploring options. We have not identified a specific requirement or project owner. Please clarify what we need before arranging a discovery meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is in the 'nurture' stage with a score of 50 and an intent level of 50. The customer has provided consent and is currently exploring options, but no specific requirement or project owner has been identified. A discovery meeting may be needed to clarify requirements.",
+    "action": "schedule_discovery",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "Our consulting operations team is exploring options. We have not identified a specific requirement or project owner. Please clarify what we need before arranging a discovery meeting."
+      },
+      {
+        "source": "verified-state",
+        "quote": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":50,\"stage\":\"nurture\"}"
+      }
+    ],
+    "draft": "Hi [Customer Name],\n\nThank you for your inquiry. We understand that your consulting operations team is currently exploring options and has not yet identified a specific requirement or project owner. To ensure we align with your needs, we would like to schedule a discovery meeting to clarify what you need from Cedar Systems.\n\nDuring this meeting, we can discuss your workflow coordination and account reporting requirements, and determine the best path forward. Please let us know a convenient time to proceed.\n\nBest regards,\n[Your Name]\nCedar Systems Team\n[Contact Information]",
+    "questions": [
+      "What is the expected timeline for identifying a project owner?",
+      "Are there any specific departments or teams that will be involved in this project?"
+    ],
+    "uncertainties": [
+      "The lack of a specific project owner may delay the decision-making process.",
+      "The need for clarification on requirements may affect the scheduling of the discovery meeting."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 4.8692,
+    "usage": {
+      "completion_tokens": 380,
+      "prompt_tokens": 498,
+      "total_tokens": 878,
+      "prompt_tokens_details": {
+        "cached_tokens": 497
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "f7a1b3d13a046c7d9f51a0323e184b91b26be2d348824318d01814677887e871",
+    "finish_reason": "stop",
+    "executed_at": 1791776853
+  },
+  "score": {
+    "success": false,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": false,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

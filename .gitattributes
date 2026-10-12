@@ -1,0 +1,2 @@
+# Preserve exact repository bytes for evidence and package hashes across platforms.
+* -text

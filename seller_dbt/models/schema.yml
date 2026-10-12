@@ -1,0 +1,22 @@
+version: 2
+sources:
+  - name: seller_raw
+    schema: raw
+    tables:
+      - name: runs
+      - name: actions
+      - name: audit
+models:
+  - name: fct_seller_runs
+    columns:
+      - name: run_id
+        tests: [unique, not_null]
+  - name: fct_seller_actions
+    columns:
+      - name: action_id
+        tests: [unique, not_null]
+      - name: run_id
+        tests:
+          - relationships:
+              to: ref('fct_seller_runs')
+              field: run_id

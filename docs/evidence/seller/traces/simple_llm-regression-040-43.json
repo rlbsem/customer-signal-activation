@@ -1,0 +1,117 @@
+{
+  "id": "simple_llm-regression-040-43",
+  "case_id": "regression-040",
+  "class": "conflicting",
+  "arm": "simple_llm",
+  "seed": 43,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "2543caec48dc1cd593c6df5739076fecf1705b9b0462e7a3e03c8bced53791d9",
+  "executed_at": 1791776987,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0012",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ]
+    },
+    "state_hash": "610156a75405961741d52c51fc825d969c60cb4b2ced75bed4157108d69aba51",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "An earlier inquiry from our construction services team requested discovery about disconnected teams. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is currently in the 'qualified' stage with a score of 80, indicating a moderate level of interest and fit. The customer has provided consent, and there is no blocking factor. However, there is a note in the documents indicating a potential contradiction in the project status: the construction services team previously requested discovery about disconnected teams, but the latest call indicates the project is paused and there is disagreement about the requirement. This needs clarification before moving forward.",
+    "action": "clarify_need",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "An earlier inquiry from our construction services team requested discovery about disconnected teams. The latest call says the project is paused and the owner disagrees about the requirement. Please clarify the contradictory project information before proposing a meeting."
+      }
+    ],
+    "draft": "Dear [Customer Name],\n\nThank you for your engagement with Cedar Systems. We understand that your construction services team previously requested discovery about disconnected teams, but we\u2019ve learned that the project is currently paused and there may be some disagreement about the requirement.\n\nTo ensure we align properly and provide the best support, could you please clarify the current status and requirements of the project? This will help us prepare effectively for any next steps.\n\nWe look forward to your response and are happy to assist further.\n\nBest regards,\n[Your Name]\nCedar Systems Team\n[Your Contact Information]",
+    "questions": [
+      "What is the current status of the project?",
+      "Are there any specific requirements or concerns that need to be addressed before resuming?"
+    ],
+    "uncertainties": [
+      "There is a contradiction in the project status between the initial inquiry and the latest call."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 43,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 4.7915,
+    "usage": {
+      "completion_tokens": 372,
+      "prompt_tokens": 515,
+      "total_tokens": 887,
+      "prompt_tokens_details": {
+        "cached_tokens": 514
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "40e62643a384b1b1147b315de9cd057e11d8aa05c64049a62dca273a96a18576",
+    "finish_reason": "stop",
+    "executed_at": 1791776992
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}

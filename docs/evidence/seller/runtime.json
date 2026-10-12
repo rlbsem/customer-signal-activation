@@ -1,0 +1,20 @@
+{
+  "mode": "actual_local_inference",
+  "model_repository": "Qwen/Qwen3-14B-GGUF",
+  "model_revision": "530227a7d994db8eca5ab5ced2fb692b614357fd",
+  "model_file": "Qwen3-14B-Q4_K_M.gguf",
+  "model_bytes": 9001752960,
+  "model_sha256": "500a8806e85ee9c83f3ae08420295592451379b4f8cf2d0f41c15dffeb6b81f0",
+  "model_alias": "qwen3-14b",
+  "runtime": "llama.cpp b10809",
+  "runtime_commit": "5266f24da",
+  "server_executable_sha256": "cb29f66008d4d73cce17cab2c2569ab318eb244b0b2ca2a15024b44d90dfcd3f",
+  "backend": "Vulkan",
+  "hardware": "NVIDIA GeForce RTX 5080, 16 GB VRAM; approximately 32 GB system RAM",
+  "driver": "610.74",
+  "context_tokens": 8192,
+  "parallel_slots": 1,
+  "reasoning": "off",
+  "paid_inference_service": false,
+  "scope": "Measured on this workstation. Hardware and electricity costs are not priced."
+}

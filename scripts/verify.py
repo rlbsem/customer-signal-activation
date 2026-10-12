@@ -12,6 +12,7 @@ from pathlib import Path
 
 from demo import run
 from package import files, manifest
+from validate_seller_evidence import validate as validate_seller
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -115,6 +116,9 @@ def verify():
         "hosted_ci": "not run for this local delivery",
         "source_sha256": {},
     }
+    seller_evidence = evidence / "seller"
+    if (seller_evidence / "evaluation.json").exists():
+        record["seller_evaluation"] = validate_seller(seller_evidence)
     for p in files():
         rel = p.relative_to(ROOT).as_posix()
         if not rel.startswith("docs/evidence/") and p.suffix not in (".png", ".jpg"):

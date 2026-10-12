@@ -1,0 +1,121 @@
+{
+  "id": "simple_llm-regression-000-42",
+  "case_id": "regression-000",
+  "class": "discovery",
+  "arm": "simple_llm",
+  "seed": 42,
+  "suite_hash": "0d2de7d11075225c25cb808cad970cc17cad9de16714396609397ec11e63ff34",
+  "configuration_hash": "9baa2bc451c3a6172cb04aeb9497fbdb8c1b5a787dd480941685ce50cfca0b8a",
+  "executed_at": 1791776605,
+  "input_snapshot": {
+    "brand": "cedar",
+    "account": "account-0012",
+    "as_of": 1774958400,
+    "decision": {
+      "brand": "cedar",
+      "account": "account-0012",
+      "as_of": 1774958400,
+      "policy": "fit-intent-route/v2",
+      "fit": 30,
+      "intent": 50,
+      "score": 80,
+      "owner": "cedar-east",
+      "stage": "qualified",
+      "consent": true,
+      "blocked": [],
+      "notes": [],
+      "campaign": "enterprise-workflows",
+      "touch_id": "account-0012-web-0",
+      "input_events": [
+        "account-0012-consent",
+        "account-0012-enrich",
+        "account-0012-link",
+        "account-0012-opp",
+        "account-0012-profile",
+        "account-0012-web-0",
+        "account-0012-web-1",
+        "account-0012-web-2"
+      ]
+    },
+    "state_hash": "9afe332e4ccc99411b81575a20664435d34580610709456e109c1e9d9e5ef308",
+    "documents": [
+      {
+        "id": "verified-state",
+        "title": "Authoritative commercial state",
+        "kind": "verified",
+        "text": "{\"blocked\":[],\"consent\":true,\"owner\":\"cedar-east\",\"score\":80,\"stage\":\"qualified\"}"
+      },
+      {
+        "id": "catalog-v1",
+        "title": "Approved Cedar Systems product information",
+        "kind": "catalog",
+        "text": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements. No price, deployment timeline, uptime guarantee or specific vendor connector is approved here."
+      },
+      {
+        "id": "customer-note",
+        "title": "Customer inquiry and call evidence",
+        "kind": "inquiry",
+        "text": "Our regional logistics team struggles with approval delays. We want workflow coordination and account reporting. Please arrange a discovery meeting to understand our requirements. No budget has been approved.",
+        "occurred_at": "2026-03-30T12:00:00Z"
+      }
+    ],
+    "excluded_documents": []
+  },
+  "raw_proposal": {
+    "assessment": "The account is currently in the 'qualified' stage with a score of 80. The customer has expressed interest in workflow coordination and account reporting, and has requested a discovery meeting to understand their requirements. The customer has not yet approved a budget.",
+    "action": "schedule_discovery",
+    "claims": [
+      {
+        "source": "customer-note",
+        "quote": "Please arrange a discovery meeting to understand our requirements."
+      },
+      {
+        "source": "catalog-v1",
+        "quote": "Cedar Systems provides workflow coordination and account reporting. A discovery meeting can establish integration requirements."
+      }
+    ],
+    "draft": "Hi [Customer Name],\n\nThank you for reaching out. We understand that your regional logistics team is experiencing approval delays and that you're interested in workflow coordination and account reporting.\n\nWe'd be happy to schedule a discovery meeting to better understand your requirements and how Cedar Systems can support your needs. Please let us know a convenient time for you.\n\nBest regards,\n[Your Name]\nCedar Systems Team\n[Your Contact Information]",
+    "questions": [
+      "What is the preferred time for the discovery meeting?",
+      "Are there any specific departments or stakeholders that should be included in the meeting?"
+    ],
+    "uncertainties": [
+      "The customer has not yet approved a budget, so we should be prepared to discuss potential options and next steps without assuming a specific financial commitment."
+    ]
+  },
+  "inference": {
+    "model": "qwen3-14b",
+    "temperature": 0.3,
+    "seed": 42,
+    "prompt_hash": "2fbcc504cf046f559eb7aba9a4a03a8a5a8cef7e1c007d30649a0cc6ec124f6b",
+    "max_tokens": 1400,
+    "prompt_version": "seller-assist/v2",
+    "mode": "live",
+    "baseline": true,
+    "source_bound_citation_decoding": false,
+    "latency_seconds": 4.4974,
+    "usage": {
+      "completion_tokens": 314,
+      "prompt_tokens": 510,
+      "total_tokens": 824,
+      "prompt_tokens_details": {
+        "cached_tokens": 397
+      }
+    },
+    "reported_model": "qwen3-14b",
+    "input_hash": "e55a68c75285b79154ceae9f1cf091c04291c3600035542901a15855895b0deb",
+    "finish_reason": "stop",
+    "executed_at": 1791776610
+  },
+  "score": {
+    "success": true,
+    "checks": {
+      "exact_source_quotes": true,
+      "expected_action": true,
+      "customer_source_cited": true,
+      "case_specific_information_present": true,
+      "no_forbidden_commitment_or_injection": true
+    },
+    "critical_failure": false
+  }
+}
