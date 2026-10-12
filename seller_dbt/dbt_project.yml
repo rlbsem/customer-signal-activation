@@ -1,0 +1,9 @@
+name: seller_operations
+version: '1.0.0'
+config-version: 2
+profile: seller_operations
+model-paths: [models]
+test-paths: [tests]
+models:
+  seller_operations:
+    +materialized: table

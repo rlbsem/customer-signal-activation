@@ -1,0 +1,7 @@
+seller_operations:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('SELLER_WAREHOUSE') }}"
+      threads: 1
