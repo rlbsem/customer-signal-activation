@@ -2,11 +2,11 @@
 
 **Which customer signals deserve a sales handoff—and can we trace the resulting commercial outcome back to collected cash?**
 
-A multi-brand B2B organization can capture the right campaign signal, associate it with the wrong account, rely on stale enrichment, route it to the wrong owner, or declare success at Closed Won without proving the resulting economic outcome. This executable system connects customer signals to verified identity, explainable fit and intent, ownership-safe CRM activation, commercial fulfillment, invoices and payment allocations—then returns eligible cash outcomes to measurement.
+A multi-brand operator or B2B SaaS organization can capture the right campaign signal, associate it with the wrong account, rely on stale enrichment, route it to the wrong owner, or declare success at Closed Won without proving the resulting economic outcome. This executable system connects customer signals to verified identity, explainable fit and intent, ownership-safe CRM activation, commercial fulfillment, invoices and payment allocations—then returns eligible cash outcomes to measurement.
 
 The browser, API, durable workflow, separate HTTP destination and dbt models all execute locally. [See the generated commercial review](docs/evidence/report.md) and [individual decisions and lineage](docs/evidence/demo.json).
 
-The **seller workbench** turns account inquiries and call evidence into a live LLM brief, a relevant response draft and an explicitly reviewed CRM task. It keeps source citations, current permission, account ownership and delivery receipts inspectable. All businesses and source documents are synthetic; model inference and local HTTP effects are real.
+The **seller workbench** turns account inquiries and call evidence into a live LLM brief, a relevant response draft and an explicitly reviewed CRM task. It keeps source citations, current permission, account ownership and delivery receipts inspectable. All businesses and source documents are synthetic; model inference and local HTTP effects are real. This public implementation makes client-work architecture patterns—identity, enrichment, owner-safe routing, CRM state and revenue lineage—inspectable without exposing private client systems.
 
 ![Executed seller workbench with a real model response](docs/images/seller-brief.jpg)
 
