@@ -27,6 +27,12 @@ with sync_playwright() as p:
         source,
     )
     browser.close()
+# Explicit dark canvas: the exported evidence SVG must remain readable when
+# viewed as a standalone asset on a light GitHub background.
+svg_start = svg.find(">")
+if svg_start < 0:
+    raise RuntimeError("Mermaid renderer returned invalid SVG")
+svg = svg[: svg_start + 1] + '<rect width="100%" height="100%" fill="#10101D"/>' + svg[svg_start + 1 :]
 target = ROOT / "docs/evidence/architecture.svg"
 target.write_text(svg, encoding="utf-8")
 record = {
