@@ -21,7 +21,8 @@ The executed synthetic demonstration has **120 accounts and 1,070 source events*
 <!-- executed-result:end -->
 
 ```mermaid
-flowchart LR
+%%{init: {"theme":"base","themeVariables":{"background":"#10101D","primaryColor":"#2A2A3D","primaryTextColor":"#F0F0FF","primaryBorderColor":"#7C7CAF","lineColor":"#B8B8FF","textColor":"#F0F0FF","secondaryColor":"#181825","tertiaryColor":"#2E2E45","fontFamily":"IBM Plex Sans, Arial, sans-serif","fontSize":"15px","edgeLabelBackground":"#10101D"}}}%%
+flowchart TB
   W[Browser data layer and call signals] --> C[Typed collection]
   C --> I[Verified brand-scoped identity]
   E[CRM facts and enrichment] --> D[Fit plus recent intent]
@@ -37,6 +38,15 @@ flowchart LR
   P --> O
   O --> H
   V --> B[Validated commercial review]
+  classDef source fill:#181825,stroke:#7C7CAF,color:#F0F0FF,stroke-width:1.5px
+  classDef identity fill:#2A2A3D,stroke:#B8B8FF,color:#F0F0FF,stroke-width:1.7px
+  classDef authority fill:#2E2E45,stroke:#E3BC7F,color:#F0F0FF,stroke-width:1.6px
+  classDef verified fill:#2E2E45,stroke:#81C5B0,color:#F0F0FF,stroke-width:2px
+  class W,E,P,F source
+  class C,I,D,A identity
+  class R,Q,O,H authority
+  class V,B verified
+
 ```
 
 **Signals are not identities. A score is not a sale. An invoice is not cash.** The system keeps these distinctions visible instead of filling missing links with plausible defaults.
