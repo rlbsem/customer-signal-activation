@@ -32,7 +32,7 @@ with sync_playwright() as p:
 svg_start = svg.find(">")
 if svg_start < 0:
     raise RuntimeError("Mermaid renderer returned invalid SVG")
-viewbox_match = re.search(r'\\bviewBox="([^"]+)"', svg[: svg_start + 1])
+viewbox_match = re.search(r'viewBox="([^"]+)"', svg[: svg_start + 1])
 if viewbox_match is None:
     raise RuntimeError("Mermaid SVG is missing a viewBox")
 viewbox_parts = viewbox_match.group(1).split()
