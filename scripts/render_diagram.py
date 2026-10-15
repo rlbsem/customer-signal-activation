@@ -32,7 +32,15 @@ with sync_playwright() as p:
 svg_start = svg.find(">")
 if svg_start < 0:
     raise RuntimeError("Mermaid renderer returned invalid SVG")
-svg = svg[: svg_start + 1] + '<rect width="100%" height="100%" fill="#10101D"/>' + svg[svg_start + 1 :]
+viewbox_match = re.search(r'\\bviewBox="([^"]+)"', svg[: svg_start + 1])
+if viewbox_match is None:
+    raise RuntimeError("Mermaid SVG is missing a viewBox")
+viewbox_parts = viewbox_match.group(1).split()
+if len(viewbox_parts) != 4:
+    raise RuntimeError("Mermaid SVG has an invalid viewBox")
+x, y, width, height = viewbox_parts
+background = f'<rect x="{x}" y="{y}" width="{width}" height="{height}" fill="#10101D"/>'
+svg = svg[: svg_start + 1] + background + svg[svg_start + 1 :]
 target = ROOT / "docs/evidence/architecture.svg"
 target.write_text(svg, encoding="utf-8")
 record = {
