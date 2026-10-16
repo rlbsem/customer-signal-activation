@@ -1,0 +1,11 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "synthetic-seller-review",
+  "namespace": "",
+  "sourceApiVersion": "65.0"
+}

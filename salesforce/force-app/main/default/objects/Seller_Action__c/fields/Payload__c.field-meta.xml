@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Payload__c</fullName>
+  <label>Exact Approved Payload JSON</label>
+  <length>32768</length>
+  <type>LongTextArea</type>
+  <visibleLines>6</visibleLines>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Approved_Content_Is_Immutable</fullName>
+  <active>true</active>
+  <errorConditionFormula>AND(NOT(ISNEW()), OR(ISCHANGED(Action_Key__c),ISCHANGED(Payload_Hash__c),ISCHANGED(Brand__c),ISCHANGED(Account_Key__c),ISCHANGED(Proposed_Owner__c),ISCHANGED(Mapping_Hash__c),ISCHANGED(Subject__c),ISCHANGED(Proposed_Action__c),ISCHANGED(Review_Notice__c),ISCHANGED(Payload__c),ISCHANGED(Draft__c),ISCHANGED(Synthetic_Account__c),ISCHANGED(Proposed_User__c)))</errorConditionFormula>
+  <errorMessage>Approved content cannot be edited. Create a separately approved action instead.</errorMessage>
+</ValidationRule>

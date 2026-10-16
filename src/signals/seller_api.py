@@ -10,10 +10,12 @@ from fastapi.responses import FileResponse
 from pydantic import ValidationError
 
 from .contracts import digest
+from .salesforce_contract import DeliveryError
 from .store import Refused
 
 
-def app(workbench, operator_token, destination_url, destination_token, root=None):
+def app(workbench, operator_token, destination_url, destination_token, root=None, dispatcher=None,
+        destination_label="Salesforce synthetic review record"):
     root = Path(root or Path(__file__).resolve().parents[2])
     api = FastAPI(title="Customer Signal — Seller Workbench")
     sessions = set()
@@ -35,6 +37,11 @@ def app(workbench, operator_token, destination_url, destination_token, root=None
     async def refused(request, exc):
         from fastapi.responses import JSONResponse
         return JSONResponse({"detail": str(exc)}, status_code=409)
+
+    @api.exception_handler(DeliveryError)
+    async def delivery_error(request, exc):
+        from fastapi.responses import JSONResponse
+        return JSONResponse({"detail": str(exc)}, status_code=503 if exc.retryable else 409)
 
     @api.exception_handler(ValidationError)
     async def validation(request, exc):
@@ -79,6 +86,12 @@ def app(workbench, operator_token, destination_url, destination_token, root=None
     def overview(request: Request):
         authenticated(request)
         value = workbench.overview()
+        if dispatcher:
+            value["destination_label"] = destination_label
+            for action in value["actions"]:
+                status = dispatcher.status(action["id"])
+                if status:
+                    action["delivery_state"] = status["state"]
         value["run_hashes"] = {r["id"]: digest(r) for r in value["runs"]}
         return value
 
@@ -112,7 +125,19 @@ def app(workbench, operator_token, destination_url, destination_token, root=None
     @api.post("/api/deliver/{key}")
     def deliver(key: str, request: Request):
         authenticated(request)
+        if dispatcher:
+            result = dispatcher.step(key)
+            return json.loads(result["receipt"]) if result["state"] == "delivered" else {
+                k: result[k] for k in ("state", "attempts", "detail", "next_at")}
         return workbench.deliver(key, destination_url, destination_token)
+
+    @api.post("/api/reconcile/{key}")
+    def reconcile(key: str, request: Request):
+        authenticated(request)
+        if not dispatcher:
+            raise HTTPException(409, "salesforce_dispatcher_not_configured")
+        result = dispatcher.reconcile_once(key)
+        return json.loads(result["receipt"]) if result["state"] == "delivered" else result
 
     @api.get("/api/evaluation")
     def evaluation(request: Request):

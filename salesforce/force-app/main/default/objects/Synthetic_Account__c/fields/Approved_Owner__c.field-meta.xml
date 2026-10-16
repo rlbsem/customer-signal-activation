@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Approved_Owner__c</fullName>
+  <deleteConstraint>SetNull</deleteConstraint>
+  <label>Approved Proposed User</label>
+  <referenceTo>User</referenceTo>
+  <relationshipLabel>Synthetic Accounts</relationshipLabel>
+  <relationshipName>SyntheticAccounts</relationshipName>
+  <required>false</required>
+  <type>Lookup</type>
+</CustomField>

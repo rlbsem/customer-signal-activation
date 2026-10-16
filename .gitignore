@@ -9,4 +9,12 @@ dbt/logs/
 .env
 *.sqlite*
 *.duckdb*
+.local/
+.sf/
+.sfdx/
+*.bak
+*.pem
+*.key
+*.p12
+*.pfx
 

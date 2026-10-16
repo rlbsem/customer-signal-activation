@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+  <deploymentStatus>Deployed</deploymentStatus>
+  <description>Isolated synthetic portfolio demonstration only.</description>
+  <enableActivities>false</enableActivities>
+  <enableReports>true</enableReports>
+  <label>Seller Review</label>
+  <nameField>
+    <displayFormat>SR-{000000}</displayFormat>
+    <label>Review Number</label>
+    <type>AutoNumber</type>
+  </nameField>
+  <pluralLabel>Seller Reviews</pluralLabel>
+  <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

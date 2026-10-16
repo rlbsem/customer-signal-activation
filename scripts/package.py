@@ -4,7 +4,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKIP = {"work", ".venv", ".git", "__pycache__", ".pytest_cache", ".ruff_cache", "target", "logs"}
+SKIP = {"work", ".venv", ".git", "__pycache__", ".pytest_cache", ".ruff_cache", "target", "logs",
+        ".local", ".sf", ".sfdx"}
 
 
 def files():
@@ -14,7 +15,8 @@ def files():
         if p.is_file()
         and not any(x in SKIP or x.endswith(".egg-info") for x in p.relative_to(ROOT).parts)
         and p.name not in {"package-manifest.json", ".user.yml", ".env"}
-        and p.suffix not in {".pyc", ".sqlite", ".duckdb"}
+        and p.suffix.lower() not in {".pyc", ".sqlite", ".duckdb", ".bak", ".log", ".pem", ".key", ".p12", ".pfx"}
+        and not any(p.name.lower().endswith(suffix) for suffix in (".sqlite-wal", ".sqlite-shm", ".db"))
     )
 
 

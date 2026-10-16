@@ -1,0 +1,689 @@
+{
+  "status": "PASSED",
+  "provenance": "native_salesforce",
+  "started_utc": "2026-10-16T00:55:41.758795+00:00",
+  "finished_utc": "2026-10-16T00:55:46.057327+00:00",
+  "error": null,
+  "checks": {
+    "preflight": {
+      "environment_pin_verified": true,
+      "environment": "developer_edition",
+      "organization_type": "Developer Edition",
+      "schema_sha256": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+      "create_only": true,
+      "unique_external_key": true,
+      "administrator_attestation": {
+        "administrator_environment_verified": true,
+        "organization_reference_sha256": "cb1c5a934be0510b5f29095703e3c5b49d85962e944fd1386cb9b2845d6fa181",
+        "administrator_reference_sha256": "9e21cb3928f3cbc94a2e05d393e5c5aea22031c5396ff9aeaeebd3acb0672109",
+        "organization_type": "Developer Edition",
+        "environment": "developer_edition"
+      },
+      "reviewer_schema_sha256": "c32ff90ca0ef1e9b711d9adecb2a9f92d80f1eee6ac1815909e472e39e3f7b57"
+    },
+    "acceptance": {
+      "final_exact_readback": true,
+      "reviewer_create_contract": {
+        "passed": true,
+        "effective_createable_before": false,
+        "effective_createable_after": false,
+        "schema_sha256_before": "c32ff90ca0ef1e9b711d9adecb2a9f92d80f1eee6ac1815909e472e39e3f7b57",
+        "schema_sha256_after": "c32ff90ca0ef1e9b711d9adecb2a9f92d80f1eee6ac1815909e472e39e3f7b57",
+        "post_status": 400,
+        "post_error_codes": [
+          "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+        ],
+        "post_classification": "generic_entity_rejection_cause_unattributed",
+        "error_code_alone_proves_permission": false,
+        "probe_records_before": 0,
+        "probe_records_after": 0,
+        "global_record_count_before": 2,
+        "global_record_count_after": 2,
+        "global_record_set_unchanged": true,
+        "global_record_set_sha256_before": "a3a73ffdce82ec38b150decaed13a310d555fb6ce0d7f492010cb23bb0bad4c8",
+        "global_record_set_sha256_after": "a3a73ffdce82ec38b150decaed13a310d555fb6ce0d7f492010cb23bb0bad4c8"
+      },
+      "integration_patch_contract": {
+        "passed": true,
+        "operation": "PATCH",
+        "effective_updateable_before": false,
+        "effective_updateable_after": false,
+        "effective_deletable_before": false,
+        "effective_deletable_after": false,
+        "schema_sha256_before": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+        "schema_sha256_after": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+        "record_sha256_before": "9840fe057a92e7c2e8d424ecab74eb99967c1544d09bcd4d050a9a8cad624e2e",
+        "record_sha256_after": "9840fe057a92e7c2e8d424ecab74eb99967c1544d09bcd4d050a9a8cad624e2e",
+        "record_unchanged": true,
+        "record_comparison_scope": "business_content_and_mutation_audit_fields_via_soql",
+        "post_status": 400,
+        "post_error_codes": [
+          "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+        ],
+        "post_classification": "generic_entity_rejection_cause_unattributed",
+        "error_code_alone_proves_permission": false,
+        "vendor_message_sha256": "b2d7088e0bfa2daf4d2a5f6c18e332433eb5115cc725c978acbe83665ca04678",
+        "vendor_message_mentions_insufficient_access": false
+      },
+      "integration_delete_contract": {
+        "passed": true,
+        "operation": "DELETE",
+        "effective_updateable_before": false,
+        "effective_updateable_after": false,
+        "effective_deletable_before": false,
+        "effective_deletable_after": false,
+        "schema_sha256_before": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+        "schema_sha256_after": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+        "record_sha256_before": "9840fe057a92e7c2e8d424ecab74eb99967c1544d09bcd4d050a9a8cad624e2e",
+        "record_sha256_after": "9840fe057a92e7c2e8d424ecab74eb99967c1544d09bcd4d050a9a8cad624e2e",
+        "record_unchanged": true,
+        "record_comparison_scope": "business_content_and_mutation_audit_fields_via_soql",
+        "post_status": 400,
+        "post_error_codes": [
+          "INSUFFICIENT_ACCESS_OR_READONLY"
+        ],
+        "post_classification": "explicit_permission_error",
+        "error_code_alone_proves_permission": false,
+        "vendor_message_sha256": "4fd975b6d819252a11712b76ae1eed6bfe0fc71bcaa0af07c2de168312d6c036",
+        "vendor_message_mentions_insufficient_access": true
+      },
+      "registry_write_contract": {
+        "passed": true,
+        "operation": "PATCH",
+        "effective_updateable_before": false,
+        "effective_updateable_after": false,
+        "effective_deletable_before": false,
+        "effective_deletable_after": false,
+        "schema_sha256_before": "94bece89ae87f061e428465cd43342ba27aaf2b599c341e6fe7a741c36d7376f",
+        "schema_sha256_after": "94bece89ae87f061e428465cd43342ba27aaf2b599c341e6fe7a741c36d7376f",
+        "record_sha256_before": "afbe2a0e7df15dc0cbcbf96e5256c329cafa59456c955331c888562b96c09221",
+        "record_sha256_after": "afbe2a0e7df15dc0cbcbf96e5256c329cafa59456c955331c888562b96c09221",
+        "record_unchanged": true,
+        "record_comparison_scope": "business_content_and_mutation_audit_fields_via_soql",
+        "post_status": 400,
+        "post_error_codes": [
+          "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+        ],
+        "post_classification": "generic_entity_rejection_cause_unattributed",
+        "error_code_alone_proves_permission": false,
+        "vendor_message_sha256": "9e1b26ae690323a8ecd11bfa06e558f99527dc3d979f171f8fc62f16c734350f",
+        "vendor_message_mentions_insufficient_access": false
+      },
+      "duplicate_records": 1,
+      "action_key": "ed9c06cc8df7484d0b51fa15d1e4010400f109c2e75f006f9221604147d4cf7b",
+      "resumed_prior_verification_sha256": "ddb46666cc4020a7f849841832505f360fb47eeb58bedca86646625b430eebf7",
+      "prior_run_status": "FAILED",
+      "prior_run_requests": 35,
+      "execution_scope": "remaining_probes_completed_existing_record_no_new_post",
+      "global_record_set_unchanged": true,
+      "inherited_experiments": [
+        "duplicate_post",
+        "global_audit_visibility",
+        "lost_acknowledgement",
+        "repeat_dispatch",
+        "reviewer_create_contract",
+        "reviewer_payload_write_denied",
+        "server_mapping_validation"
+      ],
+      "inference": "handwritten_acceptance_fixture_no_inference"
+    }
+  },
+  "completed_experiments": {
+    "global_audit_visibility": {
+      "passed": true,
+      "existing_records": 1
+    },
+    "lost_acknowledgement": {
+      "passed": true,
+      "fault": "client_discarded_real_success_response"
+    },
+    "repeat_dispatch": {
+      "passed": true
+    },
+    "duplicate_post": {
+      "passed": true,
+      "post_status": 400,
+      "error_codes": [
+        "DUPLICATE_VALUE"
+      ]
+    },
+    "server_mapping_validation": {
+      "passed": true,
+      "error_codes": [
+        "FIELD_CUSTOM_VALIDATION_EXCEPTION"
+      ]
+    },
+    "reviewer_payload_write_denied": {
+      "passed": true
+    },
+    "reviewer_create_contract": {
+      "passed": true,
+      "effective_createable_before": false,
+      "effective_createable_after": false,
+      "schema_sha256_before": "c32ff90ca0ef1e9b711d9adecb2a9f92d80f1eee6ac1815909e472e39e3f7b57",
+      "schema_sha256_after": "c32ff90ca0ef1e9b711d9adecb2a9f92d80f1eee6ac1815909e472e39e3f7b57",
+      "post_status": 400,
+      "post_error_codes": [
+        "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+      ],
+      "post_classification": "generic_entity_rejection_cause_unattributed",
+      "error_code_alone_proves_permission": false,
+      "probe_records_before": 0,
+      "probe_records_after": 0,
+      "global_record_count_before": 2,
+      "global_record_count_after": 2,
+      "global_record_set_unchanged": true,
+      "global_record_set_sha256_before": "a3a73ffdce82ec38b150decaed13a310d555fb6ce0d7f492010cb23bb0bad4c8",
+      "global_record_set_sha256_after": "a3a73ffdce82ec38b150decaed13a310d555fb6ce0d7f492010cb23bb0bad4c8"
+    },
+    "resumed_exact_receipt": {
+      "passed": true
+    },
+    "integration_patch_contract": {
+      "passed": true,
+      "operation": "PATCH",
+      "effective_updateable_before": false,
+      "effective_updateable_after": false,
+      "effective_deletable_before": false,
+      "effective_deletable_after": false,
+      "schema_sha256_before": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+      "schema_sha256_after": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+      "record_sha256_before": "9840fe057a92e7c2e8d424ecab74eb99967c1544d09bcd4d050a9a8cad624e2e",
+      "record_sha256_after": "9840fe057a92e7c2e8d424ecab74eb99967c1544d09bcd4d050a9a8cad624e2e",
+      "record_unchanged": true,
+      "record_comparison_scope": "business_content_and_mutation_audit_fields_via_soql",
+      "post_status": 400,
+      "post_error_codes": [
+        "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+      ],
+      "post_classification": "generic_entity_rejection_cause_unattributed",
+      "error_code_alone_proves_permission": false,
+      "vendor_message_sha256": "b2d7088e0bfa2daf4d2a5f6c18e332433eb5115cc725c978acbe83665ca04678",
+      "vendor_message_mentions_insufficient_access": false
+    },
+    "integration_delete_contract": {
+      "passed": true,
+      "operation": "DELETE",
+      "effective_updateable_before": false,
+      "effective_updateable_after": false,
+      "effective_deletable_before": false,
+      "effective_deletable_after": false,
+      "schema_sha256_before": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+      "schema_sha256_after": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+      "record_sha256_before": "9840fe057a92e7c2e8d424ecab74eb99967c1544d09bcd4d050a9a8cad624e2e",
+      "record_sha256_after": "9840fe057a92e7c2e8d424ecab74eb99967c1544d09bcd4d050a9a8cad624e2e",
+      "record_unchanged": true,
+      "record_comparison_scope": "business_content_and_mutation_audit_fields_via_soql",
+      "post_status": 400,
+      "post_error_codes": [
+        "INSUFFICIENT_ACCESS_OR_READONLY"
+      ],
+      "post_classification": "explicit_permission_error",
+      "error_code_alone_proves_permission": false,
+      "vendor_message_sha256": "4fd975b6d819252a11712b76ae1eed6bfe0fc71bcaa0af07c2de168312d6c036",
+      "vendor_message_mentions_insufficient_access": true
+    },
+    "registry_write_contract": {
+      "passed": true,
+      "operation": "PATCH",
+      "effective_updateable_before": false,
+      "effective_updateable_after": false,
+      "effective_deletable_before": false,
+      "effective_deletable_after": false,
+      "schema_sha256_before": "94bece89ae87f061e428465cd43342ba27aaf2b599c341e6fe7a741c36d7376f",
+      "schema_sha256_after": "94bece89ae87f061e428465cd43342ba27aaf2b599c341e6fe7a741c36d7376f",
+      "record_sha256_before": "afbe2a0e7df15dc0cbcbf96e5256c329cafa59456c955331c888562b96c09221",
+      "record_sha256_after": "afbe2a0e7df15dc0cbcbf96e5256c329cafa59456c955331c888562b96c09221",
+      "record_unchanged": true,
+      "record_comparison_scope": "business_content_and_mutation_audit_fields_via_soql",
+      "post_status": 400,
+      "post_error_codes": [
+        "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+      ],
+      "post_classification": "generic_entity_rejection_cause_unattributed",
+      "error_code_alone_proves_permission": false,
+      "vendor_message_sha256": "9e1b26ae690323a8ecd11bfa06e558f99527dc3d979f171f8fc62f16c734350f",
+      "vendor_message_mentions_insufficient_access": false
+    },
+    "final_exact_readback": {
+      "passed": true,
+      "reviewer_status": "Reviewed"
+    }
+  },
+  "source_sha256": {
+    "pyproject.toml": "d451b91dde87db90b02bea74ad99f25d2c5544f6ec1d46b5ed6cdd7a4d83c8ab",
+    "requirements.lock": "8604af350bb2a8af77255da49de8773641d30225f63a35cd4e2c76e5676fa166",
+    "salesforce/force-app/main/default/layouts/Seller_Action__c-Synthetic Seller Review.layout-meta.xml": "dbbfbd6d7be523e2105f7ecfa11d140813561bef6f847dcb7f554f524246148d",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Account_Key__c.field-meta.xml": "6b76e873e3e27c53df1297703b151c9564ce77979604ac3aeac1afada552f5fa",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Action_Key__c.field-meta.xml": "99eeb6a284042801e5398fd4c1c9b21927747912484c016b1c568af8aaa47a60",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Brand__c.field-meta.xml": "a208eb43b294e7c2a389d9e9fdffb1e937196b3b28d5d4b666315324fa27430c",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Draft__c.field-meta.xml": "771d5cd2401a8d9d733b5d28a6073341192999710f50d87d19c5902f2bad4622",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Mapping_Hash__c.field-meta.xml": "daaaaa2711f821c048f4eba09504fa6ab3051a5a36202ab21e15b045c362c8e0",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Payload__c.field-meta.xml": "eb5ef32fb7921e87dd3abfae46f8861db0c7e794ee30a6e6cec2a7462199817f",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Payload_Hash__c.field-meta.xml": "87beb0d949656c37b887c1ebf705c0a5ce1781afdac1014b7d9159dcf179ccc0",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Proposed_Action__c.field-meta.xml": "4cf7fd5f050e403b4908e4bbb32443fd3891f5c39489c186a7a83ce7e480041a",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Proposed_Owner__c.field-meta.xml": "c905c0c58ea71a4dbe33dd3d1ea73e3de639cd07669cff29c1286af01c51635d",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Proposed_User__c.field-meta.xml": "2f48bb7c86b6bbb4bd6c970e288fe5f8788ad6a72553b576bd0f332ba477ba2b",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Review_Notice__c.field-meta.xml": "5d20709d6b099dd53973dc4392e4c2fff0df08125fab5dd4bbab6ea7ccb4d6ed",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Review_Status__c.field-meta.xml": "b16bffe877c6a0662dd8eeaa1daa7c0e72428ceed5b7fb8472ef266d43c138ad",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Reviewer_Notes__c.field-meta.xml": "90d73b2d583bbe523b22da125e79d39894c14ff146d360d30d0a96fe6744b115",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Subject__c.field-meta.xml": "6fca82d124dae35168a139b3d9fa18e1dc26f3672d3de768266dba6bb199f945",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Synthetic_Account__c.field-meta.xml": "cea5873acbda76178d190222f4ea81ff721c432e1d470d9a9fea12de7501e31b",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/listViews/Synthetic_Reviews.listView-meta.xml": "b65142f4644b71c264e99b0b7663117f39bd8ddea00fd5d788962a823af79cda",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/Seller_Action__c.object-meta.xml": "6dc42d279bba72ee1469a05eb5922d5327ad9b763c44bb86e03473ed04bb90e4",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/validationRules/Approved_Content_Is_Immutable.validationRule-meta.xml": "61666bd0e94ca925b39959ee99cc21671eebcd2e2220ff63a3baa5b54c95bfbb",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/validationRules/Required_Review_Content.validationRule-meta.xml": "0b168bac2f823d54e77b17aa8d9c83d97010ae25a90765b64d3e64996053b104",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/validationRules/Synthetic_Mapping_Required.validationRule-meta.xml": "84d662e00e3b75615a1e9eb8778abea16cda33d365d2b47882136a91c7159b92",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Account_Key__c.field-meta.xml": "c84ea2319aff73c6e2610bb3e55c307dd0f8a3db163fa1f49501c9ce143cacc2",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Active__c.field-meta.xml": "2015b7a14593888b37f23b93f06abaac8d59b4b898f50fcc7f8d93bca438cd7c",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Approved_Owner__c.field-meta.xml": "15f93e1f6d62f04bf8011a5cc67aa4e29894f7cab23fa348af3426784422fc18",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Brand__c.field-meta.xml": "a208eb43b294e7c2a389d9e9fdffb1e937196b3b28d5d4b666315324fa27430c",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Synthetic__c.field-meta.xml": "09a9be4e7643d27aa5b5f6fdf2e6ebf6e0350e6707faaaa529f08000b63111c8",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/Synthetic_Account__c.object-meta.xml": "7d51780d901df772d9183d3ca1fba43ddfd41607f7025835f6b9eedc08e9c8d4",
+    "salesforce/force-app/main/default/permissionsets/Seller_Review_Integration.permissionset-meta.xml": "a4123b80125a3127a6d805f064be2a406eceb3f07f7517945e8c3586662ad4d4",
+    "salesforce/force-app/main/default/permissionsets/Seller_Review_Reviewer.permissionset-meta.xml": "e5f81967f0b23c019ef01384c81d4450dd8b9597dc602a98b10d0c7404d6b6a4",
+    "salesforce/force-app/main/default/tabs/Seller_Action__c.tab-meta.xml": "1525775a01c7b97bdcfe7f2a1f658b92ceb80b4291b12d7169a017d5fed26529",
+    "salesforce/sfdx-project.json": "36573fd677b0e77a42b76543e5aff5a3ea43c8891846dd32c3e51a38d7f58380",
+    "scripts/demo.py": "f64f89e49d452bac259fc3f5595cb72404a08a036abc4b655bb41ba75cd4d2bf",
+    "scripts/deploy_salesforce_demo.py": "7fe29d3726245bf751b6ead809cf9f33d87fa382e5313f7f7fe95b672525e4b4",
+    "scripts/evaluate_seller.py": "0cec3cc273ca9b5a8f5a0b02010de065f049fd31a5c2dd68b355b56474864db7",
+    "scripts/export_salesforce_evidence.py": "3d0d8c380c23752d60076a698188a311a84644151d6cef9b9a819892201e7304",
+    "scripts/export_seller_evidence.py": "1bd60bc34bbfc9dad090ed1da531295c5f9853ac9b138a69215104a4eef9c724",
+    "scripts/fetch_seller_model.py": "70e25fb91344ec30ca57936dfcc230f22f1192d8be624be1fc7d3e109dcdd56e",
+    "scripts/operate.py": "45899fa304b31fd9601a2055702d5f4f122cd604b59b01252b3a60dd553f2e2f",
+    "scripts/package.py": "454de19c7d692a4866c297157a61af7c9d4dd5984d8fe6901cde8967b393d516",
+    "scripts/render_diagram.py": "28217b07d8c68482a0d187e54cb2221377293c1154c6479d8d91de2391774218",
+    "scripts/run_salesforce_acceptance.py": "7c3eb3b42d22aa992df9a2864511fd7e0b2badfa91cd162ee9e4d5d24cea4afe",
+    "scripts/salesforce_workbench.py": "b2cb7367d16fecbe52192f530ac0b534aee4900c35033cec6121c719b636e6b9",
+    "scripts/seller.py": "4368cffb9b189f104aac46db4b0c00e16b13e4ffb9ed1c9d69b10827d1d42e4b",
+    "scripts/serve.py": "65555cbfbaa8e629eec88cdcc774b8d149c744e0c6dc05f8e9a313da6651fd4d",
+    "scripts/validate_seller_evidence.py": "91412f410ae015f622754149a0fe9bff75f1136f756005cca3cd9414e155ec0c",
+    "scripts/verify.py": "22beff98acf15c4e39cbc9a16a0cf9ea291b1c20ead833d4e8fc02688693737c",
+    "scripts/verify_salesforce.py": "df0bcecff18339e211f31340c974f085d76db7308783289f8284c1edec226534",
+    "src/signals/__init__.py": "7b979352be01962aebe63925eb29e99746006c1a0ddc854d67c5de2ce37ceeb6",
+    "src/signals/analytics.py": "16dfb55f6b17d7fd88e4f9b59ed353d123c07ce06d1d56edb875fc8447608f76",
+    "src/signals/api.py": "98bb10685c14609e3fa4550c06a0c99f23d7b6460e9c92a32d18a3fe66899aa0",
+    "src/signals/contracts.py": "66937dfc371d4fd0081072d3b7b7bc5f91015938cbecbec18d57d7ca105e9f32",
+    "src/signals/decision.py": "5f7ea2852891541dc3ef382b35beedd9cccb5a8a9561e24e0b82b3f21934185d",
+    "src/signals/finance.py": "5187db5cd93d80eee9978d35bcdda9f2cdc32fd338723b31e7ab3dd3a5a273b0",
+    "src/signals/fixtures.py": "ff40faf8a820d93ccc1ae21e4ab5e02bc3e726556e92369c43416367307ef2d7",
+    "src/signals/harness.py": "e5c2396ef97dca034dff53813ab734a6f01472205d2427c4041246585f5a8804",
+    "src/signals/reconcile.py": "24400eba1981d4dd05eff45c8d9f63e2cd5c5716abdb70ca8e5422f7e950108a",
+    "src/signals/remote.py": "17d90b901f98d4f3d8f17fd2b59b53062100d6b288b51c32c31012441909bf59",
+    "src/signals/salesforce_acceptance.py": "3fac63b7029a381fd8e7841c40f4a679280588ad793d1cc40b72faa4845d6e4e",
+    "src/signals/salesforce_contract.py": "908076fa14748d16ea21bf0c1c5a01fbbe1042758936073470fbc5766341e358",
+    "src/signals/salesforce_delivery.py": "70ec0dfebc7ec60c439f87ebb40ec52942b9039517a21374168457aa260fe461",
+    "src/signals/salesforce_dispatch.py": "10225b7d0d361aa8af18627b7ec5a05d32d7536f58d834db1a2314469e9898bc",
+    "src/signals/salesforce_evidence.py": "fcbad11cbdb49229ca76acf0fdb3998065a1ae2d06ad4c5294472ccfb43a5e06",
+    "src/signals/seller.py": "9406886180e51d32cdc7d6394972edaeeee0fc57e8b5ba115522841db0d87796",
+    "src/signals/seller_analytics.py": "f6417e880cc20ff20220f30cd096216ce236de16960659a45bf1724f967ad986",
+    "src/signals/seller_api.py": "99b9b510f0587a4226db91d647d6b360b8b4a4e24394275bd94efa51d8398469",
+    "src/signals/seller_evaluation.py": "4beb873fa6cc649063f405f0c71d1a75bab7942dc26c0db411d23a1662efb950",
+    "src/signals/seller_fixtures.py": "0e0ab2ff05a2f1f3c9c72674c10a07f9979f3f939985f2367eae538800d46cfc",
+    "src/signals/store.py": "1859620b7afbd4a04044ad485c944a8ec9845ad9fcb7153c656c6895cf85cdbf",
+    "src/signals/worker.py": "8681b880e1348884a66745e4ea1a6d670e032fe36cc9fbdb65cfebb3f3dc81eb",
+    "web/index.html": "68ea9d7df1299623699d8ef202e846a433a782475569ee1f48e1740e48d7363b",
+    "web/instrumentation.js": "0562151c58fe1b7f5e025e6128dea56ee922fb847d537fb60001ffeb218f5979",
+    "web/seller.html": "b3887c03e372ae2a5ab23ec1d359210839fba983b751f300d23df78bcf5a6b82",
+    "web/seller.js": "35cd81ab2af57389cd82513bc17842bdaf095ee01260619012ca3abd1a08cf5b"
+  },
+  "source_fingerprint_matches_current": true,
+  "private_record_sha256": "00891833eb5271c19554f9d36844432800e25f4922f8426537f9fdec0470cc9c",
+  "requests": [
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:42.120012+00:00",
+      "status": 200,
+      "elapsed_ms": 189.766,
+      "api_usage": null,
+      "request_reference_sha256": "2593fc7781418955374e8a148073af36e4bc1e6021b8332cf2b969eb391ee492"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:42.596685+00:00",
+      "status": 200,
+      "elapsed_ms": 141.421,
+      "api_usage": "api-usage=169/15000",
+      "request_reference_sha256": "68029267f817893fcdd34bab68d8a12dbb123cf0471ee4f738aa1ef9c5c91b20"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:42.738568+00:00",
+      "status": 404,
+      "elapsed_ms": 90.948,
+      "api_usage": "api-usage=169/15000",
+      "error_codes": [
+        "NOT_FOUND"
+      ],
+      "request_reference_sha256": "24e800d8bcdb7fd003fb74de7ba428fadb40a59cc16bf81db0ea9f091e2df465"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:43.022310+00:00",
+      "status": 200,
+      "elapsed_ms": 131.892,
+      "api_usage": "api-usage=174/15000",
+      "request_reference_sha256": "d0c582b32a7bc6482f8368692211e6d2678c69e489ab5b44b0247e827ff5ed7d"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:43.165457+00:00",
+      "status": 200,
+      "elapsed_ms": 102.875,
+      "api_usage": "api-usage=171/15000",
+      "request_reference_sha256": "b77160e3d7fda3dbf61fc033d8287a91e48d618eff6ba94d40a5f35ed4915f39"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:43.269197+00:00",
+      "status": 200,
+      "elapsed_ms": 119.972,
+      "api_usage": "api-usage=170/15000",
+      "request_reference_sha256": "e3d1e642587544fc5403bd9e159fe1cc2b753604be748d9a403e8d7e30351a57"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:43.668383+00:00",
+      "status": 200,
+      "elapsed_ms": 254.48,
+      "api_usage": "api-usage=171/15000",
+      "request_reference_sha256": "2ff64995cc7d0e1e04d382a89f2fbdd0198e7cf2bec72e3720ac0f3940c9e9d7"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:43.922865+00:00",
+      "status": 200,
+      "elapsed_ms": 85.959,
+      "api_usage": "api-usage=175/15000",
+      "request_reference_sha256": "a0019927462513cbdbd19414ec692d1606d790d3cd1cce3c8edda8d5d58f6b17"
+    },
+    {
+      "actor": "integration",
+      "method": "PATCH",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:44.008816+00:00",
+      "status": 400,
+      "elapsed_ms": 129.171,
+      "api_usage": "api-usage=174/15000",
+      "error_codes": [
+        "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+      ],
+      "request_reference_sha256": "242af1ae06c4f0421c44e19b1c36790a48e6c6f1c00e7b895ddbbc25eda7519b"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:44.138235+00:00",
+      "status": 200,
+      "elapsed_ms": 126.577,
+      "api_usage": "api-usage=173/15000",
+      "request_reference_sha256": "4d0c9b008796683931e48928a68dff7d2c8cb5c15d8429a665acab4e2834d490"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:44.264818+00:00",
+      "status": 200,
+      "elapsed_ms": 91.106,
+      "api_usage": "api-usage=176/15000",
+      "request_reference_sha256": "8966d7d336515e92017b6b9f63816262c0981f5dec0550c384632f3ad119f884"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:44.356668+00:00",
+      "status": 200,
+      "elapsed_ms": 105.303,
+      "api_usage": "api-usage=176/15000",
+      "request_reference_sha256": "1cc0eb9ebc0e17846ab55ffa243adced66d54d790208b626bdc14f0019496b2a"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:44.462525+00:00",
+      "status": 200,
+      "elapsed_ms": 121.507,
+      "api_usage": "api-usage=173/15000",
+      "request_reference_sha256": "a986352234d4e8a1e3fdb17a9538ead1f43c280117fc6079959a2c5da039c2c8"
+    },
+    {
+      "actor": "integration",
+      "method": "DELETE",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:44.583863+00:00",
+      "status": 400,
+      "elapsed_ms": 138.289,
+      "api_usage": "api-usage=173/15000",
+      "error_codes": [
+        "INSUFFICIENT_ACCESS_OR_READONLY"
+      ],
+      "request_reference_sha256": "e3695b025d37fdb147de649faa4178aecc8adf5d5eacc35ba00a82779ba155d8"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:44.721763+00:00",
+      "status": 200,
+      "elapsed_ms": 109.812,
+      "api_usage": "api-usage=173/15000",
+      "request_reference_sha256": "0fcb8fc409b2aa783c2f8e8b9aae5cf982bb4fb763d0fdcb4bcd1415e4717cc9"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:44.831754+00:00",
+      "status": 200,
+      "elapsed_ms": 151.746,
+      "api_usage": "api-usage=174/15000",
+      "request_reference_sha256": "718705522f044d1e9aadd822aed8b1b6649ac0d348de4e73348de59b61cd5fd4"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:44.985079+00:00",
+      "status": 200,
+      "elapsed_ms": 118.453,
+      "api_usage": "api-usage=175/15000",
+      "request_reference_sha256": "5516c223f5116ccfc5f7f73465e2a48dc4d8cfe003574bbd2021357a7d52fa6a"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:45.102898+00:00",
+      "status": 200,
+      "elapsed_ms": 99.408,
+      "api_usage": "api-usage=176/15000",
+      "request_reference_sha256": "c94371107d123cbb0e3661156d2fa24f889bea4ec148a58f66dd58abfef4e1b3"
+    },
+    {
+      "actor": "integration",
+      "method": "PATCH",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:45.202589+00:00",
+      "status": 400,
+      "elapsed_ms": 82.112,
+      "api_usage": "api-usage=177/15000",
+      "error_codes": [
+        "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+      ],
+      "request_reference_sha256": "e113e985b55c97c281aa2b62771aeaf858434061d6b427a5468ab8dbc1adb24c"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:45.284759+00:00",
+      "status": 200,
+      "elapsed_ms": 101.89,
+      "api_usage": "api-usage=175/15000",
+      "request_reference_sha256": "93ab93929283928b3fb69e7333fa47c9982d905c7932ae131f644fcd858819e8"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:45.387109+00:00",
+      "status": 200,
+      "elapsed_ms": 132.207,
+      "api_usage": "api-usage=174/15000",
+      "request_reference_sha256": "ffb1cb16d507f89c61de2ae3fa0831b7eb479cb8efc127fcb6eb3789398b5687"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:45.520177+00:00",
+      "status": 200,
+      "elapsed_ms": 104.997,
+      "api_usage": "api-usage=175/15000",
+      "request_reference_sha256": "1a5fa9038af7ac78552d043a05cc053ae58a8b3d8bb7bab192c797dce63a73de"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:45.624748+00:00",
+      "status": 200,
+      "elapsed_ms": 93.255,
+      "api_usage": "api-usage=178/15000",
+      "request_reference_sha256": "e0381d45b449a72a9d7903f4a965899bca28f3a4078edb43c0a6f7e0130a3ed8"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:42.309875+00:00",
+      "status": 200,
+      "elapsed_ms": 140.14,
+      "api_usage": null,
+      "request_reference_sha256": "747b1a4e37e476f78dd334c0690158e636090358493014771253c94692541adb"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:42.450136+00:00",
+      "status": 200,
+      "elapsed_ms": 145.664,
+      "api_usage": "api-usage=169/15000",
+      "request_reference_sha256": "e7c5bbba5d86f830b421aa531cf6ec5f11b03fb17d6052ea1394ee8c634a0440"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:42.828636+00:00",
+      "status": 200,
+      "elapsed_ms": 110.102,
+      "api_usage": "api-usage=170/15000",
+      "request_reference_sha256": "5f7b29c46360761ece4a2f13116ff3f19776a2e5b61df50dffd7e1e9e1cc8e68"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:42.939750+00:00",
+      "status": 404,
+      "elapsed_ms": 82.398,
+      "api_usage": "api-usage=172/15000",
+      "error_codes": [
+        "NOT_FOUND"
+      ],
+      "request_reference_sha256": "afb55028894f5b9a9e4b6a7ac6c0e80ed635010787714fd42276664ec03cac0d"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:55:45.718198+00:00",
+      "status": 200,
+      "elapsed_ms": 121.072,
+      "api_usage": "api-usage=174/15000",
+      "request_reference_sha256": "ca473fcc9156e1853b14bd59873560ea3b9cd25081adfc1aa6bd01e21cb58c76"
+    },
+    {
+      "actor": "administrator",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:41.803870+00:00",
+      "status": 200,
+      "elapsed_ms": 188.802,
+      "api_usage": null,
+      "request_reference_sha256": "f0bc0c2d533caed5bb89f12bb132e45dabaa1d2ca23519d68b9fa0aa9d6f8e97"
+    },
+    {
+      "actor": "administrator",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:41.991981+00:00",
+      "status": 200,
+      "elapsed_ms": 127.768,
+      "api_usage": "api-usage=170/15000",
+      "request_reference_sha256": "01206eade080078e9d05402a69d385c9a2f9b99006569aac35b8e29b6fefa6be"
+    },
+    {
+      "actor": "administrator",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:43.388738+00:00",
+      "status": 200,
+      "elapsed_ms": 119.7,
+      "api_usage": "api-usage=169/15000",
+      "request_reference_sha256": "451c36bf9dcf2e98df31ec44d0eb13c624d89a3a237b15abd7c60caeee343de8"
+    },
+    {
+      "actor": "administrator",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:43.508947+00:00",
+      "status": 200,
+      "elapsed_ms": 158.795,
+      "api_usage": "api-usage=170/15000",
+      "request_reference_sha256": "b7400897714229d64dfb94a94931576356fb3c45b2f2010316bd52de914dd3f7"
+    },
+    {
+      "actor": "administrator",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:45.839220+00:00",
+      "status": 200,
+      "elapsed_ms": 120.202,
+      "api_usage": "api-usage=175/15000",
+      "request_reference_sha256": "80f72386a5a4b96e66e2addb31fd6a65c96970043132ba94d0694e664e0f0994"
+    },
+    {
+      "actor": "administrator",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:55:45.959048+00:00",
+      "status": 200,
+      "elapsed_ms": 91.313,
+      "api_usage": "api-usage=176/15000",
+      "request_reference_sha256": "8980f57cda4e3ecb8babeee75cb94fbaf1d811813ae0fa34aeaa6a2d1cc7d672"
+    }
+  ]
+}

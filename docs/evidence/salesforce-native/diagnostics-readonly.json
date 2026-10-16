@@ -1,0 +1,103 @@
+{
+  "provenance": "native_salesforce_read_only_diagnostics",
+  "private_summary_sha256": "ddf6c5e4ca6ed99f4ebb49ee8d5dd8c5c26f325e60ae7f37479dd2ff7ae86c4a",
+  "environment_verified": true,
+  "administrator_view_all_data": true,
+  "roles": {
+    "administrator": {
+      "identity_verified": true,
+      "schema_status": 200,
+      "permissions": {
+        "createable": true,
+        "updateable": true,
+        "deletable": true,
+        "queryable": true
+      },
+      "schema_sha256": "ef709d231ba18b0944a7c3183ef15dcb5060dde1d28a572e3a40251299c3bbed"
+    },
+    "integration": {
+      "identity_verified": true,
+      "schema_status": 200,
+      "permissions": {
+        "createable": true,
+        "updateable": false,
+        "deletable": false,
+        "queryable": true
+      },
+      "schema_sha256": "e50a0cf418290549ff6de424676aa11cefb217c527894d780b766a99510d8c1b"
+    },
+    "reviewer": {
+      "identity_verified": true,
+      "schema_status": 200,
+      "permissions": {
+        "createable": false,
+        "updateable": true,
+        "deletable": false,
+        "queryable": true
+      },
+      "schema_sha256": "82a050aec85b4701830a3d7890645210943f5d4d17d058b2dd59cb23c6b3a427"
+    }
+  },
+  "queries": {
+    "organization": {
+      "status": 200,
+      "records": 1
+    },
+    "records": {
+      "status": 200,
+      "records": 1
+    },
+    "triggers": {
+      "status": 200,
+      "records": 0,
+      "details": []
+    },
+    "active_flows": {
+      "status": 200,
+      "records": 0,
+      "details": []
+    },
+    "validation_rules": {
+      "status": 200,
+      "records": 3,
+      "details": [
+        {
+          "ValidationName": "Approved_Content_Is_Immutable",
+          "Active": true
+        },
+        {
+          "ValidationName": "Required_Review_Content",
+          "Active": true
+        },
+        {
+          "ValidationName": "Synthetic_Mapping_Required",
+          "Active": true
+        }
+      ]
+    },
+    "record_types": {
+      "status": 200,
+      "records": 0
+    },
+    "global_ids": {
+      "status": 200,
+      "records": 1
+    },
+    "admin_global_access": {
+      "status": 200,
+      "records": 1
+    },
+    "debug_logs": {
+      "status": 200,
+      "records": 0
+    }
+  },
+  "existing_review_count": 1,
+  "existing_review_statuses": [
+    "Reviewed"
+  ],
+  "historical_response_message_available": false,
+  "historical_debug_log_available": false,
+  "historical_generic_rejection_cause": "not_established",
+  "business_writes_performed_by_diagnostics": false
+}

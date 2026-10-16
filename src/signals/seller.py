@@ -333,7 +333,6 @@ class Workbench:
             if row["state"] == "delivered":
                 return json.loads(row["receipt"])
             run = self.get_run(c, row["run_id"])
-            self.current(c, run)
             payload = json.loads(row["payload"])
             c.execute("UPDATE seller_actions SET attempts=attempts+1 WHERE id=?", (key,))
             try:
@@ -341,6 +340,9 @@ class Workbench:
                                   headers={"Authorization": "Bearer " + token}) as client:
                     response = client.get(url + "/seller/receipts/" + key)
                     if response.status_code == 404:
+                        # A historical receipt records an already committed effect.
+                        # Only a new effect requires current evidence/consent authority.
+                        self.current(c, run)
                         response = client.post(url + "/seller/tasks/" + key, json=payload)
                     response.raise_for_status()
                     receipt = response.json()
@@ -351,6 +353,8 @@ class Workbench:
                 self.audit(c, "action_delivered", key, actor, receipt)
                 return receipt
             except (httpx.HTTPError, Refused, ValueError) as exc:
+                if isinstance(exc, Refused) and str(exc) != "remote_receipt_conflict":
+                    raise
                 detail = type(exc).__name__
                 c.execute("UPDATE seller_actions SET state='retry',detail=? WHERE id=?", (detail, key))
                 self.audit(c, "delivery_deferred", key, actor, {"reason": detail})

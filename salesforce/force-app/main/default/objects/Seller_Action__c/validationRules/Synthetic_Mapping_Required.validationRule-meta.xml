@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Synthetic_Mapping_Required</fullName>
+  <active>true</active>
+  <errorConditionFormula>AND(ISNEW(), OR(ISBLANK(Synthetic_Account__c), ISBLANK(Proposed_User__c), NOT(Synthetic_Account__r.Active__c), NOT(Synthetic_Account__r.Synthetic__c), NOT(Proposed_User__r.IsActive), Brand__c &lt;&gt; Synthetic_Account__r.Brand__c, Brand__c &amp; ":" &amp; Account_Key__c &lt;&gt; Synthetic_Account__r.Account_Key__c, Proposed_User__c &lt;&gt; Synthetic_Account__r.Approved_Owner__c))</errorConditionFormula>
+  <errorMessage>Only an active matching synthetic account and approved active user can receive this review.</errorMessage>
+</ValidationRule>
