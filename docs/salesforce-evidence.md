@@ -18,7 +18,7 @@ The current acceptance runner uses a handwritten proposal to isolate delivery co
 - The isolated Developer Edition org, deployed metadata, separate identities, synthetic registry and native preflight are established. Do not repeat that setup.
 - The owner approved the bounded correction. The [execution history](salesforce-finish-review.md) and [native records](evidence/salesforce-native/README.md) show the 35-request attempt, failed 19-request continuation and successful 34-request continuation. One fresh review was created; no additional POST occurred in either continuation.
 - The API delivery/security matrix is complete across those stages. Native Salesforce UI screenshots and a fresh model-to-Salesforce run are not supplied or claimed. The original 23-request failure remains a failed record.
-- GitHub publication and hosted CI remain pending explicit publication approval.
+- The verified candidate has been published on `feat/salesforce-native-acceptance` as draft [PR #3](https://github.com/rlbsem/customer-signal-activation/pull/3), but is not merged into `main`. Windows and Ubuntu hosted CI each passed 209 tests at commit `1e12470`. Subsequent documentation commits require their own CI verification.
 
 Use `scripts/export_salesforce_evidence.py --input <private-run>/verification.json --output <new-evidence-directory>` to create allowlisted derivatives. It hashes organization/request references, excludes raw bodies/config/credentials, retains the original status and source fingerprints, and refuses an incomplete or stale full-acceptance pass. Historical preflight records explicitly disclose a fingerprint mismatch instead of pretending to validate current source. Private `.local` records and backups stay intact.
 
