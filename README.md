@@ -35,6 +35,12 @@ The live regression comparison uses **60 distinct synthetic scenarios and two se
 The executed synthetic demonstration has **120 accounts and 1,070 source events**. It produces **$55,300.00 allocated cash**, 80 reconciled CRM projections and 40 eligible cash-conversion records. Decisions include 10 qualified, 20 nurture, 30 customer and 60 hold outcomes. Open qualified opportunities do not manufacture cash; exclusions remain inspectable.
 <!-- executed-result:end -->
 
+## Engineering decisions tested against real failures
+
+- **I did not equate a Salesforce error with proof of permission.** A reviewer-create probe returned `CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY`, but the exact vendor cause was not established. I kept that code out of the permission-denial classification and required independently checked CRUD/FLS plus before-and-after proof that no unauthorized record was created. [Investigation and acceptance correction](docs/salesforce-finish-review.md).
+- **I changed the comparison when read-only requests changed the evidence.** A continuation failed because successive GETs updated `LastViewedDate` and `LastReferencedDate`. The corrected SOQL comparison checks business content and modification-audit fields rather than read-observation timestamps. Earlier failures remain published; final acceptance passed **across recorded stages**, not in one uninterrupted run. [Native execution record](docs/evidence/salesforce-native/README.md).
+- **I did not call an AI draft safe just because its rubric passed.** The grounded workflow scored 120/120 on defined regression checks, but a focused review found unsupported claims about support-team availability and escalation. Those drafts remain inspectable, and the seller must verify, edit or reject unsupported operational claims before approval. [Source-support finding](docs/seller-review-notes.md).
+
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"background":"#10101D","primaryColor":"#2A2A3D","primaryTextColor":"#F0F0FF","primaryBorderColor":"#7C7CAF","lineColor":"#B8B8FF","textColor":"#F0F0FF","secondaryColor":"#181825","tertiaryColor":"#2E2E45","fontFamily":"IBM Plex Sans, Arial, sans-serif","fontSize":"15px","edgeLabelBackground":"#10101D"}}}%%
 flowchart TB
