@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--evidence-dir", default="docs/evidence/salesforce-local/reviewer-create-fix")
+    parser.add_argument("--presentation-refresh", help="Explicit screenshot replacement record; historical bytes remain checked")
     args = parser.parse_args()
     os.chdir(ROOT)
     output = (ROOT / args.evidence_dir).resolve()
@@ -35,9 +36,25 @@ def main():
     env.pop("SIGNALS_SCREENSHOT", None)
     env.pop("SELLER_SCREENSHOT", None)
     baseline = json.loads((ROOT / "docs/evidence/salesforce-local/reviewer-create-fix/existing-evidence-sha256.json").read_text())
-    for path, expected in baseline.items():
-        if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
-            raise RuntimeError("Prior evidence changed: " + path)
+    presentation = {}
+    if args.presentation_refresh:
+        presentation = json.loads((ROOT / args.presentation_refresh).read_text(encoding="utf-8"))["screenshots"]
+        allowed = {"docs/images/browser-proof.png": "docs/images/archive/acceptance-browser-proof.png",
+                   "docs/images/seller-brief.jpg": "docs/images/archive/acceptance-seller-brief.jpg"}
+        if set(presentation) != set(allowed) or any(
+                entry["archived_path"] != allowed[path] or entry["original_sha256"] != baseline[path]
+                for path, entry in presentation.items()):
+            raise RuntimeError("Only the two explicitly archived presentation assets can be refreshed")
+
+    def preserved_evidence():
+        for path, expected in baseline.items():
+            archived = presentation.get(path, {}).get("archived_path", path)
+            if hashlib.sha256((ROOT / archived).read_bytes()).hexdigest() != expected:
+                raise RuntimeError("Prior evidence changed: " + path)
+        for path, entry in presentation.items():
+            if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != entry["current_sha256"]:
+                raise RuntimeError("Refreshed screenshot changed: " + path)
+    preserved_evidence()
 
     def source_hashes():
         return {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in files()
@@ -79,15 +96,14 @@ def main():
             if not resolved.exists() and resolved != output / "verification.json":
                 raise RuntimeError(f"Broken local link in {path.relative_to(ROOT)}: {target}")
             paths_checked += 1
-    for path, expected in baseline.items():
-        if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
-            raise RuntimeError("Prior evidence changed during verification: " + path)
+    preserved_evidence()
     record = {"provenance": "local_contract_emulation_not_salesforce", "executed_utc": datetime.now(timezone.utc).isoformat(),
               "python": platform.python_version(), "tests": {k: suite.get(k) for k in ("tests", "failures", "errors", "skipped", "time")},
               "salesforce_contract_cases": len(local), "commands": checks,
               "deterministic_demos_equal": True, "demo_accounts": a["accounts"], "demo_cash_cents": a["commercial"]["cash_cents"],
               "prior_evidence_files_preserved": len(baseline), "archived_seller_validation": archived,
               "preservation_baseline": "existing local evidence captured before this finishing review",
+              "presentation_refresh": presentation,
               "upstream_baseline_differences": "docs/evidence/salesforce-local/reviewer-create-fix/baseline-provenance.json",
               "markdown_paths_checked": paths_checked, "native_salesforce": "not_executed",
               "metadata_deployment": "outside_local_verifier_scope", "hosted_ci": "not_run",

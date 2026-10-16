@@ -1,0 +1,55 @@
+{
+  "captured_utc": "2026-10-16T02:21:15.563543+00:00",
+  "pages": "real local HTML/CSS/JS and HTTP APIs",
+  "inference": "preserved recorded output; no new model request",
+  "salesforce": "not accessed",
+  "recorded_application_sha256": "7f1717e371353b9e889484266f1991e7c18e58e328b2663d8388917792a8e658",
+  "intake_events": 3,
+  "local_delivered_tasks": 1,
+  "mobile_overflow": false,
+  "page_errors": [],
+  "seller_viewport": {
+    "width": 1440,
+    "height": 1269
+  },
+  "seller_bounds": {
+    "draft": {
+      "x": 753.125,
+      "y": 1104.734375,
+      "width": 636.875,
+      "height": 146
+    },
+    "receipt": {
+      "x": 753.125,
+      "y": 479.296875,
+      "width": 636.875,
+      "height": 85
+    },
+    "disclaimer": {
+      "x": 18,
+      "y": 724.5,
+      "width": 212,
+      "height": 96
+    }
+  },
+  "reviewed_draft": "exact preserved reviewer edit, applied through UI",
+  "approval_and_delivery_evidence_visible": true,
+  "image_sha256": {
+    "browser-proof.png": "8349ed06b855b5655bda3f890c4df0c5bd1c804edd04ec4ca382c994e3d23a89",
+    "seller-brief.jpg": "e7a3aad92e851ba8c408e8c097b071b0d0b697572684f4ada0e1e9a06c5ced75"
+  },
+  "screenshots": {
+    "docs/images/browser-proof.png": {
+      "archived_path": "docs/images/archive/acceptance-browser-proof.png",
+      "original_sha256": "781ad7602599ae0b652a6778d1d341656cad72c33ffe7b05457e9e8c3a76d2da",
+      "current_sha256": "8349ed06b855b5655bda3f890c4df0c5bd1c804edd04ec4ca382c994e3d23a89"
+    },
+    "docs/images/seller-brief.jpg": {
+      "archived_path": "docs/images/archive/acceptance-seller-brief.jpg",
+      "original_sha256": "df518ad71ed44f5f9506fda2202d0da3d795ec6843925b993d8172b0800382a0",
+      "current_sha256": "e7a3aad92e851ba8c408e8c097b071b0d0b697572684f4ada0e1e9a06c5ced75"
+    }
+  },
+  "historical_native_acceptance_commit": "1e12470acc33ee7e3aa0835d3fc151e82a2ef41d",
+  "seller_crop": "Genuine viewport includes approval/delivery receipt and the complete reviewed draft; questions and cautions remain below the frame"
+}

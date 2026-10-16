@@ -10,7 +10,9 @@ The browser, API, durable workflow, separate HTTP destination and dbt models all
 
 The **seller workbench** turns account inquiries and call evidence into a live LLM brief, a relevant response draft and an explicitly reviewed CRM task. It keeps source citations, current permission, account ownership and delivery receipts inspectable. All businesses and source documents are synthetic; model inference and local HTTP effects are real. This public implementation makes client-work architecture patterns—identity, enrichment, owner-safe routing, CRM state and revenue lineage—inspectable without exposing private client systems.
 
-![Executed seller workbench with a real model response](docs/images/seller-brief.jpg)
+![Updated seller workbench with recorded inference and a reviewed response](docs/images/seller-brief.jpg)
+
+Captured from the updated local UI using the preserved Qwen3-14B output and reviewer edit. No new inference was run for this viewport capture; the approval/delivery receipt is visible above the brief, while questions and cautions remain available below the draft in the running application. [Capture provenance](docs/images/ui-refresh.json).
 
 [Run the workbench](docs/seller-workbench.md) · [Inspect the model comparison](docs/evidence/seller/report.md) · [Read the preserved first evaluation](docs/evidence/seller/first-pass-report.md)
 
@@ -117,7 +119,7 @@ python -m pip install -r requirements.lock
 python -m pip install --no-deps --no-build-isolation -e .
 python -m playwright install chromium
 python scripts/demo.py --workspace work/demo --evidence work/demo-evidence
-python scripts/verify_salesforce.py --evidence-dir docs/evidence/salesforce-local/your-run
+python scripts/verify_salesforce.py --evidence-dir docs/evidence/salesforce-local/your-run --presentation-refresh docs/images/ui-refresh.json
 ```
 
 On Linux, Playwright may require `python -m playwright install --with-deps chromium`. Each demo workspace must be new; the command refuses to replace an existing database. The archive-preserving verifier runs tests including Chromium and dbt, repeats the full demonstration and compares its results. It writes separate evidence and regenerates the package manifest. For another run, supply a fresh `--evidence-dir docs/evidence/salesforce-local/your-run`. The original `scripts/verify.py` regenerates older root evidence; use the dedicated verifier for this revision.
