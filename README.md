@@ -44,6 +44,9 @@ flowchart TB
   P[Current consent] --> R
   R --> Q[Durable CRM projection]
   Q --> H[Separate HTTP destination]
+  Q --> S[Approved synthetic seller review]
+  S --> G[Salesforce-native review destination]
+  K[Environment pin, identities, field permissions, idempotency and receipt reconciliation] --> G
   F[Won opportunity to fulfillment to invoice to cash] --> A[dbt attribution and cash lineage]
   I --> A
   A --> V[Independent financial reconciliation]
@@ -57,7 +60,7 @@ flowchart TB
   classDef verified fill:#2E2E45,stroke:#81C5B0,color:#F0F0FF,stroke-width:2px
   class W,E,P,F source
   class C,I,D,A identity
-  class R,Q,O,H authority
+  class R,Q,O,H,S,G,K authority
   class V,B verified
 
 ```
