@@ -1,6 +1,6 @@
 # Finish review: reviewer-create acceptance
 
-Work is performed directly in the existing Windows project. Existing `.bak` files, deployed metadata, users, permissions and private evidence are preserved. The folder is a source distribution without `.git`; the public baseline was independently read from `rlbsem/customer-signal-activation` main at `f44134556d62129fcd20d2244f888a862c64cb89`. No GitHub write has been made.
+Work is performed directly in the existing Windows project. Existing `.bak` files, deployed metadata, users, permissions and private evidence are preserved. The folder is a source distribution without `.git`; the public baseline was independently read from `rlbsem/customer-signal-activation` main at `f44134556d62129fcd20d2244f888a862c64cb89`. Subsequently, the verified candidate was published to `feat/salesforce-native-acceptance` as draft [PR #3](https://github.com/rlbsem/customer-signal-activation/pull/3); `main` remains unchanged.
 
 ## Diagnosis
 
@@ -72,8 +72,8 @@ python scripts/run_salesforce_acceptance.py acceptance --config .local/runtime.j
 
 That command is an execution record, not an instruction to repeat writes. [Sanitized stage records](evidence/salesforce-native/README.md) retain every status, source fingerprint and the continuation's reference to the prior verification SHA-256. The completed API matrix combines experiments from two source versions; no single uninterrupted final-source run, native UI screenshot or fresh model-to-Salesforce execution is claimed. The additional unsuccessful continuation remains visible.
 
-## Publication plan — separate approval required
+## Publication record — draft PR, not merged
 
-The prepared publication adds the existing local Salesforce extension plus this correction to the current public baseline, updates README/architecture boundaries, and includes allowlisted native evidence with original failures preserved. It will use a dedicated feature branch and reviewable pull request. `.local`, CLI credential stores, databases, backups, private logs and raw diagnostics are excluded. No merge is proposed.
+The prepared publication adds the existing local Salesforce extension plus this correction to the current public baseline, updates README/architecture boundaries, and includes allowlisted native evidence with original failures preserved. It was published on a dedicated feature branch and reviewable draft pull request. `.local`, CLI credential stores, databases, backups, private logs and raw diagnostics are excluded. No merge is proposed.
 
-The scoped native API matrix is complete across the recorded stages. Final local regression, source/evidence fingerprints and the private-file exclusion scan are rerun for the publication candidate. GitHub publication still requires separate owner approval; hosted CI cannot run for these unpublished changes until publication is authorized. No merge is proposed.
+The scoped native API matrix is complete across the recorded stages. Final local regression, source/evidence fingerprints and the private-file exclusion scan are rerun for the publication candidate. The owner separately approved branch publication. Windows and Ubuntu GitHub CI passed at commit `1e12470` (209 tests each); subsequent documentation commits require their own CI verification. No merge is proposed.
