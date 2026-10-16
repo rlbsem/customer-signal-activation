@@ -4,6 +4,8 @@
 
 A multi-brand operator or B2B SaaS organization can capture the right campaign signal, associate it with the wrong account, rely on stale enrichment, route it to the wrong owner, or declare success at Closed Won without proving the resulting economic outcome. This executable system connects customer signals to verified identity, explainable fit and intent, ownership-safe CRM activation, commercial fulfillment, invoices and payment allocations—then returns eligible cash outcomes to measurement.
 
+**Engineering proof at a glance:** brand-scoped canonical identity and source authority; stateful, idempotent activation with lost-acknowledgement recovery; a restricted Salesforce-native synthetic review destination with audited approval and permission checks; invoice-to-allocated-cash reconciliation; and executed browser, model-evaluation, local CI and native Salesforce evidence. Native acceptance was completed across documented stages, not in one uninterrupted final-source run.
+
 The browser, API, durable workflow, separate HTTP destination and dbt models all execute locally. [See the generated commercial review](docs/evidence/report.md) and [individual decisions and lineage](docs/evidence/demo.json).
 
 The **seller workbench** turns account inquiries and call evidence into a live LLM brief, a relevant response draft and an explicitly reviewed CRM task. It keeps source citations, current permission, account ownership and delivery receipts inspectable. All businesses and source documents are synthetic; model inference and local HTTP effects are real. This public implementation makes client-work architecture patterns—identity, enrichment, owner-safe routing, CRM state and revenue lineage—inspectable without exposing private client systems.
