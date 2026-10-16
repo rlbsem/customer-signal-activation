@@ -4,6 +4,8 @@
 
 A multi-brand operator or B2B SaaS organization can capture the right campaign signal, associate it with the wrong account, rely on stale enrichment, route it to the wrong owner, or declare success at Closed Won without proving the resulting economic outcome. This executable system connects customer signals to verified identity, explainable fit and intent, ownership-safe CRM activation, commercial fulfillment, invoices and payment allocations—then returns eligible cash outcomes to measurement.
 
+**Engineering proof at a glance:** brand-scoped canonical identity and source authority; stateful, idempotent activation with lost-acknowledgement recovery; a restricted Salesforce-native synthetic review destination with audited approval and permission checks; invoice-to-allocated-cash reconciliation; and executed browser, model-evaluation, local CI and native Salesforce evidence. Native acceptance was completed across documented stages, not in one uninterrupted final-source run.
+
 The browser, API, durable workflow, separate HTTP destination and dbt models all execute locally. [See the generated commercial review](docs/evidence/report.md) and [individual decisions and lineage](docs/evidence/demo.json).
 
 The **seller workbench** turns account inquiries and call evidence into a live LLM brief, a relevant response draft and an explicitly reviewed CRM task. It keeps source citations, current permission, account ownership and delivery receipts inspectable. All businesses and source documents are synthetic; model inference and local HTTP effects are real. This public implementation makes client-work architecture patterns—identity, enrichment, owner-safe routing, CRM state and revenue lineage—inspectable without exposing private client systems.
@@ -11,6 +13,17 @@ The **seller workbench** turns account inquiries and call evidence into a live L
 ![Executed seller workbench with a real model response](docs/images/seller-brief.jpg)
 
 [Run the workbench](docs/seller-workbench.md) · [Inspect the model comparison](docs/evidence/seller/report.md) · [Read the preserved first evaluation](docs/evidence/seller/first-pass-report.md)
+
+### Verification boundaries
+
+| Evidence | What has executed |
+|---|---|
+| Local business workflow | Browser, HTTP destinations, recovery and independently reconciled dbt cash lineage |
+| Recorded LLM evaluation | Real Qwen3-14B inference on the published synthetic regression suite; independent usefulness review remains pending |
+| Native Salesforce preflight | Passed against an explicitly pinned Developer Edition org with separate identities; authenticated environment, schema and effective permissions verified |
+| Native Salesforce delivery/security matrix | **Completed across recorded stages.** One fresh synthetic review; lost-acknowledgement recovery, duplicate/mapping rejection, restricted mutations and exact read-back. A 35-request attempt and 34-request continuation supply the passing experiments; intermediate failures remain visible |
+
+[Native evidence and investigation](docs/evidence/salesforce-native/README.md) · [Correction and execution history](docs/salesforce-finish-review.md). A passing preflight is separate from native delivery acceptance, and a passing local emulator is not vendor execution. Native UI screenshots and a combined fresh-inference-to-Salesforce run are not claimed.
 
 <!-- seller-result:start -->
 The live regression comparison uses **60 distinct synthetic scenarios and two seeds**. The grounded workflow passes **120/120 proposal-quality checks**, compared with 81/120 for the simple LLM and 60/120 for the governed template. Grounded inference has a measured median of 3.76 seconds and p95 of 4.76 seconds on the recorded workstation, with 0 critical rubric failures. The first failed evaluation is retained. These are finite regression results, not independently validated seller usefulness or commercial uplift.
@@ -64,7 +77,7 @@ flowchart TB
 | Attribution doubles invoices across payments | dbt preserves payment-allocation grain and aggregates invoice values separately; a Python traversal checks every lineage row |
 | Cash feedback lacks an eligible click or permission | The allocation remains in financial reporting with a named conversion exclusion |
 
-The local CRM and conversion interfaces exercise real HTTP and persisted effects. Vendor integrations and cloud warehouse execution are outside this implementation; see the [operating boundaries](docs/limitations.md).
+The original CRM and conversion destinations exercise real local HTTP and persisted effects. The separate Salesforce adapter has executed synthetic review delivery and security acceptance in an isolated Developer Edition org, with exact read-back and preserved failure evidence. Cloud warehouse execution is outside this implementation. See the [operating boundaries](docs/limitations.md) and [Salesforce acceptance contract](docs/salesforce-acceptance-plan.md).
 
 ## Inspect a real browser interaction
 
@@ -100,11 +113,11 @@ Activate `.venv\Scripts\Activate.ps1` on Windows, or `source .venv/bin/activate`
 python -m pip install -r requirements.lock
 python -m pip install --no-deps --no-build-isolation -e .
 python -m playwright install chromium
-python scripts/demo.py --workspace work/demo
-python scripts/verify.py
+python scripts/demo.py --workspace work/demo --evidence work/demo-evidence
+python scripts/verify_salesforce.py --evidence-dir docs/evidence/salesforce-local/your-run
 ```
 
-On Linux, Playwright may require `python -m playwright install --with-deps chromium`. Each demo workspace must be new; the command refuses to replace an existing database. Verification chooses its own fresh workspace, runs tests including Chromium and dbt, repeats the full demonstration and compares its results. It generates source-bound evidence and a package manifest.
+On Linux, Playwright may require `python -m playwright install --with-deps chromium`. Each demo workspace must be new; the command refuses to replace an existing database. The archive-preserving verifier runs tests including Chromium and dbt, repeats the full demonstration and compares its results. It writes separate evidence and regenerates the package manifest. For another run, supply a fresh `--evidence-dir docs/evidence/salesforce-local/your-run`. The original `scripts/verify.py` regenerates older root evidence; use the dedicated verifier for this revision.
 
 To open the browser intake independently, run `python scripts/serve.py --workspace work/intake` and visit the printed loopback URL with optional `utm_source`, `utm_medium`, `utm_campaign` and `gclid` parameters. No enterprise credentials are exposed to JavaScript. The page intentionally records intent without collecting personal contact details; a verified CRM association is a separate server-side event. [API contracts and operating commands](docs/operations.md).
 
@@ -124,3 +137,7 @@ The bounded local system uses SQLite transactions for durable admission and deli
 First observed campaign touch is descriptive attribution, not causal lift or a propensity model. Cash means positive payment allocations against completed fulfillments and won opportunities; refunds, credits, FX, partial fulfillment completion and revenue recognition are outside this version. The conversion window is an explicit synthetic 90-day policy, not an assertion about every ad platform. The local execution lane is serialized and is not a distributed throughput benchmark. [Full claim boundary](docs/limitations.md).
 
 Source contract v2 names the commercial action `contact_sales` and the downstream object `fulfillment`. Use fresh workspaces for this release; earlier contract data is rejected rather than silently reinterpreted. [Contract and upgrade boundary](docs/operations.md).
+
+## Salesforce review acceptance
+
+A local extension adds pinned sandbox/Developer Edition approval, a synthetic account registry, scoped review-record metadata, durable bounded delivery and an operator review workflow. Metadata is deployed, native preflight has passed and the scoped delivery/security matrix has completed across recorded stages. [Implementation and native acceptance plan](docs/salesforce-acceptance-plan.md) · [Native execution boundaries](docs/evidence/salesforce-native/README.md). The original 23-request failure is retained. The approved correction created one additional review and proved recovery/uniqueness; a guarded continuation completed the remaining restrictions without another POST. The evidence identifies inherited experiments and source versions rather than presenting the history as one uninterrupted pass. No combined fresh-model-to-Salesforce run or commercial outcome is claimed. Prior inference and financial evidence is preserved.

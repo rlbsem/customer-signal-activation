@@ -1,0 +1,359 @@
+{
+  "status": "FAILED",
+  "provenance": "native_salesforce",
+  "started_utc": "2026-10-16T00:20:32.003267+00:00",
+  "finished_utc": "2026-10-16T00:20:36.939174+00:00",
+  "error": "reviewer_create_permission_denial_not_established",
+  "checks": {
+    "preflight": {
+      "environment_pin_verified": true,
+      "environment": "developer_edition",
+      "organization_type": "Developer Edition",
+      "schema_sha256": "00926c74e98c68283285b182f9c7d6020e80c2de44476db47dba67a8c2cf2aa6",
+      "create_only": true,
+      "unique_external_key": true,
+      "administrator_attestation": {
+        "administrator_environment_verified": true,
+        "organization_reference_sha256": "cb1c5a934be0510b5f29095703e3c5b49d85962e944fd1386cb9b2845d6fa181",
+        "organization_type": "Developer Edition",
+        "environment": "developer_edition"
+      },
+      "reviewer_schema_sha256": "c32ff90ca0ef1e9b711d9adecb2a9f92d80f1eee6ac1815909e472e39e3f7b57"
+    }
+  },
+  "completed_experiments": {},
+  "source_sha256": {
+    "pyproject.toml": "d451b91dde87db90b02bea74ad99f25d2c5544f6ec1d46b5ed6cdd7a4d83c8ab",
+    "requirements.lock": "8604af350bb2a8af77255da49de8773641d30225f63a35cd4e2c76e5676fa166",
+    "salesforce/force-app/main/default/layouts/Seller_Action__c-Synthetic Seller Review.layout-meta.xml": "dbbfbd6d7be523e2105f7ecfa11d140813561bef6f847dcb7f554f524246148d",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Account_Key__c.field-meta.xml": "6b76e873e3e27c53df1297703b151c9564ce77979604ac3aeac1afada552f5fa",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Action_Key__c.field-meta.xml": "99eeb6a284042801e5398fd4c1c9b21927747912484c016b1c568af8aaa47a60",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Brand__c.field-meta.xml": "a208eb43b294e7c2a389d9e9fdffb1e937196b3b28d5d4b666315324fa27430c",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Draft__c.field-meta.xml": "771d5cd2401a8d9d733b5d28a6073341192999710f50d87d19c5902f2bad4622",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Mapping_Hash__c.field-meta.xml": "daaaaa2711f821c048f4eba09504fa6ab3051a5a36202ab21e15b045c362c8e0",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Payload__c.field-meta.xml": "eb5ef32fb7921e87dd3abfae46f8861db0c7e794ee30a6e6cec2a7462199817f",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Payload_Hash__c.field-meta.xml": "87beb0d949656c37b887c1ebf705c0a5ce1781afdac1014b7d9159dcf179ccc0",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Proposed_Action__c.field-meta.xml": "4cf7fd5f050e403b4908e4bbb32443fd3891f5c39489c186a7a83ce7e480041a",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Proposed_Owner__c.field-meta.xml": "c905c0c58ea71a4dbe33dd3d1ea73e3de639cd07669cff29c1286af01c51635d",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Proposed_User__c.field-meta.xml": "2f48bb7c86b6bbb4bd6c970e288fe5f8788ad6a72553b576bd0f332ba477ba2b",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Review_Notice__c.field-meta.xml": "5d20709d6b099dd53973dc4392e4c2fff0df08125fab5dd4bbab6ea7ccb4d6ed",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Review_Status__c.field-meta.xml": "b16bffe877c6a0662dd8eeaa1daa7c0e72428ceed5b7fb8472ef266d43c138ad",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Reviewer_Notes__c.field-meta.xml": "90d73b2d583bbe523b22da125e79d39894c14ff146d360d30d0a96fe6744b115",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Subject__c.field-meta.xml": "6fca82d124dae35168a139b3d9fa18e1dc26f3672d3de768266dba6bb199f945",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/fields/Synthetic_Account__c.field-meta.xml": "cea5873acbda76178d190222f4ea81ff721c432e1d470d9a9fea12de7501e31b",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/listViews/Synthetic_Reviews.listView-meta.xml": "b65142f4644b71c264e99b0b7663117f39bd8ddea00fd5d788962a823af79cda",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/Seller_Action__c.object-meta.xml": "6dc42d279bba72ee1469a05eb5922d5327ad9b763c44bb86e03473ed04bb90e4",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/validationRules/Approved_Content_Is_Immutable.validationRule-meta.xml": "61666bd0e94ca925b39959ee99cc21671eebcd2e2220ff63a3baa5b54c95bfbb",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/validationRules/Required_Review_Content.validationRule-meta.xml": "0b168bac2f823d54e77b17aa8d9c83d97010ae25a90765b64d3e64996053b104",
+    "salesforce/force-app/main/default/objects/Seller_Action__c/validationRules/Synthetic_Mapping_Required.validationRule-meta.xml": "84d662e00e3b75615a1e9eb8778abea16cda33d365d2b47882136a91c7159b92",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Account_Key__c.field-meta.xml": "c84ea2319aff73c6e2610bb3e55c307dd0f8a3db163fa1f49501c9ce143cacc2",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Active__c.field-meta.xml": "2015b7a14593888b37f23b93f06abaac8d59b4b898f50fcc7f8d93bca438cd7c",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Approved_Owner__c.field-meta.xml": "15f93e1f6d62f04bf8011a5cc67aa4e29894f7cab23fa348af3426784422fc18",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Brand__c.field-meta.xml": "a208eb43b294e7c2a389d9e9fdffb1e937196b3b28d5d4b666315324fa27430c",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/fields/Synthetic__c.field-meta.xml": "09a9be4e7643d27aa5b5f6fdf2e6ebf6e0350e6707faaaa529f08000b63111c8",
+    "salesforce/force-app/main/default/objects/Synthetic_Account__c/Synthetic_Account__c.object-meta.xml": "7d51780d901df772d9183d3ca1fba43ddfd41607f7025835f6b9eedc08e9c8d4",
+    "salesforce/force-app/main/default/permissionsets/Seller_Review_Integration.permissionset-meta.xml": "a4123b80125a3127a6d805f064be2a406eceb3f07f7517945e8c3586662ad4d4",
+    "salesforce/force-app/main/default/permissionsets/Seller_Review_Reviewer.permissionset-meta.xml": "e5f81967f0b23c019ef01384c81d4450dd8b9597dc602a98b10d0c7404d6b6a4",
+    "salesforce/force-app/main/default/tabs/Seller_Action__c.tab-meta.xml": "1525775a01c7b97bdcfe7f2a1f658b92ceb80b4291b12d7169a017d5fed26529",
+    "salesforce/sfdx-project.json": "36573fd677b0e77a42b76543e5aff5a3ea43c8891846dd32c3e51a38d7f58380",
+    "scripts/demo.py": "f64f89e49d452bac259fc3f5595cb72404a08a036abc4b655bb41ba75cd4d2bf",
+    "scripts/deploy_salesforce_demo.py": "7fe29d3726245bf751b6ead809cf9f33d87fa382e5313f7f7fe95b672525e4b4",
+    "scripts/evaluate_seller.py": "0cec3cc273ca9b5a8f5a0b02010de065f049fd31a5c2dd68b355b56474864db7",
+    "scripts/export_seller_evidence.py": "1bd60bc34bbfc9dad090ed1da531295c5f9853ac9b138a69215104a4eef9c724",
+    "scripts/fetch_seller_model.py": "70e25fb91344ec30ca57936dfcc230f22f1192d8be624be1fc7d3e109dcdd56e",
+    "scripts/operate.py": "45899fa304b31fd9601a2055702d5f4f122cd604b59b01252b3a60dd553f2e2f",
+    "scripts/package.py": "15f3a797a3fe11324a75198776468152981505b25d19d7c4cd761c972a2f48eb",
+    "scripts/render_diagram.py": "28217b07d8c68482a0d187e54cb2221377293c1154c6479d8d91de2391774218",
+    "scripts/salesforce_workbench.py": "0cb593ccbfe86922c387fe939d668d07d2e4001ac885d409a266bd91655faf8f",
+    "scripts/seller.py": "4368cffb9b189f104aac46db4b0c00e16b13e4ffb9ed1c9d69b10827d1d42e4b",
+    "scripts/serve.py": "65555cbfbaa8e629eec88cdcc774b8d149c744e0c6dc05f8e9a313da6651fd4d",
+    "scripts/validate_seller_evidence.py": "91412f410ae015f622754149a0fe9bff75f1136f756005cca3cd9414e155ec0c",
+    "scripts/verify.py": "22beff98acf15c4e39cbc9a16a0cf9ea291b1c20ead833d4e8fc02688693737c",
+    "scripts/verify_salesforce.py": "c8bcf987b7b4129d95fad5d3faafb750b6fd45ce091f9135da14952c6abae2ed",
+    "src/signals/__init__.py": "7b979352be01962aebe63925eb29e99746006c1a0ddc854d67c5de2ce37ceeb6",
+    "src/signals/analytics.py": "16dfb55f6b17d7fd88e4f9b59ed353d123c07ce06d1d56edb875fc8447608f76",
+    "src/signals/api.py": "98bb10685c14609e3fa4550c06a0c99f23d7b6460e9c92a32d18a3fe66899aa0",
+    "src/signals/contracts.py": "66937dfc371d4fd0081072d3b7b7bc5f91015938cbecbec18d57d7ca105e9f32",
+    "src/signals/decision.py": "5f7ea2852891541dc3ef382b35beedd9cccb5a8a9561e24e0b82b3f21934185d",
+    "src/signals/finance.py": "5187db5cd93d80eee9978d35bcdda9f2cdc32fd338723b31e7ab3dd3a5a273b0",
+    "src/signals/fixtures.py": "ff40faf8a820d93ccc1ae21e4ab5e02bc3e726556e92369c43416367307ef2d7",
+    "src/signals/harness.py": "e5c2396ef97dca034dff53813ab734a6f01472205d2427c4041246585f5a8804",
+    "src/signals/reconcile.py": "24400eba1981d4dd05eff45c8d9f63e2cd5c5716abdb70ca8e5422f7e950108a",
+    "src/signals/remote.py": "17d90b901f98d4f3d8f17fd2b59b53062100d6b288b51c32c31012441909bf59",
+    "src/signals/salesforce_acceptance.py": "d18be1b53402bdfc78322b0e758db8bda43869d66e98345135cb8c3a9bf49995",
+    "src/signals/salesforce_contract.py": "cf356f749355ebbc60ac9b87736318cc92398ccefd71085140663d48ea856906",
+    "src/signals/salesforce_delivery.py": "46fe4c791aaa012aa5c9805a8bb490aedd0084421766895f21b54e2de4ced619",
+    "src/signals/salesforce_dispatch.py": "10225b7d0d361aa8af18627b7ec5a05d32d7536f58d834db1a2314469e9898bc",
+    "src/signals/seller.py": "9406886180e51d32cdc7d6394972edaeeee0fc57e8b5ba115522841db0d87796",
+    "src/signals/seller_analytics.py": "f6417e880cc20ff20220f30cd096216ce236de16960659a45bf1724f967ad986",
+    "src/signals/seller_api.py": "99b9b510f0587a4226db91d647d6b360b8b4a4e24394275bd94efa51d8398469",
+    "src/signals/seller_evaluation.py": "4beb873fa6cc649063f405f0c71d1a75bab7942dc26c0db411d23a1662efb950",
+    "src/signals/seller_fixtures.py": "0e0ab2ff05a2f1f3c9c72674c10a07f9979f3f939985f2367eae538800d46cfc",
+    "src/signals/store.py": "1859620b7afbd4a04044ad485c944a8ec9845ad9fcb7153c656c6895cf85cdbf",
+    "src/signals/worker.py": "8681b880e1348884a66745e4ea1a6d670e032fe36cc9fbdb65cfebb3f3dc81eb",
+    "web/index.html": "68ea9d7df1299623699d8ef202e846a433a782475569ee1f48e1740e48d7363b",
+    "web/instrumentation.js": "0562151c58fe1b7f5e025e6128dea56ee922fb847d537fb60001ffeb218f5979",
+    "web/seller.html": "b3887c03e372ae2a5ab23ec1d359210839fba983b751f300d23df78bcf5a6b82",
+    "web/seller.js": "35cd81ab2af57389cd82513bc17842bdaf095ee01260619012ca3abd1a08cf5b"
+  },
+  "source_fingerprint_matches_current": false,
+  "private_record_sha256": "79276648e9d832c7a84d659f841b6831f9b0fe216cb310e429b809aa0bc379d8",
+  "requests": [
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:32.820798+00:00",
+      "status": 200,
+      "elapsed_ms": 172.716,
+      "api_usage": null,
+      "request_reference_sha256": "a869a4b749af279e2e4598947ae96ce7df67779ae2d3bfc3ee4f71ff1a47de2e"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:32.993103+00:00",
+      "status": 200,
+      "elapsed_ms": 148.154,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "34fbaf7e68f1bd822dd9300a21ba00a6f69fe5277e289329ef686a475b89ac95"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:33.464303+00:00",
+      "status": 200,
+      "elapsed_ms": 140.917,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "8f86ca9b2a441bb14be24eaef89c4cfae197b223767d958d62c88556bda072f5"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:33.606301+00:00",
+      "status": 404,
+      "elapsed_ms": 100.326,
+      "api_usage": "api-usage=9/15000",
+      "error_codes": [
+        "NOT_FOUND"
+      ],
+      "request_reference_sha256": "9f44d47e63dcfeb1234a1d6a6883da72e4538100eedee450ea8c12ee71c1d3c2"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:35.008741+00:00",
+      "status": 404,
+      "elapsed_ms": 117.115,
+      "api_usage": "api-usage=9/15000",
+      "error_codes": [
+        "NOT_FOUND"
+      ],
+      "request_reference_sha256": "0a65ec6675f240341f108e2d0494fa4326c0c5538de399d28f61e169a4568b4d"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:35.127740+00:00",
+      "status": 404,
+      "elapsed_ms": 90.319,
+      "api_usage": "api-usage=10/15000",
+      "error_codes": [
+        "NOT_FOUND"
+      ],
+      "request_reference_sha256": "c61435ea7aef4a6ed53358de3a1b42d33fe035597a64b47b418ba8451dae8a9c"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:35.217850+00:00",
+      "status": 200,
+      "elapsed_ms": 126.563,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "1635a40d7f42084fb9e4159f27f07e89765959b4ca084bbb1554238b6b7edf0c"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:35.344425+00:00",
+      "status": 200,
+      "elapsed_ms": 107.476,
+      "api_usage": "api-usage=10/15000",
+      "request_reference_sha256": "3dc0a0e2aee9bca591fb9c7575ba4fc224efe8af6a753d20481ce474412f5378"
+    },
+    {
+      "actor": "integration",
+      "method": "POST",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:35.452034+00:00",
+      "status": 201,
+      "elapsed_ms": 263.986,
+      "api_usage": "api-usage=9/15000",
+      "fault": "client_discarded_success_response",
+      "transport_outcome": "unknown",
+      "request_reference_sha256": "c494b2e43221caa743ff3ef54c7b750b9dbfdc55125e4062e10b6e50a0d6e3d6"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:35.729976+00:00",
+      "status": 200,
+      "elapsed_ms": 152.133,
+      "api_usage": "api-usage=10/15000",
+      "request_reference_sha256": "ed38b26f09bd9343bec1890c4e10338380f78afe3c628dd41bfe7fc7c9f147c0"
+    },
+    {
+      "actor": "integration",
+      "method": "POST",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:35.899358+00:00",
+      "status": 400,
+      "elapsed_ms": 183.912,
+      "api_usage": "api-usage=9/15000",
+      "error_codes": [
+        "DUPLICATE_VALUE"
+      ],
+      "request_reference_sha256": "883748601836040967d4a01879d65f5229d87f644026131aabeecdc567b0bc69"
+    },
+    {
+      "actor": "integration",
+      "method": "POST",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:36.083375+00:00",
+      "status": 400,
+      "elapsed_ms": 162.523,
+      "api_usage": "api-usage=9/15000",
+      "error_codes": [
+        "FIELD_CUSTOM_VALIDATION_EXCEPTION"
+      ],
+      "request_reference_sha256": "2ed8a3ed020efbedbacfba7dbf1961d03d3cc39364b0e2995a9de5fd88f74a67"
+    },
+    {
+      "actor": "integration",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:36.245360+00:00",
+      "status": 200,
+      "elapsed_ms": 136.808,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "ce99c319c0d8fd4defc31910e0eabfccc0443f1793150b193e8a3f646798aa19"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:33.141292+00:00",
+      "status": 200,
+      "elapsed_ms": 189.282,
+      "api_usage": null,
+      "request_reference_sha256": "65e2cd2abf2e8d1fecb9c85113e1b85778d99e81efce2c935282799a246f7eb2"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:33.331296+00:00",
+      "status": 200,
+      "elapsed_ms": 133.518,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "381e977866e8dd50fff1b853605159c692727469c3ebb217983ec8a82bd768ea"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:33.706303+00:00",
+      "status": 200,
+      "elapsed_ms": 154.6,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "fb006b368a5ed6cea3c9820db51f10b45f47967893e8099281556dd05eb13ca4"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:33.861310+00:00",
+      "status": 404,
+      "elapsed_ms": 72.548,
+      "api_usage": "api-usage=10/15000",
+      "error_codes": [
+        "NOT_FOUND"
+      ],
+      "request_reference_sha256": "246b769475fbd9a1bc02f929f7d5214fa38bd6be9aeb887f09da04973d11dc1b"
+    },
+    {
+      "actor": "reviewer",
+      "method": "GET",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:36.382366+00:00",
+      "status": 200,
+      "elapsed_ms": 136.22,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "e232197c9f36f1c2fe29b70114c720013d015db9f670ca883d8d1bdfc67bcce9"
+    },
+    {
+      "actor": "reviewer",
+      "method": "PATCH",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:36.518636+00:00",
+      "status": 204,
+      "elapsed_ms": 213.499,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "01b9156e9fc7883b4f46b4aafb2cf23c1b568b52198d3e162046e83dd6c968a9"
+    },
+    {
+      "actor": "reviewer",
+      "method": "PATCH",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:36.731777+00:00",
+      "status": 400,
+      "elapsed_ms": 90.29,
+      "api_usage": "api-usage=10/15000",
+      "error_codes": [
+        "INVALID_FIELD_FOR_INSERT_UPDATE"
+      ],
+      "request_reference_sha256": "614f6ab6f0ae5feb24b8191931dd38c14f29faca9205a85f78d4b997cb24fda0"
+    },
+    {
+      "actor": "reviewer",
+      "method": "POST",
+      "resource": "review",
+      "started_utc": "2026-10-16T00:20:36.822845+00:00",
+      "status": 400,
+      "elapsed_ms": 116.462,
+      "api_usage": "api-usage=10/15000",
+      "error_codes": [
+        "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY"
+      ],
+      "request_reference_sha256": "086b7a39cc56b9fdeda78b9f818167c73ab85ff901da223d617180383156ff87"
+    },
+    {
+      "actor": "administrator",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:32.474900+00:00",
+      "status": 200,
+      "elapsed_ms": 220.587,
+      "api_usage": null,
+      "request_reference_sha256": "006d165de2c4f0e6d68bf608edb44e8e59fa2b50be6f1851d55e9d25e1e1929d"
+    },
+    {
+      "actor": "administrator",
+      "method": "GET",
+      "resource": "other",
+      "started_utc": "2026-10-16T00:20:32.695171+00:00",
+      "status": 200,
+      "elapsed_ms": 125.206,
+      "api_usage": "api-usage=9/15000",
+      "request_reference_sha256": "9e8bcc85daa654b3c821072e6d9c2224a01250d746f32a307321122e16a1f11f"
+    }
+  ]
+}

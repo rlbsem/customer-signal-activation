@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Required_Review_Content</fullName>
+  <active>true</active>
+  <errorConditionFormula>AND(ISNEW(), OR(NOT(ISPICKVAL(Review_Status__c, "Pending")),ISBLANK(Action_Key__c),ISBLANK(Payload_Hash__c),ISBLANK(Brand__c),ISBLANK(Account_Key__c),ISBLANK(Proposed_Owner__c),ISBLANK(Mapping_Hash__c),ISBLANK(Subject__c),ISBLANK(Proposed_Action__c),ISBLANK(Review_Notice__c),ISBLANK(Payload__c),ISBLANK(Draft__c)))</errorConditionFormula>
+  <errorMessage>The complete approved synthetic review content is required.</errorMessage>
+</ValidationRule>

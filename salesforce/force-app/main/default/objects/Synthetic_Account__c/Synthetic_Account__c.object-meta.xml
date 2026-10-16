@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+  <deploymentStatus>Deployed</deploymentStatus>
+  <description>Isolated synthetic portfolio demonstration only.</description>
+  <enableActivities>false</enableActivities>
+  <enableReports>true</enableReports>
+  <label>Synthetic Account</label>
+  <nameField>
+    <label>Synthetic Account Name</label>
+    <type>Text</type>
+  </nameField>
+  <pluralLabel>Synthetic Accounts</pluralLabel>
+  <sharingModel>Read</sharingModel>
+</CustomObject>

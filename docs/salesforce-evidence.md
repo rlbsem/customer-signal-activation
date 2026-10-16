@@ -1,0 +1,25 @@
+# Salesforce evidence procedure
+
+Local results live in [salesforce-local](evidence/salesforce-local/README.md). They establish contract behavior only. Keep native results separate and retain failed runs; never replace prior genuine LLM or financial evidence.
+
+## Native capture
+
+1. Preserve the exact code/package manifest and dependency versions used. The native runner writes source/metadata SHA-256 fingerprints, actual UTC start/end times and explicit `provenance=native_salesforce`. Its CLI uses only HTTPS native clients and has no switch that relabels an emulator as native.
+2. Run preflight and acceptance into fresh `.local/` directories as documented. Preserve the owner deployment validation privately. Do not use the owner identity for integration/reviewer acceptance. Identity, environment and effective permission mismatches must fail before writes.
+3. Inspect `verification.json`: overall PASSED, every required experiment present, one matching native record, independent permission/effect proofs with accurately classified rejections and final exact read-back. The telemetry allowlist retains method, resource category, status, elapsed milliseconds, Sforce-Limit-Info and X-SFDC-Request-Id only when returned. Missing request IDs are null; none are invented. This is measured API activity, not billed cloud consumption or a capacity SLA.
+4. Verify the final record with the reviewer in Salesforce. Capture the actual list/detail layout, synthetic notice, source-linked approved JSON, matching local account/proposed user, review status/notes and a corresponding workbench receipt. Confirm the limited reviewer can edit status but cannot edit approved content, and the integration cannot update/delete. Record each observed result and limitations. Never use a locally drawn Salesforce screen as native evidence.
+5. Redact org/instance URL, usernames/emails, personal details, setup pages and address-bar identifiers from screenshots. Capture only synthetic data. The runner hashes record/org references; private databases and config may still contain native IDs and must remain private. Raw CLI JSON, tokens, local databases and full HTTP responses are excluded from public packaging.
+6. Prepare an allowlisted native evidence folder containing the sanitized verification record, metadata/dependency fingerprints, selected genuine screenshots and a short result README. Copy no `private-runtime` directory. Inspect each file for credentials/account details and compare the declared source hashes with the tested implementation. Regenerate the package manifest after copying. GitHub publication still requires the owner's approval.
+
+The current acceptance runner uses a handwritten proposal to isolate delivery correctness from inference. Its config and UI disclose that fact. A later employer-facing combined workflow can use the existing local Qwen3-14B server through the native launcher, with new inference provenance and human approval; that inference must actually run before claiming a new combined model-to-Salesforce execution. Existing archived model results remain independently inspectable.
+
+## Current execution and remaining evidence limits
+
+- The isolated Developer Edition org, deployed metadata, separate identities, synthetic registry and native preflight are established. Do not repeat that setup.
+- The owner approved the bounded correction. The [execution history](salesforce-finish-review.md) and [native records](evidence/salesforce-native/README.md) show the 35-request attempt, failed 19-request continuation and successful 34-request continuation. One fresh review was created; no additional POST occurred in either continuation.
+- The API delivery/security matrix is complete across those stages. Native Salesforce UI screenshots and a fresh model-to-Salesforce run are not supplied or claimed. The original 23-request failure remains a failed record.
+- The verified candidate has been published on `feat/salesforce-native-acceptance` as draft [PR #3](https://github.com/rlbsem/customer-signal-activation/pull/3), but is not merged into `main`. Windows and Ubuntu hosted CI each passed 209 tests at commit `1e12470`. Subsequent documentation commits require their own CI verification.
+
+Use `scripts/export_salesforce_evidence.py --input <private-run>/verification.json --output <new-evidence-directory>` to create allowlisted derivatives. It hashes organization/request references, excludes raw bodies/config/credentials, retains the original status and source fingerprints, and refuses an incomplete or stale full-acceptance pass. Historical preflight records explicitly disclose a fingerprint mismatch instead of pretending to validate current source. Private `.local` records and backups stay intact.
+
+Native concurrent-worker/process-death experiments, enterprise throughput, commercial outcomes and independent blinded seller usefulness are outside this small acceptance package. The local tests prove real local process/HTTP recovery but cannot establish native platform behavior.

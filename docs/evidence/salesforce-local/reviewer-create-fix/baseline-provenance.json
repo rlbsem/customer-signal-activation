@@ -1,0 +1,13 @@
+{
+  "scope": "Existing local evidence at the start of this finishing review",
+  "files": 385,
+  "upstream_baseline_preserved": true,
+  "preexisting_upstream_differences": {
+    "docs/images/browser-proof.png": {
+      "original": "da76a80dc6355400383da20d7b2705871ab3c3bb5fcf360171ac654c1a32d459",
+      "at_start": "781ad7602599ae0b652a6778d1d341656cad72c33ffe7b05457e9e8c3a76d2da",
+      "current": "781ad7602599ae0b652a6778d1d341656cad72c33ffe7b05457e9e8c3a76d2da"
+    }
+  },
+  "prior_evidence_changed_during_review": []
+}

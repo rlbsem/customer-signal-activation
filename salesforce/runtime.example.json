@@ -1,0 +1,20 @@
+{
+  "instance_url": "https://REPLACE-WITH-ISOLATED-DE.my.salesforce.com",
+  "approval": {
+    "org_id": "00D000000000001AAA",
+    "environment": "developer_edition",
+    "organization_type": "Developer Edition",
+    "approved": false
+  },
+  "integration_user_id": "005000000000001AAA",
+  "reviewer_user_id": "005000000000002AAA",
+  "mappings": [
+    {
+      "brand": "cedar",
+      "account": "account-0012",
+      "owner": "cedar-east",
+      "registry_id": "a01000000000001AAA",
+      "user_id": "005000000000002AAA"
+    }
+  ]
+}
