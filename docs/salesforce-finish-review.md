@@ -1,6 +1,6 @@
 # Finish review: reviewer-create acceptance
 
-Work is performed directly in the existing Windows project. Existing `.bak` files, deployed metadata, users, permissions and private evidence are preserved. The folder is a source distribution without `.git`; the public baseline was independently read from `rlbsem/customer-signal-activation` main at `f44134556d62129fcd20d2244f888a862c64cb89`. Subsequently, the verified candidate was published to `feat/salesforce-native-acceptance` as draft [PR #3](https://github.com/rlbsem/customer-signal-activation/pull/3); `main` remains unchanged.
+This document preserves the staged native Salesforce Developer Edition investigation, security acceptance corrections and their evidence. The work began from public baseline `f44134556d62129fcd20d2244f888a862c64cb89` and was later integrated through [PR #3](https://github.com/rlbsem/customer-signal-activation/pull/3), **which has been merged into `main`**. Historical stage results retain their original source fingerprints; they are not presented as one uninterrupted final-source test.
 
 ## Diagnosis
 
@@ -72,8 +72,8 @@ python scripts/run_salesforce_acceptance.py acceptance --config .local/runtime.j
 
 That command is an execution record, not an instruction to repeat writes. [Sanitized stage records](evidence/salesforce-native/README.md) retain every status, source fingerprint and the continuation's reference to the prior verification SHA-256. The completed API matrix combines experiments from two source versions; no single uninterrupted final-source run, native UI screenshot or fresh model-to-Salesforce execution is claimed. The additional unsuccessful continuation remains visible.
 
-## Publication record — draft PR, not merged
+## Publication and verification status
 
-The prepared publication adds the existing local Salesforce extension plus this correction to the current public baseline, updates README/architecture boundaries, and includes allowlisted native evidence with original failures preserved. It was published on a dedicated feature branch and reviewable draft pull request. `.local`, CLI credential stores, databases, backups, private logs and raw diagnostics are excluded. No merge is proposed.
+The Salesforce-native extension, correction and sanitized evidence were merged through [PR #3](https://github.com/rlbsem/customer-signal-activation/pull/3). At the recorded acceptance milestone, Windows local verification passed 209 tests, and the documented Windows/Ubuntu hosted checks passed for commit `1e12470`. The earlier failed stages remain visible alongside the successful continuation; a passing continuation does not retroactively convert those failures into passing runs.
 
-The scoped native API matrix is complete across the recorded stages. Final local regression, source/evidence fingerprints and the private-file exclusion scan are rerun for the publication candidate. The owner separately approved branch publication. Windows and Ubuntu GitHub CI passed at commit `1e12470` (209 tests each); subsequent documentation commits require their own CI verification. No merge is proposed.
+Publication excludes `.local`, CLI credential stores, databases, backups, private logs and raw vendor diagnostics. The public evidence is an allowlisted, sanitized derivative of the original records, with source fingerprints and stage-specific limits preserved. Subsequent changes have their own [GitHub Actions verification history](https://github.com/rlbsem/customer-signal-activation/actions). No production CRM mutation, business uplift or uninterrupted final-source acceptance is claimed here.
