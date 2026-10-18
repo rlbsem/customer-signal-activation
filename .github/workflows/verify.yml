@@ -20,5 +20,7 @@ jobs:
       - run: python -m pip install --no-deps --no-build-isolation -e .
       - run: python -m playwright install --with-deps chromium
       - run: python scripts/verify_salesforce.py --evidence-dir work/ci-presentation-verification --presentation-refresh docs/images/ui-refresh.json
+      - run: python scripts/demo_connected.py --output work/connected-replay.json
+      - run: python scripts/check_connected_evidence.py
       - run: python scripts/package.py
 

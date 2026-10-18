@@ -13,7 +13,7 @@ dependencies = ["fastapi==0.115.12", "uvicorn==0.34.2", "httpx==0.28.1", "pydant
 where = ["src"]
 
 [tool.setuptools.package-data]
-signals = ["*.sql"]
+signals = ["*.sql", "integration_sql/*.sql"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
