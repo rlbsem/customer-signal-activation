@@ -1,0 +1,47 @@
+{
+  "contract": "salesforce-review-state/v1",
+  "source_authority": "salesforce_synthetic_registry_and_review_state",
+  "organization_ref": "cb1c5a934be0510b5f29095703e3c5b49d85962e944fd1386cb9b2845d6fa181",
+  "body": {
+    "accounts": [
+      {
+        "source_ref": "44101f455a50df67530a690cee4f5ee9adabb64b31f09c7ec72a83d3204f43b1",
+        "source_modified_at": "2026-10-15T23:03:28.000Z",
+        "brand": "cedar",
+        "account_key": "account-0012",
+        "owner_key": "cedar-east",
+        "owner_ref": "906c4463e297a9d7b514a1db775d7d686c6a1b5e0d03714308cf23a3ec3d117f",
+        "active": true,
+        "synthetic": true
+      }
+    ],
+    "reviews": [
+      {
+        "source_ref": "2359391dbb2e0f43c6cc845fbbf3275d00c44473ccc9e895877b4fda004aef30",
+        "source_modified_at": "2026-10-17T20:52:11.000Z",
+        "account_source_ref": "44101f455a50df67530a690cee4f5ee9adabb64b31f09c7ec72a83d3204f43b1",
+        "action_key": "def73e6d05e7f05f6005649882f0d7aec9096d42275b094691d8abbac2032e94",
+        "review_status": "Pending",
+        "proposed_action": "clarify_need"
+      },
+      {
+        "source_ref": "75e5ad9ee3cc952d550e7f13c8274aedf59f1788e1d102e142d24d2b706f8576",
+        "source_modified_at": "2026-10-16T00:50:03.000Z",
+        "account_source_ref": "44101f455a50df67530a690cee4f5ee9adabb64b31f09c7ec72a83d3204f43b1",
+        "action_key": "ed9c06cc8df7484d0b51fa15d1e4010400f109c2e75f006f9221604147d4cf7b",
+        "review_status": "Reviewed",
+        "proposed_action": "schedule_discovery"
+      },
+      {
+        "source_ref": "75f5c724c1aac9c1f70ac5b8ea8a6e33b8fd8b2f87e032a383a08a0f856c407b",
+        "source_modified_at": "2026-10-16T00:20:35.000Z",
+        "account_source_ref": "44101f455a50df67530a690cee4f5ee9adabb64b31f09c7ec72a83d3204f43b1",
+        "action_key": "0b9483db4dfc4fcf0138e276299b6c36d3cfd2a66521d361c917c0f8ae0a0716",
+        "review_status": "Reviewed",
+        "proposed_action": "schedule_discovery"
+      }
+    ]
+  },
+  "business_hash": "211a03f7beac1ea4bf25cb448c180683ced18d841854f189c3eb7a712dd7e04a",
+  "observed_at": 1792288832.393106
+}

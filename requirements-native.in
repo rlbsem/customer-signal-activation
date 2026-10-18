@@ -1,0 +1,5 @@
+# Optional native Snowflake lane; the reproducible core needs no credentials.
+# Execute in a separate environment with the core DuckDB version.
+snowflake-connector-python==3.18.1
+cryptography==46.0.0
+duckdb==1.3.2

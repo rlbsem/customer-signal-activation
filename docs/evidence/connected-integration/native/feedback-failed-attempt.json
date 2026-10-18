@@ -1,0 +1,877 @@
+{
+  "status": "FAILED",
+  "provenance": "native_snowflake",
+  "started_utc": "2026-10-18T01:57:42.747830+00:00",
+  "checks": {
+    "native_duckdb_exact_comparison": true,
+    "duplicate_ingestion_no_effect": true,
+    "late_prior_actual_batch_no_regress": true,
+    "independent_full_exact_comparison": true,
+    "complete_source_readback": true
+  },
+  "loads": [
+    {
+      "run_id": "batch_0",
+      "observed_at": "2026-10-18T01:57:53.382613Z",
+      "input_hash": "7c6583628f4607b4f81b146b56c102c83c2600dd67fae25a0bdc06215cf96c31",
+      "inserted": {
+        "accounts": 1,
+        "reviews": 2
+      }
+    },
+    {
+      "run_id": "batch_1",
+      "observed_at": "2026-10-18T01:57:56.678453Z",
+      "input_hash": "ae7588138b3f1a617fe224ba7bede6568d220b66976fb3c3f8ce528e50e3ae4a",
+      "inserted": {
+        "accounts": 0,
+        "reviews": 1
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "account_source_ref": "44101f455a50df67530a690cee4f5ee9adabb64b31f09c7ec72a83d3204f43b1",
+      "source_modified_at": "2026-10-15T23:03:28.000000Z",
+      "brand": "cedar",
+      "account_key": "account-0012",
+      "owner_key": "cedar-east",
+      "owner_ref": "906c4463e297a9d7b514a1db775d7d686c6a1b5e0d03714308cf23a3ec3d117f",
+      "active": true,
+      "synthetic": true,
+      "review_count": 3,
+      "pending_count": 1,
+      "reviewed_count": 2,
+      "rejected_count": 0,
+      "decision_action": "hold",
+      "source_hash": "22e3e085a66f34c2911c222ad16ebce5d206a7341cd5f7864443d062091a7dc6",
+      "decision_hash": "ddb053e10444d2ede4b29538e23dd156aab10c98785092f6466971670dbcd0f4"
+    }
+  ],
+  "native": {
+    "queries": [
+      {
+        "statement_sha256": "9c24646004f1bd0297371e67d7c7933159eefaaada7fe2dfb9cb6f38c9bd99e0",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e3-0011-d6b60004222e",
+        "client_elapsed_ms": 141.0
+      },
+      {
+        "statement_sha256": "c9159c415cf1d06889bd3d352c36dd4f8f895ce367db2904fdb99f2bc51de0db",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d3-0011-d6b60004a0fe",
+        "client_elapsed_ms": 140.0
+      },
+      {
+        "statement_sha256": "aafb7a81492738223bf5a9a718c479d38d0866a4da01ebf445375ac09c69309e",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e5-0011-d6b60004908e",
+        "client_elapsed_ms": 360.0
+      },
+      {
+        "statement_sha256": "9c24646004f1bd0297371e67d7c7933159eefaaada7fe2dfb9cb6f38c9bd99e0",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d4-0011-d6b6000508d6",
+        "client_elapsed_ms": 140.0
+      },
+      {
+        "statement_sha256": "c9159c415cf1d06889bd3d352c36dd4f8f895ce367db2904fdb99f2bc51de0db",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e4-0011-d6b60004886a",
+        "client_elapsed_ms": 125.0
+      },
+      {
+        "statement_sha256": "a8402858d4f1e1d27afee976520485ebb4b96a5387355b823f0d0b8079729032",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e1-0011-d6b60004b082",
+        "client_elapsed_ms": 172.0
+      },
+      {
+        "statement_sha256": "81c9c973f6a8f6b7ceca05ded340d9d9694e88ad36763d25bee850c2e50c6db2",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00db-0011-d6b6000410d2",
+        "client_elapsed_ms": 1859.0
+      },
+      {
+        "statement_sha256": "c86b4d3d56940939de970dcbf1d8542de3110b0a6f4242e4236abf4bba237864",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d6-0011-d6b60003f0fe",
+        "client_elapsed_ms": 250.0
+      },
+      {
+        "statement_sha256": "77d29871158da3665315482881dce4a54cd714d32d0b565778c63e7403965747",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e5-0011-d6b600049096",
+        "client_elapsed_ms": 79.0
+      },
+      {
+        "statement_sha256": "3c2d75415847f4858024b95262ad9d4f2b293f7ab5da2c75284b2bdebf92275d",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00de-0011-d6b6000430f2",
+        "client_elapsed_ms": 296.0
+      },
+      {
+        "statement_sha256": "382a7ae5de3741563d00386cf7da696f0d70d2b00d25937747662417f9554dac",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d6-0011-d6b60003f102",
+        "client_elapsed_ms": 235.0
+      },
+      {
+        "statement_sha256": "8090c1c3ce6b267da8d6d8820201868863732b9edb75b8db03b6283f57dbc779",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00db-0011-d6b6000410d6",
+        "client_elapsed_ms": 265.0
+      },
+      {
+        "statement_sha256": "bb93df2c6b017c587ca5880bb37f85fbe6a5c95e2fcdd6d2f40257fd926162bb",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d4-0011-d6b6000508da",
+        "client_elapsed_ms": 140.0
+      },
+      {
+        "statement_sha256": "f4dd58456e6586227898124d4a333c7897fa20b1b63dda43ea3028780ad457bb",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00de-0011-d6b6000430f6",
+        "client_elapsed_ms": 110.0
+      },
+      {
+        "statement_sha256": "cd2493ee7d27b5181b9cbd96be4b8184b3e6224e13201173b89c5de962a741df",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e1-0011-d6b60004b086",
+        "client_elapsed_ms": 140.0
+      },
+      {
+        "statement_sha256": "185dd7fecf848c851f6c33beb27be04cbe45425b5b58df28e0c94638b4cb6c27",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00da-0011-d6b6000400ca",
+        "client_elapsed_ms": 281.0
+      },
+      {
+        "statement_sha256": "be90e2a89ae876677f15ddf19d56f752a32543a2954f16039d234ca4c51c8a61",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e4-0011-d6b60004886e",
+        "client_elapsed_ms": 813.0
+      },
+      {
+        "statement_sha256": "33b00285bbd87fddb25480a730c9a86b81acda0a4cfd89241c6675a827b24a75",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e5-0011-d6b60004909a",
+        "client_elapsed_ms": 437.0
+      },
+      {
+        "statement_sha256": "33b00285bbd87fddb25480a730c9a86b81acda0a4cfd89241c6675a827b24a75",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e3-0011-d6b600042232",
+        "client_elapsed_ms": 469.0
+      },
+      {
+        "statement_sha256": "8aa50eeaae9dc50bcab95eadc3b42d497499aa030c7cc020abc9a486a62c6041",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e3-0011-d6b600042236",
+        "client_elapsed_ms": 313.0
+      },
+      {
+        "statement_sha256": "79663c1d3b43ceaf9ee728e501c64b57ae2e4d6cb36ff5c65eddcda1de27342f",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e2-0011-d6b60004514e",
+        "client_elapsed_ms": 578.0
+      },
+      {
+        "statement_sha256": "bb93df2c6b017c587ca5880bb37f85fbe6a5c95e2fcdd6d2f40257fd926162bb",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e1-0011-d6b60004b08a",
+        "client_elapsed_ms": 125.0
+      },
+      {
+        "statement_sha256": "f4dd58456e6586227898124d4a333c7897fa20b1b63dda43ea3028780ad457bb",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00da-0011-d6b6000400ce",
+        "client_elapsed_ms": 266.0
+      },
+      {
+        "statement_sha256": "cd2493ee7d27b5181b9cbd96be4b8184b3e6224e13201173b89c5de962a741df",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00da-0011-d6b6000400d2",
+        "client_elapsed_ms": 203.0
+      },
+      {
+        "statement_sha256": "185dd7fecf848c851f6c33beb27be04cbe45425b5b58df28e0c94638b4cb6c27",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e0-0011-d6b6000440ea",
+        "client_elapsed_ms": 266.0
+      },
+      {
+        "statement_sha256": "33b00285bbd87fddb25480a730c9a86b81acda0a4cfd89241c6675a827b24a75",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d6-0011-d6b60003f106",
+        "client_elapsed_ms": 437.0
+      },
+      {
+        "statement_sha256": "8aa50eeaae9dc50bcab95eadc3b42d497499aa030c7cc020abc9a486a62c6041",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e4-0011-d6b600048872",
+        "client_elapsed_ms": 328.0
+      },
+      {
+        "statement_sha256": "79663c1d3b43ceaf9ee728e501c64b57ae2e4d6cb36ff5c65eddcda1de27342f",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00de-0011-d6b6000430fa",
+        "client_elapsed_ms": 438.0
+      },
+      {
+        "statement_sha256": "f4dd58456e6586227898124d4a333c7897fa20b1b63dda43ea3028780ad457bb",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d6-0011-d6b60003f10a",
+        "client_elapsed_ms": 172.0
+      },
+      {
+        "statement_sha256": "cd2493ee7d27b5181b9cbd96be4b8184b3e6224e13201173b89c5de962a741df",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00de-0011-d6b6000430fe",
+        "client_elapsed_ms": 219.0
+      },
+      {
+        "statement_sha256": "7d29287d14f44245e6ae8be04f7d41f8bf68acda001410bdcfb23ed8e21f3c86",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d3-0011-d6b60004a102",
+        "client_elapsed_ms": 453.0
+      },
+      {
+        "statement_sha256": "bb93df2c6b017c587ca5880bb37f85fbe6a5c95e2fcdd6d2f40257fd926162bb",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00da-0011-d6b6000400d6",
+        "client_elapsed_ms": 125.0
+      },
+      {
+        "statement_sha256": "f4dd58456e6586227898124d4a333c7897fa20b1b63dda43ea3028780ad457bb",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00db-0011-d6b6000410da",
+        "client_elapsed_ms": 188.0
+      },
+      {
+        "statement_sha256": "cd2493ee7d27b5181b9cbd96be4b8184b3e6224e13201173b89c5de962a741df",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00d4-0011-d6b6000508de",
+        "client_elapsed_ms": 297.0
+      },
+      {
+        "statement_sha256": "185dd7fecf848c851f6c33beb27be04cbe45425b5b58df28e0c94638b4cb6c27",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00da-0011-d6b6000400da",
+        "client_elapsed_ms": 156.0
+      },
+      {
+        "statement_sha256": "79663c1d3b43ceaf9ee728e501c64b57ae2e4d6cb36ff5c65eddcda1de27342f",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e5-0011-d6b60004909e",
+        "client_elapsed_ms": 141.0
+      },
+      {
+        "statement_sha256": "f4dd58456e6586227898124d4a333c7897fa20b1b63dda43ea3028780ad457bb",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e3-0011-d6b60004223a",
+        "client_elapsed_ms": 187.0
+      },
+      {
+        "statement_sha256": "cd2493ee7d27b5181b9cbd96be4b8184b3e6224e13201173b89c5de962a741df",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00da-0011-d6b6000400de",
+        "client_elapsed_ms": 141.0
+      },
+      {
+        "statement_sha256": "7d29287d14f44245e6ae8be04f7d41f8bf68acda001410bdcfb23ed8e21f3c86",
+        "status": "succeeded",
+        "query_id": "01c7cd75-0109-00e1-0011-d6b60004b08e",
+        "client_elapsed_ms": 468.0
+      },
+      {
+        "statement_sha256": "bb93df2c6b017c587ca5880bb37f85fbe6a5c95e2fcdd6d2f40257fd926162bb",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e5-0011-d6b6000490a2",
+        "client_elapsed_ms": 94.0
+      },
+      {
+        "statement_sha256": "f4dd58456e6586227898124d4a333c7897fa20b1b63dda43ea3028780ad457bb",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00da-0011-d6b6000400e2",
+        "client_elapsed_ms": 94.0
+      },
+      {
+        "statement_sha256": "cd2493ee7d27b5181b9cbd96be4b8184b3e6224e13201173b89c5de962a741df",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e2-0011-d6b600045152",
+        "client_elapsed_ms": 234.0
+      },
+      {
+        "statement_sha256": "185dd7fecf848c851f6c33beb27be04cbe45425b5b58df28e0c94638b4cb6c27",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e5-0011-d6b6000490a6",
+        "client_elapsed_ms": 157.0
+      },
+      {
+        "statement_sha256": "8aa50eeaae9dc50bcab95eadc3b42d497499aa030c7cc020abc9a486a62c6041",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00d4-0011-d6b6000508e2",
+        "client_elapsed_ms": 390.0
+      },
+      {
+        "statement_sha256": "79663c1d3b43ceaf9ee728e501c64b57ae2e4d6cb36ff5c65eddcda1de27342f",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00d3-0011-d6b60004a106",
+        "client_elapsed_ms": 297.0
+      },
+      {
+        "statement_sha256": "f4dd58456e6586227898124d4a333c7897fa20b1b63dda43ea3028780ad457bb",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00d4-0011-d6b6000508e6",
+        "client_elapsed_ms": 188.0
+      },
+      {
+        "statement_sha256": "cd2493ee7d27b5181b9cbd96be4b8184b3e6224e13201173b89c5de962a741df",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00db-0011-d6b6000410de",
+        "client_elapsed_ms": 156.0
+      },
+      {
+        "statement_sha256": "7d29287d14f44245e6ae8be04f7d41f8bf68acda001410bdcfb23ed8e21f3c86",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e2-0011-d6b600045156",
+        "client_elapsed_ms": 281.0
+      },
+      {
+        "statement_sha256": "d67b1b2587c33f75bce621caeca5defc166af0b375ce3a3480d26d115b2182ec",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00d6-0011-d6b60003f10e",
+        "client_elapsed_ms": 297.0
+      },
+      {
+        "statement_sha256": "54b6045f7a653172f84b7e44996bb954749620ed30bea7652cd85b5f29421934",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e5-0011-d6b6000490aa",
+        "client_elapsed_ms": 93.0
+      },
+      {
+        "statement_sha256": "5597e44e96f674b0e1607db56ea29a05d967eca7d90d358101c5c267f924c0f4",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00db-0011-d6b6000410e2",
+        "client_elapsed_ms": 110.0
+      },
+      {
+        "statement_sha256": "9887407b39c6bc3b0cb3c7ee98886ac9c5ee92a873db0a0422e37ed50ac5ea88",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e3-0011-d6b60004223e",
+        "client_elapsed_ms": 156.0
+      },
+      {
+        "statement_sha256": "9c24646004f1bd0297371e67d7c7933159eefaaada7fe2dfb9cb6f38c9bd99e0",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00db-0011-d6b6000410e6",
+        "client_elapsed_ms": 109.0
+      },
+      {
+        "statement_sha256": "c9159c415cf1d06889bd3d352c36dd4f8f895ce367db2904fdb99f2bc51de0db",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00d4-0011-d6b6000508ea",
+        "client_elapsed_ms": 94.0
+      },
+      {
+        "statement_sha256": "79ee2edec7704e82e08703889c6f35b1428a1a789ee74f09ef62e4bbdf34a000",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00de-0011-d6b600043102",
+        "client_elapsed_ms": 109.0
+      },
+      {
+        "statement_sha256": "e10f524f9fd7c49a1182b52bcf8bee32f23f1166f0b89ba0b1d5df5d40a93ad3",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00db-0011-d6b6000410ea",
+        "client_elapsed_ms": 219.0
+      },
+      {
+        "statement_sha256": "0117e260d748ed814a8070c1424fa8c09aefc558b2846b6d477ca5fa27f810d1",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00da-0011-d6b6000400e6",
+        "client_elapsed_ms": 297.0
+      },
+      {
+        "statement_sha256": "7d29287d14f44245e6ae8be04f7d41f8bf68acda001410bdcfb23ed8e21f3c86",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00db-0011-d6b6000410ee",
+        "client_elapsed_ms": 172.0
+      },
+      {
+        "statement_sha256": "ad69704fa67085a4a064dbf0ef6a6b035f689b8780403bae9f8fc270c78e8a89",
+        "status": "failed",
+        "error_code": 2003,
+        "query_id": "01c7cd76-0109-00d6-0011-d6b60003f112",
+        "client_elapsed_ms": 219.0
+      },
+      {
+        "statement_sha256": "78399425e638e80c3f64823e25efe4bcee95f20c2ffd98a2ee1473973500d798",
+        "status": "failed",
+        "error_code": 2003,
+        "query_id": "01c7cd76-0109-00e3-0011-d6b600042242",
+        "client_elapsed_ms": 156.0
+      },
+      {
+        "statement_sha256": "cfb09e0569cda71728d4275513af3efa8f78240675cb84182f365306a3aa32c9",
+        "status": "failed",
+        "error_code": 2003,
+        "query_id": "01c7cd76-0109-00da-0011-d6b6000400ea",
+        "client_elapsed_ms": 109.0
+      },
+      {
+        "statement_sha256": "f4dd58456e6586227898124d4a333c7897fa20b1b63dda43ea3028780ad457bb",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e0-0011-d6b6000440ee",
+        "client_elapsed_ms": 281.0
+      },
+      {
+        "statement_sha256": "cd2493ee7d27b5181b9cbd96be4b8184b3e6224e13201173b89c5de962a741df",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00d6-0011-d6b60003f116",
+        "client_elapsed_ms": 141.0
+      },
+      {
+        "statement_sha256": "d822f188aebd582332d91e8732073d59268379e51b62171142e06231df662dfe",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e4-0011-d6b600048876",
+        "client_elapsed_ms": 687.0
+      },
+      {
+        "statement_sha256": "d49c7391989a2d303c63ff2814b4bf9b89ba2c0e1636be2b3375e5101e7359f5",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00db-0011-d6b6000410f2",
+        "client_elapsed_ms": 141.0
+      },
+      {
+        "statement_sha256": "aafb7a81492738223bf5a9a718c479d38d0866a4da01ebf445375ac09c69309e",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00de-0011-d6b600043106",
+        "client_elapsed_ms": 172.0
+      },
+      {
+        "statement_sha256": "f8135cc4b0a3f709871ffccfec67f1b2a229d59734d7f3dbfabc8e769fbcdd30",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e5-0011-d6b6000490ae",
+        "client_elapsed_ms": 156.0
+      },
+      {
+        "statement_sha256": "aafb7a81492738223bf5a9a718c479d38d0866a4da01ebf445375ac09c69309e",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e0-0011-d6b6000440f2",
+        "client_elapsed_ms": 172.0
+      },
+      {
+        "statement_sha256": "587fa628a9fe4642ac0e22825a97e81d388af674f7251a9fb699f96901dcb710",
+        "status": "succeeded",
+        "query_id": "01c7cd76-0109-00e1-0011-d6b60004b092",
+        "client_elapsed_ms": 250.0
+      }
+    ],
+    "warehouse": {
+      "size": "XSMALL",
+      "auto_suspend_seconds": 60,
+      "max_clusters": 1,
+      "query_acceleration": false,
+      "monitor_visible": false,
+      "monitor_attachment_verification": "prior_owner_confirmation",
+      "credit_quota": 1,
+      "quota_verification": "prior_owner_confirmation"
+    },
+    "consumer": {
+      "candidate_readback": "passed",
+      "raw_read_denials": 3,
+      "view_grants": [
+        "SELECT"
+      ],
+      "write_probe": "not_executed",
+      "write_boundary": "read_only_grant_inspection",
+      "separate_identity": true,
+      "user_role_grants_checked": true,
+      "cryptographic_key_distinctness": "not_verified"
+    },
+    "cleanup": {
+      "schema": "dropped",
+      "warehouse": "suspend_failed",
+      "warehouse_error_code": null,
+      "gate": "released"
+    },
+    "resources": {
+      "status": "collected",
+      "scope": "builder_session_before_cleanup",
+      "not_total_warehouse_cost": true,
+      "queries": [
+        {
+          "query_id": "01c7cd76-0109-00d6-0011-d6b60003f116",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 96,
+          "bytes_scanned": 2048,
+          "cloud_service_credits": 1.3e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00e0-0011-d6b6000440ee",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 215,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 3e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00db-0011-d6b6000410ee",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 103,
+          "bytes_scanned": 7168,
+          "cloud_service_credits": 1.3e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00e3-0011-d6b60004223e",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 86,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1.3e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00db-0011-d6b6000410e2",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 74,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1.1e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00e5-0011-d6b6000490aa",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 52,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 8e-06
+        },
+        {
+          "query_id": "01c7cd76-0109-00d6-0011-d6b60003f10e",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 250,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.6e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00e2-0011-d6b600045156",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 216,
+          "bytes_scanned": 7168,
+          "cloud_service_credits": 3e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00db-0011-d6b6000410de",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 127,
+          "bytes_scanned": 2048,
+          "cloud_service_credits": 1.8e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00d4-0011-d6b6000508e6",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 135,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 1.9e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00d3-0011-d6b60004a106",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 234,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.5e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00d4-0011-d6b6000508e2",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 348,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 4.2e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00e5-0011-d6b6000490a6",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 116,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1.8e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00e2-0011-d6b600045152",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 186,
+          "bytes_scanned": 2048,
+          "cloud_service_credits": 2.6e-05
+        },
+        {
+          "query_id": "01c7cd76-0109-00da-0011-d6b6000400e2",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 48,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 6e-06
+        },
+        {
+          "query_id": "01c7cd76-0109-00e5-0011-d6b6000490a2",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 53,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 6e-06
+        },
+        {
+          "query_id": "01c7cd75-0109-00e1-0011-d6b60004b08e",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 403,
+          "bytes_scanned": 7168,
+          "cloud_service_credits": 5.8e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00da-0011-d6b6000400de",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 101,
+          "bytes_scanned": 2048,
+          "cloud_service_credits": 1.4e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e3-0011-d6b60004223a",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 143,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 2.1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e5-0011-d6b60004909e",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 111,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1.5e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00da-0011-d6b6000400da",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 115,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 1.6e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00d4-0011-d6b6000508de",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 245,
+          "bytes_scanned": 2048,
+          "cloud_service_credits": 3.5e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00db-0011-d6b6000410da",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 143,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 2.1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00da-0011-d6b6000400d6",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 82,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 9e-06
+        },
+        {
+          "query_id": "01c7cd75-0109-00d3-0011-d6b60004a102",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 400,
+          "bytes_scanned": 7168,
+          "cloud_service_credits": 5.7e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00de-0011-d6b6000430fe",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 170,
+          "bytes_scanned": 2048,
+          "cloud_service_credits": 2.4e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00d6-0011-d6b60003f10a",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 123,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 1.8e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00de-0011-d6b6000430fa",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 382,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 5.6e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e4-0011-d6b600048872",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 289,
+          "bytes_scanned": 1024,
+          "cloud_service_credits": 3.7e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00d6-0011-d6b60003f106",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 403,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 5.1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e0-0011-d6b6000440ea",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 210,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.2e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00da-0011-d6b6000400d2",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 154,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 2.1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00da-0011-d6b6000400ce",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 225,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 3.2e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e1-0011-d6b60004b08a",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 82,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e2-0011-d6b60004514e",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 537,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 8.1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e3-0011-d6b600042236",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 282,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.4e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e3-0011-d6b600042232",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 415,
+          "bytes_scanned": 1536,
+          "cloud_service_credits": 5.3e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e5-0011-d6b60004909a",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 403,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 5.1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e4-0011-d6b60004886e",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 752,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 5.4e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00da-0011-d6b6000400ca",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 244,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.7e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e1-0011-d6b60004b086",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 91,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1.4e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00de-0011-d6b6000430f6",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 63,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 9e-06
+        },
+        {
+          "query_id": "01c7cd75-0109-00d4-0011-d6b6000508da",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 87,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1.3e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00db-0011-d6b6000410d6",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 222,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00d6-0011-d6b60003f102",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 188,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 2.8e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00de-0011-d6b6000430f2",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 247,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.5e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e5-0011-d6b600049096",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 36,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 5e-06
+        },
+        {
+          "query_id": "01c7cd75-0109-00d6-0011-d6b60003f0fe",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 206,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.1e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e5-0011-d6b60004908e",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 253,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 3.9e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00d3-0011-d6b60004a0fe",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 90,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1.4e-05
+        },
+        {
+          "query_id": "01c7cd75-0109-00e3-0011-d6b60004222e",
+          "execution_status": "SUCCESS",
+          "elapsed_ms": 108,
+          "bytes_scanned": 0,
+          "cloud_service_credits": 1.6e-05
+        }
+      ],
+      "completed_successful_rows": 51,
+      "bytes_scanned": 60416,
+      "elapsed_ms": 10344,
+      "cloud_service_credits": 0.0013959999999999999
+    },
+    "exclusive_gate": "acquired"
+  },
+  "error_type": "ValueError",
+  "error": "execution_or_comparison_failed",
+  "dependencies": {
+    "snowflake-connector-python": "3.18.1",
+    "duckdb": "1.3.2"
+  },
+  "finished_utc": "2026-10-18T01:58:10.155467+00:00",
+  "private_record_sha256": "f452276af700c84b1a16785ad8a7dc183741548974c21a9441734bcecb40c952"
+}

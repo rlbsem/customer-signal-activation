@@ -1,0 +1,28 @@
+{
+  "id": "def73e6d05e7f05f6005649882f0d7aec9096d42275b094691d8abbac2032e94",
+  "payload": {
+    "run_id": "ed9f42a615dca5204003067e7755e9e543c67f6d1e9ce4993e7cd685ea7b5993",
+    "brand": "cedar",
+    "account": "account-0012",
+    "owner": "cedar-east",
+    "proposal": {
+      "assessment": "Review completed synthetic account history and clarify the next internal step.",
+      "action": "clarify_need",
+      "claims": [
+        {
+          "source": "warehouse-69373fa290da95918ece20e7383d5a2fea679602f91bc009af8dc13f41b84111",
+          "quote": "{\"decision\":{\"account_key\":\"account-0012\",\"account_source_ref\":\"44101f455a50df67530a690cee4f5ee9adabb64b31f09c7ec72a83d3204f43b1\",\"active\":true,\"brand\":\"cedar\",\"decision_action\":\"clarify_need\",\"decision_hash\":\"145bf75572372761446362eea3a8c1d7e28311d81e713af1dd87923bb04723cf\",\"owner_key\":\"cedar-east\",\"owner_ref\":\"906c4463e297a9d7b514a1db775d7d686c6a1b5e0d03714308cf23a3ec3d117f\",\"pending_count\":0,\"r"
+        }
+      ],
+      "draft": "Internal synthetic review only. Previous reviews are complete and no review is pending. Confirm the next requirement with the approved account owner; this does not authorize contact.",
+      "questions": [
+        "What internal follow-up, if any, should the account owner approve?"
+      ],
+      "uncertainties": [
+        "Review completion is not a sale, consent grant or customer outcome."
+      ]
+    },
+    "evidence_hash": "75e81cd80d268948fd5f2e3de1fd6a4f762b2a6871a003a9d3ed6f4aa6214918"
+  },
+  "state": "approved"
+}
