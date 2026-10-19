@@ -1,18 +1,18 @@
 # Customer Signal & Activation
 
-**Which customer signals deserve a sales handoff—and can we trace the resulting commercial outcome back to collected cash?**
+**From customer signals to a verified CRM action and collected cash.**
 
-A multi-brand operator or B2B SaaS organization can capture the right campaign signal, associate it with the wrong account, rely on stale enrichment, route it to the wrong owner, or declare success at Closed Won without proving the resulting economic outcome. This executable system connects customer signals to verified identity, explainable fit and intent, ownership-safe CRM activation, commercial fulfillment, invoices and payment allocations—then returns eligible cash outcomes to measurement.
+An accurate campaign signal can still lead to the wrong account, stale enrichment or an unsafe sales handoff. This system resolves identity, scores fit and intent, preserves CRM ownership and traces activity through fulfillment, invoices and payment allocations. Eligible collected-cash outcomes return to measurement without treating Closed Won as collected revenue.
 
-**Engineering proof at a glance:** brand-scoped canonical identity and source authority; stateful, idempotent activation with lost-acknowledgement recovery; a restricted Salesforce-native synthetic review destination with audited approval and permission checks; invoice-to-allocated-cash reconciliation; and executed browser, model-evaluation, local CI and native Salesforce evidence. Native acceptance was completed across documented stages, not in one uninterrupted final-source run.
+**Engineering proof:** Brand-scoped identity and source authority, durable activation and receipt recovery, restricted Salesforce review writes, and payment-allocation reconciliation. Browser, model evaluation and local workflow tests are published alongside native Salesforce and Snowflake execution records. The vendor acceptance history includes both failed stages and successful continuations.
 
 The browser, API, durable workflow, separate HTTP destination and dbt models all execute locally. [See the generated commercial review](docs/evidence/report.md) and [individual decisions and lineage](docs/evidence/demo.json).
 
-The **seller workbench** turns account inquiries and call evidence into a live LLM brief, a relevant response draft and an explicitly reviewed CRM task. It keeps source citations, current permission, account ownership and delivery receipts inspectable. All businesses and source documents are synthetic; model inference and local HTTP effects are real. This public implementation makes client-work architecture patterns—identity, enrichment, owner-safe routing, CRM state and revenue lineage—inspectable without exposing private client systems.
+The **seller workbench** uses account inquiries and call evidence to produce an LLM brief, response draft and reviewable CRM task. Source citations, ownership, permission and delivery receipts remain inspectable. Businesses and source documents are synthetic; model inference and local HTTP effects execute. The public code illustrates identity, enrichment, controlled CRM state and revenue lineage without exposing client data.
 
 ![Updated seller workbench with recorded inference and a reviewed response](docs/images/seller-brief.jpg)
 
-Captured from the updated local UI using the preserved Qwen3-14B output and reviewer edit. No new inference was run for this viewport capture; the approval/delivery receipt is visible above the brief, while questions and cautions remain available below the draft in the running application. [Capture provenance](docs/images/ui-refresh.json).
+Captured from the local UI using a preserved Qwen3-14B output and reviewer edit. The screenshot records the approved action and receipt; it does not represent a fresh inference run. [Capture provenance](docs/images/ui-refresh.json).
 
 [Run the workbench](docs/seller-workbench.md) · [Inspect the model comparison](docs/evidence/seller/report.md) · [Read the preserved first evaluation](docs/evidence/seller/first-pass-report.md)
 
@@ -28,7 +28,7 @@ Captured from the updated local UI using the preserved Qwen3-14B output and revi
 
 [Native evidence and investigation](docs/evidence/salesforce-native/README.md) · [Correction and execution history](docs/salesforce-finish-review.md). A passing preflight is separate from native delivery acceptance, and a passing local emulator is not vendor execution. Native UI screenshots and a combined fresh-inference-to-Salesforce run are not claimed.
 
-**Connected warehouse proof:** [Inspect the actual Salesforce ↔ Snowflake round trip](docs/evidence/connected-integration/README.md) and [its architecture, authority boundaries and reproducible commands](docs/connected-integration.md). The workflow derives an internal review recommendation from a pinned synthetic account and review history, rechecks current CRM state before dispatch, and returns the observed effect to Snowflake. Existing ownership and privacy authority remain explicit; the warehouse cannot authorize contact. The SQL recommendation uses a deterministic policy, with no new LLM execution.
+**Connected warehouse proof:** [Native Salesforce ↔ Snowflake round trip](docs/evidence/connected-integration/README.md) with [architecture and reproduction steps](docs/connected-integration.md). Snowflake produces a deterministic internal recommendation, current Salesforce authority is checked before dispatch, and the observed CRM effect feeds the next warehouse decision. The warehouse cannot authorize customer contact.
 
 [Integration branch CI](https://github.com/rlbsem/customer-signal-activation/actions?query=branch%3Afeat%2Fsalesforce-snowflake-roundtrip) · [Recorded local verification](docs/evidence/connected-integration/local/verification.json).
 
@@ -42,9 +42,9 @@ The executed synthetic demonstration has **120 accounts and 1,070 source events*
 
 ## Engineering decisions tested against real failures
 
-- **I did not equate a Salesforce error with proof of permission.** A reviewer-create probe returned `CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY`, but the exact vendor cause was not established. I kept that code out of the permission-denial classification and required independently checked CRUD/FLS plus before-and-after proof that no unauthorized record was created. [Investigation and acceptance correction](docs/salesforce-finish-review.md).
-- **I changed the comparison when read-only requests changed the evidence.** A continuation failed because successive GETs updated `LastViewedDate` and `LastReferencedDate`. The corrected SOQL comparison checks business content and modification-audit fields rather than read-observation timestamps. Earlier failures remain published; final acceptance passed **across recorded stages**, not in one uninterrupted run. [Native execution record](docs/evidence/salesforce-native/README.md).
-- **I did not call an AI draft safe just because its rubric passed.** The grounded workflow scored 120/120 on defined regression checks, but a focused review found unsupported claims about support-team availability and escalation. Those drafts remain inspectable, and the seller must verify, edit or reject unsupported operational claims before approval. [Source-support finding](docs/seller-review-notes.md).
+- **A Salesforce error was not sufficient proof of permission enforcement.** The reviewer-create probe returned `CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY`, with no confirmed vendor cause. The permission verdict instead uses checked CRUD/FLS and before-and-after evidence that no unauthorized record appeared. [Acceptance investigation](docs/salesforce-finish-review.md).
+- **Read-only Salesforce requests can change observation timestamps.** Successive GETs advanced `LastViewedDate` and `LastReferencedDate`, initially failing the comparison. The corrected SOQL check compares business and modification-audit fields. Earlier failures remain in the staged acceptance record. [Native evidence](docs/evidence/salesforce-native/README.md).
+- **A passing model rubric did not establish source support.** The grounded workflow scored 120/120 on defined regression checks, yet an independent review found unsupported claims about support availability and escalation. The seller must verify, edit or reject those claims before approval. [Source-support review](docs/seller-review-notes.md).
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"background":"#10101D","primaryColor":"#2A2A3D","primaryTextColor":"#F0F0FF","primaryBorderColor":"#7C7CAF","lineColor":"#B8B8FF","textColor":"#F0F0FF","secondaryColor":"#181825","tertiaryColor":"#2E2E45","fontFamily":"IBM Plex Sans, Arial, sans-serif","fontSize":"15px","edgeLabelBackground":"#10101D"}}}%%
@@ -93,7 +93,7 @@ flowchart TB
 | Attribution doubles invoices across payments | dbt preserves payment-allocation grain and aggregates invoice values separately; a Python traversal checks every lineage row |
 | Cash feedback lacks an eligible click or permission | The allocation remains in financial reporting with a named conversion exclusion |
 
-The original CRM and conversion destinations exercise real local HTTP and persisted effects. The separate Salesforce adapter has executed synthetic review delivery and security acceptance in an isolated Developer Edition org, with exact read-back and preserved failure evidence. Cloud warehouse execution is outside this implementation. See the [operating boundaries](docs/limitations.md) and [Salesforce acceptance contract](docs/salesforce-acceptance-plan.md).
+The local CRM and conversion destinations execute real HTTP requests with persisted effects. The isolated Salesforce Developer Edition adapter has native synthetic review delivery and security evidence. The separate [connected Salesforce ↔ Snowflake workflow](docs/evidence/connected-integration/README.md) also executed natively; the commercial cash lineage remains a local DuckDB/dbt workflow. See [operating boundaries](docs/limitations.md) and the [Salesforce acceptance contract](docs/salesforce-acceptance-plan.md).
 
 ## Inspect a real browser interaction
 
