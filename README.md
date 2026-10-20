@@ -16,6 +16,14 @@ Captured from the local UI using a preserved Qwen3-14B output and reviewer edit.
 
 [Run the workbench](docs/seller-workbench.md) · [Inspect the model comparison](docs/evidence/seller/report.md) · [Read the preserved first evaluation](docs/evidence/seller/first-pass-report.md)
 
+## From account evidence to an owned action
+
+At LMN, I connected acquisition reporting to Salesforce pipeline and lifecycle analysis across multiple SaaS products. Through Groundbreakers, I designed and delivered customer-system integrations with canonical identifiers, persistent source mappings, preserved ownership and governed lifecycle state. The recurring challenge was deciding which account a signal belonged to, which source could change its state and whether a seller action was still appropriate.
+
+This implementation makes those decisions inspectable. Brand-scoped identity, separate fit and intent, approval-bound CRM actions, durable receipts and payment-allocation lineage connect a signal to an accountable commercial process. The native Salesforce–Snowflake round trip verifies an internal review, lost-acknowledgement recovery and independent readback. It does not send customer communications. These controls apply wherever enrichment, CRM and financial systems must cooperate without confusing a recommendation, a sale and collected cash.
+
+[Connected execution](docs/evidence/connected-integration/README.md) · [Authority and grain](docs/architecture.md)
+
 ### Verification boundaries
 
 | Evidence | What has executed |
