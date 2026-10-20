@@ -1,13 +1,13 @@
 {
   "provenance": "local_contract_emulation_not_salesforce",
-  "executed_utc": "2026-10-20T20:23:27.365848+00:00",
+  "executed_utc": "2026-10-20T20:38:41.094119+00:00",
   "python": "3.12.14",
   "tests": {
     "tests": "405",
     "failures": "0",
     "errors": "0",
     "skipped": "0",
-    "time": "397.319"
+    "time": "385.681"
   },
   "salesforce_contract_cases": 123,
   "commands": [
@@ -61,14 +61,14 @@
     }
   },
   "upstream_baseline_differences": "docs/evidence/salesforce-local/reviewer-create-fix/baseline-provenance.json",
-  "markdown_paths_checked": 164,
+  "markdown_paths_checked": 167,
   "native_salesforce": "not_executed",
   "metadata_deployment": "outside_local_verifier_scope",
   "hosted_ci": "not_run",
   "fresh_inference": "not_executed",
   "source_sha256": {
     ".gitattributes": "5c1cc97e5a2a0fceda0061a3660ac7765781fb4897447be2141e1c656368caf3",
-    ".github/workflows/verify.yml": "1f57d6b90297115b2c44ed6663968b513708139e0b09241deef0b1fd8e9af79c",
+    ".github/workflows/verify.yml": "53aa29d60aa95a8fd82d195a160a24c4a112c7edb04bb9334898ae956b096cbc",
     ".gitignore": "1f95b9b1aed204c40f7ef14185e4dd21205d83c84a5943101f97bc15bdc4eb49",
     "dbt/dbt_project.yml": "3a9f0010bbde16a23d8844fbee76647b185b0005f95e3a6cc9cd4f50774dc1bd",
     "dbt/models/dim_account.sql": "1d9dd9cd8c8ecd2e1f76141aee5407fa91921bd859149d588fa1673c12d8e556",
@@ -139,7 +139,7 @@
     "salesforce/runtime.example.json": "396e970b037f461e9250691c7dd567529f8faf477f97a9987c7277ca30988d83",
     "salesforce/sfdx-project.json": "36573fd677b0e77a42b76543e5aff5a3ea43c8891846dd32c3e51a38d7f58380",
     "scripts/capture_seller_authority.py": "bfe09001b553079c99460c61aef26bd78336e46bc5b352dfb967b6f3c4ad772b",
-    "scripts/capture_ui.py": "2738bc740db2d52ef4fe426240b5248a871c960037be5bfe8403349b0b55cff8",
+    "scripts/capture_ui.py": "1698f43117763aceec08be427b498463fd7021ca01feb1273d6e687381306027",
     "scripts/check_connected_evidence.py": "af1b48420eaa3d05d584b1b2765c6d38b93032e33971ad1a580fccf53f858eff",
     "scripts/demo.py": "f64f89e49d452bac259fc3f5595cb72404a08a036abc4b655bb41ba75cd4d2bf",
     "scripts/demo_connected.py": "5c5b57a92eef72855f4cbdc7191a63c6ffb550688aebbd2d1b1ef228d86c0480",

@@ -25,5 +25,6 @@ jobs:
       - run: python scripts/demo_connected.py --output work/connected-replay.json
       - run: python scripts/check_connected_evidence.py --source-ref 9c9f61485b165f0906c01a5c1f263fb8c07380ff
       - run: python scripts/verify_seller_authority.py --workspace work/authority-ci --output work/authority-ci.json
+      - run: python scripts/capture_ui.py --workspace work/current-capture-ci --output work/current-capture-ci/images
       - run: python scripts/package.py
 

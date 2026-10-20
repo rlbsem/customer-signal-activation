@@ -30,6 +30,8 @@ The [operator procedure](../../seller-authority.md) documents reproducible check
 
 These software tests use synthetic responders and local contract emulators; they are not native acceptance. The local verifier's `fresh_inference: not_executed` describes that regression process; the separate six-response inference run above is recorded independently.
 
+The initial passing report is preserved under [local-initial](local-initial/verification.json). The final report above repeats all 405 tests after aligning the older screenshot reproducer with governed preparation. That reproducer was also actually executed with three consent-aware browser events, one governed local task, visible approval/receipt evidence and no mobile overflow or JavaScript errors; CI now exercises it explicitly. The original repository images were not replaced.
+
 The original native evidence binds old executable fingerprints. The default current-tree checker correctly refuses the changed implementation. CI now explicitly verifies historical executable bytes from the immutable pre-hardening Git revision and reports current source differences and **current native acceptance: not executed**. It does not exempt newly changed business modules or rewrite the old fingerprints. Use:
 
 ```shell
