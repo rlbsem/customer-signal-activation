@@ -115,7 +115,15 @@ def app(workbench, operator_token, destination_url, destination_token, root=None
     async def approve(run_id: str, request: Request):
         authenticated(request)
         value = await body(request)
-        return workbench.approve(run_id, value.get("proposal"), value.get("review_hash"))
+        return workbench.approve(run_id, value.get("proposal"), value.get("review_hash"),
+                                 authority_ids=value.get("authority_ids", []))
+
+    @api.post("/api/prepare/{run_id}")
+    async def prepare(run_id: str, request: Request):
+        authenticated(request)
+        value = await body(request)
+        return workbench.prepare(run_id, value.get("review_hash"), value.get("proposal"),
+                                 value.get("authority_ids", []))
 
     @api.post("/api/reject/{run_id}")
     def reject(run_id: str, request: Request):

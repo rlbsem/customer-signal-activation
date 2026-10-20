@@ -355,7 +355,8 @@ def run_suite(inbox, reviewer, workspace, run_id, *, admin=None):
     bench = Workbench(Store(workspace / "workbench.sqlite"), AcceptanceResponder(run_id), AS_OF)
     seed_workbench(bench)
     proposal = bench.generate("cedar", "account-0012")
-    action = bench.approve(proposal["id"], proposal["proposal"], digest(proposal), actor="acceptance-fixture")
+    reviewed = bench.prepare(proposal["id"], digest(proposal))["proposal"]
+    action = bench.approve(proposal["id"], reviewed, digest(proposal), actor="acceptance-fixture")
     if effect_count(inbox, action["id"]):
         raise DeliveryError("action_key_already_exists_use_fresh_run_id")
     worker = SalesforceDispatcher(bench, inbox, workspace / "delivery.sqlite")

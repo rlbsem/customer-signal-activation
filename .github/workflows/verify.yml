@@ -12,6 +12,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0 # Historical native executable fingerprints are checked at their pinned revision.
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
@@ -21,6 +23,8 @@ jobs:
       - run: python -m playwright install --with-deps chromium
       - run: python scripts/verify_salesforce.py --evidence-dir work/ci-presentation-verification --presentation-refresh docs/images/ui-refresh.json
       - run: python scripts/demo_connected.py --output work/connected-replay.json
-      - run: python scripts/check_connected_evidence.py
+      - run: python scripts/check_connected_evidence.py --source-ref 9c9f61485b165f0906c01a5c1f263fb8c07380ff
+      - run: python scripts/verify_seller_authority.py --workspace work/authority-ci --output work/authority-ci.json
+      - run: python scripts/capture_ui.py --workspace work/current-capture-ci --output work/current-capture-ci/images
       - run: python scripts/package.py
 

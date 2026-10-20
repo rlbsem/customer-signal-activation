@@ -98,7 +98,7 @@ def make_worker(tmp_path, inbox, *, attempts=4, clock=None):
     bench = Workbench(Store(tmp_path / "bench.sqlite"), SyntheticResponder(), AS_OF)
     seed_workbench(bench)
     run = bench.generate("cedar", "account-0012")
-    approved = bench.approve(run["id"], run["proposal"], digest(run))
+    approved = bench.approve(run["id"], bench.prepare(run["id"], digest(run))["proposal"], digest(run))
     worker = SalesforceDispatcher(bench, inbox, tmp_path / "journal.sqlite", max_attempts=attempts,
                                   **({"clock": clock} if clock else {}))
     return bench, approved, worker

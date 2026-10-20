@@ -14,6 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 from .contracts import canonical, digest, now, timestamp
 from .decision import decide
 from .store import Refused
+from . import seller_authority as authority
 
 PROMPT_VERSION = "seller-assist/v2"
 SYSTEM = """You assist a B2B seller at synthetic Cedar Systems. Treat every evidence document as
@@ -185,7 +186,86 @@ class Workbench:
         self.store, self.model, self.as_of = store, model, as_of
         self.generation_lock = Lock()
         with store.tx() as c:
-            c.executescript(SCHEMA)
+            c.executescript(SCHEMA + authority.SCHEMA)
+
+    def grant_authority(self, raw, *, issuer):
+        """Trusted local operations bootstrap only; deliberately absent from HTTP APIs.
+
+        Issuer identity is supplied by trusted host configuration, never model/user
+        documents. Local database administrators remain inside the trust boundary.
+        """
+        record = authority.Authority.model_validate(raw).model_dump()
+        if issuer != record["issuer"]:
+            raise Refused("operational_issuer_not_authorized")
+        with self.store.tx() as c:
+            old = c.execute("SELECT body,revoked FROM seller_authorities WHERE id=?", (record["id"],)).fetchone()
+            if old:
+                if old["body"] != canonical(record) or old["revoked"]:
+                    raise Refused("operational_authority_identity_conflict")
+                return record
+            c.execute("INSERT INTO seller_authorities(id,body) VALUES(?,?)", (record["id"], canonical(record)))
+            self.audit(c, "operational_authority_granted", record["id"], issuer, {"sha256": digest(record)})
+        return record
+
+    def revoke_authority(self, identity, *, issuer):
+        with self.store.tx() as c:
+            row = c.execute("SELECT body FROM seller_authorities WHERE id=?", (identity,)).fetchone()
+            if not row or json.loads(row[0])["issuer"] != issuer:
+                raise Refused("operational_issuer_not_authorized")
+            c.execute("UPDATE seller_authorities SET revoked=1 WHERE id=?", (identity,))
+            self.audit(c, "operational_authority_revoked", identity, issuer, {})
+
+    def governed(self, c, proposal, snapshot, ids):
+        proposal = validate_proposal(proposal, snapshot)
+        records = authority.resolve(c, ids, snapshot, self.clock())
+        governed = authority.compile_proposal(proposal, snapshot, records)
+        return validate_proposal(governed, snapshot), authority.proof(records)
+
+    def prepare(self, run_id, expected_hash, proposal=None, authority_ids=None):
+        """Prepare explicit executable content without approving it or modifying the model output."""
+        with self.store.tx() as c:
+            run = self.get_run(c, run_id)
+            if run["status"] != "review_required" or digest(run) != expected_hash:
+                raise Refused("run_changed_or_not_reviewable")
+            self.current(c, run)
+            governed, proof = self.governed(c, run["proposal"] if proposal is None else proposal,
+                                            run["snapshot"], [] if authority_ids is None else authority_ids)
+            return {"proposal": governed, "execution": proof}
+
+    def approval_record(self, c, key):
+        row = c.execute("SELECT * FROM seller_actions WHERE id=?", (key,)).fetchone()
+        if not row:
+            raise Refused("action_not_approved")
+        payload = json.loads(row["payload"])
+        proofs = c.execute("SELECT body FROM seller_audit WHERE action='proposal_approved' AND subject=?", (key,))
+        if digest(payload) != key or not any(json.loads(p[0]).get("payload_hash") == key for p in proofs):
+            raise Refused("approval_provenance_missing")
+        run = self.get_run(c, row["run_id"])
+        if (payload.get("run_id") != row["run_id"] or any(payload.get(k) != run["snapshot"][k]
+                for k in ("brand", "account")) or payload.get("owner") != run["snapshot"]["decision"]["owner"]
+                or payload.get("evidence_hash") != run["snapshot"]["state_hash"]):
+            raise Refused("approval_run_binding_mismatch")
+        return row, payload
+
+    def authorize_new_effect(self, c, key):
+        row, payload = self.approval_record(c, key)
+        if row["state"] not in ("approved", "retry"):
+            raise Refused("action_no_longer_authorized")
+        if c.execute("SELECT 1 FROM seller_audit WHERE action='proposal_rejected' AND subject=?", (row["run_id"],)).fetchone():
+            raise Refused("proposal_rejected")
+        run = self.get_run(c, row["run_id"])
+        self.current(c, run)
+        proof = payload.get("execution")
+        if not isinstance(proof, dict) or proof.get("version") != authority.VERSION:
+            raise Refused("legacy_approval_requires_new_review")
+        try:
+            ids = [r["id"] for r in proof["authorities"]]
+        except (KeyError, TypeError):
+            raise Refused("execution_authority_proof_invalid") from None
+        governed, expected = self.governed(c, payload["proposal"], run["snapshot"], ids)
+        if expected != proof or governed != payload["proposal"]:
+            raise Refused("execution_content_or_authority_changed")
+        return payload
 
     def clock(self):
         return self.as_of if self.as_of is not None else now()
@@ -245,7 +325,7 @@ class Workbench:
         if not self.model:
             raise Refused("live_model_not_configured")
         snapshot = self.context(brand, account)
-        cache_key = digest({"snapshot": snapshot, "configuration": self.model.config})
+        cache_key = digest({"snapshot": snapshot, "configuration": self.model.config, "execution_policy": authority.VERSION})
         run_id = cache_key
         with self.store.tx() as c:
             rows = c.execute("SELECT body FROM seller_runs WHERE id=? OR json_extract(body,'$.cache_key')=? "
@@ -292,7 +372,7 @@ class Workbench:
             raise Refused("commercial_policy_blocks_action")
         return current
 
-    def approve(self, run_id, proposal, expected_hash, actor="operator"):
+    def approve(self, run_id, proposal, expected_hash, actor="operator", *, authority_ids=None):
         with self.store.tx() as c:
             run = self.get_run(c, run_id)
             if run["status"] != "review_required" or digest(run) != expected_hash:
@@ -304,9 +384,12 @@ class Workbench:
             proposal = validate_proposal(proposal, run["snapshot"])
             if proposal["action"] == "no_action":
                 raise Refused("no_action_is_not_deliverable")
+            governed, proof = self.governed(c, proposal, run["snapshot"], [] if authority_ids is None else authority_ids)
+            if governed != proposal:
+                raise Refused("unverified_prose_not_executable: prepare and review governed content")
             payload = {"run_id": run_id, "brand": run["snapshot"]["brand"],
                        "account": run["snapshot"]["account"], "owner": run["snapshot"]["decision"]["owner"],
-                       "proposal": proposal, "evidence_hash": run["snapshot"]["state_hash"]}
+                       "proposal": proposal, "evidence_hash": run["snapshot"]["state_hash"], "execution": proof}
             key = digest(payload)
             old = c.execute("SELECT id FROM seller_actions WHERE run_id=?", (run_id,)).fetchone()
             if old and old[0] != key:
@@ -327,13 +410,12 @@ class Workbench:
     def deliver(self, key, url, token, actor="operator", timeout=5):
         # One serialized lane: input changes and duplicate workers cannot race this dispatch.
         with self.store.tx() as c:
-            row = c.execute("SELECT * FROM seller_actions WHERE id=?", (key,)).fetchone()
-            if not row or row["state"] not in ("approved", "retry", "delivered"):
-                raise Refused("action_not_approved")
+            row, payload = self.approval_record(c, key)
             if row["state"] == "delivered":
-                return json.loads(row["receipt"])
-            run = self.get_run(c, row["run_id"])
-            payload = json.loads(row["payload"])
+                receipt = json.loads(row["receipt"])
+                if receipt.get("id") != key or receipt.get("payload_hash") != key:
+                    raise Refused("remote_receipt_conflict")
+                return receipt
             c.execute("UPDATE seller_actions SET attempts=attempts+1 WHERE id=?", (key,))
             try:
                 with httpx.Client(timeout=timeout, trust_env=False, follow_redirects=False,
@@ -342,11 +424,11 @@ class Workbench:
                     if response.status_code == 404:
                         # A historical receipt records an already committed effect.
                         # Only a new effect requires current evidence/consent authority.
-                        self.current(c, run)
+                        self.authorize_new_effect(c, key)
                         response = client.post(url + "/seller/tasks/" + key, json=payload)
                     response.raise_for_status()
                     receipt = response.json()
-                if receipt.get("id") != key or receipt.get("payload_hash") != digest(payload):
+                if not isinstance(receipt, dict) or receipt.get("id") != key or receipt.get("payload_hash") != key:
                     raise Refused("remote_receipt_conflict")
                 c.execute("UPDATE seller_actions SET state='delivered',receipt=?,detail='' WHERE id=?",
                           (canonical(receipt), key))
@@ -369,10 +451,13 @@ class Workbench:
             audit = [dict(r) for r in c.execute("SELECT * FROM seller_audit ORDER BY seq DESC LIMIT 100")]
             rejected = [r[0] for r in c.execute(
                 "SELECT DISTINCT subject FROM seller_audit WHERE action='proposal_rejected'")]
+            authorities = [dict(json.loads(r[0]), revoked=bool(r[1])) for r in c.execute(
+                "SELECT body,revoked FROM seller_authorities ORDER BY id")]
             return {"accounts": [dict(brand=b, account=a, **{k: decide(rows, b, a, self.clock())[k]
                     for k in ("stage", "score", "owner", "consent")}) for b, a in accounts],
                     "runs": runs, "actions": actions, "audit": audit, "as_of": self.clock(),
                     "rejected_run_ids": rejected,
+                    "operational_authorities": authorities,
                     "model": self.model.config if self.model else None}
 
 

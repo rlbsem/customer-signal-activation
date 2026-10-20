@@ -111,7 +111,7 @@ The browser test drives these controls, then supplies an independently authentic
 
 ## Review a seller action
 
-The workbench assembles account-scoped documents and verified commercial state. Qwen3-14B interprets the customer's need, selects source-bound quotation spans and proposes a response. The seller can inspect sources, edit the draft, reject the proposal or approve its exact content. A changed permission or evidence version blocks dispatch; a lost acknowledgement is reconciled before retry.
+The workbench assembles account-scoped documents and verified commercial state. Qwen3-14B interprets the customer's need, selects source-bound quotation spans and proposes an advisory response. The seller inspects those sources, prepares governed CRM content, and approves its exact payload. Operational commitments require separately registered, current authority. A changed permission or evidence version blocks new dispatch; a lost acknowledgement is reconciled before retry. [Execution contract, limits and operator procedure](docs/seller-authority.md).
 
 The **Evaluation evidence** tab lets reviewers compare saved template, simple LLM and grounded-workflow outputs for each scenario, inspect their source documents and see the checks behind each result. It works without a model download or provider credential. The live workspace uses an authenticated model endpoint. Recorded outputs are retained verbatim, including imperfect drafts; see the [focused source-support review and reviewer-edited example](docs/seller-review-notes.md).
 
@@ -122,6 +122,8 @@ python scripts/seller.py --no-model
 Open `http://127.0.0.1:8530`, enter the operator token printed by the launcher and choose Evaluation evidence. For fresh inference, follow the [pinned model and application setup](docs/seller-workbench.md).
 
 [Actual application records](docs/evidence/seller/application.json), [operational dbt results](docs/evidence/seller/operations.json) and [runtime provenance](docs/evidence/seller/runtime.json) support the screenshots. Operational metrics count generated proposals and reviewed tasks; they do not establish commercial uplift. The original cash lineage remains independent of the model.
+
+Those original screenshots and benchmark records are preserved. The [authority-hardening evidence](docs/evidence/seller-authority/README.md) separately records actual before/after local delivery, six new Qwen3-14B responses and current UI captures. This finite control does not establish general semantic grounding or fresh Salesforce execution.
 
 ## Run it
 

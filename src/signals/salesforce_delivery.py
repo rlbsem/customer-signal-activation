@@ -43,8 +43,21 @@ def _key(key):
 
 def _body(payload, mapping):
     required = {"run_id", "brand", "account", "owner", "proposal", "evidence_hash"}
-    if not isinstance(payload, dict) or set(payload) != required:
+    if not isinstance(payload, dict) or set(payload) not in (required, required | {"execution"}):
         raise DeliveryError("invalid_approved_payload")
+    if "execution" in payload:
+        proof = payload["execution"]
+        if (not isinstance(proof, dict) or set(proof) != {"version", "authorities"}
+                or proof["version"] != "seller-execution/v1" or not isinstance(proof["authorities"], list)
+                or len(proof["authorities"]) > 4):
+            raise DeliveryError("invalid_execution_proof")
+        ids = set()
+        for item in proof["authorities"]:
+            if (not isinstance(item, dict) or set(item) != {"id", "sha256"}
+                    or not isinstance(item["id"], str) or item["id"] in ids
+                    or not isinstance(item["sha256"], str) or not re.fullmatch(r"[a-f0-9]{64}", item["sha256"])):
+                raise DeliveryError("invalid_execution_proof")
+            ids.add(item["id"])
     for name in ("run_id", "brand", "account", "owner", "evidence_hash"):
         if not isinstance(payload[name], str) or not payload[name]:
             raise DeliveryError("invalid_approved_payload")

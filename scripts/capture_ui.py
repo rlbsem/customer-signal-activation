@@ -72,8 +72,10 @@ def capture(workspace, output):
             page.locator("#model-badge").filter(has_text="Recorded inference").wait_for()
             assert page.locator("#generate").is_disabled()
             assert page.locator("#draft").input_value() == record["proposal"]["draft"]
-            # Reapply the exact preserved reviewer edit through the actual UI.
+            # Retain the original edit as advisory input; execute only the newly governed response.
             page.locator("#draft").fill(reviewed["proposal"]["draft"])
+            page.get_by_role("button", name="Prepare governed review").click()
+            page.get_by_text("Governed content prepared", exact=False).wait_for()
             page.get_by_role("button", name="Approve CRM task", exact=True).click()
             page.get_by_role("button", name="Deliver approved task", exact=True).click()
             page.locator(".receipt").wait_for()
@@ -88,7 +90,7 @@ def capture(workspace, output):
             page.set_viewport_size(viewport)
             receipt_bounds = page.locator(".receipt").bounding_box()
             assert receipt_bounds["y"] >= 0 and receipt_bounds["y"] + receipt_bounds["height"] <= viewport["height"]
-            assert page.locator(".receipt code").inner_text() == old_action["id"]
+            assert page.locator(".receipt code").inner_text() == bench.overview()["actions"][0]["id"]
             page.screenshot(path=output / "seller-brief.jpg", type="jpeg", quality=92, full_page=False)
             page.screenshot(path=workspace / "seller-full.png", full_page=True)
             bounds = {name: page.locator(selector).bounding_box() for name, selector in
@@ -102,14 +104,15 @@ def capture(workspace, output):
             browser.close()
     with sqlite3.connect(workspace / "capture-crm.sqlite") as c:
         delivered = c.execute("SELECT body FROM seller_tasks").fetchall()
-    assert len(delivered) == 1 and json.loads(delivered[0][0])["proposal"] == reviewed["proposal"]
+    approved_proposal = json.loads(bench.overview()["actions"][0]["payload"])["proposal"]
+    assert len(delivered) == 1 and json.loads(delivered[0][0])["proposal"] == approved_proposal
     assert not errors, errors
     result = {"captured_utc": datetime.now(timezone.utc).isoformat(), "pages": "real local HTML/CSS/JS and HTTP APIs",
               "inference": "preserved recorded output; no new model request", "salesforce": "not accessed",
               "recorded_application_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
               "intake_events": 3, "local_delivered_tasks": 1, "mobile_overflow": False, "page_errors": errors,
               "seller_viewport": viewport, "seller_bounds": bounds,
-              "reviewed_draft": "exact preserved reviewer edit, applied through UI",
+              "reviewed_draft": "governed response prepared and approved through UI; original edit remains advisory",
               "approval_and_delivery_evidence_visible": True,
               "image_sha256": {name: hashlib.sha256((output / name).read_bytes()).hexdigest()
                                for name in ("browser-proof.png", "seller-brief.jpg")}}

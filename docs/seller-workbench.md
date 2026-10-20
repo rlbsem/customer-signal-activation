@@ -32,7 +32,7 @@ The Evaluation evidence tab also loads the committed benchmark and lets reviewer
 1. Choose an account and inspect inquiry documents, approved product information and authoritative state.
 2. Generate a live brief. Repeated requests for the identical evidence, prompt and model configuration return the saved run and are labelled as cached.
 3. Inspect exact source quotations and the model's interpretation, response, questions and unknowns.
-4. Edit the response before approval. Approval binds the full proposal and evidence hash.
+4. Use **Prepare governed review**, inspect the controlled response and any separately registered operational authority, then approve its exact content. Free-form model prose remains advisory. See the [execution contract and operator procedure](seller-authority.md).
 5. Deliver the approved CRM task. The receiver persists an idempotent receipt. If acknowledgement is lost, the next attempt looks up that receipt before sending anything again.
 
 The model does not send email or alter consent, identity, account ownership, lifecycle state or financial facts. A withdrawn canonical permission, changed source evidence or expired proposal blocks approval/delivery. Rejection is terminal for that run. Approved content is immutable; a conflicting second approval is refused. Existing remote effects are retained when later evidence changes.

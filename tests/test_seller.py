@@ -46,7 +46,7 @@ def run(bench):
 
 def approved(bench):
     record = run(bench)
-    return bench.approve(record["id"], record["proposal"], digest(record))
+    return bench.approve(record["id"], bench.prepare(record["id"], digest(record))["proposal"], digest(record))
 
 
 def test_brand_account_scope_and_authority(bench):
@@ -144,11 +144,14 @@ def test_changed_evidence_invalidates_approval(bench):
 
 def test_review_edits_bound_to_immutable_approved_content(bench):
     record = run(bench)
-    proposal = dict(record["proposal"], draft="Reviewed by the seller. Which workflow should we discuss first?")
+    proposal = bench.prepare(record["id"], digest(record))["proposal"]
     action = bench.approve(record["id"], proposal, digest(record))
     assert action["payload"]["proposal"]["draft"] == proposal["draft"]
+    changed = dict(proposal, claims=[dict(proposal["claims"][0], quote=proposal["claims"][0]["quote"][:30])])
     with pytest.raises(Refused, match="immutable"):
-        bench.approve(record["id"], record["proposal"], digest(record))
+        bench.approve(record["id"], changed, digest(record))
+    with pytest.raises(Refused, match="unverified_prose"):
+        bench.approve(record["id"], dict(proposal, draft="Our support team is ready to assist immediately."), digest(record))
     with pytest.raises(Refused, match="run_changed"):
         bench.approve(record["id"], proposal, "wrong-hash")
 
@@ -217,8 +220,9 @@ def test_operator_auth_origin_and_cached_approval(bench):
         client.post("/api/generate/cedar/account-0012", json={})
         record = client.post("/api/generate/cedar/account-0012", json={}).json()
         assert record["run"]["cached"]
+        prepared = client.post("/api/prepare/" + record["run"]["id"], json={"review_hash": record["review_hash"]}).json()
         assert client.post("/api/approve/" + record["run"]["id"], json={
-            "proposal": record["run"]["proposal"], "review_hash": record["review_hash"]}).status_code == 200
+            "proposal": prepared["proposal"], "review_hash": record["review_hash"]}).status_code == 200
         html = client.get("/").text
         assert "operator-token" not in html and "dest-token" not in html
         assert "frame-ancestors 'none'" in client.get("/").headers["content-security-policy"]
@@ -235,15 +239,18 @@ def test_actual_seller_browser_review_and_destination(bench, tmp_path):
                 page.goto(url)
                 page.locator("#token").fill("browser-login")
                 page.get_by_role("button", name="Open workbench").click()
-                page.get_by_role("button", name="Generate live brief").click()
+                page.get_by_role("button", name="Generate software-test brief").click()
+                page.get_by_text("No new model inference occurred.", exact=False).wait_for()
                 page.locator("#draft").wait_for()
                 page.locator("#draft").fill("A reviewed seller response: which workflow should we discuss first?")
+                page.get_by_role("button", name="Prepare governed review").click()
+                page.get_by_text("Governed content prepared", exact=False).wait_for()
                 page.get_by_role("button", name="Approve CRM task").click()
                 page.get_by_role("button", name="Deliver approved task").click()
                 page.get_by_text("Task persisted in the synthetic CRM").wait_for()
                 assert page.locator(".receipt").count() == 1
                 assert page.locator("#draft").is_disabled()
-                assert page.locator("#draft").input_value().startswith("A reviewed seller response")
+                assert "preferred meeting times" in page.locator("#draft").input_value()
                 page.set_viewport_size({"width": 390, "height": 844})
                 assert page.locator("#accounts").is_visible()
                 page.get_by_role("button", name="Permission withdrawn").click()
@@ -251,14 +258,15 @@ def test_actual_seller_browser_review_and_destination(bench, tmp_path):
                 browser.close()
     with sqlite3.connect(tmp_path / "crm.sqlite") as c:
         payload = json.loads(c.execute("SELECT body FROM seller_tasks").fetchone()[0])
-        assert payload["proposal"]["draft"].startswith("A reviewed seller response")
+        assert "preferred meeting times" in payload["proposal"]["draft"]
 
 
 def test_operational_dbt_grains_do_not_fan_out_repeated_approvals(bench, tmp_path):
     from signals.seller_analytics import build
     record = run(bench)
-    bench.approve(record["id"], record["proposal"], digest(record))
-    bench.approve(record["id"], record["proposal"], digest(record))
+    proposal = bench.prepare(record["id"], digest(record))["proposal"]
+    bench.approve(record["id"], proposal, digest(record))
+    bench.approve(record["id"], proposal, digest(record))
     result = build(bench, tmp_path / "warehouse")
     assert result["runs"] == 1 and result["actions"] == 1
     metrics = result["summary"][0]

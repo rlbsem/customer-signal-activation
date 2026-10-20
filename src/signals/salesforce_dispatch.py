@@ -55,15 +55,7 @@ class SalesforceDispatcher:
         return self.status(key)
 
     def _approved(self, c, key):
-        row = c.execute("SELECT * FROM seller_actions WHERE id=?", (key,)).fetchone()
-        if not row:
-            raise Refused("action_not_approved")
-        payload = json.loads(row["payload"])
-        proof = c.execute("SELECT body FROM seller_audit WHERE action='proposal_approved' AND subject=?",
-                          (key,)).fetchall()
-        if digest(payload) != key or not any(json.loads(p[0]).get("payload_hash") == key for p in proof):
-            raise Refused("approval_provenance_missing")
-        return row, payload
+        return self.bench.approval_record(c, key)
 
     def _delivered(self, c, key, receipt):
         if receipt.get("id") != key or receipt.get("payload_hash") != key:
@@ -121,7 +113,7 @@ class SalesforceDispatcher:
                 if c.execute("SELECT 1 FROM seller_audit WHERE action='proposal_rejected' AND subject=?",
                              (action["run_id"],)).fetchone():
                     raise Refused("proposal_rejected")
-                self.bench.current(c, self.bench.get_run(c, action["run_id"]))
+                self.bench.authorize_new_effect(c, key)
                 receipt = self.inbox.create(key, payload)
                 return self._delivered(c, key, receipt)
             except Refused as exc:
