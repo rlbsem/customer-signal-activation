@@ -299,7 +299,7 @@ def test_existing_workbench_delivers_approved_content_through_bridge(remote, tmp
     with serve(bridge(inbox, "bridge-test-token")) as url:
         with pytest.raises(Refused, match="action_not_approved"):
             bench.deliver("not-approved", url, "bridge-test-token")
-        approved = bench.approve(record["id"], record["proposal"], digest(record))
+        approved = bench.approve(record["id"], bench.prepare(record["id"], digest(record))["proposal"], digest(record))
         assert bench.deliver(approved["id"], url, "wrong")["state"] == "retry"
         assert count(state) == 0
         result = bench.deliver(approved["id"], url, "bridge-test-token")
@@ -318,7 +318,7 @@ def test_workbench_lost_acknowledgement_recovery(remote, tmp_path):
     bench = Workbench(Store(tmp_path / "workbench.sqlite"), SyntheticResponder(), AS_OF)
     seed_workbench(bench)
     record = bench.generate("cedar", "account-0012")
-    approved = bench.approve(record["id"], record["proposal"], digest(record))
+    approved = bench.approve(record["id"], bench.prepare(record["id"], digest(record))["proposal"], digest(record))
     state["fault"] = "after_commit"
     with serve(bridge(inbox, "bridge-test-token")) as url:
         assert bench.deliver(approved["id"], url, "bridge-test-token")["state"] == "retry"

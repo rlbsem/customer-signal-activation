@@ -1,0 +1,13 @@
+{
+  "id": "synthetic-slot-20260331",
+  "brand": "cedar",
+  "account": "account-0012",
+  "owner": "cedar-east",
+  "action": "schedule_discovery",
+  "kind": "availability",
+  "issuer": "support_operations",
+  "statement": "Synthetic demo slot confirmed for 2 April at 14:00 UTC.",
+  "valid_from": 1774958400,
+  "expires_at": 1774962000,
+  "revision": 1
+}

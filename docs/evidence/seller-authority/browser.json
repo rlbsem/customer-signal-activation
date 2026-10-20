@@ -1,0 +1,16 @@
+{
+  "scope": "Actual Chromium against local synthetic services; archived draft replay; no fresh inference or vendor execution",
+  "archived_trace": "docs/evidence/seller/traces/grounded_workflow-regression-008-42.json",
+  "archived_trace_sha256": "75403c74cc8367eae0218641e69ff73cf63f46426fb131174eb4b2877e7c147e",
+  "screenshots": {
+    "advisory.png": "15660afdd62143fac7c47a2e1c677b545404d4f92fdab6945094c630c6bd6528",
+    "governed.png": "859509b8fd1af397f8590937e3dd9d090920fcf55df662d1a1d1871f9a900efc"
+  },
+  "mobile_overflow": false,
+  "page_errors": [],
+  "receipt": {
+    "destination": "synthetic_crm_task",
+    "id": "6da481b754e78f603542ba9b34ab66f12cad25acc3ad7b93ca725b05dc9dafdf",
+    "payload_hash": "6da481b754e78f603542ba9b34ab66f12cad25acc3ad7b93ca725b05dc9dafdf"
+  }
+}

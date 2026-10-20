@@ -1,0 +1,18 @@
+{
+  "status": "recorded_native_evidence_checked_offline",
+  "native_query_ids": 126,
+  "salesforce_requests": 42,
+  "action_effects": 1,
+  "new_vendor_execution": false,
+  "historical_source_revision": "9c9f61485b165f0906c01a5c1f263fb8c07380ff",
+  "current_source_differences": [
+    "src/signals/integration_activation.py",
+    "src/signals/salesforce_acceptance.py",
+    "src/signals/salesforce_delivery.py",
+    "src/signals/salesforce_dispatch.py",
+    "src/signals/seller.py",
+    "src/signals/seller_api.py",
+    "scripts/capture_ui.py"
+  ],
+  "current_native_acceptance": "not_executed"
+}

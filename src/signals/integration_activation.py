@@ -93,7 +93,8 @@ def prepare(bench, decision, envelope, *, eligible, actor='approved-synthetic-in
             run = bench.get_run(c, generated['id'])
     if run['status'] != 'review_required':
         raise Refused('warehouse_proposal_invalid')
-    return bench.approve(run['id'], run['proposal'], digest(run), actor)
+    reviewed = bench.prepare(run['id'], digest(run))['proposal']
+    return bench.approve(run['id'], reviewed, digest(run), actor)
 
 
 class GuardedSalesforceInbox(SalesforceInbox):

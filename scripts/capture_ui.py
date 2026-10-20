@@ -74,6 +74,8 @@ def capture(workspace, output):
             assert page.locator("#draft").input_value() == record["proposal"]["draft"]
             # Reapply the exact preserved reviewer edit through the actual UI.
             page.locator("#draft").fill(reviewed["proposal"]["draft"])
+            page.get_by_role("button", name="Prepare governed review").click()
+            page.get_by_text("Governed content prepared", exact=False).wait_for()
             page.get_by_role("button", name="Approve CRM task", exact=True).click()
             page.get_by_role("button", name="Deliver approved task", exact=True).click()
             page.locator(".receipt").wait_for()
@@ -88,7 +90,7 @@ def capture(workspace, output):
             page.set_viewport_size(viewport)
             receipt_bounds = page.locator(".receipt").bounding_box()
             assert receipt_bounds["y"] >= 0 and receipt_bounds["y"] + receipt_bounds["height"] <= viewport["height"]
-            assert page.locator(".receipt code").inner_text() == old_action["id"]
+            assert page.locator(".receipt code").inner_text() == bench.overview()["actions"][0]["id"]
             page.screenshot(path=output / "seller-brief.jpg", type="jpeg", quality=92, full_page=False)
             page.screenshot(path=workspace / "seller-full.png", full_page=True)
             bounds = {name: page.locator(selector).bounding_box() for name, selector in
