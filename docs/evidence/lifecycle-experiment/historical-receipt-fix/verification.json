@@ -1,0 +1,30 @@
+{
+  "executed_at": "2026-10-23T13:03:34.285816+00:00",
+  "scope": "Complete local regression and loopback synthetic acceptance; no vendor execution.",
+  "tests": {
+    "tests": 443,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "baseline_tests": 424,
+  "new_tests": 19,
+  "test_record": "tests.xml",
+  "sanitization": "Machine hostname omitted; test results and timing preserved.",
+  "duration_seconds": 620.046,
+  "test_source_sha256": "f4618b0328083691ef69731d607ae97b8d821e21fe8c12d27f560221e71e5c44",
+  "execution_record_sha256": "714c9d05e70118dc38ad0aff6e2a5e39908978dbec3cbf8bf2d8de724cea27ca",
+  "initial_run_source": "0aba39ed7503b443e5801204ce4b97c2074326e8",
+  "scenario_metrics_match_initial": true,
+  "checks": {
+    "locked_dependencies": "passed",
+    "ruff": "passed",
+    "original_historical_artifacts": 464,
+    "initial_experiment_artifacts": 6,
+    "historical_receipt_invariance": "passed",
+    "pending_outcomes_render_unknown": "passed",
+    "source_screenshot_bindings": "passed",
+    "internal_markdown_links": "passed"
+  },
+  "boundary": "Qualified activation milestones, invoice/cash/revenue attribution and native marketing platform acceptance are not established by this study."
+}

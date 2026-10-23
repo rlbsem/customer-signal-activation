@@ -3,6 +3,7 @@
 import hashlib
 import json
 import re
+import subprocess
 from pathlib import Path
 from package import files
 
@@ -14,11 +15,19 @@ def check():
     baseline = json.loads((EVIDENCE / "baseline.json").read_text(encoding="utf8"))
     for name, expected in baseline["files"].items():
         assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
-    record = json.loads((EVIDENCE / "execution.json").read_text(encoding="utf8"))
+    current = EVIDENCE / "historical-receipt-fix"
+    previous = json.loads((current / "previous-artifacts.json").read_text(encoding="utf8"))
+    for name, expected in previous["files"].items():
+        assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
+    original = json.loads((EVIDENCE / "execution.json").read_text(encoding="utf8"))
+    for name, expected in original["source_sha256"].items():
+        blob = subprocess.check_output(["git", "show", previous["revision"] + ":" + name], cwd=ROOT)
+        assert hashlib.sha256(blob).hexdigest() == expected, name
+    record = json.loads((current / "execution.json").read_text(encoding="utf8"))
     for name, expected in record["source_sha256"].items():
         assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
     for name, expected in record["screenshots"].items():
-        assert hashlib.sha256((EVIDENCE / name).read_bytes()).hexdigest() == expected, name
+        assert hashlib.sha256((current / name).read_bytes()).hexdigest() == expected, name
     assert record["worker_exit"] == 86 and record["incremental_full_parity"]
     assert record["reference_people"] == 12 and record["large_people"] == 1200
     assert len(record["independent_receipts"]) == 2 and len(record["dbt_models"]) == 9
@@ -41,7 +50,7 @@ def check():
     print(
         json.dumps(
             {
-                "preserved_historical_artifacts": len(baseline["files"]),
+                "preserved_historical_artifacts": len(baseline["files"]) + len(previous["files"]),
                 "internal_links": links,
                 "source_and_screenshot_bindings": "passed",
             }

@@ -329,3 +329,22 @@ def test_source_join_fanout_and_assignment_golden_values(study, tmp_path):
     assert sum(p["conversions"] for p in report["population"].values()) == 1
     assert sum(p["pipeline_cents"] for p in report["population"].values()) == 123456
     build(e, tmp_path / "fanout", as_of=now)
+
+
+def test_late_receipt_cannot_rewrite_historical_comparison(study, tmp_path):
+    from signals.lifecycle_study import END
+
+    e, x = study
+    a = target(e, "treatment")
+    approve(e, a)
+    with serve(app(tmp_path / "remote.sqlite")) as url:
+        assert e.dispatch(a["id"], BASE, url, lose_ack=True) == "uncertain"
+        # Use this study id with explicit source observations, not a different study registration.
+        for person in x.measure("trial-v1", BASE)["assignments"]:
+            x.coverage("coverage-" + person["person"], 1, person["brand"], person["person"], BASE, END, END)
+        historical = x.measure("trial-v1", END)
+        assert historical["measurement_complete"] and historical["itt_rate_difference"] == 0
+        assert historical["population"]["treatment"]["accepted"] == 0
+        assert e.dispatch(a["id"], END + 1, url) == "accepted"
+        assert x.measure("trial-v1", END + 1)["population"]["treatment"]["accepted"] == 1
+        assert x.measure("trial-v1", END) == historical

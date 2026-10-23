@@ -271,7 +271,11 @@ class Experiments:
                 )
                 if valid:
                     exposed.append(action["id"])
-                if action["state"] == "accepted" and not valid:
+                # Use visible history, never today's mutable state, for an as-of verdict.
+                accepted_visible = any(
+                    h["event"] == "accepted" and h["action"] == action["id"] for h in histories
+                )
+                if accepted_visible and not valid:
                     exceptions.append({"assignment": a["id"], "reason": "accepted_without_verified_receipt"})
             other_exposure = any(
                 v["id"] not in {r["id"] for r in target}

@@ -30,9 +30,9 @@ python scripts/lifecycle.py --workspace .local/lifecycle
 
 The [Experiment & Outcomes workspace](docs/lifecycle-experiments.md) adds immutable person-level assignments, cross-journey holdout enforcement and seven-day outcome measurement. It keeps assigned populations separate from eligible, approved and independently accepted people. Late CRM corrections revise the dbt outcomes; incomplete observation withholds the comparison. Explicit opportunity links remain synthetic pipeline, never inferred revenue or commercial uplift.
 
-[Executed reference and 1,200-person measurement](docs/evidence/lifecycle-experiment/README.md) · [Metric contract](docs/lifecycle-experiment-contract-v1.json)
+[Executed reference and 1,200-person measurement](docs/evidence/lifecycle-experiment/historical-receipt-fix/README.md) · [Metric contract](docs/lifecycle-experiment-contract-v1.json)
 
-![Executed synthetic lifecycle experiment with enforced holdout and source-linked outcomes](docs/evidence/lifecycle-experiment/experiment-desktop.png)
+![Executed synthetic lifecycle experiment with enforced holdout and source-linked outcomes](docs/evidence/lifecycle-experiment/historical-receipt-fix/experiment-desktop.png)
 
 ## From account evidence to an owned action
 

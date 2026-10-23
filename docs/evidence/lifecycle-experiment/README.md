@@ -1,4 +1,6 @@
-# Executed lifecycle experiment
+# Initial executed lifecycle experiment
+
+This record is preserved at source revision `0aba39ed7503b443e5801204ce4b97c2074326e8`. The [current acceptance record](historical-receipt-fix/README.md) includes the subsequent historical-receipt visibility correction. The original execution JSON, screenshots and test results below are unchanged.
 
 The [execution record](execution.json) binds the executed source and screenshot fingerprints to a local synthetic study. It records real loopback HTTP effects, an independent destination database, a terminated child process and native local DuckDB/dbt builds. No marketing vendor, email transport or commercial business outcome is represented by this run.
 

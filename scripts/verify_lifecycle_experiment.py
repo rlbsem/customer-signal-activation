@@ -175,6 +175,7 @@ def capture(workspace, output):
 
         act("Assign reference study", "start_experiment")
         page.locator("#study-rows tr").first.wait_for()
+        assert page.locator("#study-rows").inner_text().count("Unknown") == 12
         # Deliver the eligible synthetic treatment in the original operations screen.
         page.get_by_role("button", name="Lifecycle operations", exact=True).click()
         page.locator("#person").select_option("synthetic-0007")
