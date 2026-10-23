@@ -17,7 +17,7 @@ llama-server -m work/models/Qwen3-14B-Q4_K_M.gguf --alias qwen3-14b --jinja --re
 python scripts/seller.py --workspace work/seller-demo
 ```
 
-Open http://127.0.0.1:8530 and enter the operator token printed by the launcher. The server holds provider and destination credentials; they do not appear in HTML, JavaScript or recorded model inputs. The workbench starts a separate authenticated synthetic CRM receiver with its own database. The fixed scenario clock is March 31, 2026 and is displayed in the interface.
+After starting the local workbench server, open `http://127.0.0.1:8530` in a browser on the **same computer** and enter the operator token printed by the launcher. This address is not a publicly hosted demo. The server holds provider and destination credentials; they do not appear in HTML, JavaScript or recorded model inputs. The workbench starts a separate authenticated synthetic CRM receiver with its own database. The fixed scenario clock is March 31, 2026 and is displayed in the interface.
 
 Generate a private local model token and set `SELLER_MODEL_KEY` to the same value before launching the application or evaluation. Use `$env:SELLER_MODEL_KEY = 'your-generated-token'` in PowerShell or `export SELLER_MODEL_KEY='your-generated-token'` in a POSIX shell. Keep the actual value out of repository files and screenshots. The model-server key prevents unrelated browser pages from calling local inference directly.
 
