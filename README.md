@@ -119,7 +119,7 @@ The **Evaluation evidence** tab lets reviewers compare saved template, simple LL
 python scripts/seller.py --no-model
 ```
 
-Open `http://127.0.0.1:8530`, enter the operator token printed by the launcher and choose Evaluation evidence. For fresh inference, follow the [pinned model and application setup](docs/seller-workbench.md).
+To run the operator interface, first follow the [local workbench setup](docs/seller-workbench.md). Once the server is running, open `http://127.0.0.1:8530` in a browser on the **same computer**, enter the launcher-provided operator token and choose Evaluation evidence. This address is not a public demo. For a no-install review, inspect the [recorded workbench screenshot](docs/images/seller-brief.jpg) and [hosted Engineering Evidence Lab](https://rlbsem.github.io/enterprise-revenue-systems-lab/).
 
 [Actual application records](docs/evidence/seller/application.json), [operational dbt results](docs/evidence/seller/operations.json) and [runtime provenance](docs/evidence/seller/runtime.json) support the screenshots. Operational metrics count generated proposals and reviewed tasks; they do not establish commercial uplift. The original cash lineage remains independent of the model.
 
