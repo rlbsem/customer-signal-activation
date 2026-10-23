@@ -1,12 +1,12 @@
-# Isolated Developer Edition handoff
+# Salesforce Developer Edition reproduction runbook
 
-The isolated org, metadata, three identities and CLI authentication are already configured for the current demonstration. **Do not repeat setup or change permissions.** Use the existing aliases through `scripts/run_salesforce_acceptance.py`; its preflight mode is read-only. The [finishing review](salesforce-finish-review.md) records the approved completed experiments. Further live writes still require explicit approval. The one-time instructions below remain for a fresh, separately approved reproduction.
+This runbook documents the isolated Developer Edition configuration used in the completed native acceptance. The original setup and executed results are recorded in the [acceptance review](salesforce-finish-review.md). **Do not repeat setup or change permissions in an existing environment.** Use the authenticated local aliases through `scripts/run_salesforce_acceptance.py`; its preflight mode is read-only. The setup instructions below apply to a new, separately approved reproduction. Any additional native writes require explicit authorization.
 
-## Minimum handoff to continue assisted setup
+## Fresh-environment setup prerequisites
 
 1. Create a free [Salesforce Developer Edition org](https://developer.salesforce.com/signup). Use a dedicated demonstration org with no client data or paid add-ons. Keep the administrator account private.
 2. Install the official [Salesforce CLI](https://developer.salesforce.com/tools/salesforcecli), then authenticate locally using `sf org login web --alias csa-demo-owner --instance-url https://login.salesforce.com`. Confirm the browser is signing into the new isolated org. Passwords and MFA stay in Salesforce's browser flow.
-3. Give the assisting engineer only the local CLI alias `csa-demo-owner` and explicit approval for that org ID to host these synthetic metadata/records. Do not paste passwords, access/refresh tokens, auth URLs or CLI credential files into chat. The alias is enough to continue supported local setup. Native acceptance will subsequently require two restricted test-user logins; an administrator token must never stand in for either.
+3. Use the local CLI alias `csa-demo-owner` and require explicit approval of the organization ID before creating synthetic metadata or records. Do not paste passwords, access/refresh tokens, auth URLs or CLI credential files into chat. The alias is enough to continue supported local setup. Native acceptance will subsequently require two restricted test-user logins; an administrator token must never stand in for either.
 
 An alias is a local credential reference, not proof of environment. The setup helper queries Organization and verifies the approved ID/type before deployment. For Developer Edition, the required response is exactly `OrganizationType='Developer Edition'` and `IsSandbox=false`. For sandbox approval, use `environment='sandbox'`, the actual exact edition and `IsSandbox=true`. Never classify the org by login host alone; Developer Edition uses the same login host as production.
 
@@ -89,4 +89,4 @@ For explicit read-only CLI recovery:
 python -m signals.salesforce_acceptance reconcile --config .local/runtime.json --output .local/reconciliation-001 --workbench .local/acceptance-001/private-runtime/workbench.sqlite --journal .local/acceptance-001/private-runtime/delivery.sqlite --action-key REPLACE_APPROVED_ACTION_HASH
 ```
 
-On completion, remove token variables from the session. Keep private runtime and CLI credentials local. Use the [evidence procedure](salesforce-evidence.md) before sharing results. No GitHub publication is authorized.
+On completion, remove token variables from the session. Keep private runtime and CLI credentials local. Use the [evidence procedure](salesforce-evidence.md) before sharing results. Keep passwords, tokens, credential stores, private runtime configuration and local acceptance artifacts out of public GitHub.
