@@ -1,0 +1,28 @@
+{
+  "scope": "Fresh local UI capture; no model or vendor execution",
+  "browser": "140.0.7339.16",
+  "viewports": [
+    [
+      1440,
+      1100
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "source_sha256": {
+    "web/lifecycle.html": "b8719e39e80fa8b29ac09f715e3205125a306f7bd7dc6141f891bb15d5d6224f"
+  },
+  "screenshots": {
+    "lifecycle-desktop.png": "76a7d09b0679ded9880ae288b87e9f1b2a135690c7784f79e81157d4e6905c84",
+    "lifecycle-mobile.png": "ebb07757e49d8717456b4766a1062a0ae8752f745c99726eead5f16b83b52473"
+  },
+  "flow": [
+    "exact approval",
+    "lost acknowledgment",
+    "independent receipt reconciliation"
+  ],
+  "accepted": 1,
+  "layout_overflow": false
+}

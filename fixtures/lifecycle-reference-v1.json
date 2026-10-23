@@ -1,0 +1,79 @@
+{
+  "version": "lifecycle-reference/v1",
+  "clock_utc": 1768845600,
+  "population": 12,
+  "large_population": 1200,
+  "policy": {
+    "onboarding_priority": 20,
+    "quiet_priority": 30,
+    "expansion_priority": 10,
+    "rolling_24h": 1,
+    "rolling_7d": 2,
+    "quiet_local_hours": [
+      20,
+      9
+    ]
+  },
+  "cases": [
+    {
+      "person": "synthetic-0000",
+      "journey": "quiet",
+      "expected_reason": "eligible"
+    },
+    {
+      "person": "synthetic-0001",
+      "journey": "quiet",
+      "expected_reason": "permission_denied"
+    },
+    {
+      "person": "synthetic-0002",
+      "journey": "quiet",
+      "expected_reason": "coverage_missing_or_expired"
+    },
+    {
+      "person": "synthetic-0003",
+      "journey": "expansion",
+      "expected_reason": "owner_review"
+    },
+    {
+      "person": "synthetic-0004",
+      "journey": "expansion",
+      "expected_reason": "eligible"
+    },
+    {
+      "person": "synthetic-0005",
+      "journey": "quiet",
+      "expected_reason": "owner_changed"
+    },
+    {
+      "person": "synthetic-0006",
+      "journey": "quiet",
+      "expected_reason": "recent_activity"
+    },
+    {
+      "person": "synthetic-0007",
+      "journey": "quiet",
+      "expected_reason": "eligible"
+    },
+    {
+      "person": "synthetic-0008",
+      "journey": "quiet",
+      "expected_reason": "permission_denied"
+    },
+    {
+      "person": "synthetic-0009",
+      "journey": "quiet",
+      "expected_reason": "eligible"
+    },
+    {
+      "person": "synthetic-0010",
+      "journey": "quiet",
+      "expected_reason": "eligible"
+    },
+    {
+      "person": "synthetic-0011",
+      "journey": "quiet",
+      "expected_reason": "eligible"
+    }
+  ]
+}

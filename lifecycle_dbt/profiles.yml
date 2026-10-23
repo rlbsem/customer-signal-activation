@@ -1,0 +1,7 @@
+lifecycle:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('LIFECYCLE_WAREHOUSE') }}"
+      threads: 1

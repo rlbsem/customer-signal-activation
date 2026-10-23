@@ -1,0 +1,8 @@
+{
+  "scope": "Executed local full regression; final lifecycle changes additionally covered by focused acceptance and GitHub CI",
+  "tests": 420,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 820.975,
+  "native_vendor_execution": false
+}
