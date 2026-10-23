@@ -41,13 +41,13 @@ def seed(engine, count=12):
                 {"channel": "email", "purpose": "marketing", "allowed": case not in {1, 8}},
             ),
             ("product", "trial", {"started": True}),
-            ("product", "coverage", {"after": BASE - 3 * DAY, "through": BASE + 10 * DAY}),
+            ("product", "coverage", {"after": BASE - 3 * DAY, "through": BASE}),
         ]
         if case == 2:
             values = [v for v in values if v[1] != "coverage"]
         if case == 6:
             values.append(("product", "activity", {"active": True}))
         for source, kind, body in values:
-            at = BASE if kind == "activity" else BASE - DAY
+            at = BASE if kind in {"activity", "coverage"} else BASE - DAY
             engine.ingest("cedar", person, source, f"{person}-{kind}", 1, at, at, kind, body)
     return engine.tick(BASE)

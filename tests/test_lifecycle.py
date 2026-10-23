@@ -205,7 +205,7 @@ def test_stale_approval_and_migration(engine, tmp_path):
 
 
 def test_rate_limit_exhaustion(engine, tmp_path):
-    a = action(engine)
+    a = action(engine, 4, "expansion")
     approve(engine, a)
     dest = tmp_path / "remote.sqlite"
     with serve(app(dest)) as url:
@@ -213,10 +213,23 @@ def test_rate_limit_exhaustion(engine, tmp_path):
             c.execute("INSERT INTO faults VALUES(?,?)", (a["id"], "rate_limit"))
         for offset in [0, 3, 8]:
             assert engine.dispatch(a["id"], BASE + offset, url) == "rate_limit"
-        assert action(engine, now=BASE + 8)["state"] == "exhausted"
+        assert action(engine, 4, "expansion", now=BASE + 8)["state"] == "exhausted"
 
 
 def test_source_authority_and_brand_isolation(engine):
+    with pytest.raises(Refused, match="positive_activity_only"):
+        engine.ingest(
+            "cedar",
+            "synthetic-0000",
+            "product",
+            "inactive-marker",
+            1,
+            BASE,
+            BASE,
+            "activity",
+            {"active": False},
+        )
+
     with pytest.raises(Refused, match="source_contract"):
         engine.ingest("cedar", "synthetic-0000", "product", "fake", 1, BASE, BASE, "preference", {})
     with connect(engine.path) as c:
@@ -258,8 +271,8 @@ def test_clock_only_wakeup_and_expired_coverage(tmp_path):
     seed(e)
     assert action(e, now=BASE + 11 * DAY)["reason"] == "coverage_missing_or_expired"
     # No new source fact is required to cross quiet hours.
-    assert action(e, now=BASE + 10 * 3600)["reason"] == "quiet_hours"
-    assert action(e, now=BASE + 24 * 3600)["reason"] == "eligible"
+    assert action(e, journey="onboarding", now=BASE + 10 * 3600)["reason"] == "quiet_hours"
+    assert action(e, journey="onboarding", now=BASE + 24 * 3600)["reason"] == "eligible"
 
 
 def test_last_slot_race_between_two_different_actions(engine, tmp_path):
@@ -291,3 +304,46 @@ def test_versioned_pause_is_effective_and_immutable(engine, tmp_path):
         assert engine.dispatch(fresh["id"], BASE, url) == "journey_paused"
     with pytest.raises(Refused, match="policy_collision"):
         engine.register_policy(2, [])
+
+
+def test_coverage_cannot_attest_future_observation(engine):
+    with pytest.raises(Refused, match="coverage_contract"):
+        engine.ingest(
+            "cedar",
+            "synthetic-0000",
+            "product",
+            "future-coverage",
+            1,
+            BASE,
+            BASE,
+            "coverage",
+            {"after": BASE - DAY, "through": BASE + 1},
+        )
+    assert action(engine, now=BASE + 1)["reason"] == "coverage_missing_or_expired"
+
+
+def test_delayed_receipt_starts_conservative_contact_window(engine, tmp_path):
+    a = action(engine)
+    approve(engine, a)
+    with serve(app(tmp_path / "remote.sqlite")) as url:
+        assert engine.dispatch(a["id"], BASE, url, lose_ack=True) == "uncertain"
+        later = BASE + 3 * DAY
+        assert engine.dispatch(a["id"], later, url) == "accepted"
+        row = next(r for r in engine.view(later)["actions"] if r["id"] == a["id"])
+        assert row["reserved"] == later
+        assert engine.dispatch(a["id"], later + 1, url) == "accepted"
+        row = next(r for r in engine.view(later + 1)["actions"] if r["id"] == a["id"])
+        assert row["reserved"] == later
+        b = action(engine, 0, "onboarding", later + 1)
+        approve(engine, b, later + 1)
+        assert engine.dispatch(b["id"], later + 1, url) == "contact_limit"
+
+
+def test_historical_clock_cannot_authorize_dispatch(engine, tmp_path):
+    a = action(engine)
+    approve(engine, a)
+    engine.tick(BASE + 1)
+    with serve(app(tmp_path / "remote.sqlite")) as url:
+        with pytest.raises(Refused, match="execution_clock_regression"):
+            engine.dispatch(a["id"], BASE, url)
+    assert engine.view(BASE)["now"] == BASE  # Read-only historical inspection is permitted.

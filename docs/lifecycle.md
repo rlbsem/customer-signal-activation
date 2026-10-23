@@ -19,16 +19,18 @@ Approve the winning action, lose its acknowledgment, then reconcile. One receipt
 `signals.lifecycle` uses a separate SQLite database with WAL and serialized write transactions. Existing `signals.remote.connect`, canonical payload hashing, `Refused`, loopback HTTP harness and independent receipt patterns are reused. The existing account projection dispatcher is intentionally not used to infer person authorization. No existing native adapter or its evidence is regenerated.
 
 - CRM owns explicit brand/person/account mapping, sales owner, commercial status and conversions.
-- Product owns trial starts, activity and observation coverage. No records is not proof of inactivity.
+- Product owns trial starts, activity and observation coverage. No records is not proof of inactivity. Activity records are positive observations only; a false inactivity marker is rejected and cannot erase an earlier activity. Activity retractions are outside this finite contract.
 - Preferences own email/marketing permission. Revisions win within source event identity before effective-time evaluation.
 - Immutable journey versions own the three finite priorities, waits and contact limits. A registered new version can pause selected journeys; explicit migration changes enrollment epoch and fences old actions.
 - The separate HTTP destination owns durable acceptance receipts. It is a local emulator, not a marketing vendor or email delivery service.
+
+Execution persists a monotone clock fence: historical inspection is read-only and cannot authorize old dispatch.
 
 The source ledger is unique at brand/source/event/revision with immutable fingerprints and event/observation times. Enrollments are unique at brand/person/journey/entry identity. Actions are unique at enrollment/epoch and bind exact payload, source evidence and reviewed hash. History is append-only. Analytics exports enrollment, action, event and history tables to a separate DuckDB database; SQL cannot authorize actions.
 
 ## Contact and recovery contract
 
-All three journeys share brand/person contact limits: one accepted or unresolved action in a rolling 24 hours and two in seven days. Unknown or exhausted outcomes retain capacity indefinitely until safely reconciled. Synthetic local quiet hours are 20:00–09:00 in the person's IANA time zone. UTC instants map into local time, so ambiguous/nonexistent local wall times are never invented.
+All three journeys share brand/person contact limits: one accepted or unresolved action in a rolling 24 hours and two in seven days. Unknown or exhausted outcomes retain capacity indefinitely until safely reconciled. First observed acceptance starts a conservative contact window at reconciliation time; repeated receipt reads do not move that window. The local clock is not claimed as a vendor send timestamp. Synthetic local quiet hours are 20:00–09:00 in the person's IANA time zone. UTC instants map into local time, so ambiguous/nonexistent local wall times are never invented.
 
 Reservation commits before HTTP. Receipt lookup precedes current authorization, so a committed action may be historically reconciled after revocation without granting a new POST. This destination guarantees action-key idempotency and exact payload comparison. Other destinations would require their own contract and native acceptance. HTTP errors never establish that no effect occurred. Retryable 429 results have finite exponential backoff and stop after three attempts. Unknown 5xx/transport outcomes remain uncertain.
 
@@ -53,6 +55,6 @@ The five dbt models expose action grain, conversion-revision grain, immutable tr
 
 This is bounded local execution with an explicit operator clock, not an always-running managed scheduler. Native Salesforce/Snowflake and model evidence elsewhere in the repository belong to their original runs. No native marketing tenant entitlement is established by existing Salesforce Developer Edition authentication; no optional vendor execution was attempted.
 
-The first hosted lifecycle job also exposed a missing parent `work` directory on a clean checkout; the workflow now creates it before pytest. Observed development failures included restricted sandbox sockets, an unquoted SQL `at` column, and audit hashes overflowing the mobile timeline. Local HTTP was rerun with socket access, SQL columns were quoted, and long audit text was made wrapping. Browser acceptance was tightened to approve the actual winning journey and wait for observed state before capture.
+The first hosted lifecycle job also exposed a missing parent `work` directory on a clean checkout; the workflow now creates it before pytest. Final review additionally found and corrected future-dated coverage assertions. Coverage cannot extend beyond its observed timestamp; clock advancement without new coverage suppresses quiet assistance. The initial local records are preserved in `evidence/lifecycle-initial` and are not final acceptance. Observed development failures included restricted sandbox sockets, an unquoted SQL `at` column, and audit hashes overflowing the mobile timeline. Local HTTP was rerun with socket access, SQL columns were quoted, and long audit text was made wrapping. Browser acceptance was tightened to approve the actual winning journey and wait for observed state before capture.
 
 Residual production boundaries include the non-atomic external I/O boundary, one local SQLite execution domain, explicit clock driving, finite journey templates, and no native platform or deliverability acceptance. A revocation arriving after the final current-state check cannot atomically recall an in-flight remote request. The local contract does not claim that capability.

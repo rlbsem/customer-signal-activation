@@ -17,6 +17,8 @@ record = json.loads((ROOT / "docs/evidence/lifecycle/execution.json").read_text(
 assert (
     record["reference_people"] == 12 and record["large_people"] == 1200 and record["incremental_full_parity"]
 )
+for name, h in record["source_sha256"].items():
+    assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == h, name
 for name, h in record["screenshots"].items():
     assert hashlib.sha256((ROOT / "docs/evidence/lifecycle" / name).read_bytes()).hexdigest() == h
 for p in list((ROOT / "src/signals").glob("lifecycle*.py")) + [ROOT / "web/lifecycle.html"]:

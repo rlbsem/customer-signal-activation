@@ -104,16 +104,20 @@ def run(workspace, output):
     corrected = build(e, workspace / "incremental")
     full = build(e, workspace / "full", True)
     assert corrected == full
-    large = Lifecycle(workspace / "large.sqlite")
-    large_view = seed(large, 1200)
+    import os
+
+    reused_large = os.environ.get("LIFECYCLE_EXISTING_LARGE")
+    large = Lifecycle(Path(reused_large) if reused_large else workspace / "large.sqlite")
+    large_view = large.tick(BASE) if reused_large else seed(large, 1200)
+    assert len({t["person"] for t in large_view["timers"]}) == 1200
     from datetime import datetime, timezone
 
     report = {
         "executed_at": datetime.now(timezone.utc).isoformat(),
         "source_sha256": {
-            str(p.resolve().relative_to(Path(__file__).resolve().parents[1])).replace(chr(92), "/"): hashlib.sha256(
-                p.read_bytes()
-            ).hexdigest()
+            str(p.resolve().relative_to(Path(__file__).resolve().parents[1])).replace(
+                chr(92), "/"
+            ): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in list(Path("src/signals").glob("lifecycle*.py"))
             + list(Path("lifecycle_dbt").rglob("*.sql"))
             + [Path("web/lifecycle.html"), Path(__file__)]
@@ -121,6 +125,7 @@ def run(workspace, output):
         "scope": "Executed local synthetic lifecycle; no native marketing-platform or email execution",
         "reference_people": 12,
         "large_people": 1200,
+        "large_source_replay": bool(reused_large),
         "large_enrollments": len(large_view["timers"]),
         "independent_receipts": independent,
         "initial_analytics": initial,

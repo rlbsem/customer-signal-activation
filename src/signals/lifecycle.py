@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS events(seq INTEGER PRIMARY KEY, brand TEXT, person TE
  event_id TEXT, revision INTEGER, effective INTEGER, observed INTEGER, kind TEXT, body TEXT, hash TEXT,
  UNIQUE(brand,source,event_id,revision));
 CREATE INDEX IF NOT EXISTS events_subject ON events(brand,person,observed);
+CREATE TABLE IF NOT EXISTS execution_clock(id INTEGER PRIMARY KEY, value INTEGER);
+INSERT OR IGNORE INTO execution_clock VALUES(1,0);
 CREATE TABLE IF NOT EXISTS policy(version INTEGER PRIMARY KEY, body TEXT, hash TEXT);
 CREATE TRIGGER IF NOT EXISTS policy_immutable BEFORE UPDATE ON policy BEGIN SELECT RAISE(ABORT,'immutable policy'); END;
 CREATE TRIGGER IF NOT EXISTS policy_no_delete BEFORE DELETE ON policy BEGIN SELECT RAISE(ABORT,'immutable policy'); END;
@@ -108,10 +110,13 @@ class Lifecycle:
             type(body["after"]) is not int
             or type(body["through"]) is not int
             or body["after"] > body["through"]
+            or body["through"] > observed
         ):
             raise Refused("coverage_contract")
         if kind in {"trial", "activity", "conversion"} and type(next(iter(body.values()))) is not bool:
             raise Refused("boolean_contract")
+        if kind == "activity" and body["active"] is not True:
+            raise Refused("positive_activity_only")
         value = digest(
             {
                 "brand": brand,
@@ -198,7 +203,12 @@ class Lifecycle:
         return "eligible"
 
     def tick(self, now):
+        if type(now) is not int:
+            raise Refused("integer_clock_required")
         with connect(self.path) as c:
+            if now < c.execute("SELECT value FROM execution_clock WHERE id=1").fetchone()[0]:
+                raise Refused("execution_clock_regression")
+            c.execute("UPDATE execution_clock SET value=? WHERE id=1", (now,))
             people = c.execute("SELECT DISTINCT brand,person FROM events").fetchall()
             for brand, person in people:
                 f = self.facts(c, brand, person, now)
@@ -369,7 +379,8 @@ class Lifecycle:
                     if a["reserved"] is None:
                         raise Refused("unreserved_remote_effect")
                     c.execute(
-                        "UPDATE actions SET state='accepted',detail='independent_receipt' WHERE id=?", (key,)
+                        "UPDATE actions SET reserved=CASE WHEN state='accepted' THEN reserved ELSE ? END, state='accepted',detail='independent_receipt' WHERE id=?",
+                        (now, key),
                     )
                     self.log(c, key, now, "accepted", receipt.json())
                     return "accepted"

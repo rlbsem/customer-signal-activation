@@ -1,22 +1,23 @@
 {
-  "executed_at": "2026-10-23T00:06:35.058374+00:00",
+  "executed_at": "2026-10-23T00:20:30.219315+00:00",
   "source_sha256": {
-    "src/signals/lifecycle.py": "faaedeb57740956d229b82b63baf6733ac418b2ad7819fda94ae9230c6ebb190",
+    "src/signals/lifecycle.py": "2daf800f92905b2430bbe47623e1543f29d9bd40a05970bd5df042b0bf929f8a",
     "src/signals/lifecycle_analytics.py": "f680a5e1edfb7d903fae740fa75c0e6a563b5310ef608a03b49a642d176f151c",
     "src/signals/lifecycle_api.py": "2606b4dc867f0dc9dd303e8eb2e07474f3223254c7f01733ff888daa71f8b97e",
     "src/signals/lifecycle_destination.py": "260857b1893b1df18a6adb25b7dc036475fbee21dcc785ac967aabe5015daafa",
-    "src/signals/lifecycle_fixtures.py": "20121a4cafed9f418a16c18970dbde7530099694924d18f0d7fd139de900ec00",
+    "src/signals/lifecycle_fixtures.py": "4eaa3ef29f8ca28c9bf8b6fef224c4666db8eba845461d392b9ba04af10a2eed",
     "lifecycle_dbt/models/fct_lifecycle_action.sql": "300348dd6aea765d94814e86a3540128a14fafa06887ebbbd379d53b3f08f425",
     "lifecycle_dbt/models/fct_lifecycle_conversion.sql": "3ecef84220d3d81f4ad5ebb317ca73b0fdf380a8033669d86e1854888b5f10a9",
     "lifecycle_dbt/models/fct_lifecycle_transition.sql": "6540bfc5ca8e130284eb75cbfd0b4506a72974c42664361d62de10077c843311",
     "lifecycle_dbt/models/mart_lifecycle_daily.sql": "45b0a96369255d3d7cfbf09e8394d82e5c480905d6e7464496b43703e482ade2",
     "lifecycle_dbt/models/mart_lifecycle_journey.sql": "2a5d3040105a659eaf13baad9ba415474c1634c4916572dd4d5e99ece03f3dcf",
     "web/lifecycle.html": "b8719e39e80fa8b29ac09f715e3205125a306f7bd7dc6141f891bb15d5d6224f",
-    "scripts/verify_lifecycle.py": "d403dd78c9de1256e10f17dfc32900171d41226356d2d02c6e7dbeb01c9ebf73"
+    "scripts/verify_lifecycle.py": "927ecbf24e8840c66d7a01160218e1dc8ff3f6b38717cecf87cd67858107c7ab"
   },
   "scope": "Executed local synthetic lifecycle; no native marketing-platform or email execution",
   "reference_people": 12,
   "large_people": 1200,
+  "large_source_replay": true,
   "large_enrollments": 2600,
   "independent_receipts": [
     {
@@ -528,7 +529,7 @@
           "a87d88370dfaad6014038e89575fd98657923d6a7aeabedbd7f2c2c7a8b20f6e",
           1768845600,
           "approved",
-          "{\"hash\":\"7930f68fd8b1bbb94736078a6a98eb0f38000c79de42a0580fe87adfcca51383\"}"
+          "{\"hash\":\"51b94609c320724efae467c9c230415e645f771de79ab4b329ee8872a65efe60\"}"
         ],
         [
           32,
@@ -549,7 +550,7 @@
           "b1c7a195f790d612e519185bf855f97634cfd8577d9def0f314ab639eedfddb3",
           1768845600,
           "approved",
-          "{\"hash\":\"923a4a99b552ade8fdfde5b528438e4967be21bd910a88760f69ec94ca99bf73\"}"
+          "{\"hash\":\"2c42478029fb0c637f79f207630f4a59cfaaea72ee996ac64a9044cd2d96b57f\"}"
         ],
         [
           35,
@@ -570,7 +571,7 @@
           "155c00b0aa774835ba304b0473ce28f59d2e5795272cf6e68d94e16e3eb2bc64",
           1768932000,
           "approved",
-          "{\"hash\":\"b27e0e55d0ff813a9b7a4cab13d2092bb1eb403d6fc58ce909cd8a2d70cd3437\"}"
+          "{\"hash\":\"c55c43072d2bafabcb7d7860b38e47b77cdd39540368ad362092bffc212efd73\"}"
         ],
         [
           38,
@@ -1109,7 +1110,7 @@
           "a87d88370dfaad6014038e89575fd98657923d6a7aeabedbd7f2c2c7a8b20f6e",
           1768845600,
           "approved",
-          "{\"hash\":\"7930f68fd8b1bbb94736078a6a98eb0f38000c79de42a0580fe87adfcca51383\"}"
+          "{\"hash\":\"51b94609c320724efae467c9c230415e645f771de79ab4b329ee8872a65efe60\"}"
         ],
         [
           32,
@@ -1130,7 +1131,7 @@
           "b1c7a195f790d612e519185bf855f97634cfd8577d9def0f314ab639eedfddb3",
           1768845600,
           "approved",
-          "{\"hash\":\"923a4a99b552ade8fdfde5b528438e4967be21bd910a88760f69ec94ca99bf73\"}"
+          "{\"hash\":\"2c42478029fb0c637f79f207630f4a59cfaaea72ee996ac64a9044cd2d96b57f\"}"
         ],
         [
           35,
@@ -1151,7 +1152,7 @@
           "155c00b0aa774835ba304b0473ce28f59d2e5795272cf6e68d94e16e3eb2bc64",
           1768932000,
           "approved",
-          "{\"hash\":\"b27e0e55d0ff813a9b7a4cab13d2092bb1eb403d6fc58ce909cd8a2d70cd3437\"}"
+          "{\"hash\":\"c55c43072d2bafabcb7d7860b38e47b77cdd39540368ad362092bffc212efd73\"}"
         ],
         [
           38,
@@ -1200,8 +1201,8 @@
   "incremental_full_parity": true,
   "desktop_mobile": "passed",
   "screenshots": {
-    "lifecycle-desktop.png": "2f60934489519aab87a77be8136b6a3981918ed85e865fd9119ace8363f27bbf",
-    "lifecycle-mobile.png": "bf01110c2a4745503526f3df0dfcb305233db9f843518c73db488fa395098771"
+    "lifecycle-desktop.png": "76a7d09b0679ded9880ae288b87e9f1b2a135690c7784f79e81157d4e6905c84",
+    "lifecycle-mobile.png": "ebb07757e49d8717456b4766a1062a0ae8752f745c99726eead5f16b83b52473"
   },
   "screenshot_provenance": "browser.json"
 }

@@ -15,8 +15,8 @@
     "web/lifecycle.html": "b8719e39e80fa8b29ac09f715e3205125a306f7bd7dc6141f891bb15d5d6224f"
   },
   "screenshots": {
-    "lifecycle-desktop.png": "2f60934489519aab87a77be8136b6a3981918ed85e865fd9119ace8363f27bbf",
-    "lifecycle-mobile.png": "bf01110c2a4745503526f3df0dfcb305233db9f843518c73db488fa395098771"
+    "lifecycle-desktop.png": "76a7d09b0679ded9880ae288b87e9f1b2a135690c7784f79e81157d4e6905c84",
+    "lifecycle-mobile.png": "ebb07757e49d8717456b4766a1062a0ae8752f745c99726eead5f16b83b52473"
   },
   "flow": [
     "exact approval",

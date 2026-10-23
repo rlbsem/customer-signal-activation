@@ -1,5 +1,5 @@
 {
-  "scope": "Actual independent SQLite source/destination reads after local HTTP execution",
+  "scope": "Independent source and destination reads after final local HTTP execution",
   "expected_payload_hashes": {
     "155c00b0aa774835ba304b0473ce28f59d2e5795272cf6e68d94e16e3eb2bc64": "22e27656dbf06e84b368c7a1c66d8981d32f372069018476d1a1d33ea5e4f26e",
     "a87d88370dfaad6014038e89575fd98657923d6a7aeabedbd7f2c2c7a8b20f6e": "7bac492f0dbd26fb426e1c9dd3a434845fa9be6d96802426d4b209fd7f748efe",
