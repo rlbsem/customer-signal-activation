@@ -1,0 +1,11 @@
+{
+  "revision": "0aba39ed7503b443e5801204ce4b97c2074326e8",
+  "files": {
+    "docs/evidence/lifecycle-experiment/baseline.json": "3cc4a8569521b63b7b99b3f0bae784b3cb88e6d77536b9e010ec674decfe3c60",
+    "docs/evidence/lifecycle-experiment/execution.json": "bd9426fa0b64ed66b5cc77a5fccb02a22bb5ea55398f6c8a94444a5712aa3f23",
+    "docs/evidence/lifecycle-experiment/experiment-desktop.png": "882d0d7d4543c2973d5b1dc696765053d987d7468d79c196c2cf669967821864",
+    "docs/evidence/lifecycle-experiment/experiment-mobile.png": "167b995ce7cdf6973b946f0b82074cf00db2995a6dd52e32cc18ed2d85824bc0",
+    "docs/evidence/lifecycle-experiment/tests.xml": "56b66336504f1ed162c264fa3676ed98094567940c1a687edaaa3ede3e8b042c",
+    "docs/evidence/lifecycle-experiment/verification.json": "4b6c60af25130f9f27cb01b3d0831e8b5bc7e1c11f1211fc69bc4f5292ab971f"
+  }
+}

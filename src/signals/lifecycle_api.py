@@ -38,6 +38,14 @@ def app(path, destination, token):
     def state():
         return engine.tick(clock())
 
+    @api.get("/experiments")
+    def experiments():
+        from .lifecycle_experiment import Experiments
+
+        with connect(path) as c:
+            keys = [r[0] for r in c.execute("SELECT id FROM experiment ORDER BY id")]
+        return [Experiments(engine).measure(key, clock()) for key in keys]
+
     @api.post("/operate")
     async def operate(request: Request):
         if not secrets.compare_digest(request.headers.get("X-Operator", ""), token):
@@ -48,7 +56,29 @@ def app(path, destination, token):
         now = clock()
         try:
             op = body["operation"]
-            if op == "advance":
+            if op == "start_experiment":
+                from .lifecycle_experiment import Experiments
+                from .lifecycle_study import STUDY
+
+                study = Experiments(engine)
+                study.register(STUDY)
+                study.assign_all(STUDY, now)
+            elif op == "observe_experiment":
+                from .lifecycle_study import observe, END
+
+                # This finite local fixture is anchored at BASE, never relabel a later enrollment.
+                from .lifecycle_study import STUDY
+                from .lifecycle_experiment import Experiments
+
+                study = Experiments(engine).measure(STUDY, now)
+                if any(a["assigned_at"] != BASE for a in study["assignments"]):
+                    raise Refused("reference_assignment_time_required")
+                if now > END + 1:
+                    raise Refused("reference_observation_time_passed")
+                observed = observe(engine, corrected=bool(body.get("corrected", False)))
+                with connect(path) as c:
+                    c.execute("UPDATE lifecycle_clock SET value=max(value,?) WHERE id=1", (observed,))
+            elif op == "advance":
                 hours = body.get("hours", 1)
                 if type(hours) is not int or not 1 <= hours <= 24:
                     raise Refused("clock_step")

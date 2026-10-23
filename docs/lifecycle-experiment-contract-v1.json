@@ -1,0 +1,30 @@
+{
+  "contract_version": "lifecycle-experiment/1",
+  "unit": "brand/person; one immutable study across all marketing journeys",
+  "assignment": {
+    "allocation": "SHA-256(canonical JSON [seed,brand,person]), first unsigned 64 bits < 2^63 → treatment",
+    "seed": "lifecycle-study/v1",
+    "ratio": "expected 50/50; never forced balance",
+    "reassignment": "forbidden across versions/epochs; no automatic release"
+  },
+  "window": "[assigned_at, assigned_at + 604800); observation as_of is separate from event effective time",
+  "metrics": {
+    "assigned": "All persisted assignments visible as_of; denominator never filtered on post-assignment eligibility or acceptance.",
+    "eligible_at_assignment": "Frozen pre-action lifecycle eligibility; snapshot fingerprint retained. Current dispatch eligibility is reevaluated.",
+    "approved": "Distinct assigned people with exact-action approval history visible as_of.",
+    "accepted": "Distinct assigned people with matching action id and exact payload fingerprint in independently reconciled receipt history. Not contact or deliverability.",
+    "holdout": "Assigned holdout; dispatch suppresses every competing marketing journey.",
+    "conversion": "At least one latest-revision positive CRM conversion with matching brand/person and effective time inside the window. Not attributed to delivery.",
+    "activation": "Not separately instrumented: generic product activity does not establish a qualified activation milestone. No activation-rate claim.",
+    "mature_covered": "Window ended as_of AND one latest source coverage assertion spans the whole window; no record absence assumption.",
+    "itt_rate_difference": "Treatment conversions/all treatment assigned minus holdout conversions/all holdout assigned, only when both arms nonempty, all assignments mature/covered and no exposure integrity exceptions.",
+    "received_subgroup": "Conversions among independently accepted people divided by accepted people; descriptive selection, never a randomized/causal estimate.",
+    "uncertainty": "Difference of approximate Bonferroni-adjusted 97.5% Wilson bounds (z=2.241403), reported as conservative approximate joint 95% interval. Small synthetic sample; no power or significance claim.",
+    "pipeline_cents": "Latest explicit synthetic USD opportunity sources linked by exact brand/person/conversion_ref; each source counted once. No campaign attribution inferred.",
+    "incremental_commercial_revenue": "null. No invoice, payment allocation, recognized revenue or causal commercial bridge in this study."
+  },
+  "revision_rules": "Select highest revision observed <= as_of BEFORE effective window and positive conversion filters. Duplicate source versions are idempotent; identity rebinding/collisions rejected.",
+  "suppression": "Frozen assignment never authorizes execution. Current consent, owner, commercial state, coverage, contact limits and exact approvals remain mandatory. New effects stop at window end; historical receipt reconciliation remains permitted.",
+  "simulation": "Person ordinal divisible by 3 has one positive day-1 CRM conversion, observed at day 7; first person corrected to false one second later. Neither arm nor acceptance influences this rule. One explicit USD 125000 pipeline source and one USD 9000 missing-link source exercise reconciliation.",
+  "boundaries": "Local synthetic fixture and loopback destination. No native vendor, actual communications, real financial outcomes or measured commercial lift."
+}
