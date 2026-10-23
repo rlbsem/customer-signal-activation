@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: fct_lifecycle_action
+    columns:
+      - name: action_key
+        tests: [unique, not_null]
+  - name: fct_lifecycle_conversion
+    columns:
+      - name: event_id
+        tests: [unique, not_null]
+  - name: mart_lifecycle_journey
+    columns:
+      - name: journey
+        tests: [not_null]

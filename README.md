@@ -16,6 +16,16 @@ Captured from the local UI using a preserved Qwen3-14B output and reviewer edit.
 
 [Run the workbench](docs/seller-workbench.md) · [Inspect the model comparison](docs/evidence/seller/report.md) · [Read the preserved first evaluation](docs/evidence/seller/first-pass-report.md)
 
+## Coordinate competing lifecycle journeys
+
+The [Lifecycle Operations demonstration](docs/lifecycle.md) coordinates trial onboarding, quiet-trial assistance and customer expansion education at person/brand/channel/purpose grain. Inspect competing actions, advance the clock, approve exact content and recover a lost acknowledgment against an independent local HTTP destination. Current preferences, coverage, sales ownership and shared contact limits govern new actions. This is a separate local synthetic lane; it does not extend the historical native Salesforce acceptance claim.
+
+```text
+python scripts/lifecycle.py --workspace .local/lifecycle
+```
+
+[Recorded execution and screenshots](docs/evidence/lifecycle/README.md).
+
 ## From account evidence to an owned action
 
 At LMN, I connected acquisition reporting to Salesforce pipeline and lifecycle analysis across multiple SaaS products. Through Groundbreakers, I designed and delivered customer-system integrations with canonical identifiers, persistent source mappings, preserved ownership and governed lifecycle state. The recurring challenge was deciding which account a signal belonged to, which source could change its state and whether a seller action was still appropriate.
