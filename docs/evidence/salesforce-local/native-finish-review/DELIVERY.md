@@ -1,6 +1,4 @@
-# Historical native Salesforce acceptance closeout
-
-**Historical execution record.** This report preserves a prior acceptance stage, not the current GitHub status. See the [completed Salesforce review](../../../salesforce-finish-review.md) for the later result and publication.
+# Final native acceptance delivery
 
 Work was completed directly in the existing Windows project. The owner approved one bounded native matrix. One additional synthetic review was created; the original review, metadata, users, roles, mappings, private verification records and backups were preserved. GitHub publication remains a separate approval boundary.
 
@@ -22,4 +20,4 @@ Generic `CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY` responses remain outside `permiss
 
 All 385 pre-existing evidence/image files are preserved. The initial screenshot/upstream hash discrepancy is disclosed in [baseline provenance](../reviewer-create-fix/baseline-provenance.json). The original hashes are retained. The final ZIP and package manifest exclude private runtime, credentials, keys, backups, databases and raw logs; a separate private publication preview lists exact changes and privacy checks.
 
-The README opens with the commercial problem, emphasizes exact approvals/reconciliation/restricted identities and distinguishes local tests, recorded inference, native preflight and the completed staged API matrix. No client outcomes, throughput guarantee, fresh model-to-Salesforce execution, native UI capture or hosted CI pass is claimed. At the time of this recorded stage, `main` remained at `f44134556d62129fcd20d2244f888a862c64cb89` and publication was still pending. The linked completed Salesforce review supersedes that stage's status.
+The README opens with the commercial problem, emphasizes exact approvals/reconciliation/restricted identities and distinguishes local tests, recorded inference, native preflight and the completed staged API matrix. No client outcomes, throughput guarantee, fresh model-to-Salesforce execution, native UI capture or hosted CI pass is claimed. The current GitHub main remains `f44134556d62129fcd20d2244f888a862c64cb89`; publication would use a dedicated feature branch and pull request, with no direct main update or merge.
