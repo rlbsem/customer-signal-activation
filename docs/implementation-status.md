@@ -1,13 +1,18 @@
-# Seller workbench delivery status
+# Seller workbench implementation record
 
-Baseline: `b655ba8b526a0f3d97a4edc20902a3b4ed652b50`, the latest GitHub main when this work began.
-Feature branch: `feature/evidence-grounded-seller-workbench`.
+The seller workbench links scoped account documents and authoritative CRM context to model-assisted research, human review, controlled internal task delivery, and operational analytics. Its primary engineering distinction is the separation of **advice, approval, current source authority, and verified execution**.
 
-1. Evidence foundation: scoped authenticated documents, freshness, authoritative account state and actual structured model adapter implemented.
-2. Review and execution: immutable generation records, cached inference, content-bound approval, rejection, current-evidence checks, authenticated HTTP tasks and receipt reconciliation implemented.
-3. Application and analytics: seller workspace, source citations, editable draft, execution history, recorded evaluation explorer and separate operational dbt models implemented. The browser has executed three live briefs, an edited approval and one reconciled task delivery. Operational dbt build and conservation tests pass.
-4. Evaluation: genuine Qwen3-14B inference executed locally. The delivered 60-case, two-seed regression comparison passes 120/120 grounded proposal checks, versus 81/120 for the simple LLM and 60/120 for the governed template. The original failed evaluation is retained in a verified archive. Source-bound citation decoding and explicit attention to the customer's operational friction address the observed defects. Final screenshots and full source-bound verification are generated for pull-request review.
+## Implemented boundaries
 
-To reproduce or extend the work, use the [run instructions](seller-workbench.md) to start the same pinned model and run `python scripts/evaluate_seller.py --cases 60 --repeats 2`. Stored traces are reused only when configuration hashes match; use a fresh output directory for new inference. Do not edit or substitute outputs to make evaluation pass. Run `python scripts/validate_seller_evidence.py`, inspect the application, run `python scripts/verify.py` and `python scripts/package.py`. Merge requires the repository owner's approval.
+1. **Evidence ingestion:** scoped authenticated documents, freshness checks, authoritative account state, and a structured local-model adapter.
+2. **Review and execution:** immutable generation records, content-bound approval or rejection, current-evidence rechecks, authenticated HTTP task submission, and independent receipt reconciliation.
+3. **Application and analytics:** operator workspace with source citations, editable drafts, review and execution history, evaluation explorer, and dbt operational models. The recorded browser run includes three model-generated briefs, an edited approval, and one reconciled task delivery.
+4. **Model evaluation:** genuine local Qwen3-14B inference. The saved 60-case, two-seed comparison reports 120/120 passing mechanical proposal checks for the grounded workflow, versus 81/120 for the simple LLM and 60/120 for the governed template. The earlier failing evaluation is retained. **Those scores measure the published rubric, not independent human usefulness or semantic truth.** See the [source-support review](seller-review-notes.md) for a recorded unsupported implication.
 
-Human usefulness assessment, actual vendor compatibility and measured commercial uplift are separate from software and finite synthetic evaluation. No such results are asserted.
+## Reproduce and inspect
+
+Use the [seller workbench procedure](seller-workbench.md) to run the pinned model and `python scripts/evaluate_seller.py --cases 60 --repeats 2`. Saved traces are reused only when configuration hashes match. Use a fresh output directory to generate new inference. Run `python scripts/validate_seller_evidence.py`, `python scripts/verify.py`, and `python scripts/package.py` to inspect the published software and evidence.
+
+[Architecture](architecture.md) · [Original evaluation and failure traces](evidence/seller/first-pass-report.md) · [Source-support review](seller-review-notes.md) · [Acceptance and authority](seller-authority.md)
+
+The local evaluation, operator review, and synthetic workflow records do not measure live seller productivity, pipeline lift, or customer revenue. Vendor compatibility and production operation require separate acceptance.
