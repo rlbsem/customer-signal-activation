@@ -16,18 +16,32 @@ MODELS = [
     "mart_lifecycle_journey",
     "fct_lifecycle_transition",
     "mart_lifecycle_daily",
+    "fct_experiment_assignment",
+    "fct_experiment_exposure",
+    "fct_experiment_outcome",
+    "mart_experiment_comparison",
 ]
 
 
-def build(engine, workspace, full=False):
+def build(engine, workspace, full=False, as_of=None):
     workspace = Path(workspace)
     workspace.mkdir(parents=True, exist_ok=True)
     database = (workspace / "lifecycle.duckdb").resolve()
     with sqlite3.connect(engine.path) as c, duckdb.connect(str(database)) as db:
         c.row_factory = sqlite3.Row
+        c.execute("BEGIN")
+        db.execute("BEGIN TRANSACTION")
         db.execute("CREATE SCHEMA IF NOT EXISTS raw")
         exported = {}
-        for table in ["actions", "events", "enrollment", "history"]:
+        from .lifecycle_experiment import TABLES
+
+        clock = (
+            as_of
+            if as_of is not None
+            else c.execute("SELECT value FROM execution_clock WHERE id=1").fetchone()[0]
+        )
+        db.execute("CREATE OR REPLACE TABLE raw.experiment_clock AS SELECT ?::BIGINT AS as_of", [clock])
+        for table in ["actions", "events", "enrollment", "history"] + TABLES:
             rows = [dict(r) for r in c.execute("SELECT * FROM " + table)]
             exported[table] = rows
             info = c.execute("PRAGMA table_info(" + table + ")").fetchall()
@@ -43,6 +57,7 @@ def build(engine, workspace, full=False):
                     "INSERT INTO raw." + table + " VALUES(" + ",".join("?" for _ in info) + ")",
                     [tuple(r.values()) for r in rows],
                 )
+        db.execute("COMMIT")
     env = dict(
         os.environ,
         LIFECYCLE_WAREHOUSE=str(database),
@@ -109,6 +124,31 @@ def build(engine, workspace, full=False):
             (*k, *v) for k, v in aggregate.items()
         ):
             raise Refused("independent_aggregate_mismatch")
+        from .lifecycle_experiment import Experiments
+
+        for experiment in exported["experiment"]:
+            expected_groups = Experiments(engine).measure(experiment["id"], clock)["population"]
+            for arm, expected_group in expected_groups.items():
+                actual_group = db.execute(
+                    "SELECT assigned,eligible,approved,accepted,conversions,mature_covered,pipeline_cents FROM mart_experiment_comparison WHERE experiment=? AND arm=?",
+                    [experiment["id"], arm],
+                ).fetchone()
+                wanted = tuple(
+                    expected_group[k]
+                    for k in [
+                        "assigned",
+                        "eligible_at_assignment",
+                        "approved",
+                        "accepted",
+                        "conversions",
+                        "mature_covered",
+                        "pipeline_cents",
+                    ]
+                )
+                if actual_group is None and wanted[0] == 0:
+                    continue
+                if actual_group != wanted:
+                    raise Refused("independent_experiment_mismatch")
         tables = {m: db.execute("SELECT * FROM " + m + " ORDER BY ALL").fetchall() for m in MODELS}
     return {
         "models": tables,

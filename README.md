@@ -26,6 +26,14 @@ python scripts/lifecycle.py --workspace .local/lifecycle
 
 [Recorded execution and screenshots](docs/evidence/lifecycle/README.md).
 
+## Measure lifecycle outcomes against an enforced holdout
+
+The [Experiment & Outcomes workspace](docs/lifecycle-experiments.md) adds immutable person-level assignments, cross-journey holdout enforcement and seven-day outcome measurement. It keeps assigned populations separate from eligible, approved and independently accepted people. Late CRM corrections revise the dbt outcomes; incomplete observation withholds the comparison. Explicit opportunity links remain synthetic pipeline, never inferred revenue or commercial uplift.
+
+[Executed reference and 1,200-person measurement](docs/evidence/lifecycle-experiment/README.md) · [Metric contract](docs/lifecycle-experiment-contract-v1.json)
+
+![Executed synthetic lifecycle experiment with enforced holdout and source-linked outcomes](docs/evidence/lifecycle-experiment/experiment-desktop.png)
+
 ## From account evidence to an owned action
 
 At LMN, I connected acquisition reporting to Salesforce pipeline and lifecycle analysis across multiple SaaS products. Through Groundbreakers, I designed and delivered customer-system integrations with canonical identifiers, persistent source mappings, preserved ownership and governed lifecycle state. The recurring challenge was deciding which account a signal belonged to, which source could change its state and whether a seller action was still appropriate.

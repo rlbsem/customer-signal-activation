@@ -1,0 +1,28 @@
+name: Verify lifecycle experiments
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  experiment:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.lock
+      - run: python -m pip install --no-deps --no-build-isolation -e .
+      - run: python -m playwright install --with-deps chromium
+      - run: python -c "from pathlib import Path; Path('work').mkdir(exist_ok=True)"
+      - run: python -m pytest tests/test_lifecycle_experiment.py -q --basetemp work/experiment-ci-tests
+      - run: python scripts/verify_lifecycle_experiment.py work/experiment-ci work/experiment-ci-evidence
+      - run: python scripts/check_lifecycle_experiment.py
+      - run: python scripts/check_lifecycle.py

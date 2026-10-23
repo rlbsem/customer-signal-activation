@@ -47,7 +47,7 @@ python scripts/verify_lifecycle.py work/new-lifecycle-run docs/evidence/new-life
 
 Use a fresh working directory and output directory for each evidence run. The verifier executes real HTTP actions for all three journeys, independently reads destination receipts, drives the operator browser on desktop/mobile, runs dbt, applies a backdated conversion correction, and compares incremental results with an independent full build. A Python oracle separately checks action rows, conversion revision winners and journey aggregates. The 1,200-person scenario is deterministic operational data, not a performance benchmark. The 12-person reference has explicit expected eligibility reasons in the regression suite.
 
-The five dbt models expose action grain, conversion-revision grain, immutable transitions, journey totals and cohort-day enrollment/transition counts. Attempts are aggregated at action grain. Accepted messages, conversions and financial revenue are never equated. No experimentation or synthetic uplift is introduced.
+The five dbt models expose action grain, conversion-revision grain, immutable transitions, journey totals and cohort-day enrollment/transition counts. Attempts are aggregated at action grain. Accepted messages, conversions and financial revenue are never equated. The original orchestration evidence contains no experimentation. The separate [experiment extension](lifecycle-experiments.md) adds four models and enforced holdouts with its own executed evidence; it makes no commercial uplift claim.
 
 [Execution record](evidence/lifecycle/execution.json) · [Executed tests](evidence/lifecycle/tests.xml) · [Desktop](evidence/lifecycle/lifecycle-desktop.png) · [Mobile](evidence/lifecycle/lifecycle-mobile.png).
 

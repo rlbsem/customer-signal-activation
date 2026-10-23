@@ -69,6 +69,9 @@ class Lifecycle:
             database.execute("PRAGMA journal_mode=WAL")
         with connect(self.path) as c:
             c.executescript(SCHEMA)
+            from .lifecycle_experiment import initialize
+
+            initialize(c)
             body = canonical({"journeys": JOURNEYS, "daily": 1, "weekly": 2, "quiet": [20, 9]})
             c.execute("INSERT OR IGNORE INTO policy VALUES(1,?,?)", (body, digest(json.loads(body))))
 
@@ -374,7 +377,11 @@ class Lifecycle:
             try:
                 receipt = client.get("/receipts/" + key)
                 if receipt.status_code == 200:
-                    if receipt.json().get("payload_hash") != digest(payload):
+                    if (
+                        receipt.json().get("payload_hash") != digest(payload)
+                        or receipt.json().get("id") != key
+                        or receipt.json().get("accepted") is not True
+                    ):
                         raise Refused("receipt_conflict")
                     if a["reserved"] is None:
                         raise Refused("unreserved_remote_effect")
@@ -398,6 +405,12 @@ class Lifecycle:
             e = c.execute("SELECT * FROM enrollment WHERE id=?", (a["enrollment"],)).fetchone()
             f = self.facts(c, e["brand"], e["person"], now)
             reason = self.eligibility(f, e["journey"], now)
+            from .lifecycle_experiment import guard
+
+            experiment_reason = guard(c, e, now)
+            if experiment_reason:
+                self.log(c, key, now, "experiment_suppressed", {"reason": experiment_reason})
+                return experiment_reason
             policy = json.loads(
                 c.execute("SELECT body FROM policy WHERE version=?", (e["version"],)).fetchone()[0]
             )

@@ -12,3 +12,15 @@ models:
     columns:
       - name: journey
         tests: [not_null]
+  - name: fct_experiment_assignment
+    columns:
+      - name: id
+        tests: [unique, not_null]
+  - name: fct_experiment_exposure
+    columns:
+      - name: assignment_id
+        tests: [unique, not_null]
+  - name: fct_experiment_outcome
+    columns:
+      - name: assignment_id
+        tests: [unique, not_null]

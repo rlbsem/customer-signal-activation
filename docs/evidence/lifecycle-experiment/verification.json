@@ -1,0 +1,25 @@
+{
+  "executed_at": "2026-10-23T12:36:38.397997+00:00",
+  "scope": "Complete local regression suite; loopback synthetic services only. No vendor execution.",
+  "tests": {
+    "tests": 442,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "baseline_tests": 424,
+  "new_tests": 18,
+  "test_record": "tests.xml",
+  "sanitization": "Machine hostname omitted; test results and timing preserved.",
+  "duration_seconds": 758.117,
+  "test_source_sha256": "85af5ae5ea2fe81549aa157c7909e1d66962a9c325441a64e4a52a7ed0406371",
+  "execution_record_sha256": "bd9426fa0b64ed66b5cc77a5fccb02a22bb5ea55398f6c8a94444a5712aa3f23",
+  "checks": {
+    "locked_dependencies": "passed",
+    "ruff": "passed",
+    "historical_artifacts": 464,
+    "source_screenshot_bindings": "passed",
+    "internal_markdown_links": "passed"
+  },
+  "boundary": "Qualified activation milestones, invoice/cash/revenue attribution and native marketing platform acceptance are not established by this study."
+}
