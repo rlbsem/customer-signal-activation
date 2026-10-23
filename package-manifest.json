@@ -1,6 +1,6 @@
 {
   ".gitattributes": "5c1cc97e5a2a0fceda0061a3660ac7765781fb4897447be2141e1c656368caf3",
-  ".github/workflows/lifecycle.yml": "380f1ab776bf52aed71072cfa9b569d478a6812c21b3ed2aad2a445fd50ef2d2",
+  ".github/workflows/lifecycle.yml": "754449e920146cd22efea3f5e28b6d01ba501843dc964fac8d63c2c2fd5abb25",
   ".github/workflows/verify.yml": "53aa29d60aa95a8fd82d195a160a24c4a112c7edb04bb9334898ae956b096cbc",
   ".gitignore": "1f95b9b1aed204c40f7ef14185e4dd21205d83c84a5943101f97bc15bdc4eb49",
   "dbt/dbt_project.yml": "3a9f0010bbde16a23d8844fbee76647b185b0005f95e3a6cc9cd4f50774dc1bd",
@@ -473,7 +473,7 @@
   "docs/images/seller-suppressed.jpg": "d4c8895421f4d8a21e06d57761a5c0c4e33b7620ebda9f0441d961ebfd4688b1",
   "docs/images/ui-refresh.json": "96b8a04f2090d02003505b73a296530f9b48d6d887551c6361733fd618baa321",
   "docs/implementation-status.md": "0b1ed8d929058af33e80314fd8f878a880df9633af9a90fc1af8044d31250db0",
-  "docs/lifecycle.md": "41afd7b6478d58d09d2b4a669b68e456a2c7d0b48f64d0937da49ccad995c60d",
+  "docs/lifecycle.md": "a9c90f8826f63d911eecf6f4b2b4faeb716cac2546f138fd2e0b164adae8120b",
   "docs/limitations.md": "e53f5864d7a332164d7e154248d898bee34f524704f0bde3a6f0093393991b06",
   "docs/operations.md": "a82a83264e79614b2e0e19b73bb6310da35f387ef46b9dc393a91764d5026c81",
   "docs/repository-map.md": "42ece274cce5e212d18e3d6262c3288fe42ee7b910f118eef60f3cb9d6d1cce9",

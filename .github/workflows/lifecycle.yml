@@ -19,6 +19,7 @@ jobs:
       - run: python -m pip install -r requirements.lock
       - run: python -m pip install --no-deps --no-build-isolation -e .
       - run: python -m playwright install --with-deps chromium
+      - run: python -c "from pathlib import Path; Path('work').mkdir(exist_ok=True)"
       - run: python -m pytest tests/test_lifecycle.py -q --basetemp work/lifecycle-ci-tests
       - run: python scripts/verify_lifecycle.py work/lifecycle-ci-demo work/lifecycle-ci-evidence
       - run: python scripts/check_lifecycle.py
