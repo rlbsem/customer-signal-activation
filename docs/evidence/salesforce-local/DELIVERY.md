@@ -1,6 +1,6 @@
-# Historical local Salesforce acceptance stage — October 15, 2026
+# Local Salesforce acceptance revision — delivery
 
-This document records an **October 15, 2026 source-stage snapshot** based on `f44134556d62129fcd20d2244f888a862c64cb89`; at that stage, no GitHub publication or native Salesforce deployment had occurred. It is retained as historical delivery evidence, **not the current project status**. For the subsequent native Salesforce execution and merged changes, see the [completed acceptance review](../../salesforce-finish-review.md).
+Completed October 15, 2026. Base: `rlbsem/customer-signal-activation` at `f44134556d62129fcd20d2244f888a862c64cb89`. This is a complete local repository package; no commits, pushes or pull requests were created.
 
 ## Implemented
 
@@ -29,9 +29,9 @@ This document records an **October 15, 2026 source-stage snapshot** based on `f4
 
 There was one pre-existing AnyIO/Starlette deprecation warning. No cloud/API charges, credential changes or public GitHub writes occurred.
 
-## Reproduction procedure recorded for the next stage
+## Next boundary and precise completion steps
 
-The steps below describe the follow-up process proposed at this historical stage; later results are recorded in the [completed acceptance review](../../salesforce-finish-review.md). For a new, separately authorized reproduction, create an isolated Developer Edition org and authenticate locally with the Salesforce CLI under alias `csa-demo-owner`. Provide the alias and explicit approval of the org ID; share no password/token/auth URL. The [owner handoff](../../salesforce-owner-handoff.md) has exact commands for the gated check-only/deployment, two restricted test identities, registry seed, private config and local token handoff. Available compatible free seats/API entitlement must be checked; no paid license is assumed.
+Create an isolated free Developer Edition org and authenticate locally with the Salesforce CLI under alias `csa-demo-owner`. Provide the alias and explicit approval of the org ID; share no password/token/auth URL. The [owner handoff](../../salesforce-owner-handoff.md) has exact commands for the gated check-only/deployment, two restricted test identities, registry seed, private config and local token handoff. Available compatible free seats/API entitlement must be checked; no paid license is assumed.
 
 Then run native preflight and acceptance into a fresh private output directory, inspect the actual Salesforce list/detail view, capture genuine redacted screenshots and review the sanitized evidence. The [evidence procedure](../../salesforce-evidence.md) defines what to retain and what must stay private. A fresh model-to-Salesforce run additionally needs the existing real local model server and a new human approval; the native delivery fixture is explicitly handwritten.
 
