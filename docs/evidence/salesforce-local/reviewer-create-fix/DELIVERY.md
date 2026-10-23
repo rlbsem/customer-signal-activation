@@ -1,4 +1,6 @@
-# Reviewer-create acceptance correction: executed review
+# Historical Salesforce reviewer-create correction
+
+**Historical execution record.** This report preserves a prior acceptance stage, not the current GitHub status. See the [completed Salesforce review](../../../salesforce-finish-review.md) for the later result and publication.
 
 The existing Windows project was reviewed and updated in place. No Salesforce deployment, user/permission change, additional native business write or GitHub publication was performed by this correction. Original private native runs, backups and prior evidence remain in place.
 
@@ -22,7 +24,7 @@ The restricted integration/reviewer identities remain separate from the read-onl
 | Markdown file links | 81 checked during full verification; supplemental evidence links checked separately |
 | [Corrected native preflight](../../salesforce-native/current/preflight-finish-review-final-02.json) | PASSED; 10 authenticated GET requests against the pinned Developer Edition and existing identities |
 | Corrected full native acceptance | Not executed; owner approval required before additional live writes |
-| Hosted GitHub CI for this correction | Not run; candidate is not published |
+| Hosted GitHub CI for this correction | Not run at this archived correction stage |
 
 One existing Starlette/AnyIO deprecation warning remains. A pre-existing upstream hash difference in `docs/images/browser-proof.png` is disclosed in [baseline provenance](baseline-provenance.json); the image's bytes did not change during this work. The original archive hashes are retained.
 
