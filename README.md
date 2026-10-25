@@ -2,7 +2,7 @@
 
 **From customer signals to a verified CRM action and collected cash.**
 
-An accurate campaign signal can still lead to the wrong account, stale enrichment or an unsafe sales handoff. This system resolves identity, scores fit and intent, preserves CRM ownership and traces activity through fulfillment, invoices and payment allocations. Eligible collected-cash outcomes return to measurement without treating Closed Won as collected revenue.
+**Business impact:** Connect customer intelligence to the correct account owner, coordinated lifecycle follow-up and source-traceable commercial outcomes. Rather than letting disconnected workflows create stale assignments or duplicate actions, this system resolves identity, scores fit and intent, preserves CRM ownership and traces activity through fulfillment, invoices and payment allocations. Eligible collected-cash outcomes return to measurement without treating Closed Won as collected revenue.
 
 **Engineering proof:** Brand-scoped identity and source authority, durable activation and receipt recovery, restricted Salesforce review writes, and payment-allocation reconciliation. Browser, model evaluation and local workflow tests are published alongside native Salesforce and Snowflake execution records. The vendor acceptance history includes both failed stages and successful continuations.
 
@@ -18,7 +18,7 @@ Captured from the local UI using a preserved Qwen3-14B output and reviewer edit.
 
 ## Coordinate competing lifecycle journeys
 
-The [Lifecycle Operations demonstration](docs/lifecycle.md) coordinates trial onboarding, quiet-trial assistance and customer expansion education at person/brand/channel/purpose grain. Inspect competing actions, advance the clock, approve exact content and recover a lost acknowledgment against an independent local HTTP destination. Current preferences, coverage, sales ownership and shared contact limits govern new actions. This is a separate local synthetic lane; it does not extend the historical native Salesforce acceptance claim.
+The [Lifecycle Operations demonstration](docs/lifecycle.md) coordinates trial onboarding, quiet-trial assistance and customer expansion education at person/brand/channel/purpose grain. Inspect competing actions, advance the clock, approve exact content and recover a lost acknowledgment against an independent local HTTP destination. Current preferences, coverage, sales ownership and shared contact limits govern new actions. The local lifecycle acceptance and previously executed native Salesforce integration have separately inspectable evidence.
 
 ```text
 python scripts/lifecycle.py --workspace .local/lifecycle
@@ -28,7 +28,7 @@ python scripts/lifecycle.py --workspace .local/lifecycle
 
 ## Measure lifecycle outcomes against an enforced holdout
 
-The [Experiment & Outcomes workspace](docs/lifecycle-experiments.md) adds immutable person-level assignments, cross-journey holdout enforcement and seven-day outcome measurement. It keeps assigned populations separate from eligible, approved and independently accepted people. Late CRM corrections revise the dbt outcomes; incomplete observation withholds the comparison. Explicit opportunity links remain synthetic pipeline, never inferred revenue or commercial uplift.
+The [Experiment & Outcomes workspace](docs/lifecycle-experiments.md) adds immutable person-level assignments, cross-journey holdout enforcement and seven-day outcome measurement. It keeps assigned populations separate from eligible, approved and independently accepted people. Late CRM corrections revise the dbt outcomes; incomplete observation withholds the comparison. Synthetic opportunities remain source-linked and independently measurable, allowing commercial teams to distinguish influenced pipeline from recognized financial events and collected cash.
 
 [Verified lifecycle execution and results](docs/lifecycle-execution-evidence.md) · [Metric contract](docs/lifecycle-experiment-contract-v1.json)
 
