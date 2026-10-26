@@ -61,6 +61,6 @@ Optional actual inference uses the existing [pinned model setup](seller-workbenc
 python scripts/verify_seller_authority.py --workspace work/authority-live-1 --output work/authority-live-1.json --model-url http://127.0.0.1:8093/v1 --model-key-file PRIVATE_LOCAL_KEY_FILE
 ```
 
-Do not publish the key file or raw runtime logs. The runner excludes the key from reports. It retains failed generations and distinguishes actual model responses, archived replay, controlled rendering and local delivery. The original 120/120 mechanical benchmark and native Salesforce–Snowflake evidence are unchanged. Independent blinded usefulness assessment, general semantic support, and native execution of this new contract remain unverified.
+Do not publish the key file or raw runtime logs. The runner excludes the key from reports. It retains failed generations and distinguishes actual model responses, archived replay, controlled rendering and local delivery. The original 120/120 mechanical benchmark and native Salesforce/Snowflake evidence are unchanged. Independent blinded usefulness assessment, general semantic support, and native execution of this new contract remain unverified.
 
 Historical native executable hashes are verified at an explicit immutable Git revision, separately from today's implementation. The [evidence boundary](evidence/seller-authority/README.md) explains why default current-tree native fingerprint validation correctly fails after an executable change.

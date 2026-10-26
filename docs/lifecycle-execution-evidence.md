@@ -1,4 +1,4 @@
-# Lifecycle orchestration and experiment measurement — executed evidence
+# Lifecycle orchestration and experiment measurement: executed evidence
 
 The customer-signal platform now includes three governed lifecycle journeys and an experiment layer that answers two separate questions: **Was an approved action delivered safely?** and **Did assigned treatment outperform a properly enforced holdout?**
 
@@ -27,6 +27,6 @@ The code executes locally with synthetic people and simulated commercial outcome
 
 ## Execution boundaries
 
-The experiment has synthetic assignment, conversion and opportunity fixtures; its model compares those sources accurately but does not demonstrate real incremental conversion, customer communication or revenue. Explicitly linked opportunity values are simulated pipeline, not invoiced or collected cash. The existing native Salesforce–Snowflake integration and Qwen seller-agent evidence are separate executions, not one continuous customer lifecycle deployment.
+The experiment has synthetic assignment, conversion and opportunity fixtures; its model compares those sources accurately but does not demonstrate real incremental conversion, customer communication or revenue. Explicitly linked opportunity values are simulated pipeline, not invoiced or collected cash. The existing native Salesforce/Snowflake integration and Qwen seller-agent evidence are separate executions, not one continuous customer lifecycle deployment.
 
 The historical receipt-fix evidence directory retains the final audited execution; prior experimental runs remain available at their own recorded revisions. This entry point distinguishes the current implementation from those preserved debugging stages.
